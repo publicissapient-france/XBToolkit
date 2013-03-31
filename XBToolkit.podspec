@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "XBToolkit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Xebia Toolkit for iOS & OSX."
   s.homepage     = "https://github.com/xebia-france/XBToolkit"
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com' }
 
   s.license      = 'Apache License, Version 2.0'
-  s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :tag => "0.0.2" }
 
 #  s.platform = :osx, "10.7"
 #  s.platform = :ios, "5.0"
