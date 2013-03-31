@@ -15,10 +15,12 @@
 
 @interface XBCacheableArrayDataSource (protected)
 
+@property(nonatomic, strong)NSDictionary *dataSource;
 -(void)setCache:(NSObject<XBCache> *)cache;
 -(void)setDateFormatter:(NSDateFormatter *)dateFormatter;
 -(void)setMaxDataAgeInSecondsBeforeServerFetch:(NSInteger)maxDataAgeInSecondsBeforeServerFetch;
 -(void)setStorageFileName:(NSString *)storageFilename;
+-(void)setLastUpdate:(NSDate *)lastUpdate;
 
 -(void)processSuccessWithJson:(id)jsonFetched callback:(void (^)())callback;
 -(void)processError:(NSError*)error json:(id)jsonFetched callback:(void (^)())callback;

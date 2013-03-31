@@ -14,6 +14,7 @@
 @interface XBCacheableArrayDataSource : XBLoadableArrayDataSource {
     NSDateFormatter *_dateFormatter;
     NSInteger _maxDataAgeInSecondsBeforeServerFetch;
+    NSDate *_lastUpdate;
     NSString *_storageFileName;
     NSObject<XBCache> *_cache;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, assign, readonly)NSInteger maxDataAgeInSecondsBeforeServerFetch;
 @property (nonatomic, strong, readonly)NSDate *lastUpdate;
 @property (nonatomic, strong, readonly)NSObject<XBCache> *cache;
+@property (nonatomic, strong, readonly)NSString * storageFileName;
 
 - (void)loadDataWithForceReload:(BOOL)force;
 

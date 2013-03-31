@@ -8,7 +8,7 @@
 #import "XBLoadableArrayDataSource.h"
 #import "XBArrayDataSource+protected.h"
 #import "XBMapper.h"
-
+#import "XBToolkit.h"
 
 @implementation XBLoadableArrayDataSource
 
@@ -29,12 +29,11 @@
 }
 
 - (void)loadDataWithCallback:(void (^)())callback {
-    if (callback) {
-        callback();
-    }
+    mustOverride();
 }
 
 - (void)loadArrayFromJson:(NSDictionary *)json {
+    _rawData = json;
     NSArray *array = self.rootKeyPath ? [json valueForKeyPath:self.rootKeyPath] : json;
     self.array = [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
 }

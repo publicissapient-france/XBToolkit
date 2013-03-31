@@ -7,14 +7,11 @@
 
 #import <JSONKit/JSONKit.h>
 #import "XBCacheableArrayDataSource.h"
-#import "XBCache.h"
+#import "XBCacheableArrayDataSource+protected.h"
 #import "XBArrayDataSource+protected.h"
 #import "XBLoadableArrayDataSource+protected.h"
-#import "XBMapper.h"
 
-@implementation XBCacheableArrayDataSource {
-    NSDictionary *_dataSource;
-}
+@implementation XBCacheableArrayDataSource
 
 - (void)setCache:(NSObject <XBCache> *)cache {
     _cache = cache;
@@ -32,12 +29,8 @@
     _storageFileName = storageFileName;
 }
 
-- (NSString *)storageFileName {
-    return _storageFileName;
-}
-
-- (NSDate *)lastUpdate {
-    return [self.dateFormatter dateFromString:_dataSource[@"lastUpdate"]];
+- (void)setLastUpdate:(NSDate *)lastUpdate {
+    _lastUpdate = lastUpdate;
 }
 
 - (void)loadData {
@@ -84,7 +77,7 @@
     if (self.cache) {
         @try {
             NSError *error = nil;
-            NSString *cacheData = [self.cache getForKey:[self storageFileName] error: &error];
+            NSString *cacheData = [self.cache getForKey:self.storageFileName error: &error];
             if (cacheData) {
                 NSDictionary *json = [cacheData objectFromJSONString];
                 [self loadArrayFromJson:json];
@@ -93,7 +86,7 @@
         @catch ( NSException *e ) {
             DDLogError( @"%@: %@", e.name, e.reason);
             NSError *error = nil;
-            [self.cache clearForKey:[self storageFileName] error:&error];
+            [self.cache clearForKey:self.storageFileName error:&error];
         }
     }
 }
@@ -106,19 +99,19 @@
 }
 
 -(void)processSuccessWithJson:(id)jsonFetched callback:(void (^)())callback {
-    DDLogVerbose(@"jsonFetched: %@", jsonFetched);
+    [self loadArrayFromJson:jsonFetched];
+
+    self.lastUpdate = [NSDate date];
 
     NSDictionary *json = @{
-            @"lastUpdate" : [self.dateFormatter stringFromDate:[NSDate date]],
-            @"data" : self.rootKeyPath ? [jsonFetched valueForKeyPath:self.rootKeyPath] : jsonFetched
+            @"lastUpdate" : [self.dateFormatter stringFromDate: self.lastUpdate],
+            @"data" : jsonFetched
     };
 
     if (self.cache) {
         NSError *error;
-        [self.cache setForKey:[self storageFileName] value:[json JSONString] error:&error];
+        [self.cache setForKey:self.storageFileName value:[json JSONString] error:&error];
     }
-
-    [self loadArrayFromJson:json];
 
     if (callback) {
         callback();
@@ -131,12 +124,6 @@
     if (callback) {
         callback();
     }
-}
-
-- (void)loadArrayFromJson:(NSDictionary *)json {
-    _dataSource = json;
-    NSArray *array = json[@"data"];
-    self.array = [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
 }
 
 @end

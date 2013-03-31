@@ -13,9 +13,6 @@
 
 @interface XBHttpArrayDataSource (XBHttpArrayDataSource_protected)
 
-- (void)loadArrayFromJson:(NSDictionary *)json;
-- (NSArray *)data;
-
 - (void)setHttpClient:(XBHttpClient *)httpClient;
 - (void)setResourcePath:(NSString *)resourcePath;
 - (void)setHttpQueryParamBuilder:(NSObject<XBHttpQueryParamBuilder> *)httpQueryParamBuilder;

@@ -12,11 +12,13 @@
 @interface XBLoadableArrayDataSource : XBArrayDataSource {
     __weak Class _typeClass;
     NSString *_rootKeyPath;
+    id rawData;
     NSError *_error;
 }
 
 @property (nonatomic, strong, readonly)NSError *error;
 @property (nonatomic, weak, readonly)Class typeClass;
+@property (nonatomic, weak, readonly)id rawData;
 @property (nonatomic, strong, readonly)NSString *rootKeyPath;
 
 - (void)loadData;

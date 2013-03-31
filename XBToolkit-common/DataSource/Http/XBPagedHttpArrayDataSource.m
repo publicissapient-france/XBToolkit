@@ -80,44 +80,17 @@
 }
 
 - (void)processSuccessWithJson:(id)jsonFetched callback:(void (^)())callback merge:(BOOL)merge {
-    DDLogVerbose(@"jsonFetched: %@", jsonFetched);
-
-    NSDictionary *json;
-    if (!merge) {
-        json = @{
-            @"lastUpdate": [self.dateFormatter stringFromDate:[NSDate date]],
-            @"data": self.rootKeyPath ? [jsonFetched valueForKeyPath:self.rootKeyPath] : jsonFetched
-        };
-    }
-    else {
-        json = [self mergeJsonFetched:jsonFetched];
-
-    }
-    if (self.cache) {
-        NSError *error;
-        [self.cache setForKey:[self storageFileName] value:[json JSONString] error:&error];
-    }
-
-    [self loadArrayFromJson:json];
-
-    [self.paginator incrementPage];
-
-    if (callback) {
-        callback();
-    }
+    id jsonMerged = !merge ? jsonFetched : [self mergeRawData:jsonFetched];
+    [super processSuccessWithJson:jsonMerged callback:callback];
 }
 
-- (NSDictionary *)mergeJsonFetched:(id)jsonFetched {
-    NSDictionary *json;
-    NSMutableArray * mergedArray = [[self data] mutableCopy];
+- (id)mergeRawData:(id)jsonFetched {
+    id mutableRawData = [self.rawData mutableCopy];
 
-    [mergedArray addObjectsFromArray: (self.rootKeyPath ? [jsonFetched valueForKeyPath:self.rootKeyPath] : jsonFetched)];
+    NSMutableArray *currentData = self.rootKeyPath ? [mutableRawData valueForKeyPath:self.rootKeyPath] : mutableRawData;
+    [currentData addObjectsFromArray: (self.rootKeyPath ? [jsonFetched valueForKeyPath:self.rootKeyPath] : jsonFetched)];
 
-    json = @{
-        @"lastUpdate": [self.dateFormatter stringFromDate:[NSDate date]],
-        @"data": mergedArray
-    };
-    return json;
+    return mutableRawData;
 }
 
 @end

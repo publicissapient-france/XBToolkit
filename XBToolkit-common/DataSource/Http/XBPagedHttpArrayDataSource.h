@@ -19,6 +19,6 @@
 
 - (id)initWithConfiguration:(XBHttpArrayDataSourceConfiguration *)configuration httpClient:(XBHttpClient *)httpClient;
 
-- (NSDictionary *)mergeJsonFetched:(id)jsonFetched;
+- (id)mergeRawData:(id)jsonFetched;
 
 @end
