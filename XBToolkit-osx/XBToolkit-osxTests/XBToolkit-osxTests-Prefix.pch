@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'XBToolkit-osxTests' target in the 'XBToolkit-osxTests' project
+//
+
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#import "DDLog.h"
+#endif
+
+#ifdef DEBUG
+static const int ddLogLevel = LOG_LEVEL_INFO;
+#else
+static const int ddLogLevel = LOG_LEVEL_WARN;
+#endif
