@@ -10,7 +10,6 @@
 		0D9E8E90BA24418F9196858E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D026A35469DD4A979A24A9C4 /* libPods.a */; };
 		5420831517074CCC00290AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5420831417074CCC00290AEF /* Cocoa.framework */; };
 		5420831F17074CCC00290AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5420831D17074CCC00290AEF /* InfoPlist.strings */; };
-		5420832317074CCD00290AEF /* XBToolkit_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420832217074CCD00290AEF /* XBToolkit_osx.m */; };
 		5420850B1707547800290AEF /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084BC1707547800290AEF /* XBCache.h */; };
 		5420850C1707547800290AEF /* XBFileSystemCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084BD1707547800290AEF /* XBFileSystemCache.h */; };
 		5420850D1707547800290AEF /* XBFileSystemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCache.m */; };
@@ -105,8 +104,6 @@
 		5420831C17074CCC00290AEF /* XBToolkit-osx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XBToolkit-osx-Info.plist"; sourceTree = "<group>"; };
 		5420831E17074CCC00290AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5420832017074CCC00290AEF /* XBToolkit-osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XBToolkit-osx-Prefix.pch"; sourceTree = "<group>"; };
-		5420832117074CCD00290AEF /* XBToolkit_osx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBToolkit_osx.h; sourceTree = "<group>"; };
-		5420832217074CCD00290AEF /* XBToolkit_osx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBToolkit_osx.m; sourceTree = "<group>"; };
 		5420833217074CCD00290AEF /* XBToolkit-osxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XBToolkit-osxTests-Info.plist"; sourceTree = "<group>"; };
 		5420833417074CCD00290AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		542084BC1707547800290AEF /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
@@ -252,8 +249,6 @@
 		5420831A17074CCC00290AEF /* XBToolkit-osx */ = {
 			isa = PBXGroup;
 			children = (
-				5420832117074CCD00290AEF /* XBToolkit_osx.h */,
-				5420832217074CCD00290AEF /* XBToolkit_osx.m */,
 				5420831B17074CCC00290AEF /* Supporting Files */,
 			);
 			path = "XBToolkit-osx";
@@ -672,7 +667,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5420832317074CCD00290AEF /* XBToolkit_osx.m in Sources */,
 				5420850D1707547800290AEF /* XBFileSystemCache.m in Sources */,
 				542085101707547800290AEF /* DCParserConfiguration+XBAdditions.m in Sources */,
 				542085131707547800290AEF /* NSDateFormatter+XBAdditions.m in Sources */,

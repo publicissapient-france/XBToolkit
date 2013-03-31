@@ -14,8 +14,6 @@
 		540956AD1707C4CF00B006B0 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420847E1707546200290AEF /* XBMapper.m */; };
 		540956B11707C66A00B006B0 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 540956B01707C66A00B006B0 /* wp-author-index.json */; };
 		542082E017074C9B00290AEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542082DF17074C9B00290AEF /* Foundation.framework */; };
-		542082E517074C9B00290AEF /* XBToolkit_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 542082E417074C9B00290AEF /* XBToolkit_ios.h */; };
-		542082E717074C9B00290AEF /* XBToolkit_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 542082E617074C9B00290AEF /* XBToolkit_ios.m */; };
 		542084801707546200290AEF /* XBFileSystemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084331707546200290AEF /* XBFileSystemCache.m */; };
 		542084821707546200290AEF /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084361707546200290AEF /* DCParserConfiguration+XBAdditions.m */; };
 		542084841707546200290AEF /* NSDateFormatter+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084381707546200290AEF /* NSDateFormatter+XBAdditions.m */; };
@@ -75,7 +73,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				542082E517074C9B00290AEF /* XBToolkit_ios.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +91,6 @@
 		542082DC17074C9B00290AEF /* libXBToolkit-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libXBToolkit-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542082DF17074C9B00290AEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		542082E317074C9B00290AEF /* XBToolkit-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XBToolkit-ios-Prefix.pch"; sourceTree = "<group>"; };
-		542082E417074C9B00290AEF /* XBToolkit_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBToolkit_ios.h; sourceTree = "<group>"; };
-		542082E617074C9B00290AEF /* XBToolkit_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBToolkit_ios.m; sourceTree = "<group>"; };
 		542082EE17074C9C00290AEF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		542082F017074C9C00290AEF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		542084311707546200290AEF /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
@@ -278,8 +273,6 @@
 		542082E117074C9B00290AEF /* XBToolkit-ios */ = {
 			isa = PBXGroup;
 			children = (
-				542082E417074C9B00290AEF /* XBToolkit_ios.h */,
-				542082E617074C9B00290AEF /* XBToolkit_ios.m */,
 				542082E217074C9B00290AEF /* Supporting Files */,
 			);
 			path = "XBToolkit-ios";
@@ -624,7 +617,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				542082E717074C9B00290AEF /* XBToolkit_ios.m in Sources */,
 				542084801707546200290AEF /* XBFileSystemCache.m in Sources */,
 				542084821707546200290AEF /* DCParserConfiguration+XBAdditions.m in Sources */,
 				542084841707546200290AEF /* NSDateFormatter+XBAdditions.m in Sources */,
