@@ -7,17 +7,16 @@
 
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
-#import "XBPagedArrayDataSource.h"
+#import "XBInfiniteScrollArrayDataSource.h"
 #import "XBCompositeArrayDataSource.h"
+#import "XBInfiniteScrollArrayDataSource.h"
 
-@interface XBPagedCompositeArrayDataSource : XBCompositeArrayDataSource<XBPagedArrayDataSource>
-
-- (NSObject <XBPagedArrayDataSource> *)pagedSecondDataSource;
+@interface XBPagedCompositeArrayDataSource : XBCompositeArrayDataSource
 
 - (NSUInteger)totalCount;
 
-- (void)loadNextPageWithCallback:(void (^)())callback;
+- (void)loadMoreDataWithCallback:(void (^)())callback;
 
-- (Boolean)hasMorePages;
+- (Boolean)hasMoreData;
 
 @end

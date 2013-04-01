@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBPagedHttpArrayDataSource.h"
+#import "XBInfiniteScrollArrayDataSource.h"
 
-@interface XBPagedHttpArrayDataSource (XBPagedHttpArrayDataSource_protected)
+@interface XBInfiniteScrollArrayDataSource (XBPagedHttpArrayDataSource_protected)
 
 -(void)setPaginator:(NSObject<XBPaginator> *)paginator;
 

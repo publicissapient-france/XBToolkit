@@ -4,12 +4,15 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
 #import "GHUnit.h"
-#import "XBHttpArrayDataSource.h"
-#import "XBPagedHttpArrayDataSource.h"
+#import "XBInfiniteScrollArrayDataSource.h"
 #import "WPAuthor.h"
-#import "AFHTTPRequestOperationLogger.h"
+#import "XBHttpJsonDataLoader.h"
+#import "XBJsonToArrayDataMapper.h"
+#import "JSONKit.h"
+#import "XBTestUtils.h"
+#import "Underscore.h"
+#import "XBArrayDataSource+protected.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -21,21 +24,17 @@
     [self prepare];
 //    [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
 
-    XBHttpClient *httpClient = [[XBHttpClient alloc] initWithBaseUrl:@"http://blog.xebia.fr"];
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
 
-    XBHttpArrayDataSourceConfiguration *configuration =
-        [XBHttpArrayDataSourceConfiguration configurationWithResourcePath:@"/wp-json-api/get_author_index/"
-                                                          storageFileName:@"wp-author"
-                                                                typeClass:[WPAuthor class]
-                                                              rootKeyPath:@"authors"];
+    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
+                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
 
-    configuration.httpQueryParamBuilder = [XBBasicHttpQueryParamBuilder builderWithDictionary:@{@"count": @"10"}];
+    XBJsonToArrayDataMapper * dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
 
-    XBHttpArrayDataSource *wpAuthorDS =
-        [XBHttpArrayDataSource dataSourceWithConfiguration:configuration
-                                                httpClient:httpClient];
+    XBReloadableArrayDataSource *wpAuthorDS = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader
+                                                                                         dataMapper:dataMapper];
 
-    [wpAuthorDS loadDataWithForceReload:YES callback:^() {
+    [wpAuthorDS loadDataWithCallback:^() {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchSearchIndexResult)];
     }];
 
@@ -44,7 +43,18 @@
 //    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     GHAssertNil(wpAuthorDS.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long)wpAuthorDS.error.code, wpAuthorDS.error.domain]);
-    GHAssertTrue(wpAuthorDS.count > 0, @"Response should be different from 0");
+    GHAssertEquals(wpAuthorDS.count, [@70 unsignedIntegerValue], @"Response should be different from 0");
+
+    WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:wpAuthorDS.array ById:50];
+
+    GHAssertEquals([wpAuthor.identifier intValue], 50, nil);
+    GHAssertEqualStrings(wpAuthor.slug, @"akinsella", nil);
+    GHAssertEqualStrings(wpAuthor.name, @"Alexis Kinsella", nil);
+    GHAssertEqualStrings(wpAuthor.first_name, @"Alexis", nil);
+    GHAssertEqualStrings(wpAuthor.last_name, @"Kinsella", nil);
+    GHAssertEqualStrings(wpAuthor.nickname, @"akinsella", nil);
+    GHAssertEqualStrings(wpAuthor.url, @"http://www.xebia.fr", nil);
+    GHAssertEqualStrings(wpAuthor.description_, @"", nil);
 }
 
 @end

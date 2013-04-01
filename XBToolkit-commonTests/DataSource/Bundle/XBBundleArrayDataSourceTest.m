@@ -6,9 +6,10 @@
 
 
 #import "GHUnit.h"
-#import "XBHttpArrayDataSource.h"
-#import "XBBundleArrayDataSource.h"
+#import "XBReloadableArrayDataSource.h"
 #import "WPAuthor.h"
+#import "XBBundleJsonDataLoader.h"
+#import "XBJsonToArrayDataMapper.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -19,13 +20,9 @@
 - (void)testLoadDataSourceFromBundle {
     [self prepare];
 
-    XBBundleArrayDataSourceConfiguration *configuration =
-            [XBBundleArrayDataSourceConfiguration configurationWithResourcePath:@"wp-author-index"
-                                                                   resourceType:@"json"
-                                                                      typeClass:[WPAuthor class]];
-    configuration.rootKeyPath = @"authors";
-
-    XBBundleArrayDataSource *bundleDS = [XBBundleArrayDataSource dataSourceWithConfiguration:configuration];
+    XBBundleJsonDataLoader *dataLoader = [XBBundleJsonDataLoader loaderWithResourcePath:@"wp-author-index" resourceType:@"json"];
+    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+    XBReloadableArrayDataSource *bundleDS = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader dataMapper:dataMapper];
 
     [bundleDS loadDataWithCallback:^() {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testLoadDataSourceFromBundle)];

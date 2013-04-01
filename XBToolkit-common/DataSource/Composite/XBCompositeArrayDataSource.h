@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
-#import "XBLoadableArrayDataSource.h"
+#import "XBReloadableArrayDataSource.h"
 
-@interface XBCompositeArrayDataSource : XBLoadableArrayDataSource
+@interface XBCompositeArrayDataSource : XBReloadableArrayDataSource
 
-- (id)initWithFirstDataSource:(XBLoadableArrayDataSource *)firstDataSource
-             secondDataSource:(XBLoadableArrayDataSource *)secondDataSource;
+- (id)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource;
 
-+ (id)dataSourceWithFirstDataSource:(XBLoadableArrayDataSource *)firstDataSource
-                   secondDataSource:(XBLoadableArrayDataSource *)secondDataSource;
++ (id)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource;
 
 @end

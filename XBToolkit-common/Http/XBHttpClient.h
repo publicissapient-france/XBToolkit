@@ -10,7 +10,7 @@
 
 @interface XBHttpClient : NSObject
 
-+(id)initWithBaseUrl:(NSString *)baseUrl;
++(id)httpClientWithBaseUrl:(NSString *)baseUrl;
 -(id)initWithBaseUrl:(NSString *)baseUrl;
 
 - (void)executeGetJsonRequestWithPath:(NSString *)path

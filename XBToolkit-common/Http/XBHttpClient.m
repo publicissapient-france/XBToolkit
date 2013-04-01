@@ -12,7 +12,7 @@
     AFHTTPClient *_afHttpClient;
 }
 
-+(id)initWithBaseUrl:(NSString *)baseUrl {
++(id)httpClientWithBaseUrl:(NSString *)baseUrl {
     return [[XBHttpClient alloc] initWithBaseUrl:baseUrl];
 }
 
@@ -28,7 +28,7 @@
 
 - (void)executeGetJsonRequestWithPath:(NSString *)path
                            parameters:(NSDictionary *)parameters
-                              success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
+                                  success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
                               failure: (void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id))errorCb {
 
     NSURLRequest *urlRequest = [_afHttpClient requestWithMethod:@"GET" path:path parameters:parameters];

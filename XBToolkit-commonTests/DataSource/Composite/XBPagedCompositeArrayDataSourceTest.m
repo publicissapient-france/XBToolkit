@@ -6,8 +6,6 @@
 
 
 #import "GHUnit.h"
-#import "XBHttpArrayDataSource.h"
-#import "XBPagedCompositeArrayDataSource.h"
 
 #define kNetworkTimeout 30.0f
 

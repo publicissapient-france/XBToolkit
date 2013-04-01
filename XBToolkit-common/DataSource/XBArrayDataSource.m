@@ -7,53 +7,86 @@
 
 #import "XBArrayDataSource.h"
 
+@interface XBArrayDataSource()
+@property(nonatomic, strong)NSArray *array;
+@property(nonatomic, strong)NSArray *filteredSortedArray;
+@property(nonatomic, strong)XBPredicateBlock filterPredicate;
+@property(nonatomic, assign)NSComparator sortComparator;
+@end
+
 @implementation XBArrayDataSource {
     NSArray *_array;
-    NSArray *_filteredArray;
 }
 
 + (id)dataSourceWithArray:(NSArray *)array {
-    return [[self alloc] initWithArray:array];
+    return [self dataSourceWithArray:array filterPredicate:nil sortComparator:nil];
+}
+
++ (id)dataSourceWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator {
+    return [[self alloc] initWithArray:array filterPredicate:filterPredicate sortComparator:sortComparator];
 }
 
 - (id)initWithArray:(NSArray *)array {
+    return [self initWithArray: array filterPredicate: nil sortComparator:nil];
+}
+
+- (id)initWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator {
     self = [super init];
     if (self) {
-        self.array = array;
+        _array = array;
+        self.filterPredicate = filterPredicate;
+        self.sortComparator = sortComparator;
+        [self filterData];
     }
 
     return self;
 }
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx {
-    return _filteredArray[idx];
+    return self.filteredSortedArray[idx];
 }
 
 - (NSArray *)array {
-    return _filteredArray;
+    return self.filteredSortedArray;
 }
 
 - (void)setArray:(NSArray *)array {
     _array = array;
-    _filteredArray = [_array copy];
+    [self filterData];
 }
 
 - (NSUInteger)count {
-    return _filteredArray.count;
+    return self.filteredSortedArray.count;
 }
 
-- (void)filter:(XBPredicateBlock)filter {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:_array.count];
+- (void)filter:(XBPredicateBlock)filterPredicate {
+    self.filterPredicate = filterPredicate;
+    [self filterData];
+}
 
-    for (id obj in _array) {
-        id mapped = filter(obj) ? obj : nil;
+- (void)sort:(NSComparator)sortComparator {
+    self.sortComparator = sortComparator;
+    [self sortData];
+}
 
-        if (mapped) {
-            [result addObject:mapped];
+- (void)filterData {
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.array.count];
+
+    for (id item in _array) {
+        if (!self.filterPredicate || self.filterPredicate(item) ? item : nil) {
+            [result addObject:item];
         }
     }
 
-    _filteredArray = [result copy];
+    self.filteredSortedArray = [result copy];
+
+    [self sortData];
+}
+
+- (void)sortData {
+    if (self.sortComparator) {
+        self.filteredSortedArray = [self.filteredSortedArray sortedArrayUsingComparator:self.sortComparator];
+    }
 }
 
 @end

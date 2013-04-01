@@ -9,25 +9,23 @@
 #import "XBCompositeArrayDataSource+protected.h"
 #import "XBArrayDataSource.h"
 #import "XBArrayDataSource+protected.h"
-#import "XBLoadableArrayDataSource.h"
-#import "XBLoadableArrayDataSource+protected.h"
+#import "XBReloadableArrayDataSource.h"
+#import "XBReloadableArrayDataSource+protected.h"
 
-@implementation XBCompositeArrayDataSource {
-    XBLoadableArrayDataSource *_firstDataSource;
-    XBLoadableArrayDataSource *_secondDataSource;
-}
+@implementation XBCompositeArrayDataSource
 
-+ (id)dataSourceWithFirstDataSource:(XBLoadableArrayDataSource *)firstDataSource
-                   secondDataSource:(XBLoadableArrayDataSource *)secondDataSource {
+
++ (id)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
     return [[self alloc] initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }
 
-- (id)initWithFirstDataSource:(XBLoadableArrayDataSource *)firstDataSource
-             secondDataSource:(XBLoadableArrayDataSource *)secondDataSource {
+- (id)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
     self = [super init];
     if (self) {
-        _firstDataSource = firstDataSource;
-        _secondDataSource = secondDataSource;
+        self.firstDataSource = firstDataSource;
+        self.secondDataSource = secondDataSource;
     }
 
     return self;
@@ -45,20 +43,33 @@
     return self.firstDataSource.error ? self.firstDataSource.error : self.secondDataSource.error;
 }
 
+- (id)rawData {
+    return self.secondDataSource.rawData;
+}
+
 - (NSArray *)array {
     return self.secondDataSource.array;
 }
 
-- (void)loadDataWithForceReload:(BOOL)force callback:(void(^)())callback {
+- (void)filter:(XBPredicateBlock)filterPredicate {
+    [self.secondDataSource filter:filterPredicate];
+}
+
+- (void)sort:(NSComparator)sortComparator {
+    [self.secondDataSource sort:sortComparator];
+}
+
+
+- (void)loadDataWithCallback:(void (^)())callback {
     [self.firstDataSource loadDataWithCallback:^{
-            if (self.firstDataSource.error) {
-                if (callback) {
-                    callback();
-                }
+        if (self.firstDataSource.error) {
+            if (callback) {
+                callback();
             }
-            else {
-                [self.secondDataSource loadDataWithCallback:callback];
-            }
+        }
+        else {
+            [self.secondDataSource loadDataWithCallback:callback];
+        }
     }];
 }
 

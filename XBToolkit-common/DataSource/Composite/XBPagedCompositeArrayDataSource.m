@@ -8,40 +8,40 @@
 #import "XBArrayDataSource.h"
 #import "XBCompositeArrayDataSource.h"
 #import "XBPagedCompositeArrayDataSource.h"
-#import "XBPagedArrayDataSource.h"
 #import "XBCompositeArrayDataSource+protected.h"
 
 
 @implementation XBPagedCompositeArrayDataSource
 
-+ (id)dataSourceWithFirstDataSource:(XBLoadableArrayDataSource *)firstDataSource
-                   secondDataSource:(XBLoadableArrayDataSource *)secondDataSource {
++ (id)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
     return [[self alloc] initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }
 
-- (id)initWithFirstDataSource:(XBLoadableArrayDataSource *)firstDataSource
-             secondDataSource:(XBLoadableArrayDataSource *)secondDataSource {
+- (id)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
 
-    if (![secondDataSource conformsToProtocol:@protocol(XBPagedArrayDataSource)]) {
-        [NSException raise:NSInvalidArgumentException format:@"secondDataSource does not conform to XBPagedArrayDataSource protocol"];
+    if (![[secondDataSource class] isSubclassOfClass:[XBInfiniteScrollArrayDataSource class]]) {
+        [NSException raise:NSInvalidArgumentException format:@"secondDataSource is a sub class of class XBInfiniteScrollArrayDataSource"];
     }
+
     return [super initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }
 
--(NSObject<XBPagedArrayDataSource> *)pagedSecondDataSource {
-    return (NSObject<XBPagedArrayDataSource> *)[self secondDataSource];
+-(XBInfiniteScrollArrayDataSource *)pagedSecondDataSource {
+    return (XBInfiniteScrollArrayDataSource *)[self secondDataSource];
 }
 
 - (NSUInteger)totalCount {
     return [self firstDataSource].count;
 }
 
-- (void)loadNextPageWithCallback:(void (^)())callback {
-    [[self pagedSecondDataSource] loadNextPageWithCallback:callback];
+- (void)loadMoreDataWithCallback:(void (^)())callback {
+    [[self pagedSecondDataSource] loadMoreDataWithCallback:callback];
 }
 
-- (Boolean)hasMorePages {
-    return [[self pagedSecondDataSource] hasMorePages];
+- (Boolean)hasMoreData {
+    return [[self pagedSecondDataSource] hasMoreData];
 }
 
 @end

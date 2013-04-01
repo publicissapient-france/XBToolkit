@@ -10,19 +10,22 @@
 #import "XBBundleArrayDataSource.h"
 #import "JSONKit.h"
 
+@interface XBBundleArrayDataSource()
+@property (nonatomic, strong, readonly)NSString *resourcePath;
+@property (nonatomic, strong, readonly)NSString *resourceType;
+@end
+
 @implementation XBBundleArrayDataSource
 
-+ (XBBundleArrayDataSource *)dataSourceWithConfiguration:(XBBundleArrayDataSourceConfiguration *)configuration {
-    return [[self alloc] initWithConfiguration:configuration];
++ (id)sourceWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
+    return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType];
 }
 
-- (id)initWithConfiguration:(XBBundleArrayDataSourceConfiguration *)configuration {
+- (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
     self = [super init];
     if (self) {
-        self.typeClass = configuration.typeClass;
-        self.rootKeyPath = configuration.rootKeyPath;
-        _resourcePath = configuration.resourcePath;
-        _resourceType = configuration.resourceType;
+        _resourcePath = resourcePath;
+        _resourceType = resourceType;
     }
 
     return self;

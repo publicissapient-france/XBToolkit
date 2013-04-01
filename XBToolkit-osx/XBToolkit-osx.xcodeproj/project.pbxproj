@@ -10,9 +10,8 @@
 		0D9E8E90BA24418F9196858E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D026A35469DD4A979A24A9C4 /* libPods.a */; };
 		5420831517074CCC00290AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5420831417074CCC00290AEF /* Cocoa.framework */; };
 		5420831F17074CCC00290AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5420831D17074CCC00290AEF /* InfoPlist.strings */; };
-		5420850B1707547800290AEF /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084BC1707547800290AEF /* XBCache.h */; };
-		5420850C1707547800290AEF /* XBFileSystemCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084BD1707547800290AEF /* XBFileSystemCache.h */; };
-		5420850D1707547800290AEF /* XBFileSystemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCache.m */; };
+		5420850C1707547800290AEF /* XBFileSystemCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084BD1707547800290AEF /* XBFileSystemCacheSupport.h */; };
+		5420850D1707547800290AEF /* XBFileSystemCacheSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */; };
 		5420850F1707547800290AEF /* DCParserConfiguration+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C01707547800290AEF /* DCParserConfiguration+XBAdditions.h */; };
 		542085101707547800290AEF /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */; };
 		542085121707547800290AEF /* NSDateFormatter+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C21707547800290AEF /* NSDateFormatter+XBAdditions.h */; };
@@ -21,10 +20,6 @@
 		542085161707547800290AEF /* NSError+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C51707547800290AEF /* NSError+XBAdditions.m */; };
 		542085181707547800290AEF /* NSNumber+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C61707547800290AEF /* NSNumber+XBAdditions.h */; };
 		542085191707547800290AEF /* NSNumber+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C71707547800290AEF /* NSNumber+XBAdditions.m */; };
-		5420853A1707547800290AEF /* XBBundleArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084DF1707547800290AEF /* XBBundleArrayDataSource.h */; };
-		5420853B1707547800290AEF /* XBBundleArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E01707547800290AEF /* XBBundleArrayDataSource.m */; };
-		5420853D1707547800290AEF /* XBBundleArrayDataSourceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084E11707547800290AEF /* XBBundleArrayDataSourceConfiguration.h */; };
-		5420853E1707547800290AEF /* XBBundleArrayDataSourceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E21707547800290AEF /* XBBundleArrayDataSourceConfiguration.m */; };
 		542085401707547800290AEF /* XBCompositeArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084E41707547800290AEF /* XBCompositeArrayDataSource+protected.h */; };
 		542085411707547800290AEF /* XBCompositeArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084E51707547800290AEF /* XBCompositeArrayDataSource.h */; };
 		542085421707547800290AEF /* XBCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E61707547800290AEF /* XBCompositeArrayDataSource.m */; };
@@ -33,27 +28,15 @@
 		542085471707547800290AEF /* XBBasicHttpQueryParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084EB1707547800290AEF /* XBBasicHttpQueryParamBuilder.h */; };
 		542085481707547800290AEF /* XBBasicHttpQueryParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */; };
 		5420854A1707547800290AEF /* XBHttpQueryParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084ED1707547800290AEF /* XBHttpQueryParamBuilder.h */; };
-		5420854B1707547800290AEF /* XBHttpArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084EE1707547800290AEF /* XBHttpArrayDataSource+protected.h */; };
-		5420854C1707547800290AEF /* XBHttpArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084EF1707547800290AEF /* XBHttpArrayDataSource.h */; };
-		5420854D1707547800290AEF /* XBHttpArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F01707547800290AEF /* XBHttpArrayDataSource.m */; };
-		5420854F1707547800290AEF /* XBHttpArrayDataSourceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F11707547800290AEF /* XBHttpArrayDataSourceConfiguration.h */; };
-		542085501707547800290AEF /* XBHttpArrayDataSourceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F21707547800290AEF /* XBHttpArrayDataSourceConfiguration.m */; };
-		542085521707547800290AEF /* XBPagedHttpArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F31707547800290AEF /* XBPagedHttpArrayDataSource+protected.h */; };
-		542085531707547800290AEF /* XBPagedHttpArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F41707547800290AEF /* XBPagedHttpArrayDataSource.h */; };
-		542085541707547800290AEF /* XBPagedHttpArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F51707547800290AEF /* XBPagedHttpArrayDataSource.m */; };
 		542085561707547800290AEF /* XBArrayDataSourcePaginator.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F71707547800290AEF /* XBArrayDataSourcePaginator.h */; };
 		542085571707547800290AEF /* XBArrayDataSourcePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */; };
 		542085591707547800290AEF /* XBPaginator.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F91707547800290AEF /* XBPaginator.h */; };
 		5420855A1707547800290AEF /* XBArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084FA1707547800290AEF /* XBArrayDataSource+protected.h */; };
 		5420855B1707547800290AEF /* XBArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084FB1707547800290AEF /* XBArrayDataSource.h */; };
 		5420855C1707547800290AEF /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084FC1707547800290AEF /* XBArrayDataSource.m */; };
-		5420855E1707547800290AEF /* XBCacheableArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084FD1707547800290AEF /* XBCacheableArrayDataSource+protected.h */; };
-		5420855F1707547800290AEF /* XBCacheableArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084FE1707547800290AEF /* XBCacheableArrayDataSource.h */; };
-		542085601707547800290AEF /* XBCacheableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084FF1707547800290AEF /* XBCacheableArrayDataSource.m */; };
-		542085621707547800290AEF /* XBLoadableArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085001707547800290AEF /* XBLoadableArrayDataSource+protected.h */; };
-		542085631707547800290AEF /* XBLoadableArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085011707547800290AEF /* XBLoadableArrayDataSource.h */; };
-		542085641707547800290AEF /* XBLoadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085021707547800290AEF /* XBLoadableArrayDataSource.m */; };
-		542085661707547800290AEF /* XBPagedArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085031707547800290AEF /* XBPagedArrayDataSource.h */; };
+		542085621707547800290AEF /* XBReloadableArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085001707547800290AEF /* XBReloadableArrayDataSource+protected.h */; };
+		542085631707547800290AEF /* XBReloadableArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085011707547800290AEF /* XBReloadableArrayDataSource.h */; };
+		542085641707547800290AEF /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085021707547800290AEF /* XBReloadableArrayDataSource.m */; };
 		542085671707547800290AEF /* XBHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085051707547800290AEF /* XBHttpClient.h */; };
 		542085681707547800290AEF /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085061707547800290AEF /* XBHttpClient.m */; };
 		5420856A1707547800290AEF /* XBMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085081707547800290AEF /* XBMapper.h */; };
@@ -66,9 +49,8 @@
 		54C534141707923F001DB282 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C534131707923F001DB282 /* GHUnitTestMain.m */; };
 		54C5341517079438001DB282 /* XBBundleArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420857D1707555B00290AEF /* XBBundleArrayDataSourceTest.m */; };
 		54C5341617079438001DB282 /* XBPagedCompositeArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420857F1707555B00290AEF /* XBPagedCompositeArrayDataSourceTest.m */; };
-		54C5341717079438001DB282 /* XBHttpArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085811707555B00290AEF /* XBHttpArrayDataSourceTest.m */; };
 		54C5341817079460001DB282 /* WPAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085881707572C00290AEF /* WPAuthor.m */; };
-		54C5341917079478001DB282 /* XBFileSystemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCache.m */; };
+		54C5341917079478001DB282 /* XBFileSystemCacheSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */; };
 		54C5341A1707947F001DB282 /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */; };
 		54C5341B1707947F001DB282 /* NSDateFormatter+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C31707547800290AEF /* NSDateFormatter+XBAdditions.m */; };
 		54C5341C1707947F001DB282 /* NSError+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C51707547800290AEF /* NSError+XBAdditions.m */; };
@@ -76,23 +58,50 @@
 		54C5341E17079484001DB282 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085091707547800290AEF /* XBMapper.m */; };
 		54C5341F1707948A001DB282 /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085061707547800290AEF /* XBHttpClient.m */; };
 		54C5342017079490001DB282 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084FC1707547800290AEF /* XBArrayDataSource.m */; };
-		54C5342117079490001DB282 /* XBCacheableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084FF1707547800290AEF /* XBCacheableArrayDataSource.m */; };
-		54C5342217079490001DB282 /* XBLoadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085021707547800290AEF /* XBLoadableArrayDataSource.m */; };
+		54C5342217079490001DB282 /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085021707547800290AEF /* XBReloadableArrayDataSource.m */; };
 		54C5342317079494001DB282 /* XBArrayDataSourcePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */; };
 		54C5342417079499001DB282 /* XBCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E61707547800290AEF /* XBCompositeArrayDataSource.m */; };
 		54C5342517079499001DB282 /* XBPagedCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E81707547800290AEF /* XBPagedCompositeArrayDataSource.m */; };
-		54C53426170794A0001DB282 /* XBHttpArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F01707547800290AEF /* XBHttpArrayDataSource.m */; };
-		54C53427170794A0001DB282 /* XBHttpArrayDataSourceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F21707547800290AEF /* XBHttpArrayDataSourceConfiguration.m */; };
-		54C53428170794A0001DB282 /* XBPagedHttpArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F51707547800290AEF /* XBPagedHttpArrayDataSource.m */; };
 		54C53429170794A5001DB282 /* XBBasicHttpQueryParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */; };
-		54C5342A170794A9001DB282 /* XBBundleArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E01707547800290AEF /* XBBundleArrayDataSource.m */; };
-		54C5342B170794AC001DB282 /* XBBundleArrayDataSourceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E21707547800290AEF /* XBBundleArrayDataSourceConfiguration.m */; };
 		54C5343217079744001DB282 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C5343117079744001DB282 /* SystemConfiguration.framework */; };
 		54C5343417079B22001DB282 /* libPods-XBToolkit-osxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 000C6175096E46839CA6FDB8 /* libPods-XBToolkit-osxTests.a */; };
 		54C5343917079C95001DB282 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D026A35469DD4A979A24A9C4 /* libPods.a */; };
 		54C5343A1707A95B001DB282 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34DC6E7779C0160C7E440B /* wp-author-index.json */; };
+		DB34D01D08A656D0ABA0850E /* XBDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */; };
+		DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */; };
+		DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */; };
+		DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
+		DB34D1B2240DDF422B93E98F /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
+		DB34D229A0FE3A84E00C0BA5 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */; };
+		DB34D2FB071FDDEEF44CF10E /* XBHttpArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */; };
 		DB34D337ED94131B8A5DCF91 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34DC6E7779C0160C7E440B /* wp-author-index.json */; };
+		DB34D39D86C3E6873B35A792 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D494A7AD914F078A9A41 /* XBCacheElement.m */; };
+		DB34D3AF68A6ED7CB71F935E /* XBBasicDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */; };
+		DB34D3FE9E52C243E32A2E04 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */; };
+		DB34D43B3203D16B05182880 /* XBTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D1E885637177A9361457 /* XBTestUtils.m */; };
+		DB34D5148579F2EF9A76806B /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */; };
+		DB34D57464E6904A421A4D74 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */; };
+		DB34D5993354C60B77E658C2 /* XBCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */; };
+		DB34D5B6DAE071DFE073A369 /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */; };
+		DB34D6035A1389B64E4C4990 /* XBHttpJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */; };
+		DB34D63F5CCF3CFCFB0B2298 /* XBInfiniteScrollArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */; };
+		DB34D76CBE405CCD78D4E35F /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3405D539CFC1910CF76 /* XBCache.m */; };
+		DB34D789430DE650C4B72EE9 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */; };
+		DB34D80E240635C691108D99 /* XBJsonToArrayDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */; };
 		DB34D851B9D58DB382CCD7E2 /* XBToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */; };
+		DB34D887A1094CA62181E0E2 /* XBCacheableDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */; };
+		DB34D88CBC61B318D9A853B2 /* XBBasicDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */; };
+		DB34D8CCCE41B95F5E8DA2D7 /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D21D18BC4E69B200A38B /* XBCache.h */; };
+		DB34D8F97C5D1BB7975377E3 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3405D539CFC1910CF76 /* XBCache.m */; };
+		DB34D935C8E9D443A95803E5 /* XBDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */; };
+		DB34D979FB7D5FEC4EBBB952 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D494A7AD914F078A9A41 /* XBCacheElement.m */; };
+		DB34D9986065C33D6AB6DBD0 /* XBBasicDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D7A8769C56CA962874AB /* XBBasicDataMerger.h */; };
+		DB34DC1C9431A2A6F2B93316 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */; };
+		DB34DCF676108EB893C5A7F8 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */; };
+		DB34DD34168C59C38098CA50 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */; };
+		DB34DD8CC5A5D1D98F2B0392 /* XBCacheElement.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D51331C95055F03D6FB2 /* XBCacheElement.h */; };
+		DB34DE727DACF2AA434B264D /* XBBundleJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */; };
+		DB34DF5C4B9E52C46F3DFAD1 /* XBDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D994329A1B24F374F8FA /* XBDataMerger.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,9 +116,8 @@
 		5420832017074CCC00290AEF /* XBToolkit-osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XBToolkit-osx-Prefix.pch"; sourceTree = "<group>"; };
 		5420833217074CCD00290AEF /* XBToolkit-osxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XBToolkit-osxTests-Info.plist"; sourceTree = "<group>"; };
 		5420833417074CCD00290AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		542084BC1707547800290AEF /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
-		542084BD1707547800290AEF /* XBFileSystemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBFileSystemCache.h; sourceTree = "<group>"; };
-		542084BE1707547800290AEF /* XBFileSystemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBFileSystemCache.m; sourceTree = "<group>"; };
+		542084BD1707547800290AEF /* XBFileSystemCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBFileSystemCacheSupport.h; sourceTree = "<group>"; };
+		542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBFileSystemCacheSupport.m; sourceTree = "<group>"; };
 		542084C01707547800290AEF /* DCParserConfiguration+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCParserConfiguration+XBAdditions.h"; sourceTree = "<group>"; };
 		542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCParserConfiguration+XBAdditions.m"; sourceTree = "<group>"; };
 		542084C21707547800290AEF /* NSDateFormatter+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+XBAdditions.h"; sourceTree = "<group>"; };
@@ -118,10 +126,6 @@
 		542084C51707547800290AEF /* NSError+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+XBAdditions.m"; sourceTree = "<group>"; };
 		542084C61707547800290AEF /* NSNumber+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+XBAdditions.h"; sourceTree = "<group>"; };
 		542084C71707547800290AEF /* NSNumber+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+XBAdditions.m"; sourceTree = "<group>"; };
-		542084DF1707547800290AEF /* XBBundleArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleArrayDataSource.h; sourceTree = "<group>"; };
-		542084E01707547800290AEF /* XBBundleArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleArrayDataSource.m; sourceTree = "<group>"; };
-		542084E11707547800290AEF /* XBBundleArrayDataSourceConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleArrayDataSourceConfiguration.h; sourceTree = "<group>"; };
-		542084E21707547800290AEF /* XBBundleArrayDataSourceConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleArrayDataSourceConfiguration.m; sourceTree = "<group>"; };
 		542084E41707547800290AEF /* XBCompositeArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBCompositeArrayDataSource+protected.h"; sourceTree = "<group>"; };
 		542084E51707547800290AEF /* XBCompositeArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCompositeArrayDataSource.h; sourceTree = "<group>"; };
 		542084E61707547800290AEF /* XBCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCompositeArrayDataSource.m; sourceTree = "<group>"; };
@@ -130,27 +134,15 @@
 		542084EB1707547800290AEF /* XBBasicHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicHttpQueryParamBuilder.h; sourceTree = "<group>"; };
 		542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilder.m; sourceTree = "<group>"; };
 		542084ED1707547800290AEF /* XBHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpQueryParamBuilder.h; sourceTree = "<group>"; };
-		542084EE1707547800290AEF /* XBHttpArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBHttpArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542084EF1707547800290AEF /* XBHttpArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpArrayDataSource.h; sourceTree = "<group>"; };
-		542084F01707547800290AEF /* XBHttpArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpArrayDataSource.m; sourceTree = "<group>"; };
-		542084F11707547800290AEF /* XBHttpArrayDataSourceConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpArrayDataSourceConfiguration.h; sourceTree = "<group>"; };
-		542084F21707547800290AEF /* XBHttpArrayDataSourceConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpArrayDataSourceConfiguration.m; sourceTree = "<group>"; };
-		542084F31707547800290AEF /* XBPagedHttpArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBPagedHttpArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542084F41707547800290AEF /* XBPagedHttpArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPagedHttpArrayDataSource.h; sourceTree = "<group>"; };
-		542084F51707547800290AEF /* XBPagedHttpArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedHttpArrayDataSource.m; sourceTree = "<group>"; };
 		542084F71707547800290AEF /* XBArrayDataSourcePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSourcePaginator.h; sourceTree = "<group>"; };
 		542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourcePaginator.m; sourceTree = "<group>"; };
 		542084F91707547800290AEF /* XBPaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPaginator.h; sourceTree = "<group>"; };
 		542084FA1707547800290AEF /* XBArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBArrayDataSource+protected.h"; sourceTree = "<group>"; };
 		542084FB1707547800290AEF /* XBArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSource.h; sourceTree = "<group>"; };
 		542084FC1707547800290AEF /* XBArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSource.m; sourceTree = "<group>"; };
-		542084FD1707547800290AEF /* XBCacheableArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBCacheableArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542084FE1707547800290AEF /* XBCacheableArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheableArrayDataSource.h; sourceTree = "<group>"; };
-		542084FF1707547800290AEF /* XBCacheableArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableArrayDataSource.m; sourceTree = "<group>"; };
-		542085001707547800290AEF /* XBLoadableArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBLoadableArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542085011707547800290AEF /* XBLoadableArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBLoadableArrayDataSource.h; sourceTree = "<group>"; };
-		542085021707547800290AEF /* XBLoadableArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBLoadableArrayDataSource.m; sourceTree = "<group>"; };
-		542085031707547800290AEF /* XBPagedArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPagedArrayDataSource.h; sourceTree = "<group>"; };
+		542085001707547800290AEF /* XBReloadableArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBReloadableArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		542085011707547800290AEF /* XBReloadableArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBReloadableArrayDataSource.h; sourceTree = "<group>"; };
+		542085021707547800290AEF /* XBReloadableArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBReloadableArrayDataSource.m; sourceTree = "<group>"; };
 		542085051707547800290AEF /* XBHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpClient.h; sourceTree = "<group>"; };
 		542085061707547800290AEF /* XBHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpClient.m; sourceTree = "<group>"; };
 		542085081707547800290AEF /* XBMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMapper.h; sourceTree = "<group>"; };
@@ -158,7 +150,6 @@
 		5420850A1707547800290AEF /* XBMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMappingProvider.h; sourceTree = "<group>"; };
 		5420857D1707555B00290AEF /* XBBundleArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleArrayDataSourceTest.m; sourceTree = "<group>"; };
 		5420857F1707555B00290AEF /* XBPagedCompositeArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedCompositeArrayDataSourceTest.m; sourceTree = "<group>"; };
-		542085811707555B00290AEF /* XBHttpArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpArrayDataSourceTest.m; sourceTree = "<group>"; };
 		542085871707572C00290AEF /* WPAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAuthor.h; sourceTree = "<group>"; };
 		542085881707572C00290AEF /* WPAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAuthor.m; sourceTree = "<group>"; };
 		549B75B817078E4500190FEB /* XBToolkit-osxTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XBToolkit-osxTests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,7 +164,33 @@
 		AE88119C5B574B80B47C72FC /* Pods-XBToolkit-osxTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-osxTests.xcconfig"; path = "Pods/Pods-XBToolkit-osxTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BEE6E5ECACDD49AAA2B0ECE6 /* Pods-XBToolkit-osxTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-osxTests.xcconfig"; path = "Pods/Pods-XBToolkit-osxTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		D026A35469DD4A979A24A9C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapper.m; sourceTree = "<group>"; };
+		DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
+		DB34D1E885637177A9361457 /* XBTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBTestUtils.m; sourceTree = "<group>"; };
+		DB34D200ABC384E9F3B4F466 /* XBTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTestUtils.h; sourceTree = "<group>"; };
+		DB34D21D18BC4E69B200A38B /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
+		DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataLoader.h; sourceTree = "<group>"; };
+		DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourceTest.m; sourceTree = "<group>"; };
+		DB34D3405D539CFC1910CF76 /* XBCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCache.m; sourceTree = "<group>"; };
+		DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpArrayDataSourceTest.m; sourceTree = "<group>"; };
+		DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapperTest.m; sourceTree = "<group>"; };
+		DB34D494A7AD914F078A9A41 /* XBCacheElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheElement.m; sourceTree = "<group>"; };
+		DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheSupport.h; sourceTree = "<group>"; };
+		DB34D51331C95055F03D6FB2 /* XBCacheElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheElement.h; sourceTree = "<group>"; };
+		DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoader.m; sourceTree = "<group>"; };
+		DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpJsonDataLoader.m; sourceTree = "<group>"; };
+		DB34D7A8769C56CA962874AB /* XBBasicDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicDataMerger.h; sourceTree = "<group>"; };
+		DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteScrollArrayDataSource.h; sourceTree = "<group>"; };
+		DB34D994329A1B24F374F8FA /* XBDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMerger.h; sourceTree = "<group>"; };
+		DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBInfiniteScrollArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpJsonDataLoader.h; sourceTree = "<group>"; };
+		DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollArrayDataSource.m; sourceTree = "<group>"; };
+		DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheableDataLoader.h; sourceTree = "<group>"; };
 		DB34DC6E7779C0160C7E440B /* wp-author-index.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index.json"; sourceTree = "<group>"; };
+		DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMapper.h; sourceTree = "<group>"; };
+		DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToArrayDataMapper.h; sourceTree = "<group>"; };
+		DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicDataMerger.m; sourceTree = "<group>"; };
+		DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableDataLoader.m; sourceTree = "<group>"; };
 		DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBToolkit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -305,9 +322,13 @@
 		542084BB1707547800290AEF /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				542084BC1707547800290AEF /* XBCache.h */,
-				542084BD1707547800290AEF /* XBFileSystemCache.h */,
-				542084BE1707547800290AEF /* XBFileSystemCache.m */,
+				542084BD1707547800290AEF /* XBFileSystemCacheSupport.h */,
+				542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */,
+				DB34D494A7AD914F078A9A41 /* XBCacheElement.m */,
+				DB34D51331C95055F03D6FB2 /* XBCacheElement.h */,
+				DB34D3405D539CFC1910CF76 /* XBCache.m */,
+				DB34D21D18BC4E69B200A38B /* XBCache.h */,
+				DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -330,33 +351,23 @@
 		542084DD1707547800290AEF /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				542084DE1707547800290AEF /* Bundle */,
 				542084E31707547800290AEF /* Composite */,
 				542084E91707547800290AEF /* Http */,
 				542084F61707547800290AEF /* Paging */,
 				542084FA1707547800290AEF /* XBArrayDataSource+protected.h */,
 				542084FB1707547800290AEF /* XBArrayDataSource.h */,
 				542084FC1707547800290AEF /* XBArrayDataSource.m */,
-				542084FD1707547800290AEF /* XBCacheableArrayDataSource+protected.h */,
-				542084FE1707547800290AEF /* XBCacheableArrayDataSource.h */,
-				542084FF1707547800290AEF /* XBCacheableArrayDataSource.m */,
-				542085001707547800290AEF /* XBLoadableArrayDataSource+protected.h */,
-				542085011707547800290AEF /* XBLoadableArrayDataSource.h */,
-				542085021707547800290AEF /* XBLoadableArrayDataSource.m */,
-				542085031707547800290AEF /* XBPagedArrayDataSource.h */,
+				542085001707547800290AEF /* XBReloadableArrayDataSource+protected.h */,
+				542085011707547800290AEF /* XBReloadableArrayDataSource.h */,
+				542085021707547800290AEF /* XBReloadableArrayDataSource.m */,
+				DB34D43888BA4F745D6C7BB0 /* Mapper */,
+				DB34DF3B3D593984B2363099 /* Loader */,
+				DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */,
+				DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */,
+				DB34D3F387B83CF031A578E5 /* Merger */,
+				DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */,
 			);
 			path = DataSource;
-			sourceTree = "<group>";
-		};
-		542084DE1707547800290AEF /* Bundle */ = {
-			isa = PBXGroup;
-			children = (
-				542084DF1707547800290AEF /* XBBundleArrayDataSource.h */,
-				542084E01707547800290AEF /* XBBundleArrayDataSource.m */,
-				542084E11707547800290AEF /* XBBundleArrayDataSourceConfiguration.h */,
-				542084E21707547800290AEF /* XBBundleArrayDataSourceConfiguration.m */,
-			);
-			path = Bundle;
 			sourceTree = "<group>";
 		};
 		542084E31707547800290AEF /* Composite */ = {
@@ -375,14 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				542084EA1707547800290AEF /* QueryParam */,
-				542084EE1707547800290AEF /* XBHttpArrayDataSource+protected.h */,
-				542084EF1707547800290AEF /* XBHttpArrayDataSource.h */,
-				542084F01707547800290AEF /* XBHttpArrayDataSource.m */,
-				542084F11707547800290AEF /* XBHttpArrayDataSourceConfiguration.h */,
-				542084F21707547800290AEF /* XBHttpArrayDataSourceConfiguration.m */,
-				542084F31707547800290AEF /* XBPagedHttpArrayDataSource+protected.h */,
-				542084F41707547800290AEF /* XBPagedHttpArrayDataSource.h */,
-				542084F51707547800290AEF /* XBPagedHttpArrayDataSource.m */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -432,6 +435,8 @@
 				5420857B1707555B00290AEF /* DataSource */,
 				542085851707572C00290AEF /* Model */,
 				DB34D736E4E5BBB69614E871 /* Resources */,
+				DB34D1E885637177A9361457 /* XBTestUtils.m */,
+				DB34D200ABC384E9F3B4F466 /* XBTestUtils.h */,
 			);
 			name = "XBToolkit-commonTests";
 			path = "../XBToolkit-commonTests";
@@ -443,6 +448,8 @@
 				5420857C1707555B00290AEF /* Bundle */,
 				5420857E1707555B00290AEF /* Composite */,
 				542085801707555B00290AEF /* Http */,
+				DB34D9636A42926988E2253A /* Mapper */,
+				DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -466,7 +473,7 @@
 		542085801707555B00290AEF /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				542085811707555B00290AEF /* XBHttpArrayDataSourceTest.m */,
+				DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -488,12 +495,40 @@
 			path = WordPress;
 			sourceTree = "<group>";
 		};
+		DB34D3F387B83CF031A578E5 /* Merger */ = {
+			isa = PBXGroup;
+			children = (
+				DB34D994329A1B24F374F8FA /* XBDataMerger.h */,
+				DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */,
+				DB34D7A8769C56CA962874AB /* XBBasicDataMerger.h */,
+			);
+			path = Merger;
+			sourceTree = "<group>";
+		};
+		DB34D43888BA4F745D6C7BB0 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */,
+				DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */,
+				DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		DB34D736E4E5BBB69614E871 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				DB34DCF0C8B0DD53FD220133 /* Data */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DB34D9636A42926988E2253A /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		DB34DCF0C8B0DD53FD220133 /* Data */ = {
@@ -504,6 +539,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DB34DF3B3D593984B2363099 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */,
+				DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */,
+				DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */,
+				DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */,
+				DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */,
+				DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */,
+				DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -511,37 +560,39 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5420850B1707547800290AEF /* XBCache.h in Headers */,
-				5420850C1707547800290AEF /* XBFileSystemCache.h in Headers */,
+				5420850C1707547800290AEF /* XBFileSystemCacheSupport.h in Headers */,
 				5420850F1707547800290AEF /* DCParserConfiguration+XBAdditions.h in Headers */,
 				542085121707547800290AEF /* NSDateFormatter+XBAdditions.h in Headers */,
 				542085151707547800290AEF /* NSError+XBAdditions.h in Headers */,
 				542085181707547800290AEF /* NSNumber+XBAdditions.h in Headers */,
-				5420853A1707547800290AEF /* XBBundleArrayDataSource.h in Headers */,
-				5420853D1707547800290AEF /* XBBundleArrayDataSourceConfiguration.h in Headers */,
 				542085401707547800290AEF /* XBCompositeArrayDataSource+protected.h in Headers */,
 				542085411707547800290AEF /* XBCompositeArrayDataSource.h in Headers */,
 				542085441707547800290AEF /* XBPagedCompositeArrayDataSource.h in Headers */,
 				542085471707547800290AEF /* XBBasicHttpQueryParamBuilder.h in Headers */,
 				5420854A1707547800290AEF /* XBHttpQueryParamBuilder.h in Headers */,
-				5420854B1707547800290AEF /* XBHttpArrayDataSource+protected.h in Headers */,
-				5420854C1707547800290AEF /* XBHttpArrayDataSource.h in Headers */,
-				5420854F1707547800290AEF /* XBHttpArrayDataSourceConfiguration.h in Headers */,
-				542085521707547800290AEF /* XBPagedHttpArrayDataSource+protected.h in Headers */,
-				542085531707547800290AEF /* XBPagedHttpArrayDataSource.h in Headers */,
 				542085561707547800290AEF /* XBArrayDataSourcePaginator.h in Headers */,
 				542085591707547800290AEF /* XBPaginator.h in Headers */,
 				5420855A1707547800290AEF /* XBArrayDataSource+protected.h in Headers */,
 				5420855B1707547800290AEF /* XBArrayDataSource.h in Headers */,
-				5420855E1707547800290AEF /* XBCacheableArrayDataSource+protected.h in Headers */,
-				5420855F1707547800290AEF /* XBCacheableArrayDataSource.h in Headers */,
-				542085621707547800290AEF /* XBLoadableArrayDataSource+protected.h in Headers */,
-				542085631707547800290AEF /* XBLoadableArrayDataSource.h in Headers */,
-				542085661707547800290AEF /* XBPagedArrayDataSource.h in Headers */,
+				542085621707547800290AEF /* XBReloadableArrayDataSource+protected.h in Headers */,
+				542085631707547800290AEF /* XBReloadableArrayDataSource.h in Headers */,
 				542085671707547800290AEF /* XBHttpClient.h in Headers */,
 				5420856A1707547800290AEF /* XBMapper.h in Headers */,
 				5420856D1707547800290AEF /* XBMappingProvider.h in Headers */,
 				DB34D851B9D58DB382CCD7E2 /* XBToolkit.h in Headers */,
+				DB34D80E240635C691108D99 /* XBJsonToArrayDataMapper.h in Headers */,
+				DB34D935C8E9D443A95803E5 /* XBDataMapper.h in Headers */,
+				DB34D6035A1389B64E4C4990 /* XBHttpJsonDataLoader.h in Headers */,
+				DB34D01D08A656D0ABA0850E /* XBDataLoader.h in Headers */,
+				DB34DD8CC5A5D1D98F2B0392 /* XBCacheElement.h in Headers */,
+				DB34D8CCCE41B95F5E8DA2D7 /* XBCache.h in Headers */,
+				DB34D5993354C60B77E658C2 /* XBCacheSupport.h in Headers */,
+				DB34D887A1094CA62181E0E2 /* XBCacheableDataLoader.h in Headers */,
+				DB34DE727DACF2AA434B264D /* XBBundleJsonDataLoader.h in Headers */,
+				DB34DD34168C59C38098CA50 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */,
+				DB34D63F5CCF3CFCFB0B2298 /* XBInfiniteScrollArrayDataSource.h in Headers */,
+				DB34DF5C4B9E52C46F3DFAD1 /* XBDataMerger.h in Headers */,
+				DB34D9986065C33D6AB6DBD0 /* XBBasicDataMerger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,25 +722,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5420850D1707547800290AEF /* XBFileSystemCache.m in Sources */,
+				5420850D1707547800290AEF /* XBFileSystemCacheSupport.m in Sources */,
 				542085101707547800290AEF /* DCParserConfiguration+XBAdditions.m in Sources */,
 				542085131707547800290AEF /* NSDateFormatter+XBAdditions.m in Sources */,
 				542085161707547800290AEF /* NSError+XBAdditions.m in Sources */,
 				542085191707547800290AEF /* NSNumber+XBAdditions.m in Sources */,
-				5420853B1707547800290AEF /* XBBundleArrayDataSource.m in Sources */,
-				5420853E1707547800290AEF /* XBBundleArrayDataSourceConfiguration.m in Sources */,
 				542085421707547800290AEF /* XBCompositeArrayDataSource.m in Sources */,
 				542085451707547800290AEF /* XBPagedCompositeArrayDataSource.m in Sources */,
 				542085481707547800290AEF /* XBBasicHttpQueryParamBuilder.m in Sources */,
-				5420854D1707547800290AEF /* XBHttpArrayDataSource.m in Sources */,
-				542085501707547800290AEF /* XBHttpArrayDataSourceConfiguration.m in Sources */,
-				542085541707547800290AEF /* XBPagedHttpArrayDataSource.m in Sources */,
 				542085571707547800290AEF /* XBArrayDataSourcePaginator.m in Sources */,
 				5420855C1707547800290AEF /* XBArrayDataSource.m in Sources */,
-				542085601707547800290AEF /* XBCacheableArrayDataSource.m in Sources */,
-				542085641707547800290AEF /* XBLoadableArrayDataSource.m in Sources */,
+				542085641707547800290AEF /* XBReloadableArrayDataSource.m in Sources */,
 				542085681707547800290AEF /* XBHttpClient.m in Sources */,
 				5420856B1707547800290AEF /* XBMapper.m in Sources */,
+				DB34D1B2240DDF422B93E98F /* XBJsonToArrayDataMapper.m in Sources */,
+				DB34D5148579F2EF9A76806B /* XBHttpJsonDataLoader.m in Sources */,
+				DB34D39D86C3E6873B35A792 /* XBCacheElement.m in Sources */,
+				DB34D76CBE405CCD78D4E35F /* XBCache.m in Sources */,
+				DB34D3FE9E52C243E32A2E04 /* XBCacheableDataLoader.m in Sources */,
+				DB34DCF676108EB893C5A7F8 /* XBBundleJsonDataLoader.m in Sources */,
+				DB34D57464E6904A421A4D74 /* XBInfiniteScrollArrayDataSource.m in Sources */,
+				DB34D88CBC61B318D9A853B2 /* XBBasicDataMerger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,9 +753,8 @@
 				54C534141707923F001DB282 /* GHUnitTestMain.m in Sources */,
 				54C5341517079438001DB282 /* XBBundleArrayDataSourceTest.m in Sources */,
 				54C5341617079438001DB282 /* XBPagedCompositeArrayDataSourceTest.m in Sources */,
-				54C5341717079438001DB282 /* XBHttpArrayDataSourceTest.m in Sources */,
 				54C5341817079460001DB282 /* WPAuthor.m in Sources */,
-				54C5341917079478001DB282 /* XBFileSystemCache.m in Sources */,
+				54C5341917079478001DB282 /* XBFileSystemCacheSupport.m in Sources */,
 				54C5341A1707947F001DB282 /* DCParserConfiguration+XBAdditions.m in Sources */,
 				54C5341B1707947F001DB282 /* NSDateFormatter+XBAdditions.m in Sources */,
 				54C5341C1707947F001DB282 /* NSError+XBAdditions.m in Sources */,
@@ -710,17 +762,23 @@
 				54C5341E17079484001DB282 /* XBMapper.m in Sources */,
 				54C5341F1707948A001DB282 /* XBHttpClient.m in Sources */,
 				54C5342017079490001DB282 /* XBArrayDataSource.m in Sources */,
-				54C5342117079490001DB282 /* XBCacheableArrayDataSource.m in Sources */,
-				54C5342217079490001DB282 /* XBLoadableArrayDataSource.m in Sources */,
+				54C5342217079490001DB282 /* XBReloadableArrayDataSource.m in Sources */,
 				54C5342317079494001DB282 /* XBArrayDataSourcePaginator.m in Sources */,
 				54C5342417079499001DB282 /* XBCompositeArrayDataSource.m in Sources */,
 				54C5342517079499001DB282 /* XBPagedCompositeArrayDataSource.m in Sources */,
-				54C53426170794A0001DB282 /* XBHttpArrayDataSource.m in Sources */,
-				54C53427170794A0001DB282 /* XBHttpArrayDataSourceConfiguration.m in Sources */,
-				54C53428170794A0001DB282 /* XBPagedHttpArrayDataSource.m in Sources */,
 				54C53429170794A5001DB282 /* XBBasicHttpQueryParamBuilder.m in Sources */,
-				54C5342A170794A9001DB282 /* XBBundleArrayDataSource.m in Sources */,
-				54C5342B170794AC001DB282 /* XBBundleArrayDataSourceConfiguration.m in Sources */,
+				DB34DC1C9431A2A6F2B93316 /* XBInfiniteScrollArrayDataSource.m in Sources */,
+				DB34D3AF68A6ED7CB71F935E /* XBBasicDataMerger.m in Sources */,
+				DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */,
+				DB34D5B6DAE071DFE073A369 /* XBHttpJsonDataLoader.m in Sources */,
+				DB34D789430DE650C4B72EE9 /* XBCacheableDataLoader.m in Sources */,
+				DB34D229A0FE3A84E00C0BA5 /* XBBundleJsonDataLoader.m in Sources */,
+				DB34D8F97C5D1BB7975377E3 /* XBCache.m in Sources */,
+				DB34D979FB7D5FEC4EBBB952 /* XBCacheElement.m in Sources */,
+				DB34D2FB071FDDEEF44CF10E /* XBHttpArrayDataSourceTest.m in Sources */,
+				DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */,
+				DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */,
+				DB34D43B3203D16B05182880 /* XBTestUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

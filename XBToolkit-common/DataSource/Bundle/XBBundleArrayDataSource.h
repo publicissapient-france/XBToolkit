@@ -7,15 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
-#import "XBBundleArrayDataSourceConfiguration.h"
 #import "XBLoadableArrayDataSource.h"
 
 @interface XBBundleArrayDataSource : XBLoadableArrayDataSource
+- (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
 
-@property (nonatomic, strong, readonly)NSString *resourcePath;
-@property (nonatomic, strong, readonly)NSString *resourceType;
++ (id)sourceWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
 
-+ (XBBundleArrayDataSource *)dataSourceWithConfiguration:(XBBundleArrayDataSourceConfiguration *)configuration;
-- (id)initWithConfiguration:(XBBundleArrayDataSourceConfiguration *)configuration;
 
 @end

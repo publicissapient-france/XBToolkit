@@ -10,7 +10,7 @@
 
 @interface XBCompositeArrayDataSource (XBCompositeArrayDataSource_protected)
 
-@property(nonatomic, strong)XBLoadableArrayDataSource * firstDataSource;
-@property(nonatomic, strong)XBLoadableArrayDataSource * secondDataSource;
+@property(nonatomic, strong) XBReloadableArrayDataSource * firstDataSource;
+@property(nonatomic, strong) XBReloadableArrayDataSource * secondDataSource;
 
 @end

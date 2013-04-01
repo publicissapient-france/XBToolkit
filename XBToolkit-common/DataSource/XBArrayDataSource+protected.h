@@ -7,12 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "XBHttpClient.h"
-#import "XBHttpArrayDataSourceConfiguration.h"
-#import "XBHttpArrayDataSource.h"
-
 @interface XBArrayDataSource (protected)
 
 @property(nonatomic, strong) NSArray *array;
+
+- (void)filterData;
+- (void)sortData;
 
 @end
