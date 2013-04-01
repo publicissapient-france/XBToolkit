@@ -10,7 +10,7 @@
 #import "XBInfiniteScrollArrayDataSource+protected.h"
 #import "XBReloadableArrayDataSource+protected.h"
 #import "XBDataMerger.h"
-#import "XBBasicDataMerger.h"
+#import "XBDictionaryDataMerger.h"
 
 @interface XBInfiniteScrollArrayDataSource()
 

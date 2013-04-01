@@ -1,0 +1,308 @@
+{
+    "status":"ok",
+    "count":30,
+    "page":2,
+    "total":70,
+    "authors":[
+        {
+            "id":48,
+            "slug":"hgeissmann",
+            "name":"Hugo Geissmann",
+            "first_name":"Hugo",
+            "last_name":"Geissmann",
+            "nickname":"hgeissmann",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":94,
+            "slug":"ygrenzinger",
+            "name":"Yannick Grenzinger",
+            "first_name":"Yannick",
+            "last_name":"Grenzinger",
+            "nickname":"ygrenzinger",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":19,
+            "slug":"ngriso",
+            "name":"Nicolas Griso",
+            "first_name":"Nicolas",
+            "last_name":"Griso",
+            "nickname":"ngriso",
+            "url":"http:\/\/xebia.fr",
+            "description":""
+        },
+        {
+            "id":82,
+            "slug":"bguerout",
+            "name":"Beno\u00eet Gu\u00e9rout",
+            "first_name":"Beno\u00eet",
+            "last_name":"Gu\u00e9rout",
+            "nickname":"bguerout",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Beno\u00eet \u00e9volue depuis 7 ans \u2014 dont 2 chez Xebia \u2014 sur des architectures orient\u00e9es Web et affectionne une approche simple et pragmatique des d\u00e9veloppements. HTML5, Backbone, CSS3, Mongo+Jongo, Rest sont ses passions du moment.\r\nKiss !"
+        },
+        {
+            "id":80,
+            "slug":"tguerin",
+            "name":"Thomas Guerin",
+            "first_name":"Thomas",
+            "last_name":"Guerin",
+            "nickname":"tguerin",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Consultant Java"
+        },
+        {
+            "id":79,
+            "slug":"jhelou",
+            "name":"Jean Helou",
+            "first_name":"Jean",
+            "last_name":"Helou",
+            "nickname":"jhelou",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Jean Helou est un passionn\u00e9 aux opinions tranch\u00e9es. Il essaye r\u00e9guli\u00e8rement de nouvelles approches, outils, patterns et r\u00e9vise ses opinions en fonction. Tr\u00e8s curieux il a exp\u00e9riment\u00e9 avec un grand nombre de technologies et de mod\u00e8les applicatifs. Jean est  convaincu que les machines sont au service de l'homme, pas l'inverse. Il essaye toujours de faire en sorte que les logiciels qu'il d\u00e9veloppe refl\u00e8tent cette conviction."
+        },
+        {
+            "id":7,
+            "slug":"cheubes",
+            "name":"Christophe Heub\u00e8s",
+            "first_name":"Christophe",
+            "last_name":"Heub\u00e8s",
+            "nickname":"cheubes",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"&lt;a href=&quot;https:\/\/github.com\/cheubes\/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http:\/\/christophe.heubes.com\/assets\/img\/github.png&quot; width=&quot;40px&quot; style=&quot;margin: -15px 0px 0px 0px;float: right&quot; \/&gt;&lt;\/a&gt;\r\n&lt;a href=&quot;https:\/\/plus.google.com\/u\/1\/112441565660602348702\/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http:\/\/christophe.heubes.com\/assets\/img\/google.png&quot; width=&quot;40px&quot; style=&quot;margin: -15px 10px 0px 0px;float: right&quot; \/&gt;&lt;\/a&gt;\r\n&lt;a href=&quot;https:\/\/twitter.com\/#!\/cheubes\/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http:\/\/christophe.heubes.com\/assets\/img\/twitter.png&quot; width=&quot;40px&quot; style=&quot;margin: -15px 10px 0px 0px;float: right&quot; \/&gt;&lt;\/a&gt;\r\n&lt;em&gt;Getting things done at Xebia since 2007.&lt;\/em&gt;&lt;br \/&gt;\r\n\u00a0&lt;br \/&gt;\r\nConsultant senior et architecte exp\u00e9riment\u00e9, Christophe m\u00e8ne depuis 10 ans des missions \u00e0 forte technicit\u00e9 autour des Architectures Orient\u00e9es Services et des architectures d'int\u00e9gration."
+        },
+        {
+            "id":14,
+            "slug":"njozwiak",
+            "name":"Nicolas Jozwiak",
+            "first_name":"Nicolas",
+            "last_name":"Jozwiak",
+            "nickname":"njozwiak",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Nicolas est un ing\u00e9nieur d'\u00e9tudes confirm\u00e9 disposant de 5 ans d'exp\u00e9rience de conception et d\u00e9veloppement sur technologies Java\/JEE. Son parcours chez un \u00e9diteur avant son entr\u00e9e chez Xebia lui a notamment permis de d\u00e9velopper de solides comp\u00e9tences dans le domaine de la qualit\u00e9 et de l\u2019industrialisation (tests, int\u00e9gration continue, gestion de configuration, contr\u00f4le qualit\u00e9).\r\n\r\nNicolas est Scrum Master Certifi\u00e9 et b\u00e9n\u00e9ficie d\u2019une exp\u00e9rience tr\u00e8s solide de mise en place des m\u00e9thodes agiles et d\u2019accompagnement d\u2019\u00e9quipe sur le terrain. Il est reconnu pour son approche pragmatique, proactive et p\u00e9dagogique."
+        },
+        {
+            "id":50,
+            "slug":"akinsella",
+            "name":"Alexis Kinsella",
+            "first_name":"Alexis",
+            "last_name":"Kinsella",
+            "nickname":"akinsella",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":63,
+            "slug":"sklouvi",
+            "name":"Steve Klouvi",
+            "first_name":"Steve",
+            "last_name":"Klouvi",
+            "nickname":"sklouvi",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":85,
+            "slug":"plaporte",
+            "name":"Pierre Laporte",
+            "first_name":"Pierre",
+            "last_name":"Laporte",
+            "nickname":"plaporte",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Pierre est un touche-\u00e0-tout chez Xebia qui aime relever tous types de challenges.\r\n\r\nDes probl\u00e9matiques d'architecture aux tests de charge en passant par la gestion de dette technique ou encore les applications mobiles, c'est pouss\u00e9 par cette volont\u00e9 d'apprendre qu'il oeuvre aujourd'hui chez Xebia. Il aime faire du code propre et expressif, appr\u00e9cie le travail d'\u00e9quipe et se concentre avant tout sur le service rendu \u00e0 l'utilisateur final."
+        },
+        {
+            "id":98,
+            "slug":"clardeur",
+            "name":"Cl\u00e9ment Lardeur",
+            "first_name":"Cl\u00e9ment",
+            "last_name":"Lardeur",
+            "nickname":"clardeur",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":6,
+            "slug":"cleclerc",
+            "name":"Cyrille Le Clerc",
+            "first_name":"Cyrille",
+            "last_name":"Le Clerc",
+            "nickname":"Cyrille Le Clerc",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"CTO de Xebia, Cyrille est aussi &lt;i&gt;committer&lt;\/i&gt; sur le projet Apache CXF. \r\n\r\nApr\u00e8s \u00eatre r\u00e9cemment intervenu sur les sites web et les plateformes de web service \u00e0 fort traffic d'op\u00e9rateurs de t\u00e9l\u00e9communication, Cyrille est actuellement responsable de la mise en place d'une grille de donn\u00e9es inter-continentale pour une grande institution financi\u00e8re fran\u00e7aise.\r\n\r\nApr\u00e8s 7 ans chez IBM Global Services et 5 ans chez Xebia, Cyrille a une exp\u00e9rience vari\u00e9e allant du monde commercial aux \u00e9cosyst\u00e8mes Open Source dans des approches aussi bien tr\u00e8s cadr\u00e9es et contractuelles que l\u00e9g\u00e8res et agiles. \r\n\r\nCyrille est aussi blogger sur blog.xebia.fr et &lt;i&gt;speaker&lt;\/i&gt; dans des conf\u00e9rences (In Memory Data Grids &amp;amp; NoSQL, applications pr\u00eates pour la production, etc)."
+        },
+        {
+            "id":70,
+            "slug":"slemerdy",
+            "name":"S\u00e9bastian Le Merdy",
+            "first_name":"S\u00e9bastian",
+            "last_name":"Le Merdy",
+            "nickname":"slemerdy",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"S\u00e9bastian est entr\u00e9 chez Xebia en 2011 pour mettre en pratique le &lt;em&gt;Software Development &lt;strong&gt;Done Right&lt;\/strong&gt;&lt;\/em&gt;.&lt;br&gt;\r\nIl est passionn\u00e9 par le d\u00e9veloppement logiciel et les technologies innovantes et le met au service de l'utilisateur final \u00e0 travers l'agilit\u00e9 dans les projets.&lt;br&gt;\r\nVous pourrez peut-\u00eatre le rencontrer lors d'un coding dojo ou une pr\u00e9sentation de live coding."
+        },
+        {
+            "id":22,
+            "slug":"slemesle",
+            "name":"S\u00e9ven Le Mesle",
+            "first_name":"S\u00e9ven",
+            "last_name":"Le Mesle",
+            "nickname":"slemesle",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":32,
+            "slug":"nlecoz",
+            "name":"Nicolas Lecoz",
+            "first_name":"Nicolas",
+            "last_name":"Lecoz",
+            "nickname":"nlecoz",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":2,
+            "slug":"llegardeur",
+            "name":"Luc Legardeur",
+            "first_name":"Luc",
+            "last_name":"Legardeur",
+            "nickname":"llegardeur",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":90,
+            "slug":"blemoine",
+            "name":"Beno\u00eet Lemoine",
+            "first_name":"Beno\u00eet",
+            "last_name":"Lemoine",
+            "nickname":"blemoine",
+            "url":"http:\/\/finandsys.com\/finandsys-blog\/",
+            "description":"D\u00e9veloppeur et fier de l'\u00eatre, Benoit s'int\u00e9resse de pr\u00e8s \u00e0 tout ce qui peut permettre de cr\u00e9er une application web, du HTML aux sources de donn\u00e9es, en passant par le javascript et les framework haute productivit\u00e9.  \r\ntwitter : @benoit_lemoine"
+        },
+        {
+            "id":87,
+            "slug":"dlemos",
+            "name":"Diego Lemos",
+            "first_name":"Diego",
+            "last_name":"Lemos",
+            "nickname":"dlemos",
+            "url":"http:\/\/diegolemos.net\/",
+            "description":"Consultant Java &amp;amp; Software Craftsman.\r\nBlog personnel : &lt;a href=&quot;http:\/\/diegolemos.net\/&quot;&gt;http:\/\/diegolemos.net&lt;\/a&gt; \/ Twitter : &lt;a href=&quot;https:\/\/twitter.com\/dlresende&quot;&gt;@dlresende&lt;\/a&gt;."
+        },
+        {
+            "id":24,
+            "slug":"plopez",
+            "name":"Pablo Lopez",
+            "first_name":"Pablo",
+            "last_name":"Lopez",
+            "nickname":"plopez",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Pablo a 8 ans d\u2019exp\u00e9rience au cours desquels il s\u2019est forg\u00e9 une solide exp\u00e9rience d\u2019architecte logiciel. Il dispose d\u2019une tr\u00e8s large comp\u00e9tence sur l\u2019ensemble de l\u2019\u00e9cosyst\u00e8me JEE, et notamment les solutions du monde open-source.\r\n\r\nOp\u00e9rationnel par go\u00fbt, il intervient sur une large vari\u00e9t\u00e9 de missions, de l'analyse de performances en production au conseil en architecture logicielle."
+        },
+        {
+            "id":74,
+            "slug":"gmantel",
+            "name":"Gilles Mantel",
+            "first_name":"Gilles",
+            "last_name":"Mantel",
+            "nickname":"gmantel",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"J'ai 13 ans d\u2019exp\u00e9rience professionelle. Je suis impliqu\u00e9 sur des projets it\u00e9ratifs et offshore depuis 2001 et j'y ai occup\u00e9 tour \u00e0 tour les postes d'ing\u00e9nieur qualit\u00e9, responsable des tests, analyste fonctionnel, et directeur de projet. \r\n\r\nJe forme et j'accompagne les clients de Xebia dans l\u2019adoption de m\u00e9thodes agiles (SCRUM, XP) et de pratiques d\u2019ing\u00e9nierie pilot\u00e9es par les tests (TDR, ATDD). J'ai d\u00e9velopp\u00e9 mon expertise au travers d\u2019interventions dans des domaines m\u00e9tiers aussi vari\u00e9s que l\u2019industrie, l\u2019e-commerce, l\u2019\u00e9dition logiciel, le luxe, le public, les t\u00e9l\u00e9coms, ou les banques d\u2019investissement.\r\n\r\nJ'intervient r\u00e9guli\u00e8rement dans les conf\u00e9rences traitant de l'agilit\u00e9 et des tests depuis 2008."
+        },
+        {
+            "id":45,
+            "slug":"fmarot",
+            "name":"Fran\u00e7ois Marot",
+            "first_name":"Fran\u00e7ois",
+            "last_name":"Marot",
+            "nickname":"fmarot",
+            "url":"",
+            "description":""
+        },
+        {
+            "id":61,
+            "slug":"amasse",
+            "name":"Aur\u00e9lien Masse",
+            "first_name":"Aur\u00e9lien",
+            "last_name":"Masse",
+            "nickname":"Aur\u00e9lien Masse",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":76,
+            "slug":"jmateo",
+            "name":"Julia Mateo",
+            "first_name":"Julia",
+            "last_name":"Mateo",
+            "nickname":"jmateo",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":17,
+            "slug":"gmathias",
+            "name":"Guillaume Mathias",
+            "first_name":"Guillaume",
+            "last_name":"Mathias",
+            "nickname":"gmathias",
+            "url":"",
+            "description":""
+        },
+        {
+            "id":33,
+            "slug":"rmaton",
+            "name":"Romain Maton",
+            "first_name":"Romain",
+            "last_name":"Maton",
+            "nickname":"rmat0n",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Apr\u00e8s trois ann\u00e9es pass\u00e9es chez Improve Technologies, Romain est aujourd'hui consultant Java\/JEE chez Xebia. Mission apr\u00e8s mission, il s\u2019est forg\u00e9 une solide exp\u00e9rience en d\u00e9veloppement Web et logiciel. Il dispose ainsi d'une tr\u00e8s large comp\u00e9tence sur l'emsemble de l'ecosyst\u00e8me JEE, que ce soit sur les bonnes pratiques d'architecture, sur les frameworks de d\u00e9veloppement ou sur les interfaces client riches.\r\n\r\nInconditionnel du pair programming, certifi\u00e9 Scrum Master, c'est un fervent disciple des m\u00e9thodes Agiles. Romain est aussi un contributeur actif de la revue de presse Xebia. Il traite de nombreux sujets tels que RIA, API Java, frameworks ou bien encore Scala."
+        },
+        {
+            "id":26,
+            "slug":"amaury",
+            "name":"Aur\u00e9lien Maury",
+            "first_name":"Aur\u00e9lien",
+            "last_name":"Maury",
+            "nickname":"amaury",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Aur\u00e9lien est passionn\u00e9 par les frameworks web haute productivit\u00e9 comme Grails, JRuby on Rails ou Play! framework. Il est \u00e9galement int\u00e9ress\u00e9 par tous les aspects de performance et d'optimisation (mais aussi par la phytoth\u00e9rapie, la PNL, la basse \u00e9lectrique, la philosophie et pleins d'autres sujets)."
+        },
+        {
+            "id":75,
+            "slug":"omichallat",
+            "name":"Olivier Michallat",
+            "first_name":"Olivier",
+            "last_name":"Michallat",
+            "nickname":"omichallat",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":5,
+            "slug":"bmoussaud",
+            "name":"Benoit Moussaud",
+            "first_name":"Benoit",
+            "last_name":"Moussaud",
+            "nickname":"Benoit Moussaud",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":96,
+            "slug":"lperot",
+            "name":"Ludovic P\u00e9rot",
+            "first_name":"Ludovic",
+            "last_name":"P\u00e9rot",
+            "nickname":"lperot",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Ancien ing\u00e9nieur de d\u00e9veloppement, j'ai eu l'occasion de travailler en eXtreme Programming et suis de facto tr\u00e8s sensible aux bonnes pratiques d'ing\u00e9nierie logicielle.  \r\nDepuis 2008, j'ai alternativement assum\u00e9 les r\u00f4les de Product Owner ou de Scrum Master sur diff\u00e9rents projets. C'est ce qui me permet maintenant d'accompagner des \u00e9quipes dans leur transition agile."
+        }
+    ]
+}

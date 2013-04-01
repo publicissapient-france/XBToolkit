@@ -19,7 +19,7 @@
 
 @implementation XBBundleJsonDataLoader
 
-+ (id)loaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
++ (id)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
     return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType];
 }
 

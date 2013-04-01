@@ -10,6 +10,8 @@
 
 @interface XBHttpClient : NSObject
 
+@property(nonatomic, strong, readonly)NSString *baseUrl;
+
 +(id)httpClientWithBaseUrl:(NSString *)baseUrl;
 -(id)initWithBaseUrl:(NSString *)baseUrl;
 

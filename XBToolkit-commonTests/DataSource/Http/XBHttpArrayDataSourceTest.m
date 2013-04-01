@@ -20,9 +20,8 @@
 
 @implementation XBHttpArrayDataSourceTest
 
-- (void)testFetchSearchIndexResult {
+- (void)testFetchDataResult {
     [self prepare];
-//    [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
 
@@ -31,30 +30,28 @@
 
     XBJsonToArrayDataMapper * dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
 
-    XBReloadableArrayDataSource *wpAuthorDS = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader
+    XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader
                                                                                          dataMapper:dataMapper];
 
-    [wpAuthorDS loadDataWithCallback:^() {
-        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchSearchIndexResult)];
+    [dataSource loadDataWithCallback:^() {
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
 
-    // Wait for the async activity to complete
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
-//    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
-    GHAssertNil(wpAuthorDS.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long)wpAuthorDS.error.code, wpAuthorDS.error.domain]);
-    GHAssertEquals(wpAuthorDS.count, [@70 unsignedIntegerValue], @"Response should be different from 0");
+    GHAssertNil(dataSource.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long) dataSource.error.code, dataSource.error.domain]);
+    GHAssertEquals(dataSource.count, [@70 unsignedIntegerValue], @"Response should be different from 0");
 
-    WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:wpAuthorDS.array ById:50];
+    WPAuthor *author = [XBTestUtils findAuthorInArray:dataSource.array ById:50];
 
-    GHAssertEquals([wpAuthor.identifier intValue], 50, nil);
-    GHAssertEqualStrings(wpAuthor.slug, @"akinsella", nil);
-    GHAssertEqualStrings(wpAuthor.name, @"Alexis Kinsella", nil);
-    GHAssertEqualStrings(wpAuthor.first_name, @"Alexis", nil);
-    GHAssertEqualStrings(wpAuthor.last_name, @"Kinsella", nil);
-    GHAssertEqualStrings(wpAuthor.nickname, @"akinsella", nil);
-    GHAssertEqualStrings(wpAuthor.url, @"http://www.xebia.fr", nil);
-    GHAssertEqualStrings(wpAuthor.description_, @"", nil);
+    GHAssertEquals([author.identifier intValue], 50, nil);
+    GHAssertEqualStrings(author.slug, @"akinsella", nil);
+    GHAssertEqualStrings(author.name, @"Alexis Kinsella", nil);
+    GHAssertEqualStrings(author.first_name, @"Alexis", nil);
+    GHAssertEqualStrings(author.last_name, @"Kinsella", nil);
+    GHAssertEqualStrings(author.nickname, @"akinsella", nil);
+    GHAssertEqualStrings(author.url, @"http://www.xebia.fr", nil);
+    GHAssertEqualStrings(author.description_, @"", nil);
 }
 
 @end

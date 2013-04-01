@@ -67,18 +67,22 @@
 		54C5343417079B22001DB282 /* libPods-XBToolkit-osxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 000C6175096E46839CA6FDB8 /* libPods-XBToolkit-osxTests.a */; };
 		54C5343917079C95001DB282 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D026A35469DD4A979A24A9C4 /* libPods.a */; };
 		54C5343A1707A95B001DB282 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34DC6E7779C0160C7E440B /* wp-author-index.json */; };
+		DB34D01A437E96370ACCBB88 /* wp-author-index-p2.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */; };
 		DB34D01D08A656D0ABA0850E /* XBDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */; };
+		DB34D0636797602F96E8CE59 /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */; };
 		DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */; };
 		DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */; };
 		DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
 		DB34D1B2240DDF422B93E98F /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
 		DB34D229A0FE3A84E00C0BA5 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */; };
+		DB34D25FA95798E37205F42E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */; };
 		DB34D2FB071FDDEEF44CF10E /* XBHttpArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */; };
 		DB34D337ED94131B8A5DCF91 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34DC6E7779C0160C7E440B /* wp-author-index.json */; };
 		DB34D39D86C3E6873B35A792 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D494A7AD914F078A9A41 /* XBCacheElement.m */; };
-		DB34D3AF68A6ED7CB71F935E /* XBBasicDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */; };
+		DB34D3AF68A6ED7CB71F935E /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */; };
 		DB34D3FE9E52C243E32A2E04 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */; };
 		DB34D43B3203D16B05182880 /* XBTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D1E885637177A9361457 /* XBTestUtils.m */; };
+		DB34D4F2EB302DBDC6CDD742 /* wp-author-index-p3.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */; };
 		DB34D5148579F2EF9A76806B /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */; };
 		DB34D57464E6904A421A4D74 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */; };
 		DB34D5993354C60B77E658C2 /* XBCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */; };
@@ -87,21 +91,41 @@
 		DB34D63F5CCF3CFCFB0B2298 /* XBInfiniteScrollArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */; };
 		DB34D76CBE405CCD78D4E35F /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3405D539CFC1910CF76 /* XBCache.m */; };
 		DB34D789430DE650C4B72EE9 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */; };
+		DB34D7B35D20DBECF9BF9A26 /* XBArrayDataMergerTest.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D9D2F202E147FF937CA4 /* XBArrayDataMergerTest.h */; };
 		DB34D80E240635C691108D99 /* XBJsonToArrayDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */; };
 		DB34D851B9D58DB382CCD7E2 /* XBToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */; };
+		DB34D862ABADFD078BDFB93D /* XBBasicHttpQueryParamBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */; };
 		DB34D887A1094CA62181E0E2 /* XBCacheableDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */; };
-		DB34D88CBC61B318D9A853B2 /* XBBasicDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */; };
+		DB34D88CBC61B318D9A853B2 /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */; };
+		DB34D8A11F8195A86232C5F1 /* XBHttpJsonDataLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DF19B2924CD7B234A10A /* XBHttpJsonDataLoaderTest.m */; };
+		DB34D8A33BBDCD89C3EC82A6 /* XBArrayDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */; };
 		DB34D8CCCE41B95F5E8DA2D7 /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D21D18BC4E69B200A38B /* XBCache.h */; };
 		DB34D8F97C5D1BB7975377E3 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3405D539CFC1910CF76 /* XBCache.m */; };
+		DB34D90D2C5BC23980C84B0E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */; };
+		DB34D93584D2BDF7D25934C4 /* XBBasicHttpQueryParamBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */; };
 		DB34D935C8E9D443A95803E5 /* XBDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */; };
+		DB34D962BC488135F686A8F2 /* wp-author-index-p3.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */; };
 		DB34D979FB7D5FEC4EBBB952 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D494A7AD914F078A9A41 /* XBCacheElement.m */; };
-		DB34D9986065C33D6AB6DBD0 /* XBBasicDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D7A8769C56CA962874AB /* XBBasicDataMerger.h */; };
+		DB34D981408059A0C826C3FE /* XBDictionaryDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */; };
+		DB34D9986065C33D6AB6DBD0 /* XBDictionaryDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D7A8769C56CA962874AB /* XBDictionaryDataMerger.h */; };
+		DB34DA05A27DBF0D6CB9EEDE /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */; };
 		DB34DC1C9431A2A6F2B93316 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */; };
 		DB34DCF676108EB893C5A7F8 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */; };
+		DB34DD05CCBE17EF0AD7218E /* wp-author-index-p1.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */; };
+		DB34DD155DD032187E7AA101 /* wp-author-index-p2.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */; };
+		DB34DD1F29A3526A6EE92EFE /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */; };
 		DB34DD34168C59C38098CA50 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */; };
+		DB34DD6A6DA347B85019895F /* XBCacheableDataLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2F33FBCB81270505952 /* XBCacheableDataLoaderTest.m */; };
 		DB34DD8CC5A5D1D98F2B0392 /* XBCacheElement.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D51331C95055F03D6FB2 /* XBCacheElement.h */; };
+		DB34DE6DA91E8AB0897DBBD0 /* NSDictionary+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DEEFF5B04B2EBE781126 /* NSDictionary+XBAdditions.m */; };
 		DB34DE727DACF2AA434B264D /* XBBundleJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */; };
+		DB34DE8FB6266CA85C780E9D /* XBBundleJsonDataLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3837469B508DF52EB33 /* XBBundleJsonDataLoaderTest.m */; };
+		DB34DE9B190D13FE4FC7A01D /* wp-author-index-p1.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */; };
+		DB34DEA57327BCD8DE9C0D86 /* XBArrayDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DEF89ED61ED887D4F2D4 /* XBArrayDataMerger.h */; };
+		DB34DEFA9779F9023A241C33 /* XBDictionaryDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */; };
+		DB34DF2D8A76DD45DF219B35 /* XBArrayDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */; };
 		DB34DF5C4B9E52C46F3DFAD1 /* XBDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D994329A1B24F374F8FA /* XBDataMerger.h */; };
+		DB34DF8E883E20633E2351DB /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,32 +190,51 @@
 		D026A35469DD4A979A24A9C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapper.m; sourceTree = "<group>"; };
 		DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
+		DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index-p2.json"; sourceTree = "<group>"; };
 		DB34D1E885637177A9361457 /* XBTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBTestUtils.m; sourceTree = "<group>"; };
 		DB34D200ABC384E9F3B4F466 /* XBTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTestUtils.h; sourceTree = "<group>"; };
 		DB34D21D18BC4E69B200A38B /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
+		DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataMerger.m; sourceTree = "<group>"; };
 		DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataLoader.h; sourceTree = "<group>"; };
 		DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourceTest.m; sourceTree = "<group>"; };
+		DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index-p3.json"; sourceTree = "<group>"; };
+		DB34D2F33FBCB81270505952 /* XBCacheableDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableDataLoaderTest.m; sourceTree = "<group>"; };
 		DB34D3405D539CFC1910CF76 /* XBCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCache.m; sourceTree = "<group>"; };
 		DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpArrayDataSourceTest.m; sourceTree = "<group>"; };
 		DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapperTest.m; sourceTree = "<group>"; };
+		DB34D3837469B508DF52EB33 /* XBBundleJsonDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoaderTest.m; sourceTree = "<group>"; };
+		DB34D4397AADD174AE6574F7 /* XBCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheKeyBuilder.h; sourceTree = "<group>"; };
+		DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataMergerTest.m; sourceTree = "<group>"; };
+		DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilderTest.m; sourceTree = "<group>"; };
 		DB34D494A7AD914F078A9A41 /* XBCacheElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheElement.m; sourceTree = "<group>"; };
 		DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheSupport.h; sourceTree = "<group>"; };
 		DB34D51331C95055F03D6FB2 /* XBCacheElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheElement.h; sourceTree = "<group>"; };
+		DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index-p1.json"; sourceTree = "<group>"; };
 		DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoader.m; sourceTree = "<group>"; };
 		DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpJsonDataLoader.m; sourceTree = "<group>"; };
-		DB34D7A8769C56CA962874AB /* XBBasicDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicDataMerger.h; sourceTree = "<group>"; };
+		DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilderTest.m; sourceTree = "<group>"; };
+		DB34D7A8769C56CA962874AB /* XBDictionaryDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDictionaryDataMerger.h; sourceTree = "<group>"; };
+		DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDictionaryDataMergerTest.m; sourceTree = "<group>"; };
 		DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteScrollArrayDataSource.h; sourceTree = "<group>"; };
 		DB34D994329A1B24F374F8FA /* XBDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMerger.h; sourceTree = "<group>"; };
+		DB34D9D2F202E147FF937CA4 /* XBArrayDataMergerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataMergerTest.h; sourceTree = "<group>"; };
 		DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBInfiniteScrollArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		DB34DA98E9A602C797CFE27B /* XBHttpDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoader.h; sourceTree = "<group>"; };
+		DB34DAB62D77CEBF04C08E13 /* NSDictionary+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XBAdditions.h"; sourceTree = "<group>"; };
+		DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilder.m; sourceTree = "<group>"; };
 		DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpJsonDataLoader.h; sourceTree = "<group>"; };
 		DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollArrayDataSource.m; sourceTree = "<group>"; };
 		DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheableDataLoader.h; sourceTree = "<group>"; };
 		DB34DC6E7779C0160C7E440B /* wp-author-index.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index.json"; sourceTree = "<group>"; };
 		DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMapper.h; sourceTree = "<group>"; };
 		DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToArrayDataMapper.h; sourceTree = "<group>"; };
-		DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicDataMerger.m; sourceTree = "<group>"; };
+		DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDictionaryDataMerger.m; sourceTree = "<group>"; };
 		DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableDataLoader.m; sourceTree = "<group>"; };
 		DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBToolkit.h; sourceTree = "<group>"; };
+		DB34DDE712E8F5539D799C2F /* XBHttpDataLoaderCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoaderCacheKeyBuilder.h; sourceTree = "<group>"; };
+		DB34DEEFF5B04B2EBE781126 /* NSDictionary+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XBAdditions.m"; sourceTree = "<group>"; };
+		DB34DEF89ED61ED887D4F2D4 /* XBArrayDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataMerger.h; sourceTree = "<group>"; };
+		DB34DF19B2924CD7B234A10A /* XBHttpJsonDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpJsonDataLoaderTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +387,8 @@
 				542084C51707547800290AEF /* NSError+XBAdditions.m */,
 				542084C61707547800290AEF /* NSNumber+XBAdditions.h */,
 				542084C71707547800290AEF /* NSNumber+XBAdditions.m */,
+				DB34DEEFF5B04B2EBE781126 /* NSDictionary+XBAdditions.m */,
+				DB34DAB62D77CEBF04C08E13 /* NSDictionary+XBAdditions.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -450,6 +495,8 @@
 				542085801707555B00290AEF /* Http */,
 				DB34D9636A42926988E2253A /* Mapper */,
 				DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */,
+				DB34D6DFFF6D20B911C390F8 /* Loader */,
+				DB34DD69979B3373C7A44FDB /* Merger */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -474,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */,
+				DB34D484A379C0BDB811C559 /* QueryParam */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -499,8 +547,10 @@
 			isa = PBXGroup;
 			children = (
 				DB34D994329A1B24F374F8FA /* XBDataMerger.h */,
-				DB34DD50F47AAA3F8F721177 /* XBBasicDataMerger.m */,
-				DB34D7A8769C56CA962874AB /* XBBasicDataMerger.h */,
+				DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */,
+				DB34D7A8769C56CA962874AB /* XBDictionaryDataMerger.h */,
+				DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */,
+				DB34DEF89ED61ED887D4F2D4 /* XBArrayDataMerger.h */,
 			);
 			path = Merger;
 			sourceTree = "<group>";
@@ -513,6 +563,25 @@
 				DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		DB34D484A379C0BDB811C559 /* QueryParam */ = {
+			isa = PBXGroup;
+			children = (
+				DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */,
+			);
+			path = QueryParam;
+			sourceTree = "<group>";
+		};
+		DB34D6DFFF6D20B911C390F8 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				DB34DF19B2924CD7B234A10A /* XBHttpJsonDataLoaderTest.m */,
+				DB34D3837469B508DF52EB33 /* XBBundleJsonDataLoaderTest.m */,
+				DB34D2F33FBCB81270505952 /* XBCacheableDataLoaderTest.m */,
+				DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		DB34D736E4E5BBB69614E871 /* Resources */ = {
@@ -535,8 +604,21 @@
 			isa = PBXGroup;
 			children = (
 				DB34DC6E7779C0160C7E440B /* wp-author-index.json */,
+				DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */,
+				DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */,
+				DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		DB34DD69979B3373C7A44FDB /* Merger */ = {
+			isa = PBXGroup;
+			children = (
+				DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */,
+				DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */,
+				DB34D9D2F202E147FF937CA4 /* XBArrayDataMergerTest.h */,
+			);
+			path = Merger;
 			sourceTree = "<group>";
 		};
 		DB34DF3B3D593984B2363099 /* Loader */ = {
@@ -549,6 +631,10 @@
 				DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */,
 				DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */,
 				DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */,
+				DB34D4397AADD174AE6574F7 /* XBCacheKeyBuilder.h */,
+				DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */,
+				DB34DDE712E8F5539D799C2F /* XBHttpDataLoaderCacheKeyBuilder.h */,
+				DB34DA98E9A602C797CFE27B /* XBHttpDataLoader.h */,
 			);
 			path = Loader;
 			sourceTree = "<group>";
@@ -592,7 +678,9 @@
 				DB34DD34168C59C38098CA50 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */,
 				DB34D63F5CCF3CFCFB0B2298 /* XBInfiniteScrollArrayDataSource.h in Headers */,
 				DB34DF5C4B9E52C46F3DFAD1 /* XBDataMerger.h in Headers */,
-				DB34D9986065C33D6AB6DBD0 /* XBBasicDataMerger.h in Headers */,
+				DB34D9986065C33D6AB6DBD0 /* XBDictionaryDataMerger.h in Headers */,
+				DB34DEA57327BCD8DE9C0D86 /* XBArrayDataMerger.h in Headers */,
+				DB34D7B35D20DBECF9BF9A26 /* XBArrayDataMergerTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +758,9 @@
 			files = (
 				5420831F17074CCC00290AEF /* InfoPlist.strings in Resources */,
 				DB34D337ED94131B8A5DCF91 /* wp-author-index.json in Resources */,
+				DB34DD05CCBE17EF0AD7218E /* wp-author-index-p1.json in Resources */,
+				DB34D01A437E96370ACCBB88 /* wp-author-index-p2.json in Resources */,
+				DB34D962BC488135F686A8F2 /* wp-author-index-p3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +772,9 @@
 				54C5340D1707913F001DB282 /* GHTestApp.xib in Resources */,
 				54C5340F1707913F001DB282 /* GHTestView.xib in Resources */,
 				54C534111707913F001DB282 /* GHTestWindow.xib in Resources */,
+				DB34DE9B190D13FE4FC7A01D /* wp-author-index-p1.json in Resources */,
+				DB34DD155DD032187E7AA101 /* wp-author-index-p2.json in Resources */,
+				DB34D4F2EB302DBDC6CDD742 /* wp-author-index-p3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +836,13 @@
 				DB34D3FE9E52C243E32A2E04 /* XBCacheableDataLoader.m in Sources */,
 				DB34DCF676108EB893C5A7F8 /* XBBundleJsonDataLoader.m in Sources */,
 				DB34D57464E6904A421A4D74 /* XBInfiniteScrollArrayDataSource.m in Sources */,
-				DB34D88CBC61B318D9A853B2 /* XBBasicDataMerger.m in Sources */,
+				DB34D88CBC61B318D9A853B2 /* XBDictionaryDataMerger.m in Sources */,
+				DB34D90D2C5BC23980C84B0E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
+				DB34DA05A27DBF0D6CB9EEDE /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */,
+				DB34D93584D2BDF7D25934C4 /* XBBasicHttpQueryParamBuilderTest.m in Sources */,
+				DB34DEFA9779F9023A241C33 /* XBDictionaryDataMergerTest.m in Sources */,
+				DB34DD1F29A3526A6EE92EFE /* XBArrayDataMerger.m in Sources */,
+				DB34D8A33BBDCD89C3EC82A6 /* XBArrayDataMergerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +868,7 @@
 				54C5342517079499001DB282 /* XBPagedCompositeArrayDataSource.m in Sources */,
 				54C53429170794A5001DB282 /* XBBasicHttpQueryParamBuilder.m in Sources */,
 				DB34DC1C9431A2A6F2B93316 /* XBInfiniteScrollArrayDataSource.m in Sources */,
-				DB34D3AF68A6ED7CB71F935E /* XBBasicDataMerger.m in Sources */,
+				DB34D3AF68A6ED7CB71F935E /* XBDictionaryDataMerger.m in Sources */,
 				DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */,
 				DB34D5B6DAE071DFE073A369 /* XBHttpJsonDataLoader.m in Sources */,
 				DB34D789430DE650C4B72EE9 /* XBCacheableDataLoader.m in Sources */,
@@ -779,6 +879,16 @@
 				DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */,
 				DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */,
 				DB34D43B3203D16B05182880 /* XBTestUtils.m in Sources */,
+				DB34D8A11F8195A86232C5F1 /* XBHttpJsonDataLoaderTest.m in Sources */,
+				DB34DE8FB6266CA85C780E9D /* XBBundleJsonDataLoaderTest.m in Sources */,
+				DB34DD6A6DA347B85019895F /* XBCacheableDataLoaderTest.m in Sources */,
+				DB34D25FA95798E37205F42E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
+				DB34DE6DA91E8AB0897DBBD0 /* NSDictionary+XBAdditions.m in Sources */,
+				DB34DF8E883E20633E2351DB /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */,
+				DB34D862ABADFD078BDFB93D /* XBBasicHttpQueryParamBuilderTest.m in Sources */,
+				DB34D981408059A0C826C3FE /* XBDictionaryDataMergerTest.m in Sources */,
+				DB34D0636797602F96E8CE59 /* XBArrayDataMerger.m in Sources */,
+				DB34DF2D8A76DD45DF219B35 /* XBArrayDataMergerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

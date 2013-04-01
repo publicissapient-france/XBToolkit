@@ -7,32 +7,36 @@
 
 #import "XBCacheableDataLoader.h"
 #import "XBCache.h"
-
+#import "XBCacheKeyBuilder.h"
 @interface XBCacheableDataLoader()
 
 @property (nonatomic, strong)NSObject<XBDataLoader> *dataLoader;
 @property (nonatomic, strong)XBCache *cache;
-@property (nonatomic, strong)NSString *cacheKey;
+@property (nonatomic, strong)NSObject<XBCacheKeyBuilder> *cacheKeyBuilder;
 @property (nonatomic, assign)NSTimeInterval ttl;
 
 @end
 
 @implementation XBCacheableDataLoader
 
-+ (id)loaderWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKey:(NSString *)cacheKey ttl:(NSTimeInterval)ttl {
-    return [[self alloc] initWithDataLoader:dataLoader cache:cache cacheKey:cacheKey ttl:ttl];
++ (id)dataLoaderWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(NSObject <XBCacheKeyBuilder> *)cacheKeyBuilder ttl:(NSTimeInterval)ttl {
+    return [[self alloc] initWithDataLoader:dataLoader cache:cache cacheKeyBuilder:cacheKeyBuilder ttl:ttl];
 }
 
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKey:(NSString *)cacheKey ttl:(NSTimeInterval)ttl {
+- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(NSObject<XBCacheKeyBuilder> *)cacheKeyBuilder ttl:(NSTimeInterval)ttl {
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;
         self.cache = cache;
-        self.cacheKey = cacheKey;
+        self.cacheKeyBuilder = cacheKeyBuilder;
         self.ttl = ttl;
     }
 
     return self;
+}
+
+- (NSString *)cacheKey {
+    return [self.cacheKeyBuilder buildWithData:self.dataLoader];
 }
 
 - (void)loadDataWithSuccess:(void(^)(id))success failure:(void(^)(NSError *))failure {
@@ -45,7 +49,7 @@
     else {
         [self.dataLoader loadDataWithSuccess:^(id loadedData) {
             NSError *error = nil;
-            [self.cache setForKey:self.cacheKey value:loadedData ttl:60 error:&error];
+            [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
             success(loadedData);
         } failure:^(NSError *error) {
             failure(error);
@@ -63,6 +67,7 @@
             [self.cache clearForKey:self.cacheKey error:nil];
         }
     }
+    return nil;
 }
 
 @end

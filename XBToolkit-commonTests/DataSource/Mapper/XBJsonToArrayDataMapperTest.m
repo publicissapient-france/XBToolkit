@@ -8,8 +8,6 @@
 #import "XBJsonToArrayDataMapper.h"
 #import "GHUnit.h"
 #import "WPAuthor.h"
-#import "JSONKit.h"
-#import "Underscore.h"
 #import "XBTestUtils.h"
 
 @interface XBJsonToArrayDataMapperTest : GHTestCase @end

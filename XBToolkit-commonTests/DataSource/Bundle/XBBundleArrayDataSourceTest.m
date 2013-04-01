@@ -20,7 +20,7 @@
 - (void)testLoadDataSourceFromBundle {
     [self prepare];
 
-    XBBundleJsonDataLoader *dataLoader = [XBBundleJsonDataLoader loaderWithResourcePath:@"wp-author-index" resourceType:@"json"];
+    XBBundleJsonDataLoader *dataLoader = [XBBundleJsonDataLoader dataLoaderWithResourcePath:@"wp-author-index" resourceType:@"json"];
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
     XBReloadableArrayDataSource *bundleDS = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader dataMapper:dataMapper];
 

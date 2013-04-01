@@ -35,6 +35,7 @@
 +(id)fakeHttpClientWithSuccessCallbackWithData:(id)data {
     id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
 
+    [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
     [[[httpClient expect] andDo:[self fakeSuccessCallbackWithData: data]] executeGetJsonRequestWithPath:[OCMArg isNotNil]
                                                                                              parameters:[OCMArg any]
                                                                                                 success:[OCMArg isNotNil]

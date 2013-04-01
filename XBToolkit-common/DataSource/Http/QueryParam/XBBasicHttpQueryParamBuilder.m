@@ -23,7 +23,7 @@
 }
 
 - (NSDictionary *)build {
-    return self.dictionary;
+    return [self.dictionary copy];
 }
 
 @end

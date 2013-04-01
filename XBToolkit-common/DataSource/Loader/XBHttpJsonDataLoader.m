@@ -6,7 +6,6 @@
 
 
 #import "XBHttpJsonDataLoader.h"
-#import "XBHttpQueryParamBuilder.h"
 
 @interface XBHttpJsonDataLoader()
 @property (nonatomic, strong)NSString *resourcePath;

@@ -9,8 +9,9 @@
 #import "XBDataLoader.h"
 #import "XBHttpClient.h"
 #import "XBHttpQueryParamBuilder.h"
+#import "XBHttpDataLoader.h"
 
-@interface XBHttpJsonDataLoader : NSObject<XBDataLoader>
+@interface XBHttpJsonDataLoader : NSObject<XBDataLoader, XBHttpDataLoader>
 
 + (id)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath;
 

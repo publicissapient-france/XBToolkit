@@ -1,0 +1,308 @@
+{
+    "status":"ok",
+    "count":30,
+    "page":1,
+    "total":70,
+    "authors":[
+        {
+            "id":18,
+            "slug":"ealliaume",
+            "name":"Erwan Alliaume",
+            "first_name":"Erwan",
+            "last_name":"Alliaume",
+            "nickname":"ealliaume",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Passionn\u00e9 par les technologies Java\/JEE depuis sa sortie de l'EPITA, Erwan Alliaume est aujourd'hui consultant chez Xebia. Il intervient depuis 2 ans sur des missions de d\u00e9veloppement et d'architecture pour l\u2019un des leaders mondiaux de la production et de la distribution de contenus multim\u00e9dia. Expert technique polyvalent, Erwan a \u00e9t\u00e9 amen\u00e9 tr\u00e8s t\u00f4t \u00e0 prendre des responsabilit\u00e9s sur des projets de taille significative. Il a notamment d\u00e9velopp\u00e9 des comp\u00e9tences cl\u00e9 dans la mise en place de socle de d\u00e9veloppement, la m\u00e9trologie et les audits de performance et de qualit\u00e9.\r\n\r\nErwan participe \u00e9galement activement au blog Xebia ou il traite aussi bien de sujets d\u2019actualit\u00e9s que de probl\u00e9matiques techniques."
+        },
+        {
+            "id":59,
+            "slug":"yamsellem",
+            "name":"Yves Amsellem",
+            "first_name":"Yves",
+            "last_name":"Amsellem",
+            "nickname":"yamsellem",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"D\u00e9veloppeur depuis 5 ans \u2014 les 2 derniers chez Xebia \u2014 Yves tire de son exp\u00e9rience sur des sites \u00e0 fort trafic une culture de la qualit\u00e9, de l'effort commun et de l'innovation. Sp\u00e9cialis\u00e9 du style d'architecture ReST, il intervient sur des projets web \u00e0 forte composante JavaScript et NoSQL. Avec Beno\u00eet Gu\u00e9rout, il d\u00e9veloppe la librairie open source Jongo \u2014 Query in Java as in Mongo shell"
+        },
+        {
+            "id":97,
+            "slug":"pantoine",
+            "name":"Philippe Antoine",
+            "first_name":"Philippe",
+            "last_name":"Antoine",
+            "nickname":"pantoine",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":58,
+            "slug":"karesti",
+            "name":"Katia Aresti",
+            "first_name":"Katia",
+            "last_name":"Aresti",
+            "nickname":"karesti",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":40,
+            "slug":"garnaud",
+            "name":"Guillaume Arnaud",
+            "first_name":"Guillaume",
+            "last_name":"Arnaud",
+            "nickname":"garnaud",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":9,
+            "slug":"mbacrot",
+            "name":"M\u00e9lanie Bacrot",
+            "first_name":"M\u00e9lanie",
+            "last_name":"Bacrot",
+            "nickname":"mbacrot",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":54,
+            "slug":"hbenmansour",
+            "name":"Mohamed-Hamza Benmansour",
+            "first_name":"Mohamed-Hamza",
+            "last_name":"Benmansour",
+            "nickname":"hbenmansour",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":83,
+            "slug":"cblonde",
+            "name":"Charles Blonde",
+            "first_name":"Charles",
+            "last_name":"Blonde",
+            "nickname":"cblonde",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Charles a rejoint Xebia en 2011 apr\u00e8s 7 ann\u00e9es d'exp\u00e9riences en d\u00e9veloppement Java JEE. Il intervient sur des missions d'expertise li\u00e9es \u00e0 la performance. Passionn\u00e9 de d\u00e9veloppement mais aussi d'infrastructure, il est un fervent d\u00e9fenseur de la philosophie DevOps et des technologies Opensource et Cloud."
+        },
+        {
+            "id":3,
+            "slug":"gbodet",
+            "name":"Guillaume Bodet",
+            "first_name":"Guillaume",
+            "last_name":"Bodet",
+            "nickname":"gbodet",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":81,
+            "slug":"mbreton",
+            "name":"Mathieu Breton",
+            "first_name":"Mathieu",
+            "last_name":"Breton",
+            "nickname":"mbreton",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":77,
+            "slug":"xbucchiotty",
+            "name":"Xavier Bucchiotty",
+            "first_name":"Xavier",
+            "last_name":"Bucchiotty",
+            "nickname":"xbucchiotty",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Xavier est un d\u00e9veloppeur java de quatre ans d'exp\u00e9rience. Issu de la fili\u00e8re apprentissage, il dispose en plus de trois ans pass\u00e9s au sein d'un grand groupe industriel fran\u00e7ais. Cela lui conf\u00e8re une approche pragmatique et rigoureuse de son travail. L'alternance lui a permis d'acqu\u00e9rir des comp\u00e9tences techniques solides et concr\u00e8tes. \r\nIl travaille dor\u00e9navant chez un \u00e9diteur fran\u00e7ais de solutions financi\u00e8res.\r\nMotiv\u00e9 par les m\u00e9thodes agiles, il affectionne les aspirations du software craftsmanship."
+        },
+        {
+            "id":71,
+            "slug":"jburet",
+            "name":"Julien Buret",
+            "first_name":"Julien",
+            "last_name":"Buret",
+            "nickname":"jburet",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":57,
+            "slug":"scaplette",
+            "name":"Simon Caplette",
+            "first_name":"Simon",
+            "last_name":"Caplette",
+            "nickname":"scaplette",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Simon a rejoint Xebia en 2010 apr\u00e8s cinq ann\u00e9es pass\u00e9es \u00e0 Londres o\u00f9 il a travaill\u00e9 sur diverses plate-formes Spring et J2EE. Depuis trois ans, il applique avec succ\u00e9s les methodes XP et plus particuli\u00e8rement TDD."
+        },
+        {
+            "id":13,
+            "slug":"gcarre",
+            "name":"Guillaume Carre",
+            "first_name":"Guillaume",
+            "last_name":"Carre",
+            "nickname":"Guillaume Carre",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":20,
+            "slug":"ademagal",
+            "name":"Alexandre De Magalhaes Garcia",
+            "first_name":"Alexandre",
+            "last_name":"De Magalhaes Garcia",
+            "nickname":"ademagal",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":56,
+            "slug":"jlmorlhon",
+            "name":"Jean-Laurent de Morlhon",
+            "first_name":"Jean-Laurent",
+            "last_name":"de Morlhon",
+            "nickname":"Jean-Laurent de Morlhon",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"CTO @ Xebia France. Sur twitter avec @morlhon"
+        },
+        {
+            "id":73,
+            "slug":"bdechoux",
+            "name":"Bertrand Dechoux",
+            "first_name":"Bertrand",
+            "last_name":"Dechoux",
+            "nickname":"bdechoux",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Consultant Java @BertrandDechoux"
+        },
+        {
+            "id":62,
+            "slug":"ndemengel",
+            "name":"Nicolas Demengel",
+            "first_name":"Nicolas",
+            "last_name":"Demengel",
+            "nickname":"ndemengel",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"&lt;a href=&quot;https:\/\/twitter.com\/#!\/nicolasdemengel\/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http:\/\/christophe.heubes.com\/assets\/img\/twitter.png&quot; width=&quot;40px&quot; style=&quot;margin: -15px 10px 0px 0px;float: right&quot;&gt;&lt;\/a&gt;\r\n&lt;em&gt;Nicolas est arriv\u00e9 chez Xebia en 2010 et a 5 ans d'exp\u00e9rience sur le d\u00e9veloppement d'applications Java\/Web.&lt;\/em&gt;&lt;br \/&gt;&lt;br \/&gt;\r\nNicolas est un d\u00e9veloppeur passionn\u00e9 et pragmatique. Il aime la technologie mais n'oublie pas que la finalit\u00e9 d'un produit, c'est le service rendu \u00e0 l'utilisateur.&lt;br \/&gt;\r\nSon credo : un produit doit se construire et prouver sa qualit\u00e9 avec du feedback et des tests !&lt;br \/&gt;&lt;br \/&gt;\r\nPour cette raison, Nicolas travaille \u00e9galement sur le plug-in &lt;a href=&quot;http:\/\/moreunit.sourceforge.net\/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http:\/\/moreunit.sourceforge.net\/favicon.ico&quot; style=&quot;vertical-align: middle&quot; \/&gt;MoreUnit&lt;\/a&gt; pour Eclipse."
+        },
+        {
+            "id":31,
+            "slug":"edijoux",
+            "name":"Ell\u00e8ne Dijoux",
+            "first_name":"Ell\u00e8ne",
+            "last_name":"Dijoux",
+            "nickname":"edijoux",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":93,
+            "slug":"sdrouard",
+            "name":"S\u00e9bastien Drouard",
+            "first_name":"S\u00e9bastien",
+            "last_name":"Drouard",
+            "nickname":"sdrouard",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"D\u00e9veloppeur chez Xebia, initi\u00e9 aux pratiques agiles, j'ai 4 ans d'exp\u00e9rience dans le d\u00e9veloppement Java\/Web."
+        },
+        {
+            "id":49,
+            "slug":"fdubois",
+            "name":"Fr\u00e9d\u00e9ric Dubois",
+            "first_name":"Fr\u00e9d\u00e9ric",
+            "last_name":"Dubois",
+            "nickname":"fdubois",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":95,
+            "slug":"fduveau",
+            "name":"Florent Duveau",
+            "first_name":"Florent",
+            "last_name":"Duveau",
+            "nickname":"fduveau",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":67,
+            "slug":"ielfatmi",
+            "name":"Issam El Fatmi",
+            "first_name":"Issam",
+            "last_name":"El Fatmi",
+            "nickname":"ielfatmi",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":10,
+            "slug":"meveno",
+            "name":"Manuel Eveno",
+            "first_name":"Manuel",
+            "last_name":"Eveno",
+            "nickname":"meveno",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":30,
+            "slug":"afathallah",
+            "name":"Amin Fathallah",
+            "first_name":"Amin",
+            "last_name":"Fathallah",
+            "nickname":"afathallah",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":34,
+            "slug":"mfiguiere",
+            "name":"Micha\u00ebl Figui\u00e8re",
+            "first_name":"Micha\u00ebl",
+            "last_name":"Figui\u00e8re",
+            "nickname":"mfiguiere",
+            "url":"http:\/\/blog.xebia.com\/",
+            "description":"Micha\u00ebl est consultant chez Xebia o\u00f9 il intervient notamment sur des sites Web \u00e0 fort trafic. A son aise tant avec les environnements JEE qu'avec les technologies de plus bas niveau, il est sp\u00e9cialis\u00e9 dans les architectures distribu\u00e9es et les technologies innovantes telles que NoSQL, les moteurs de recherche, ou encore le &lt;em&gt;data mining&lt;\/em&gt;."
+        },
+        {
+            "id":12,
+            "slug":"xebiafrance",
+            "name":"Xebia France",
+            "first_name":"Xebia",
+            "last_name":"France",
+            "nickname":"Xebia France",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":43,
+            "slug":"efruh",
+            "name":"Emilie Fruh",
+            "first_name":"Emilie",
+            "last_name":"Fruh",
+            "nickname":"efruh",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":47,
+            "slug":"dgalichet",
+            "name":"David Galichet",
+            "first_name":"David",
+            "last_name":"Galichet",
+            "nickname":"dgalichet",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"David a commenc\u00e9 sa carri\u00e8re en 2004 chez Fimasys, \u00e9diteur de progiciel dans la finance puis a rejoint Linagora, une SSLL dans laquelle il a pass\u00e9 un an et demi avant de rejoindre Xebia fin 2009.\r\nIl s'int\u00e9resse tout particuli\u00e8rement au monde Java, aux technologies J2EE et aux langages qui gravitent autour comme Groovy et Scala. Il a aussi d\u00e9velopp\u00e9 un fort int\u00e9r\u00eat pour les plateformes d'int\u00e9gration ainsi que pour les probl\u00e9matiques de production. David a aussi un r\u00e9el int\u00e9r\u00eat pour les m\u00e9thodologies agiles, qu'il a pu appliquer en tant que Scrum Master dans ses diff\u00e9rentes missions.\r\nEnfin, David participe activement \u00e0 la revue de presse de Xebia sur des sujets relatifs aux technologies Java et aux m\u00e9thodologies agiles."
+        },
+        {
+            "id":65,
+            "slug":"ngasri",
+            "name":"Nabil Gasri",
+            "first_name":"Nabil",
+            "last_name":"Gasri",
+            "nickname":"ngasri",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        }
+    ]
+}

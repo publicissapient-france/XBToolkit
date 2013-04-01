@@ -8,11 +8,12 @@
 #import <Foundation/Foundation.h>
 #import "XBDataLoader.h"
 #import "XBCache.h"
+#import "XBCacheKeyBuilder.h"
 
 @interface XBCacheableDataLoader : NSObject<XBDataLoader>
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKey:(NSString *)cacheKey ttl:(NSTimeInterval)ttl;
 
-+ (id)loaderWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKey:(NSString *)cacheKey ttl:(NSTimeInterval)ttl;
++ (id)dataLoaderWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(NSObject <XBCacheKeyBuilder> *)cacheKeyBuilder ttl:(NSTimeInterval)ttl;
 
+- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(NSObject<XBCacheKeyBuilder> *)cacheKeyBuilder ttl:(NSTimeInterval)ttl;
 
 @end

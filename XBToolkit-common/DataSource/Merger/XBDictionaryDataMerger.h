@@ -9,7 +9,7 @@
 #import "XBDataMerger.h"
 #import "XBDataMapper.h"
 
-@interface XBBasicDataMerger : NSObject<XBDataMerger>
+@interface XBDictionaryDataMerger : NSObject<XBDataMerger>
 
 - (id)initWithRootKeyPath:(NSString *)rootKeyPath;
 

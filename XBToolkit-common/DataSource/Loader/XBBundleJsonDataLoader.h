@@ -12,7 +12,7 @@
 
 @interface XBBundleJsonDataLoader : NSObject<XBDataLoader>
 
-+ (id)loaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
++ (id)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
 
 - (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
 

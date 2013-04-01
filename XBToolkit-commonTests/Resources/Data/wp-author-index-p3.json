@@ -1,0 +1,108 @@
+{
+    "status":"ok",
+    "count":10,
+    "page":3,
+    "total":70,
+    "authors":[
+        {
+            "id":88,
+            "slug":"apedro",
+            "name":"Audrey Pedro",
+            "first_name":"Audrey",
+            "last_name":"Pedro",
+            "nickname":"apedro",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Business Analyst \/ Proxy PO chez Xebia Studio"
+        },
+        {
+            "id":92,
+            "slug":"yquenechdu",
+            "name":"Yannick Quenec'hdu",
+            "first_name":"Yannick",
+            "last_name":"Quenec'hdu",
+            "nickname":"yquenechdu",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":"Yannick Quenec\u2019hdu est un consultant senior et coach agile exp\u00e9riment\u00e9. Depuis plus de 15 ans, il a men\u00e9 plusieurs \u00e9quipes de d\u00e9veloppement sur l\u2019ensemble du cycle de vie du logiciel, notamment en mettant en \u0153uvre Lean, Scrum et XP.\r\n\r\nSon exp\u00e9rience d\u2019entrepreneur lui a permis de mettre en place l\u2019agilit\u00e9 aussi bien au niveau technique qu\u2019au niveau m\u00e9tier avec une forte capacit\u00e9 d\u2019engagement. \r\n\r\nDot\u00e9 d\u2019une excellente capacit\u00e9 \u00e0 communiquer et bon p\u00e9dagogue, Yannick sait f\u00e9d\u00e9rer les \u00e9quipes techniques et m\u00e9tiers autour d\u2019un objectif commun.\r\n\r\nYannick est dipl\u00f4m\u00e9 de Telecom Bretagne, il participe activement aux conf\u00e9rences Agile. \r\n\r\nIl a r\u00e9alis\u00e9 la transformation Agile pour les groupes EDF, DCNS, LVMH, PSA et accompagn\u00e9 des entreprises du Web comme Krop, Behance, Sarenza, LeGuide.com\r\n\r\nIl intervient dans plusieurs pays, tels que la France, L'Angleterre, USA, Suisse, Pologne, \u2026"
+        },
+        {
+            "id":69,
+            "slug":"mrenou",
+            "name":"Morgan Renou",
+            "first_name":"Morgan",
+            "last_name":"Renou",
+            "nickname":"mrenou",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":39,
+            "slug":"nrichand",
+            "name":"Nathaniel Richand",
+            "first_name":"Nathaniel",
+            "last_name":"Richand",
+            "nickname":"nrichand",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Expert Java, passionn\u00e9 par les m\u00e9thodes agiles, les tests et l\u2019industrialisation des pratiques de d\u00e9veloppement."
+        },
+        {
+            "id":60,
+            "slug":"jlrigau",
+            "name":"Jean-Louis Rigau",
+            "first_name":"Jean-Louis",
+            "last_name":"Rigau",
+            "nickname":"jlrigau",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Consultant Java EE \/ Scrum Master, Xebia IT Architects (@jlrigau)"
+        },
+        {
+            "id":21,
+            "slug":"msaade",
+            "name":"Mathieu Saad\u00e9",
+            "first_name":"Mathieu",
+            "last_name":"Saad\u00e9",
+            "nickname":"msaade",
+            "url":"http:\/\/www.xebia.fr",
+            "description":""
+        },
+        {
+            "id":68,
+            "slug":"fsarradin",
+            "name":"Fran\u00e7ois Sarradin",
+            "first_name":"Fran\u00e7ois",
+            "last_name":"Sarradin",
+            "nickname":"Fsarradin",
+            "url":"http:\/\/kerflyn.wordpress.com\/",
+            "description":"Consultant Java et \u03bb d\u00e9veloppeur.\r\n\r\nBlog personnel : http:\/\/kerflyn.wordpress.com\/\r\nTwitter : @fsarradin"
+        },
+        {
+            "id":35,
+            "slug":"rschlick",
+            "name":"Romain Schlick",
+            "first_name":"Romain",
+            "last_name":"Schlick",
+            "nickname":"rschlick",
+            "url":"http:\/\/blog.xebia.fr",
+            "description":""
+        },
+        {
+            "id":29,
+            "slug":"eservent",
+            "name":"Emmanuel Servent",
+            "first_name":"Emmanuel",
+            "last_name":"Servent",
+            "nickname":"eservent",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Emmanuel a rejoint Xebia en 2008 apr\u00e8s quatre ann\u00e9es pass\u00e9es \u00e0 Unilog. Il associe les comp\u00e9tences techniques de l'\u00e9cosyst\u00e8me Java \u00e0 une prise de responsabilit\u00e9s sur l'encadrement d'\u00e9quipes. Il tire son exp\u00e9rience des nombreux projets d\u00e9licats rencontr\u00e9s autant par le niveau d'exigence de l'application que par les d\u00e9lais \u00e0 respecter."
+        },
+        {
+            "id":64,
+            "slug":"jsmadja",
+            "name":"Julien Smadja",
+            "first_name":"Julien",
+            "last_name":"Smadja",
+            "nickname":"jsmadja",
+            "url":"http:\/\/www.xebia.fr",
+            "description":"Julien Smadja est consultant chez Xebia o\u00f9 il intervient notamment sur des probl\u00e9matiques li\u00e9es \u00e0 la testabilit\u00e9 et la qualit\u00e9 des projets. Int\u00e9ress\u00e9 par l'int\u00e9gration continue, il participe \u00e0 l'\u00e9vang\u00e9lisation de produits comme Jenkins et Sonar."
+        }
+    ]
+}

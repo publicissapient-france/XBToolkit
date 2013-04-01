@@ -8,6 +8,12 @@
 #import "XBHttpClient.h"
 #import "AFNetworking.h"
 
+@interface XBHttpClient()
+
+@property(nonatomic, strong)NSString *baseUrl;
+
+@end
+
 @implementation XBHttpClient {
     AFHTTPClient *_afHttpClient;
 }
@@ -20,6 +26,7 @@
     self = [super init];
 
     if (self) {
+        self.baseUrl = baseUrl;
         _afHttpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseUrl]];
     }
 
