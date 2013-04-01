@@ -22,7 +22,7 @@
 
 @implementation XBInfiniteScrollArrayDataSource
 
-+ (id)sourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger paginator:(NSObject <XBPaginator> *)paginator {
++ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger paginator:(NSObject <XBPaginator> *)paginator {
     return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper dataMerger:dataMerger paginator:paginator];
 }
 
@@ -40,6 +40,12 @@
     return [self.paginator hasMorePages];
 }
 
+- (void)loadDataWithCallback:(void (^)())callback {
+    [self.paginator resetPageIncrement];
+    [self fetchDataFromSourceInternalWithCallback:callback merge:NO];
+}
+
+
 - (void)loadMoreDataWithCallback:(void (^)())callback {
     if ([self hasMoreData]) {
         [self fetchDataFromSourceInternalWithCallback:callback merge:YES];
@@ -47,11 +53,6 @@
     else if (callback) {
         callback();
     }
-}
-
-- (void)fetchDataFromSourceWithCallback:(void (^)())callback {
-    [self.paginator resetPageIncrement];
-    [self fetchDataFromSourceInternalWithCallback:callback merge:NO];
 }
 
 - (void)fetchDataFromSourceInternalWithCallback:(void (^)())callback merge:(BOOL)merge {

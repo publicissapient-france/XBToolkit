@@ -9,10 +9,18 @@
 #import "XBPaginator.h"
 #import "XBArrayDataSource.h"
 
-@interface XBArrayDataSourcePaginator : NSObject <XBPaginator>
+@interface XBArrayDataSourcePaginator : NSObject<XBPaginator>
 
-+ (id)paginatorWithItemByPage:(NSUInteger)itemByPage dataSource:(XBArrayDataSource *)dataSource;
+@property(nonatomic, strong)XBArrayDataSource *dataSource;
 
-- (id)initWithItemByPage:(NSUInteger)itemByPage dataSource:(XBArrayDataSource *)dataSource;
++ (id)paginatorWithItemByPage:(NSUInteger)itemByPage;
+
+- (id)initWithItemByPage:(NSUInteger)itemByPage;
+
+@end
+
+@interface XBArrayDataSourcePaginatorFactory : NSObject<XBPaginatorFactory>
+
++ (id)paginatorWithItemByPage:(NSUInteger)itemByPage;
 
 @end

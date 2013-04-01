@@ -6,28 +6,33 @@
 
 
 #import "XBArrayDataSourcePaginator.h"
-#import "XBArrayDataSource.h"
 
+@interface XBArrayDataSourcePaginator()
+
+@end
 
 @implementation XBArrayDataSourcePaginator {
     NSUInteger _currentPage;
     NSUInteger _itemByPage;
-    XBArrayDataSource *_dataSource;
 }
 
-+ (id)paginatorWithItemByPage:(NSUInteger)itemByPage dataSource:(XBArrayDataSource *)dataSource {
-    return [[self alloc] initWithItemByPage:itemByPage dataSource:dataSource];
++ (id)paginatorWithItemByPage:(NSUInteger)itemByPage {
+    return [[self alloc] initWithItemByPage:itemByPage];
 }
 
-- (id)initWithItemByPage:(NSUInteger)itemByPage dataSource:(XBArrayDataSource *)dataSource {
+- (id)initWithItemByPage:(NSUInteger)itemByPage {
     self = [super init];
     if (self) {
         _itemByPage = itemByPage;
-        _dataSource = dataSource;
         [self resetPageIncrement];
     }
 
     return self;
+}
+
+- (void)setDataSource:(XBArrayDataSource *)dataSource {
+    _dataSource = dataSource;
+    [self resetPageIncrement];
 }
 
 - (NSUInteger)currentPage {
@@ -39,7 +44,7 @@
 }
 
 - (NSUInteger)totalItem {
-    return [_dataSource count];
+    return [self.dataSource count];
 }
 
 - (void)incrementPage {
@@ -47,11 +52,38 @@
 }
 
 - (Boolean)hasMorePages {
-    return [self totalItem] > _currentPage * (_itemByPage + 1);
+    return [self totalItem] > self.currentPage * (self.itemByPage + 1);
 }
 
 - (void)resetPageIncrement {
     _currentPage = 1;
+}
+
+@end
+
+
+@implementation XBArrayDataSourcePaginatorFactory {
+    NSUInteger _itemByPage;
+}
+
++ (id)paginatorWithItemByPage:(NSUInteger)itemByPage {
+    return [[self alloc] initWithItemByPage:itemByPage];
+}
+
+- (id)initWithItemByPage:(NSUInteger)itemByPage {
+    self = [super init];
+    if (self) {
+        _itemByPage = itemByPage;
+    }
+
+    return self;
+}
+
+-(XBArrayDataSourcePaginator *)buildWithDataSource:(XBArrayDataSource *)dataSource {
+    XBArrayDataSourcePaginator *paginator = [XBArrayDataSourcePaginator paginatorWithItemByPage:_itemByPage];
+    paginator.dataSource = dataSource;
+    return paginator;
+    
 }
 
 @end

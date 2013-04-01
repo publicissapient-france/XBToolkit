@@ -16,5 +16,7 @@
 +(NSDictionary *)getAuthorsAsJson;
 +(id)fakeHttpClientWithSuccessCallbackWithData:(id)data;
 +(id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data;
++(id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName;
 
++ (id)getAuthorsAsJsonWithPage:(NSUInteger)page;
 @end

@@ -40,7 +40,7 @@
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     GHAssertNil(dataSource.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long) dataSource.error.code, dataSource.error.domain]);
-    GHAssertEquals(dataSource.count, [@70 unsignedIntegerValue], @"Response should be different from 0");
+    GHAssertEquals(dataSource.count, [@70 unsignedIntegerValue], nil);
 
     WPAuthor *author = [XBTestUtils findAuthorInArray:dataSource.array ById:50];
 

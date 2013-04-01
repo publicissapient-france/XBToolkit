@@ -36,7 +36,7 @@
 
 - (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     NSDictionary *parameters = self.httpQueryParamBuilder ? [self.httpQueryParamBuilder build] : nil;
-    [self.httpClient executeGetJsonRequestWithPath:self.resourcePath parameters: parameters
+    [self.httpClient executeGetJsonRequestWithPath:self.resourcePath parameters:parameters
        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id jsonFetched) {
            if (success) {
                success(jsonFetched);

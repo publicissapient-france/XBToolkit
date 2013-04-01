@@ -6,6 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "XBArrayDataSource.h"
 
 @protocol XBPaginator <NSObject>
 
@@ -20,5 +21,11 @@
 - (Boolean)hasMorePages;
 
 - (void)resetPageIncrement;
+
+@end
+
+@protocol XBPaginatorFactory <NSObject>
+
+-(NSObject<XBPaginator> *) buildWithDataSource:(XBArrayDataSource *)dataSource;
 
 @end
