@@ -71,6 +71,7 @@
 		DB34D01D08A656D0ABA0850E /* XBDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */; };
 		DB34D039BF98B89097C6D9C3 /* NSURL+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D62AF645B6A0BB2D1672 /* NSURL+XBAdditions.h */; };
 		DB34D0636797602F96E8CE59 /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */; };
+		DB34D0B9257643367AC3DFB4 /* XBToolkit-osx-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5420832017074CCC00290AEF /* XBToolkit-osx-Prefix.pch */; };
 		DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */; };
 		DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */; };
 		DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
@@ -697,6 +698,7 @@
 				DB34DEA57327BCD8DE9C0D86 /* XBArrayDataMerger.h in Headers */,
 				DB34D039BF98B89097C6D9C3 /* NSURL+XBAdditions.h in Headers */,
 				DB34D565AD1B35BCCDD5D6F1 /* XBPaginatorHttpQueryDataBuilder.h in Headers */,
+				DB34D0B9257643367AC3DFB4 /* XBToolkit-osx-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,6 +63,7 @@
 		54C534A91707BCEA001DB282 /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084361707546200290AEF /* DCParserConfiguration+XBAdditions.m */; };
 		54C534AA1707BCED001DB282 /* XBFileSystemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084331707546200290AEF /* XBFileSystemCache.m */; };
 		871849EDE14F46F9B3DC9F72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72D9672488D4A1AB2EB4940 /* libPods.a */; };
+		DB34DB4E214FD2A180146277 /* XBToolkit-ios-Prefix.pch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 542082E317074C9B00290AEF /* XBToolkit-ios-Prefix.pch */; };
 		E48D455BB88E451993552315 /* libPods-XBToolkit-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB089F6D419944DFABA5C2B9 /* libPods-XBToolkit-iosTests.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				DB34DB4E214FD2A180146277 /* XBToolkit-ios-Prefix.pch in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
