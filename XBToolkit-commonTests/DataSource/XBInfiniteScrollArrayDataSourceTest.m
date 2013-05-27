@@ -12,8 +12,8 @@
 #import "XBJsonToArrayDataMapper.h"
 #import "XBArrayDataSource+protected.h"
 #import "XBDictionaryDataMerger.h"
-#import "XBArrayDataSourcePaginator.h"
-#import "XBPaginatorHttpQueryDataBuilder.h"
+#import "XBArrayDataSourceDataPager.h"
+#import "XBDataPagerHttpQueryDataBuilder.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -31,8 +31,8 @@
     ] parameterName:@"page"];
 
 
-    XBArrayDataSourcePaginator *paginator = [XBArrayDataSourcePaginator paginatorWithItemByPage:25];
-    XBPaginatorHttpQueryDataBuilder *httpQueryDataBuilder = [XBPaginatorHttpQueryDataBuilder builderWithPaginator:paginator pageParameterName:@"page"];
+    XBArrayDataSourceDataPager *dataPager = [XBArrayDataSourceDataPager paginatorWithItemByPage:25];
+    XBDataPagerHttpQueryDataBuilder *httpQueryDataBuilder = [XBDataPagerHttpQueryDataBuilder builderWithDataPager:dataPager pageParameterName:@"page"];
 
     XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
                                                                     httpQueryParamBuilder:httpQueryDataBuilder
@@ -45,9 +45,9 @@
     XBInfiniteScrollArrayDataSource *dataSource = [XBInfiniteScrollArrayDataSource dataSourceWithDataLoader:dataLoader
                                                                                                  dataMapper:dataMapper
                                                                                                  dataMerger:dataMerger
-                                                                                                  paginator:paginator];
+                                                                                                  dataPager:dataPager];
 
-    paginator.dataSource = dataSource;
+    dataPager.dataSource = dataSource;
 
     [dataSource loadDataWithCallback:^() {
         GHAssertTrue([dataSource hasMoreData], nil);

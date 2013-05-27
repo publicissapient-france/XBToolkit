@@ -8,6 +8,8 @@
 #import "XBCacheableDataLoader.h"
 #import "XBCache.h"
 #import "XBCacheKeyBuilder.h"
+#import "XBLogging.h"
+
 @interface XBCacheableDataLoader()
 
 @property (nonatomic, strong)NSObject<XBDataLoader> *dataLoader;
@@ -63,7 +65,7 @@
             return [self.cache getForKey:self.cacheKey error:error];
         }
         @catch ( NSException *e ) {
-            DDLogError( @"%@: %@", e.name, e.reason);
+            XBLogError( @"%@: %@", e.name, e.reason);
             [self.cache clearForKey:self.cacheKey error:nil];
         }
     }

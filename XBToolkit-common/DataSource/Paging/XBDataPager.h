@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
 
-@protocol XBPaginator <NSObject>
+@protocol XBDataPager <NSObject>
 
 - (NSUInteger)currentPage;
 
@@ -26,6 +26,6 @@
 
 @protocol XBPaginatorFactory <NSObject>
 
--(NSObject<XBPaginator> *) buildWithDataSource:(XBArrayDataSource *)dataSource;
+-(NSObject<XBDataPager> *) buildWithDataSource:(XBArrayDataSource *)dataSource;
 
 @end

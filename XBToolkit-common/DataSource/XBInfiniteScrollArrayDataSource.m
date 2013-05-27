@@ -11,10 +11,11 @@
 #import "XBReloadableArrayDataSource+protected.h"
 #import "XBDataMerger.h"
 #import "XBDictionaryDataMerger.h"
+#import "XBLogging.h"
 
 @interface XBInfiniteScrollArrayDataSource()
 
-@property(nonatomic, strong)NSObject<XBPaginator> *paginator;
+@property(nonatomic, strong)NSObject<XBDataPager> *dataPager;
 
 @property(nonatomic, strong)NSObject<XBDataMerger> *dataMerger;
 
@@ -22,14 +23,14 @@
 
 @implementation XBInfiniteScrollArrayDataSource
 
-+ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger paginator:(NSObject <XBPaginator> *)paginator {
-    return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper dataMerger:dataMerger paginator:paginator];
++ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger dataPager:(NSObject <XBDataPager> *)dataPager {
+    return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper dataMerger:dataMerger dataPager:dataPager];
 }
 
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger paginator:(NSObject <XBPaginator> *)paginator {
+- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger dataPager:(NSObject <XBDataPager> *)dataPager {
     self = [super initWithDataLoader:dataLoader dataMapper:dataMapper];
     if (self) {
-        self.paginator = paginator;
+        self.dataPager = dataPager;
         self.dataMerger = dataMerger;
     }
 
@@ -37,11 +38,11 @@
 }
 
 - (BOOL)hasMoreData {
-    return [self.paginator hasMorePages];
+    return [self.dataPager hasMorePages];
 }
 
 - (void)loadDataWithCallback:(void (^)())callback {
-    [self.paginator resetPageIncrement];
+    [self.dataPager resetPageIncrement];
     [self fetchDataFromSourceInternalWithCallback:callback merge:NO];
 }
 
@@ -63,7 +64,7 @@
             callback();
         }
     } failure:^(NSError *error) {
-        DDLogWarn(@"Error: %@", error);
+        XBLogWarn(@"Error: %@", error);
         self.error = error;
         if (callback) {
             callback();

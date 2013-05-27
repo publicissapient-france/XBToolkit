@@ -6,7 +6,7 @@
 
 
 #import "XBFileSystemCacheSupport.h"
-#import "DDLog.h"
+#import "XBLogging.h"
 
 #define kXBFileCachePluginDefaultFileName @"XBCache.plist"
 
@@ -31,7 +31,7 @@
 }
 
 -(void)setForKey:(NSString *)key value:(NSString *)value ttl:(NSTimeInterval)expiration error:(NSError **)error {
-    DDLogInfo(@"Set cache data for key: %@", key);
+    XBLogInfo(@"Set cache data for key: %@", key);
     XBCacheElement *element = [XBCacheElement elementWithKey:key value:value ttl:expiration];
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
     [cacheData setObject:element forKey:element.key];
@@ -39,14 +39,14 @@
 }
 
 - (id)getForKey:(NSString *)key error:(NSError **)error {
-    DDLogInfo(@"Get cache data for key: %@", key);
+    XBLogInfo(@"Get cache data for key: %@", key);
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
     XBCacheElement *element = (XBCacheElement *)[cacheData objectForKey:key];
     return element.value;
 }
 
 - (void)clearForKey:(NSString *)key error:(NSError **)error {
-    DDLogInfo(@"Clear cache data for key: %@", key);
+    XBLogInfo(@"Clear cache data for key: %@", key);
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
     [cacheData removeObjectForKey:key];
     [self saveCacheData:cacheData];

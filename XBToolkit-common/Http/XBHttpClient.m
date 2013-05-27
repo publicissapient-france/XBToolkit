@@ -7,6 +7,7 @@
 
 #import "XBHttpClient.h"
 #import "AFNetworking.h"
+#import "XBLogging.h"
 
 @interface XBHttpClient()
 
@@ -42,14 +43,14 @@
 
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest
         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id json) {
-            DDLogVerbose(@"json: %@", json);
+            XBLogVerbose(@"json: %@", json);
 
             if (successCb) {
                 successCb(request, response, json);
             }
         }
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id json) {
-            DDLogWarn(@"Error: %@, json: %@", error, json);
+            XBLogWarn(@"Error: %@, json: %@", error, json);
 
             if (errorCb) {
                 errorCb(request, response, error, json);

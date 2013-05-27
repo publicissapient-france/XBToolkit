@@ -8,6 +8,8 @@ pod 'DCKeyValueObjectMapping', 		'1.3'
 pod 'OCMock',						'2.0.1'
 pod 'CocoaLumberjack',				'1.6'
 #pod 'OCMockito',					'0.23'
+pod 'MBProgressHUD',                '0.6'
+pod 'SVPullToRefresh',				'0.4'
 
 target 'XBToolkit-iosTests', :exclusive => true do
   pod 'GHUnitIOS',					'0.5.6'

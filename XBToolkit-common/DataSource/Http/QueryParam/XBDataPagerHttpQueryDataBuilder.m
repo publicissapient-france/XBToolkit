@@ -5,23 +5,23 @@
 //
 
 
-#import "XBPaginatorHttpQueryDataBuilder.h"
-#import "XBPaginator.h"
+#import "XBDataPagerHttpQueryDataBuilder.h"
+#import "XBDataPager.h"
 
-@interface XBPaginatorHttpQueryDataBuilder()
+@interface XBDataPagerHttpQueryDataBuilder ()
 
-@property(nonatomic, strong) NSObject<XBPaginator> *paginator;
+@property(nonatomic, strong) NSObject<XBDataPager> *paginator;
 @property(nonatomic, strong) NSString *pageParameterName;
 
 @end
 
-@implementation XBPaginatorHttpQueryDataBuilder
+@implementation XBDataPagerHttpQueryDataBuilder
 
-+ (id)builderWithPaginator:(NSObject <XBPaginator> *)paginator pageParameterName:(NSString *)pageParameterName {
++ (id)builderWithDataPager:(NSObject <XBDataPager> *)paginator pageParameterName:(NSString *)pageParameterName {
     return [[self alloc] initWithPaginator:paginator pageParameterName:pageParameterName];
 }
 
-- (id)initWithPaginator:(NSObject <XBPaginator> *)paginator pageParameterName:(NSString *)pageParameterName {
+- (id)initWithPaginator:(NSObject <XBDataPager> *)paginator pageParameterName:(NSString *)pageParameterName {
     self = [super init];
     if (self) {
         self.paginator = paginator;

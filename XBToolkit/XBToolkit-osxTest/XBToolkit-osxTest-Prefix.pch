@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'XBToolkit-osxTest' target in the 'XBToolkit-osxTest' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

@@ -5,13 +5,13 @@
 //
 
 
-#import "XBArrayDataSourcePaginator.h"
+#import "XBArrayDataSourceDataPager.h"
 
-@interface XBArrayDataSourcePaginator()
+@interface XBArrayDataSourceDataPager ()
 
 @end
 
-@implementation XBArrayDataSourcePaginator {
+@implementation XBArrayDataSourceDataPager {
     NSUInteger _currentPage;
     NSUInteger _itemByPage;
 }
@@ -79,8 +79,8 @@
     return self;
 }
 
--(XBArrayDataSourcePaginator *)buildWithDataSource:(XBArrayDataSource *)dataSource {
-    XBArrayDataSourcePaginator *paginator = [XBArrayDataSourcePaginator paginatorWithItemByPage:_itemByPage];
+-(XBArrayDataSourceDataPager *)buildWithDataSource:(XBArrayDataSource *)dataSource {
+    XBArrayDataSourceDataPager *paginator = [XBArrayDataSourceDataPager paginatorWithItemByPage:_itemByPage];
     paginator.dataSource = dataSource;
     return paginator;
     

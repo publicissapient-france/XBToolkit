@@ -6,10 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBPaginator.h"
+#import "XBDataPager.h"
 #import "XBArrayDataSource.h"
 
-@interface XBArrayDataSourcePaginator : NSObject<XBPaginator>
+@interface XBArrayDataSourceDataPager : NSObject<XBDataPager>
 
 @property(nonatomic, strong)XBArrayDataSource *dataSource;
 

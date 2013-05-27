@@ -8,13 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "XBInfiniteScrollArrayDataSource.h"
 #import "XBReloadableArrayDataSource.h"
-#import "XBPaginator.h"
+#import "XBDataPager.h"
 #import "XBDataMerger.h"
 
 @interface XBInfiniteScrollArrayDataSource : XBReloadableArrayDataSource
 
-+ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger paginator:(NSObject <XBPaginator> *)paginator;
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger paginator:(NSObject <XBPaginator> *)paginator;
++ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger dataPager:(NSObject <XBDataPager> *)dataPager;
+- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger dataPager:(NSObject <XBDataPager> *)dataPager;
 
 - (id)mergeRawData:(id)rawData;
 

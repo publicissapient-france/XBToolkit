@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
 
   s.source_files = 'XBToolkit-common/**/*.{h,m}'
   s.ios.source_files = 'XBToolkit-ios/XBToolkit-ios/**/*.{h,m}'
-  s.ios.prefix_header_file = 'XBToolkit-ios/XBToolkit-ios/XBToolkit-ios-Prefix.pch'
+#  s.ios.prefix_header_file = 'XBToolkit-ios/XBToolkit-ios/XBToolkit-ios-Prefix.pch'
   s.osx.source_files = 'XBToolkit-osx/XBToolkit-osx/**/*.{h,m}'
-  s.osx.prefix_header_file = 'XBToolkit-osx/XBToolkit-osx/XBToolkit-osx-Prefix.pch'
+#  s.osx.prefix_header_file = 'XBToolkit-osx/XBToolkit-osx/XBToolkit-osx-Prefix.pch'
 
   s.requires_arc = true
 

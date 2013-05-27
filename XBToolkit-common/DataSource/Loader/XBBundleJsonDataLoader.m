@@ -9,6 +9,7 @@
 #import "XBHttpQueryParamBuilder.h"
 #import "JSONKit.h"
 #import "XBBundleJsonDataLoader.h"
+#import "XBLogging.h"
 
 @interface XBBundleJsonDataLoader()
 
@@ -41,7 +42,7 @@
     NSDictionary *json = [jsonLoaded objectFromJSONString];
 
     if (!error) {
-        DDLogVerbose(@"Json loaded from bundle: %@", json);
+        XBLogVerbose(@"Json loaded from bundle: %@", json);
         success(json);
     }
     else {

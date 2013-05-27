@@ -8,40 +8,103 @@
 
 /* Begin PBXBuildFile section */
 		0D9E8E90BA24418F9196858E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D026A35469DD4A979A24A9C4 /* libPods.a */; };
+		5409578B1710A87F00B006B0 /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409573D1710A87F00B006B0 /* XBCache.h */; };
+		5409578C1710A87F00B006B0 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409573E1710A87F00B006B0 /* XBCache.m */; };
+		5409578D1710A87F00B006B0 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409573E1710A87F00B006B0 /* XBCache.m */; };
+		5409578E1710A87F00B006B0 /* XBCacheElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409573F1710A87F00B006B0 /* XBCacheElement.h */; };
+		5409578F1710A87F00B006B0 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957401710A87F00B006B0 /* XBCacheElement.m */; };
+		540957901710A87F00B006B0 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957401710A87F00B006B0 /* XBCacheElement.m */; };
+		540957911710A87F00B006B0 /* XBCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957411710A87F00B006B0 /* XBCacheSupport.h */; };
+		540957931710A87F00B006B0 /* XBFileSystemCacheSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957431710A87F00B006B0 /* XBFileSystemCacheSupport.m */; };
+		540957941710A87F00B006B0 /* XBFileSystemCacheSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957431710A87F00B006B0 /* XBFileSystemCacheSupport.m */; };
+		540957951710A87F00B006B0 /* DCParserConfiguration+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957451710A87F00B006B0 /* DCParserConfiguration+XBAdditions.h */; };
+		540957961710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957461710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m */; };
+		540957971710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957461710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m */; };
+		540957981710A87F00B006B0 /* NSDateFormatter+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957471710A87F00B006B0 /* NSDateFormatter+XBAdditions.h */; };
+		540957991710A87F00B006B0 /* NSDateFormatter+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957481710A87F00B006B0 /* NSDateFormatter+XBAdditions.m */; };
+		5409579A1710A87F00B006B0 /* NSDateFormatter+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957481710A87F00B006B0 /* NSDateFormatter+XBAdditions.m */; };
+		5409579B1710A87F00B006B0 /* NSDictionary+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957491710A87F00B006B0 /* NSDictionary+XBAdditions.h */; };
+		5409579C1710A87F00B006B0 /* NSDictionary+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409574A1710A87F00B006B0 /* NSDictionary+XBAdditions.m */; };
+		5409579D1710A87F00B006B0 /* NSDictionary+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409574A1710A87F00B006B0 /* NSDictionary+XBAdditions.m */; };
+		5409579E1710A87F00B006B0 /* NSError+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409574B1710A87F00B006B0 /* NSError+XBAdditions.h */; };
+		5409579F1710A87F00B006B0 /* NSError+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409574C1710A87F00B006B0 /* NSError+XBAdditions.m */; };
+		540957A01710A87F00B006B0 /* NSError+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409574C1710A87F00B006B0 /* NSError+XBAdditions.m */; };
+		540957A11710A87F00B006B0 /* NSNumber+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409574D1710A87F00B006B0 /* NSNumber+XBAdditions.h */; };
+		540957A21710A87F00B006B0 /* NSNumber+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409574E1710A87F00B006B0 /* NSNumber+XBAdditions.m */; };
+		540957A31710A87F00B006B0 /* NSNumber+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409574E1710A87F00B006B0 /* NSNumber+XBAdditions.m */; };
+		540957A41710A87F00B006B0 /* NSURL+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409574F1710A87F00B006B0 /* NSURL+XBAdditions.h */; };
+		540957A51710A87F00B006B0 /* NSURL+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957501710A87F00B006B0 /* NSURL+XBAdditions.m */; };
+		540957A61710A87F00B006B0 /* NSURL+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957501710A87F00B006B0 /* NSURL+XBAdditions.m */; };
+		540957A71710A87F00B006B0 /* XBCompositeArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957541710A87F00B006B0 /* XBCompositeArrayDataSource+protected.h */; };
+		540957A81710A87F00B006B0 /* XBCompositeArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957551710A87F00B006B0 /* XBCompositeArrayDataSource.h */; };
+		540957A91710A87F00B006B0 /* XBCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957561710A87F00B006B0 /* XBCompositeArrayDataSource.m */; };
+		540957AA1710A87F00B006B0 /* XBCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957561710A87F00B006B0 /* XBCompositeArrayDataSource.m */; };
+		540957AB1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957571710A87F00B006B0 /* XBPagedCompositeArrayDataSource.h */; };
+		540957AC1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957581710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m */; };
+		540957AD1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957581710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m */; };
+		540957AE1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409575B1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.h */; };
+		540957AF1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409575C1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m */; };
+		540957B01710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409575C1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m */; };
+		540957B11710A87F00B006B0 /* XBHttpQueryParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409575D1710A87F00B006B0 /* XBHttpQueryParamBuilder.h */; };
+		540957B21710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409575E1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */; };
+		540957B31710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409575F1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */; };
+		540957B41710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409575F1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */; };
+		540957B51710A87F00B006B0 /* XBBundleJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957611710A87F00B006B0 /* XBBundleJsonDataLoader.h */; };
+		540957B61710A87F00B006B0 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957621710A87F00B006B0 /* XBBundleJsonDataLoader.m */; };
+		540957B71710A87F00B006B0 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957621710A87F00B006B0 /* XBBundleJsonDataLoader.m */; };
+		540957B81710A87F00B006B0 /* XBCacheableDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957631710A87F00B006B0 /* XBCacheableDataLoader.h */; };
+		540957B91710A87F00B006B0 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957641710A87F00B006B0 /* XBCacheableDataLoader.m */; };
+		540957BA1710A87F00B006B0 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957641710A87F00B006B0 /* XBCacheableDataLoader.m */; };
+		540957BB1710A87F00B006B0 /* XBCacheKeyBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957651710A87F00B006B0 /* XBCacheKeyBuilder.h */; };
+		540957BC1710A87F00B006B0 /* XBDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957661710A87F00B006B0 /* XBDataLoader.h */; };
+		540957BD1710A87F00B006B0 /* XBHttpDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957671710A87F00B006B0 /* XBHttpDataLoader.h */; };
+		540957BE1710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957681710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */; };
+		540957BF1710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957691710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */; };
+		540957C01710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957691710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */; };
+		540957C11710A87F00B006B0 /* XBHttpJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409576A1710A87F00B006B0 /* XBHttpJsonDataLoader.h */; };
+		540957C21710A87F00B006B0 /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409576B1710A87F00B006B0 /* XBHttpJsonDataLoader.m */; };
+		540957C31710A87F00B006B0 /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409576B1710A87F00B006B0 /* XBHttpJsonDataLoader.m */; };
+		540957C41710A87F00B006B0 /* XBDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409576D1710A87F00B006B0 /* XBDataMapper.h */; };
+		540957C51710A87F00B006B0 /* XBJsonToArrayDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409576E1710A87F00B006B0 /* XBJsonToArrayDataMapper.h */; };
+		540957C61710A87F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409576F1710A87F00B006B0 /* XBJsonToArrayDataMapper.m */; };
+		540957C71710A87F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409576F1710A87F00B006B0 /* XBJsonToArrayDataMapper.m */; };
+		540957C81710A87F00B006B0 /* XBArrayDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957711710A87F00B006B0 /* XBArrayDataMerger.h */; };
+		540957C91710A87F00B006B0 /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957721710A87F00B006B0 /* XBArrayDataMerger.m */; };
+		540957CA1710A87F00B006B0 /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957721710A87F00B006B0 /* XBArrayDataMerger.m */; };
+		540957CB1710A87F00B006B0 /* XBDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957731710A87F00B006B0 /* XBDataMerger.h */; };
+		540957CC1710A87F00B006B0 /* XBDictionaryDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957741710A87F00B006B0 /* XBDictionaryDataMerger.h */; };
+		540957CD1710A87F00B006B0 /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957751710A87F00B006B0 /* XBDictionaryDataMerger.m */; };
+		540957CE1710A87F00B006B0 /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957751710A87F00B006B0 /* XBDictionaryDataMerger.m */; };
+		540957CF1710A87F00B006B0 /* XBArrayDataSourceDataPager.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957771710A87F00B006B0 /* XBArrayDataSourceDataPager.h */; };
+		540957D01710A87F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957781710A87F00B006B0 /* XBArrayDataSourceDataPager.m */; };
+		540957D11710A87F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957781710A87F00B006B0 /* XBArrayDataSourceDataPager.m */; };
+		540957D21710A87F00B006B0 /* XBDataPager.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957791710A87F00B006B0 /* XBDataPager.h */; };
+		540957D31710A87F00B006B0 /* XBArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409577A1710A87F00B006B0 /* XBArrayDataSource+protected.h */; };
+		540957D41710A87F00B006B0 /* XBArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409577B1710A87F00B006B0 /* XBArrayDataSource.h */; };
+		540957D51710A87F00B006B0 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409577C1710A87F00B006B0 /* XBArrayDataSource.m */; };
+		540957D61710A87F00B006B0 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409577C1710A87F00B006B0 /* XBArrayDataSource.m */; };
+		540957D71710A87F00B006B0 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409577D1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource+protected.h */; };
+		540957D81710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409577E1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.h */; };
+		540957D91710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409577F1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m */; };
+		540957DA1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409577F1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m */; };
+		540957DB1710A87F00B006B0 /* XBReloadableArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957801710A87F00B006B0 /* XBReloadableArrayDataSource+protected.h */; };
+		540957DC1710A87F00B006B0 /* XBReloadableArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957811710A87F00B006B0 /* XBReloadableArrayDataSource.h */; };
+		540957DD1710A87F00B006B0 /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957821710A87F00B006B0 /* XBReloadableArrayDataSource.m */; };
+		540957DE1710A87F00B006B0 /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957821710A87F00B006B0 /* XBReloadableArrayDataSource.m */; };
+		540957DF1710A87F00B006B0 /* XBHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957841710A87F00B006B0 /* XBHttpClient.h */; };
+		540957E01710A87F00B006B0 /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957851710A87F00B006B0 /* XBHttpClient.m */; };
+		540957E11710A87F00B006B0 /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957851710A87F00B006B0 /* XBHttpClient.m */; };
+		540957E21710A87F00B006B0 /* XBMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957871710A87F00B006B0 /* XBMapper.h */; };
+		540957E31710A87F00B006B0 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957881710A87F00B006B0 /* XBMapper.m */; };
+		540957E41710A87F00B006B0 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957881710A87F00B006B0 /* XBMapper.m */; };
+		540957E51710A87F00B006B0 /* XBMappingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957891710A87F00B006B0 /* XBMappingProvider.h */; };
+		540957E61710A87F00B006B0 /* XBToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409578A1710A87F00B006B0 /* XBToolkit.h */; };
+		540957E81710B4D300B006B0 /* XBFileSystemCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 540957421710A87F00B006B0 /* XBFileSystemCacheSupport.h */; };
+		54095B191711ABDA00B006B0 /* XBLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 54095B181711ABDA00B006B0 /* XBLogging.h */; };
+		54095B1D17120CE600B006B0 /* XBDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 54095B1B17120CE600B006B0 /* XBDate.h */; };
+		54095B1E17120CE600B006B0 /* XBDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54095B1C17120CE600B006B0 /* XBDate.m */; };
 		5420831517074CCC00290AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5420831417074CCC00290AEF /* Cocoa.framework */; };
 		5420831F17074CCC00290AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5420831D17074CCC00290AEF /* InfoPlist.strings */; };
-		5420850C1707547800290AEF /* XBFileSystemCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084BD1707547800290AEF /* XBFileSystemCacheSupport.h */; };
-		5420850D1707547800290AEF /* XBFileSystemCacheSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */; };
-		5420850F1707547800290AEF /* DCParserConfiguration+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C01707547800290AEF /* DCParserConfiguration+XBAdditions.h */; };
-		542085101707547800290AEF /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */; };
-		542085121707547800290AEF /* NSDateFormatter+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C21707547800290AEF /* NSDateFormatter+XBAdditions.h */; };
-		542085131707547800290AEF /* NSDateFormatter+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C31707547800290AEF /* NSDateFormatter+XBAdditions.m */; };
-		542085151707547800290AEF /* NSError+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C41707547800290AEF /* NSError+XBAdditions.h */; };
-		542085161707547800290AEF /* NSError+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C51707547800290AEF /* NSError+XBAdditions.m */; };
-		542085181707547800290AEF /* NSNumber+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084C61707547800290AEF /* NSNumber+XBAdditions.h */; };
-		542085191707547800290AEF /* NSNumber+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C71707547800290AEF /* NSNumber+XBAdditions.m */; };
-		542085401707547800290AEF /* XBCompositeArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084E41707547800290AEF /* XBCompositeArrayDataSource+protected.h */; };
-		542085411707547800290AEF /* XBCompositeArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084E51707547800290AEF /* XBCompositeArrayDataSource.h */; };
-		542085421707547800290AEF /* XBCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E61707547800290AEF /* XBCompositeArrayDataSource.m */; };
-		542085441707547800290AEF /* XBPagedCompositeArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084E71707547800290AEF /* XBPagedCompositeArrayDataSource.h */; };
-		542085451707547800290AEF /* XBPagedCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E81707547800290AEF /* XBPagedCompositeArrayDataSource.m */; };
-		542085471707547800290AEF /* XBBasicHttpQueryParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084EB1707547800290AEF /* XBBasicHttpQueryParamBuilder.h */; };
-		542085481707547800290AEF /* XBBasicHttpQueryParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */; };
-		5420854A1707547800290AEF /* XBHttpQueryParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084ED1707547800290AEF /* XBHttpQueryParamBuilder.h */; };
-		542085561707547800290AEF /* XBArrayDataSourcePaginator.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F71707547800290AEF /* XBArrayDataSourcePaginator.h */; };
-		542085571707547800290AEF /* XBArrayDataSourcePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */; };
-		542085591707547800290AEF /* XBPaginator.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084F91707547800290AEF /* XBPaginator.h */; };
-		5420855A1707547800290AEF /* XBArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084FA1707547800290AEF /* XBArrayDataSource+protected.h */; };
-		5420855B1707547800290AEF /* XBArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542084FB1707547800290AEF /* XBArrayDataSource.h */; };
-		5420855C1707547800290AEF /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084FC1707547800290AEF /* XBArrayDataSource.m */; };
-		542085621707547800290AEF /* XBReloadableArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085001707547800290AEF /* XBReloadableArrayDataSource+protected.h */; };
-		542085631707547800290AEF /* XBReloadableArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085011707547800290AEF /* XBReloadableArrayDataSource.h */; };
-		542085641707547800290AEF /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085021707547800290AEF /* XBReloadableArrayDataSource.m */; };
-		542085671707547800290AEF /* XBHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085051707547800290AEF /* XBHttpClient.h */; };
-		542085681707547800290AEF /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085061707547800290AEF /* XBHttpClient.m */; };
-		5420856A1707547800290AEF /* XBMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 542085081707547800290AEF /* XBMapper.h */; };
-		5420856B1707547800290AEF /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085091707547800290AEF /* XBMapper.m */; };
-		5420856D1707547800290AEF /* XBMappingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 5420850A1707547800290AEF /* XBMappingProvider.h */; };
 		549B75B917078E4500190FEB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5420831417074CCC00290AEF /* Cocoa.framework */; };
 		54C5340D1707913F001DB282 /* GHTestApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C534031707913E001DB282 /* GHTestApp.xib */; };
 		54C5340F1707913F001DB282 /* GHTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C534061707913E001DB282 /* GHTestView.xib */; };
@@ -50,94 +113,111 @@
 		54C5341517079438001DB282 /* XBBundleArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420857D1707555B00290AEF /* XBBundleArrayDataSourceTest.m */; };
 		54C5341617079438001DB282 /* XBPagedCompositeArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420857F1707555B00290AEF /* XBPagedCompositeArrayDataSourceTest.m */; };
 		54C5341817079460001DB282 /* WPAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085881707572C00290AEF /* WPAuthor.m */; };
-		54C5341917079478001DB282 /* XBFileSystemCacheSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */; };
-		54C5341A1707947F001DB282 /* DCParserConfiguration+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */; };
-		54C5341B1707947F001DB282 /* NSDateFormatter+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C31707547800290AEF /* NSDateFormatter+XBAdditions.m */; };
-		54C5341C1707947F001DB282 /* NSError+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C51707547800290AEF /* NSError+XBAdditions.m */; };
-		54C5341D1707947F001DB282 /* NSNumber+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084C71707547800290AEF /* NSNumber+XBAdditions.m */; };
-		54C5341E17079484001DB282 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085091707547800290AEF /* XBMapper.m */; };
-		54C5341F1707948A001DB282 /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085061707547800290AEF /* XBHttpClient.m */; };
-		54C5342017079490001DB282 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084FC1707547800290AEF /* XBArrayDataSource.m */; };
-		54C5342217079490001DB282 /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085021707547800290AEF /* XBReloadableArrayDataSource.m */; };
-		54C5342317079494001DB282 /* XBArrayDataSourcePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */; };
-		54C5342417079499001DB282 /* XBCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E61707547800290AEF /* XBCompositeArrayDataSource.m */; };
-		54C5342517079499001DB282 /* XBPagedCompositeArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084E81707547800290AEF /* XBPagedCompositeArrayDataSource.m */; };
-		54C53429170794A5001DB282 /* XBBasicHttpQueryParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */; };
 		54C5343217079744001DB282 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C5343117079744001DB282 /* SystemConfiguration.framework */; };
 		54C5343417079B22001DB282 /* libPods-XBToolkit-osxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 000C6175096E46839CA6FDB8 /* libPods-XBToolkit-osxTests.a */; };
 		54C5343917079C95001DB282 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D026A35469DD4A979A24A9C4 /* libPods.a */; };
 		54C5343A1707A95B001DB282 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34DC6E7779C0160C7E440B /* wp-author-index.json */; };
 		DB34D01A437E96370ACCBB88 /* wp-author-index-p2.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */; };
-		DB34D01D08A656D0ABA0850E /* XBDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */; };
-		DB34D039BF98B89097C6D9C3 /* NSURL+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D62AF645B6A0BB2D1672 /* NSURL+XBAdditions.h */; };
-		DB34D0636797602F96E8CE59 /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */; };
 		DB34D0B9257643367AC3DFB4 /* XBToolkit-osx-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5420832017074CCC00290AEF /* XBToolkit-osx-Prefix.pch */; };
 		DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */; };
 		DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */; };
-		DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
-		DB34D1B2240DDF422B93E98F /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */; };
-		DB34D1D6A1E1A2BD09CFD5F6 /* XBPaginatorHttpQueryDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D9DFA4B09AA49C8F9322 /* XBPaginatorHttpQueryDataBuilder.m */; };
-		DB34D229A0FE3A84E00C0BA5 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */; };
-		DB34D25FA95798E37205F42E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */; };
+		DB34D20205EE00F691B5CEAA /* NSString+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D22CCF72505A6BFD7C94 /* NSString+XBAdditions.m */; };
+		DB34D28BAAC83F02AF7A6DA2 /* NSIndexSet+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2CE403BAB7810F2D545 /* NSIndexSet+XBAdditions.m */; };
 		DB34D2FB071FDDEEF44CF10E /* XBHttpArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */; };
 		DB34D337ED94131B8A5DCF91 /* wp-author-index.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34DC6E7779C0160C7E440B /* wp-author-index.json */; };
-		DB34D39D86C3E6873B35A792 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D494A7AD914F078A9A41 /* XBCacheElement.m */; };
-		DB34D3AF68A6ED7CB71F935E /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */; };
-		DB34D3FE9E52C243E32A2E04 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */; };
 		DB34D43B3203D16B05182880 /* XBTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D1E885637177A9361457 /* XBTestUtils.m */; };
+		DB34D46A66485F9AFF325604 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DEB569802BBD30554F7C /* NSStringTest.m */; };
 		DB34D4F2EB302DBDC6CDD742 /* wp-author-index-p3.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */; };
-		DB34D5148579F2EF9A76806B /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */; };
-		DB34D565AD1B35BCCDD5D6F1 /* XBPaginatorHttpQueryDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D2B2460B6D2001F93D63 /* XBPaginatorHttpQueryDataBuilder.h */; };
-		DB34D57464E6904A421A4D74 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */; };
-		DB34D5993354C60B77E658C2 /* XBCacheSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */; };
-		DB34D5B6DAE071DFE073A369 /* XBHttpJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */; };
-		DB34D6035A1389B64E4C4990 /* XBHttpJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */; };
-		DB34D63F5CCF3CFCFB0B2298 /* XBInfiniteScrollArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */; };
-		DB34D76CBE405CCD78D4E35F /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3405D539CFC1910CF76 /* XBCache.m */; };
-		DB34D789430DE650C4B72EE9 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */; };
-		DB34D80E240635C691108D99 /* XBJsonToArrayDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */; };
-		DB34D851B9D58DB382CCD7E2 /* XBToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */; };
+		DB34D4F984B6F73695E9A331 /* NSString+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D55351B8BBAEF8280175 /* NSString+XBAdditions.h */; };
 		DB34D862ABADFD078BDFB93D /* XBBasicHttpQueryParamBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */; };
-		DB34D887A1094CA62181E0E2 /* XBCacheableDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */; };
-		DB34D88CBC61B318D9A853B2 /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */; };
 		DB34D8A11F8195A86232C5F1 /* XBHttpJsonDataLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DF19B2924CD7B234A10A /* XBHttpJsonDataLoaderTest.m */; };
-		DB34D8A33BBDCD89C3EC82A6 /* XBArrayDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */; };
-		DB34D8CCCE41B95F5E8DA2D7 /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D21D18BC4E69B200A38B /* XBCache.h */; };
-		DB34D8F97C5D1BB7975377E3 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3405D539CFC1910CF76 /* XBCache.m */; };
-		DB34D90D2C5BC23980C84B0E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */; };
-		DB34D93584D2BDF7D25934C4 /* XBBasicHttpQueryParamBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */; };
-		DB34D935C8E9D443A95803E5 /* XBDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */; };
 		DB34D962BC488135F686A8F2 /* wp-author-index-p3.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */; };
-		DB34D979FB7D5FEC4EBBB952 /* XBCacheElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D494A7AD914F078A9A41 /* XBCacheElement.m */; };
 		DB34D981408059A0C826C3FE /* XBDictionaryDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */; };
-		DB34D9986065C33D6AB6DBD0 /* XBDictionaryDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D7A8769C56CA962874AB /* XBDictionaryDataMerger.h */; };
-		DB34DA05A27DBF0D6CB9EEDE /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */; };
+		DB34DB03ACF9A36933375184 /* NSString+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D22CCF72505A6BFD7C94 /* NSString+XBAdditions.m */; };
+		DB34DB128C2B68E122CE6B90 /* NSIndexSet+XBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D01415ACD2C195BABF70 /* NSIndexSet+XBAdditions.h */; };
 		DB34DB705C0B81CECED22ED0 /* XBInfiniteScrollArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DDB77AED98620E7904BE /* XBInfiniteScrollArrayDataSourceTest.m */; };
-		DB34DBB5D35522F204F9A493 /* XBInfiniteScrollArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DDB77AED98620E7904BE /* XBInfiniteScrollArrayDataSourceTest.m */; };
-		DB34DC1C9431A2A6F2B93316 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */; };
-		DB34DC348F627BA507690E8B /* NSURL+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DC4A1F5B97DFF77F1A74 /* NSURL+XBAdditions.m */; };
-		DB34DCF676108EB893C5A7F8 /* XBBundleJsonDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */; };
+		DB34DC6FCA6CD5829A8A634A /* NSIndexSet+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2CE403BAB7810F2D545 /* NSIndexSet+XBAdditions.m */; };
 		DB34DD05CCBE17EF0AD7218E /* wp-author-index-p1.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */; };
 		DB34DD155DD032187E7AA101 /* wp-author-index-p2.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */; };
-		DB34DD1F29A3526A6EE92EFE /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */; };
-		DB34DD34168C59C38098CA50 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */; };
 		DB34DD6A6DA347B85019895F /* XBCacheableDataLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D2F33FBCB81270505952 /* XBCacheableDataLoaderTest.m */; };
-		DB34DD8CC5A5D1D98F2B0392 /* XBCacheElement.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D51331C95055F03D6FB2 /* XBCacheElement.h */; };
-		DB34DDD057AE233D8E7C759F /* XBPaginatorHttpQueryDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D9DFA4B09AA49C8F9322 /* XBPaginatorHttpQueryDataBuilder.m */; };
-		DB34DE6DA91E8AB0897DBBD0 /* NSDictionary+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DEEFF5B04B2EBE781126 /* NSDictionary+XBAdditions.m */; };
-		DB34DE727DACF2AA434B264D /* XBBundleJsonDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */; };
-		DB34DE88D9ECCF5CF6AD7F8B /* NSURL+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DC4A1F5B97DFF77F1A74 /* NSURL+XBAdditions.m */; };
 		DB34DE8FB6266CA85C780E9D /* XBBundleJsonDataLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3837469B508DF52EB33 /* XBBundleJsonDataLoaderTest.m */; };
 		DB34DE9B190D13FE4FC7A01D /* wp-author-index-p1.json in Resources */ = {isa = PBXBuildFile; fileRef = DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */; };
-		DB34DEA57327BCD8DE9C0D86 /* XBArrayDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34DEF89ED61ED887D4F2D4 /* XBArrayDataMerger.h */; };
-		DB34DEFA9779F9023A241C33 /* XBDictionaryDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */; };
 		DB34DF2D8A76DD45DF219B35 /* XBArrayDataMergerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */; };
-		DB34DF5C4B9E52C46F3DFAD1 /* XBDataMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34D994329A1B24F374F8FA /* XBDataMerger.h */; };
 		DB34DF8E883E20633E2351DB /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */; };
+		DB34DFB95EEE53D0BDE5D877 /* NSIndexSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D27D6AF155BB72D016C9 /* NSIndexSetTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		000C6175096E46839CA6FDB8 /* libPods-XBToolkit-osxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XBToolkit-osxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5409573D1710A87F00B006B0 /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
+		5409573E1710A87F00B006B0 /* XBCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCache.m; sourceTree = "<group>"; };
+		5409573F1710A87F00B006B0 /* XBCacheElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheElement.h; sourceTree = "<group>"; };
+		540957401710A87F00B006B0 /* XBCacheElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheElement.m; sourceTree = "<group>"; };
+		540957411710A87F00B006B0 /* XBCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheSupport.h; sourceTree = "<group>"; };
+		540957421710A87F00B006B0 /* XBFileSystemCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBFileSystemCacheSupport.h; sourceTree = "<group>"; };
+		540957431710A87F00B006B0 /* XBFileSystemCacheSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBFileSystemCacheSupport.m; sourceTree = "<group>"; };
+		540957451710A87F00B006B0 /* DCParserConfiguration+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCParserConfiguration+XBAdditions.h"; sourceTree = "<group>"; };
+		540957461710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCParserConfiguration+XBAdditions.m"; sourceTree = "<group>"; };
+		540957471710A87F00B006B0 /* NSDateFormatter+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+XBAdditions.h"; sourceTree = "<group>"; };
+		540957481710A87F00B006B0 /* NSDateFormatter+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+XBAdditions.m"; sourceTree = "<group>"; };
+		540957491710A87F00B006B0 /* NSDictionary+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XBAdditions.h"; sourceTree = "<group>"; };
+		5409574A1710A87F00B006B0 /* NSDictionary+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XBAdditions.m"; sourceTree = "<group>"; };
+		5409574B1710A87F00B006B0 /* NSError+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+XBAdditions.h"; sourceTree = "<group>"; };
+		5409574C1710A87F00B006B0 /* NSError+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+XBAdditions.m"; sourceTree = "<group>"; };
+		5409574D1710A87F00B006B0 /* NSNumber+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+XBAdditions.h"; sourceTree = "<group>"; };
+		5409574E1710A87F00B006B0 /* NSNumber+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+XBAdditions.m"; sourceTree = "<group>"; };
+		5409574F1710A87F00B006B0 /* NSURL+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+XBAdditions.h"; sourceTree = "<group>"; };
+		540957501710A87F00B006B0 /* NSURL+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+XBAdditions.m"; sourceTree = "<group>"; };
+		540957541710A87F00B006B0 /* XBCompositeArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBCompositeArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		540957551710A87F00B006B0 /* XBCompositeArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCompositeArrayDataSource.h; sourceTree = "<group>"; };
+		540957561710A87F00B006B0 /* XBCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCompositeArrayDataSource.m; sourceTree = "<group>"; };
+		540957571710A87F00B006B0 /* XBPagedCompositeArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPagedCompositeArrayDataSource.h; sourceTree = "<group>"; };
+		540957581710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedCompositeArrayDataSource.m; sourceTree = "<group>"; };
+		5409575B1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicHttpQueryParamBuilder.h; sourceTree = "<group>"; };
+		5409575C1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilder.m; sourceTree = "<group>"; };
+		5409575D1710A87F00B006B0 /* XBHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpQueryParamBuilder.h; sourceTree = "<group>"; };
+		5409575E1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataPagerHttpQueryDataBuilder.h; sourceTree = "<group>"; };
+		5409575F1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDataPagerHttpQueryDataBuilder.m; sourceTree = "<group>"; };
+		540957611710A87F00B006B0 /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
+		540957621710A87F00B006B0 /* XBBundleJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoader.m; sourceTree = "<group>"; };
+		540957631710A87F00B006B0 /* XBCacheableDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheableDataLoader.h; sourceTree = "<group>"; };
+		540957641710A87F00B006B0 /* XBCacheableDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableDataLoader.m; sourceTree = "<group>"; };
+		540957651710A87F00B006B0 /* XBCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheKeyBuilder.h; sourceTree = "<group>"; };
+		540957661710A87F00B006B0 /* XBDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataLoader.h; sourceTree = "<group>"; };
+		540957671710A87F00B006B0 /* XBHttpDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoader.h; sourceTree = "<group>"; };
+		540957681710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoaderCacheKeyBuilder.h; sourceTree = "<group>"; };
+		540957691710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilder.m; sourceTree = "<group>"; };
+		5409576A1710A87F00B006B0 /* XBHttpJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpJsonDataLoader.h; sourceTree = "<group>"; };
+		5409576B1710A87F00B006B0 /* XBHttpJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpJsonDataLoader.m; sourceTree = "<group>"; };
+		5409576D1710A87F00B006B0 /* XBDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMapper.h; sourceTree = "<group>"; };
+		5409576E1710A87F00B006B0 /* XBJsonToArrayDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToArrayDataMapper.h; sourceTree = "<group>"; };
+		5409576F1710A87F00B006B0 /* XBJsonToArrayDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapper.m; sourceTree = "<group>"; };
+		540957711710A87F00B006B0 /* XBArrayDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataMerger.h; sourceTree = "<group>"; };
+		540957721710A87F00B006B0 /* XBArrayDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataMerger.m; sourceTree = "<group>"; };
+		540957731710A87F00B006B0 /* XBDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMerger.h; sourceTree = "<group>"; };
+		540957741710A87F00B006B0 /* XBDictionaryDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDictionaryDataMerger.h; sourceTree = "<group>"; };
+		540957751710A87F00B006B0 /* XBDictionaryDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDictionaryDataMerger.m; sourceTree = "<group>"; };
+		540957771710A87F00B006B0 /* XBArrayDataSourceDataPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSourceDataPager.h; sourceTree = "<group>"; };
+		540957781710A87F00B006B0 /* XBArrayDataSourceDataPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourceDataPager.m; sourceTree = "<group>"; };
+		540957791710A87F00B006B0 /* XBDataPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataPager.h; sourceTree = "<group>"; };
+		5409577A1710A87F00B006B0 /* XBArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		5409577B1710A87F00B006B0 /* XBArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSource.h; sourceTree = "<group>"; };
+		5409577C1710A87F00B006B0 /* XBArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSource.m; sourceTree = "<group>"; };
+		5409577D1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBInfiniteScrollArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		5409577E1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteScrollArrayDataSource.h; sourceTree = "<group>"; };
+		5409577F1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollArrayDataSource.m; sourceTree = "<group>"; };
+		540957801710A87F00B006B0 /* XBReloadableArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBReloadableArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		540957811710A87F00B006B0 /* XBReloadableArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBReloadableArrayDataSource.h; sourceTree = "<group>"; };
+		540957821710A87F00B006B0 /* XBReloadableArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBReloadableArrayDataSource.m; sourceTree = "<group>"; };
+		540957841710A87F00B006B0 /* XBHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpClient.h; sourceTree = "<group>"; };
+		540957851710A87F00B006B0 /* XBHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpClient.m; sourceTree = "<group>"; };
+		540957871710A87F00B006B0 /* XBMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMapper.h; sourceTree = "<group>"; };
+		540957881710A87F00B006B0 /* XBMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBMapper.m; sourceTree = "<group>"; };
+		540957891710A87F00B006B0 /* XBMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMappingProvider.h; sourceTree = "<group>"; };
+		5409578A1710A87F00B006B0 /* XBToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBToolkit.h; sourceTree = "<group>"; };
+		54095B181711ABDA00B006B0 /* XBLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBLogging.h; sourceTree = "<group>"; };
+		54095B1B17120CE600B006B0 /* XBDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDate.h; sourceTree = "<group>"; };
+		54095B1C17120CE600B006B0 /* XBDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDate.m; sourceTree = "<group>"; };
 		5420831117074CCC00290AEF /* XBToolkit-osx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "XBToolkit-osx.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5420831417074CCC00290AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5420831717074CCC00290AEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -148,38 +228,6 @@
 		5420832017074CCC00290AEF /* XBToolkit-osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XBToolkit-osx-Prefix.pch"; sourceTree = "<group>"; };
 		5420833217074CCD00290AEF /* XBToolkit-osxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XBToolkit-osxTests-Info.plist"; sourceTree = "<group>"; };
 		5420833417074CCD00290AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		542084BD1707547800290AEF /* XBFileSystemCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBFileSystemCacheSupport.h; sourceTree = "<group>"; };
-		542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBFileSystemCacheSupport.m; sourceTree = "<group>"; };
-		542084C01707547800290AEF /* DCParserConfiguration+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCParserConfiguration+XBAdditions.h"; sourceTree = "<group>"; };
-		542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCParserConfiguration+XBAdditions.m"; sourceTree = "<group>"; };
-		542084C21707547800290AEF /* NSDateFormatter+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+XBAdditions.h"; sourceTree = "<group>"; };
-		542084C31707547800290AEF /* NSDateFormatter+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+XBAdditions.m"; sourceTree = "<group>"; };
-		542084C41707547800290AEF /* NSError+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+XBAdditions.h"; sourceTree = "<group>"; };
-		542084C51707547800290AEF /* NSError+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+XBAdditions.m"; sourceTree = "<group>"; };
-		542084C61707547800290AEF /* NSNumber+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+XBAdditions.h"; sourceTree = "<group>"; };
-		542084C71707547800290AEF /* NSNumber+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+XBAdditions.m"; sourceTree = "<group>"; };
-		542084E41707547800290AEF /* XBCompositeArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBCompositeArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542084E51707547800290AEF /* XBCompositeArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCompositeArrayDataSource.h; sourceTree = "<group>"; };
-		542084E61707547800290AEF /* XBCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCompositeArrayDataSource.m; sourceTree = "<group>"; };
-		542084E71707547800290AEF /* XBPagedCompositeArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPagedCompositeArrayDataSource.h; sourceTree = "<group>"; };
-		542084E81707547800290AEF /* XBPagedCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedCompositeArrayDataSource.m; sourceTree = "<group>"; };
-		542084EB1707547800290AEF /* XBBasicHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicHttpQueryParamBuilder.h; sourceTree = "<group>"; };
-		542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilder.m; sourceTree = "<group>"; };
-		542084ED1707547800290AEF /* XBHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpQueryParamBuilder.h; sourceTree = "<group>"; };
-		542084F71707547800290AEF /* XBArrayDataSourcePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSourcePaginator.h; sourceTree = "<group>"; };
-		542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourcePaginator.m; sourceTree = "<group>"; };
-		542084F91707547800290AEF /* XBPaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPaginator.h; sourceTree = "<group>"; };
-		542084FA1707547800290AEF /* XBArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542084FB1707547800290AEF /* XBArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSource.h; sourceTree = "<group>"; };
-		542084FC1707547800290AEF /* XBArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSource.m; sourceTree = "<group>"; };
-		542085001707547800290AEF /* XBReloadableArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBReloadableArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		542085011707547800290AEF /* XBReloadableArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBReloadableArrayDataSource.h; sourceTree = "<group>"; };
-		542085021707547800290AEF /* XBReloadableArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBReloadableArrayDataSource.m; sourceTree = "<group>"; };
-		542085051707547800290AEF /* XBHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpClient.h; sourceTree = "<group>"; };
-		542085061707547800290AEF /* XBHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpClient.m; sourceTree = "<group>"; };
-		542085081707547800290AEF /* XBMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMapper.h; sourceTree = "<group>"; };
-		542085091707547800290AEF /* XBMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBMapper.m; sourceTree = "<group>"; };
-		5420850A1707547800290AEF /* XBMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMappingProvider.h; sourceTree = "<group>"; };
 		5420857D1707555B00290AEF /* XBBundleArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleArrayDataSourceTest.m; sourceTree = "<group>"; };
 		5420857F1707555B00290AEF /* XBPagedCompositeArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedCompositeArrayDataSourceTest.m; sourceTree = "<group>"; };
 		542085871707572C00290AEF /* WPAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAuthor.h; sourceTree = "<group>"; };
@@ -196,56 +244,28 @@
 		AE88119C5B574B80B47C72FC /* Pods-XBToolkit-osxTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-osxTests.xcconfig"; path = "Pods/Pods-XBToolkit-osxTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BEE6E5ECACDD49AAA2B0ECE6 /* Pods-XBToolkit-osxTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-osxTests.xcconfig"; path = "Pods/Pods-XBToolkit-osxTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		D026A35469DD4A979A24A9C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapper.m; sourceTree = "<group>"; };
-		DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
+		DB34D01415ACD2C195BABF70 /* NSIndexSet+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+XBAdditions.h"; sourceTree = "<group>"; };
 		DB34D093A8CEB7E3B12F1597 /* wp-author-index-p2.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index-p2.json"; sourceTree = "<group>"; };
 		DB34D1E885637177A9361457 /* XBTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBTestUtils.m; sourceTree = "<group>"; };
 		DB34D200ABC384E9F3B4F466 /* XBTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTestUtils.h; sourceTree = "<group>"; };
-		DB34D21D18BC4E69B200A38B /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
-		DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataMerger.m; sourceTree = "<group>"; };
-		DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataLoader.h; sourceTree = "<group>"; };
+		DB34D22CCF72505A6BFD7C94 /* NSString+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XBAdditions.m"; sourceTree = "<group>"; };
+		DB34D27D6AF155BB72D016C9 /* NSIndexSetTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexSetTest.m; sourceTree = "<group>"; };
 		DB34D2ACAB3AAEB179BF60C5 /* XBArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourceTest.m; sourceTree = "<group>"; };
-		DB34D2B2460B6D2001F93D63 /* XBPaginatorHttpQueryDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPaginatorHttpQueryDataBuilder.h; sourceTree = "<group>"; };
+		DB34D2CE403BAB7810F2D545 /* NSIndexSet+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+XBAdditions.m"; sourceTree = "<group>"; };
 		DB34D2E1FD74187E4F6E485C /* wp-author-index-p3.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index-p3.json"; sourceTree = "<group>"; };
 		DB34D2F33FBCB81270505952 /* XBCacheableDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableDataLoaderTest.m; sourceTree = "<group>"; };
-		DB34D3405D539CFC1910CF76 /* XBCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCache.m; sourceTree = "<group>"; };
 		DB34D354E27FE054948B1F84 /* XBHttpArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpArrayDataSourceTest.m; sourceTree = "<group>"; };
 		DB34D3640E36DBFF1FB9F8E5 /* XBJsonToArrayDataMapperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapperTest.m; sourceTree = "<group>"; };
 		DB34D3837469B508DF52EB33 /* XBBundleJsonDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoaderTest.m; sourceTree = "<group>"; };
-		DB34D4397AADD174AE6574F7 /* XBCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheKeyBuilder.h; sourceTree = "<group>"; };
 		DB34D44FA052A7B927E1BBAB /* XBArrayDataMergerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataMergerTest.m; sourceTree = "<group>"; };
 		DB34D48B7FAE2311FB3BA7E7 /* XBHttpDataLoaderCacheKeyBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilderTest.m; sourceTree = "<group>"; };
-		DB34D494A7AD914F078A9A41 /* XBCacheElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheElement.m; sourceTree = "<group>"; };
-		DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheSupport.h; sourceTree = "<group>"; };
-		DB34D51331C95055F03D6FB2 /* XBCacheElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheElement.h; sourceTree = "<group>"; };
+		DB34D55351B8BBAEF8280175 /* NSString+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XBAdditions.h"; sourceTree = "<group>"; };
 		DB34D5543B1242172F9F2D2B /* wp-author-index-p1.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index-p1.json"; sourceTree = "<group>"; };
-		DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoader.m; sourceTree = "<group>"; };
-		DB34D62AF645B6A0BB2D1672 /* NSURL+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+XBAdditions.h"; sourceTree = "<group>"; };
-		DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpJsonDataLoader.m; sourceTree = "<group>"; };
 		DB34D781B65895F1EC46A4AF /* XBBasicHttpQueryParamBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilderTest.m; sourceTree = "<group>"; };
-		DB34D7A8769C56CA962874AB /* XBDictionaryDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDictionaryDataMerger.h; sourceTree = "<group>"; };
 		DB34D7BD84C3B2E15179DC5B /* XBDictionaryDataMergerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDictionaryDataMergerTest.m; sourceTree = "<group>"; };
-		DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteScrollArrayDataSource.h; sourceTree = "<group>"; };
-		DB34D994329A1B24F374F8FA /* XBDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMerger.h; sourceTree = "<group>"; };
-		DB34D9DFA4B09AA49C8F9322 /* XBPaginatorHttpQueryDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPaginatorHttpQueryDataBuilder.m; sourceTree = "<group>"; };
-		DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBInfiniteScrollArrayDataSource+protected.h"; sourceTree = "<group>"; };
-		DB34DA98E9A602C797CFE27B /* XBHttpDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoader.h; sourceTree = "<group>"; };
-		DB34DAB62D77CEBF04C08E13 /* NSDictionary+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XBAdditions.h"; sourceTree = "<group>"; };
-		DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilder.m; sourceTree = "<group>"; };
-		DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpJsonDataLoader.h; sourceTree = "<group>"; };
-		DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollArrayDataSource.m; sourceTree = "<group>"; };
-		DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheableDataLoader.h; sourceTree = "<group>"; };
-		DB34DC4A1F5B97DFF77F1A74 /* NSURL+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+XBAdditions.m"; sourceTree = "<group>"; };
 		DB34DC6E7779C0160C7E440B /* wp-author-index.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "wp-author-index.json"; sourceTree = "<group>"; };
-		DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMapper.h; sourceTree = "<group>"; };
-		DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToArrayDataMapper.h; sourceTree = "<group>"; };
-		DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDictionaryDataMerger.m; sourceTree = "<group>"; };
-		DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCacheableDataLoader.m; sourceTree = "<group>"; };
 		DB34DDB77AED98620E7904BE /* XBInfiniteScrollArrayDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollArrayDataSourceTest.m; sourceTree = "<group>"; };
-		DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBToolkit.h; sourceTree = "<group>"; };
-		DB34DDE712E8F5539D799C2F /* XBHttpDataLoaderCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoaderCacheKeyBuilder.h; sourceTree = "<group>"; };
-		DB34DEEFF5B04B2EBE781126 /* NSDictionary+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XBAdditions.m"; sourceTree = "<group>"; };
-		DB34DEF89ED61ED887D4F2D4 /* XBArrayDataMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataMerger.h; sourceTree = "<group>"; };
+		DB34DEB569802BBD30554F7C /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
 		DB34DF19B2924CD7B234A10A /* XBHttpJsonDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpJsonDataLoaderTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,11 +293,212 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5409573B1710A87E00B006B0 /* XBToolkit-common */ = {
+			isa = PBXGroup;
+			children = (
+				5409573C1710A87F00B006B0 /* Cache */,
+				540957441710A87F00B006B0 /* Category */,
+				540957511710A87F00B006B0 /* DataSource */,
+				540957831710A87F00B006B0 /* Http */,
+				54095B171711ABDA00B006B0 /* Logging */,
+				540957861710A87F00B006B0 /* Mapping */,
+				54095B1A17120CE600B006B0 /* Utils */,
+				5409578A1710A87F00B006B0 /* XBToolkit.h */,
+			);
+			name = "XBToolkit-common";
+			path = "../XBToolkit-common";
+			sourceTree = "<group>";
+		};
+		5409573C1710A87F00B006B0 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				5409573D1710A87F00B006B0 /* XBCache.h */,
+				5409573E1710A87F00B006B0 /* XBCache.m */,
+				5409573F1710A87F00B006B0 /* XBCacheElement.h */,
+				540957401710A87F00B006B0 /* XBCacheElement.m */,
+				540957411710A87F00B006B0 /* XBCacheSupport.h */,
+				540957421710A87F00B006B0 /* XBFileSystemCacheSupport.h */,
+				540957431710A87F00B006B0 /* XBFileSystemCacheSupport.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		540957441710A87F00B006B0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				540957451710A87F00B006B0 /* DCParserConfiguration+XBAdditions.h */,
+				540957461710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m */,
+				540957471710A87F00B006B0 /* NSDateFormatter+XBAdditions.h */,
+				540957481710A87F00B006B0 /* NSDateFormatter+XBAdditions.m */,
+				540957491710A87F00B006B0 /* NSDictionary+XBAdditions.h */,
+				5409574A1710A87F00B006B0 /* NSDictionary+XBAdditions.m */,
+				5409574B1710A87F00B006B0 /* NSError+XBAdditions.h */,
+				5409574C1710A87F00B006B0 /* NSError+XBAdditions.m */,
+				5409574D1710A87F00B006B0 /* NSNumber+XBAdditions.h */,
+				5409574E1710A87F00B006B0 /* NSNumber+XBAdditions.m */,
+				5409574F1710A87F00B006B0 /* NSURL+XBAdditions.h */,
+				540957501710A87F00B006B0 /* NSURL+XBAdditions.m */,
+				DB34D01415ACD2C195BABF70 /* NSIndexSet+XBAdditions.h */,
+				DB34D55351B8BBAEF8280175 /* NSString+XBAdditions.h */,
+				DB34D22CCF72505A6BFD7C94 /* NSString+XBAdditions.m */,
+				DB34D2CE403BAB7810F2D545 /* NSIndexSet+XBAdditions.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		540957511710A87F00B006B0 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				540957521710A87F00B006B0 /* Cache */,
+				540957531710A87F00B006B0 /* Composite */,
+				540957591710A87F00B006B0 /* Http */,
+				540957601710A87F00B006B0 /* Loader */,
+				5409576C1710A87F00B006B0 /* Mapper */,
+				540957701710A87F00B006B0 /* Merger */,
+				540957761710A87F00B006B0 /* Paging */,
+				5409577A1710A87F00B006B0 /* XBArrayDataSource+protected.h */,
+				5409577B1710A87F00B006B0 /* XBArrayDataSource.h */,
+				5409577C1710A87F00B006B0 /* XBArrayDataSource.m */,
+				5409577D1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource+protected.h */,
+				5409577E1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.h */,
+				5409577F1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m */,
+				540957801710A87F00B006B0 /* XBReloadableArrayDataSource+protected.h */,
+				540957811710A87F00B006B0 /* XBReloadableArrayDataSource.h */,
+				540957821710A87F00B006B0 /* XBReloadableArrayDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		540957521710A87F00B006B0 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		540957531710A87F00B006B0 /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				540957541710A87F00B006B0 /* XBCompositeArrayDataSource+protected.h */,
+				540957551710A87F00B006B0 /* XBCompositeArrayDataSource.h */,
+				540957561710A87F00B006B0 /* XBCompositeArrayDataSource.m */,
+				540957571710A87F00B006B0 /* XBPagedCompositeArrayDataSource.h */,
+				540957581710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m */,
+			);
+			path = Composite;
+			sourceTree = "<group>";
+		};
+		540957591710A87F00B006B0 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				5409575A1710A87F00B006B0 /* QueryParam */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		5409575A1710A87F00B006B0 /* QueryParam */ = {
+			isa = PBXGroup;
+			children = (
+				5409575B1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.h */,
+				5409575C1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m */,
+				5409575D1710A87F00B006B0 /* XBHttpQueryParamBuilder.h */,
+				5409575E1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */,
+				5409575F1710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */,
+			);
+			path = QueryParam;
+			sourceTree = "<group>";
+		};
+		540957601710A87F00B006B0 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				540957611710A87F00B006B0 /* XBBundleJsonDataLoader.h */,
+				540957621710A87F00B006B0 /* XBBundleJsonDataLoader.m */,
+				540957631710A87F00B006B0 /* XBCacheableDataLoader.h */,
+				540957641710A87F00B006B0 /* XBCacheableDataLoader.m */,
+				540957651710A87F00B006B0 /* XBCacheKeyBuilder.h */,
+				540957661710A87F00B006B0 /* XBDataLoader.h */,
+				540957671710A87F00B006B0 /* XBHttpDataLoader.h */,
+				540957681710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */,
+				540957691710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */,
+				5409576A1710A87F00B006B0 /* XBHttpJsonDataLoader.h */,
+				5409576B1710A87F00B006B0 /* XBHttpJsonDataLoader.m */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		5409576C1710A87F00B006B0 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				5409576D1710A87F00B006B0 /* XBDataMapper.h */,
+				5409576E1710A87F00B006B0 /* XBJsonToArrayDataMapper.h */,
+				5409576F1710A87F00B006B0 /* XBJsonToArrayDataMapper.m */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		540957701710A87F00B006B0 /* Merger */ = {
+			isa = PBXGroup;
+			children = (
+				540957711710A87F00B006B0 /* XBArrayDataMerger.h */,
+				540957721710A87F00B006B0 /* XBArrayDataMerger.m */,
+				540957731710A87F00B006B0 /* XBDataMerger.h */,
+				540957741710A87F00B006B0 /* XBDictionaryDataMerger.h */,
+				540957751710A87F00B006B0 /* XBDictionaryDataMerger.m */,
+			);
+			path = Merger;
+			sourceTree = "<group>";
+		};
+		540957761710A87F00B006B0 /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				540957771710A87F00B006B0 /* XBArrayDataSourceDataPager.h */,
+				540957781710A87F00B006B0 /* XBArrayDataSourceDataPager.m */,
+				540957791710A87F00B006B0 /* XBDataPager.h */,
+			);
+			path = Paging;
+			sourceTree = "<group>";
+		};
+		540957831710A87F00B006B0 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				540957841710A87F00B006B0 /* XBHttpClient.h */,
+				540957851710A87F00B006B0 /* XBHttpClient.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		540957861710A87F00B006B0 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				540957871710A87F00B006B0 /* XBMapper.h */,
+				540957881710A87F00B006B0 /* XBMapper.m */,
+				540957891710A87F00B006B0 /* XBMappingProvider.h */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		54095B171711ABDA00B006B0 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				54095B181711ABDA00B006B0 /* XBLogging.h */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		54095B1A17120CE600B006B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				54095B1B17120CE600B006B0 /* XBDate.h */,
+				54095B1C17120CE600B006B0 /* XBDate.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5420830717074CCC00290AEF = {
 			isa = PBXGroup;
 			children = (
 				54C5343117079744001DB282 /* SystemConfiguration.framework */,
-				542084BA1707547800290AEF /* XBToolkit-common */,
+				5409573B1710A87E00B006B0 /* XBToolkit-common */,
 				5420857A1707555B00290AEF /* XBToolkit-commonTests */,
 				5420831A17074CCC00290AEF /* XBToolkit-osx */,
 				5420833017074CCD00290AEF /* XBToolkit-osxTests */,
@@ -360,136 +581,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		542084BA1707547800290AEF /* XBToolkit-common */ = {
-			isa = PBXGroup;
-			children = (
-				542084BB1707547800290AEF /* Cache */,
-				542084BF1707547800290AEF /* Category */,
-				542084DD1707547800290AEF /* DataSource */,
-				542085041707547800290AEF /* Http */,
-				542085071707547800290AEF /* Mapping */,
-				DB34DDCAD96A5A3C0F096DD9 /* XBToolkit.h */,
-			);
-			name = "XBToolkit-common";
-			path = "../XBToolkit-common";
-			sourceTree = "<group>";
-		};
-		542084BB1707547800290AEF /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				542084BD1707547800290AEF /* XBFileSystemCacheSupport.h */,
-				542084BE1707547800290AEF /* XBFileSystemCacheSupport.m */,
-				DB34D494A7AD914F078A9A41 /* XBCacheElement.m */,
-				DB34D51331C95055F03D6FB2 /* XBCacheElement.h */,
-				DB34D3405D539CFC1910CF76 /* XBCache.m */,
-				DB34D21D18BC4E69B200A38B /* XBCache.h */,
-				DB34D4979E6C66ED69C199D7 /* XBCacheSupport.h */,
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
-		542084BF1707547800290AEF /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				542084C01707547800290AEF /* DCParserConfiguration+XBAdditions.h */,
-				542084C11707547800290AEF /* DCParserConfiguration+XBAdditions.m */,
-				542084C21707547800290AEF /* NSDateFormatter+XBAdditions.h */,
-				542084C31707547800290AEF /* NSDateFormatter+XBAdditions.m */,
-				542084C41707547800290AEF /* NSError+XBAdditions.h */,
-				542084C51707547800290AEF /* NSError+XBAdditions.m */,
-				542084C61707547800290AEF /* NSNumber+XBAdditions.h */,
-				542084C71707547800290AEF /* NSNumber+XBAdditions.m */,
-				DB34DEEFF5B04B2EBE781126 /* NSDictionary+XBAdditions.m */,
-				DB34DAB62D77CEBF04C08E13 /* NSDictionary+XBAdditions.h */,
-				DB34DC4A1F5B97DFF77F1A74 /* NSURL+XBAdditions.m */,
-				DB34D62AF645B6A0BB2D1672 /* NSURL+XBAdditions.h */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		542084DD1707547800290AEF /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				542084E31707547800290AEF /* Composite */,
-				542084E91707547800290AEF /* Http */,
-				542084F61707547800290AEF /* Paging */,
-				542084FA1707547800290AEF /* XBArrayDataSource+protected.h */,
-				542084FB1707547800290AEF /* XBArrayDataSource.h */,
-				542084FC1707547800290AEF /* XBArrayDataSource.m */,
-				542085001707547800290AEF /* XBReloadableArrayDataSource+protected.h */,
-				542085011707547800290AEF /* XBReloadableArrayDataSource.h */,
-				542085021707547800290AEF /* XBReloadableArrayDataSource.m */,
-				DB34D43888BA4F745D6C7BB0 /* Mapper */,
-				DB34DF3B3D593984B2363099 /* Loader */,
-				DB34DA15D43BA73BADD4848B /* XBInfiniteScrollArrayDataSource+protected.h */,
-				DB34DB20D3CE7030ED4072CF /* XBInfiniteScrollArrayDataSource.m */,
-				DB34D3F387B83CF031A578E5 /* Merger */,
-				DB34D9838AB35AE6477C7352 /* XBInfiniteScrollArrayDataSource.h */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		542084E31707547800290AEF /* Composite */ = {
-			isa = PBXGroup;
-			children = (
-				542084E41707547800290AEF /* XBCompositeArrayDataSource+protected.h */,
-				542084E51707547800290AEF /* XBCompositeArrayDataSource.h */,
-				542084E61707547800290AEF /* XBCompositeArrayDataSource.m */,
-				542084E71707547800290AEF /* XBPagedCompositeArrayDataSource.h */,
-				542084E81707547800290AEF /* XBPagedCompositeArrayDataSource.m */,
-			);
-			path = Composite;
-			sourceTree = "<group>";
-		};
-		542084E91707547800290AEF /* Http */ = {
-			isa = PBXGroup;
-			children = (
-				542084EA1707547800290AEF /* QueryParam */,
-			);
-			path = Http;
-			sourceTree = "<group>";
-		};
-		542084EA1707547800290AEF /* QueryParam */ = {
-			isa = PBXGroup;
-			children = (
-				542084EB1707547800290AEF /* XBBasicHttpQueryParamBuilder.h */,
-				542084EC1707547800290AEF /* XBBasicHttpQueryParamBuilder.m */,
-				542084ED1707547800290AEF /* XBHttpQueryParamBuilder.h */,
-				DB34D9DFA4B09AA49C8F9322 /* XBPaginatorHttpQueryDataBuilder.m */,
-				DB34D2B2460B6D2001F93D63 /* XBPaginatorHttpQueryDataBuilder.h */,
-			);
-			path = QueryParam;
-			sourceTree = "<group>";
-		};
-		542084F61707547800290AEF /* Paging */ = {
-			isa = PBXGroup;
-			children = (
-				542084F71707547800290AEF /* XBArrayDataSourcePaginator.h */,
-				542084F81707547800290AEF /* XBArrayDataSourcePaginator.m */,
-				542084F91707547800290AEF /* XBPaginator.h */,
-			);
-			path = Paging;
-			sourceTree = "<group>";
-		};
-		542085041707547800290AEF /* Http */ = {
-			isa = PBXGroup;
-			children = (
-				542085051707547800290AEF /* XBHttpClient.h */,
-				542085061707547800290AEF /* XBHttpClient.m */,
-			);
-			path = Http;
-			sourceTree = "<group>";
-		};
-		542085071707547800290AEF /* Mapping */ = {
-			isa = PBXGroup;
-			children = (
-				542085081707547800290AEF /* XBMapper.h */,
-				542085091707547800290AEF /* XBMapper.m */,
-				5420850A1707547800290AEF /* XBMappingProvider.h */,
-			);
-			path = Mapping;
-			sourceTree = "<group>";
-		};
 		5420857A1707555B00290AEF /* XBToolkit-commonTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +589,7 @@
 				DB34D736E4E5BBB69614E871 /* Resources */,
 				DB34D1E885637177A9361457 /* XBTestUtils.m */,
 				DB34D200ABC384E9F3B4F466 /* XBTestUtils.h */,
+				DB34D2DD9C9E770972912E43 /* Category */,
 			);
 			name = "XBToolkit-commonTests";
 			path = "../XBToolkit-commonTests";
@@ -560,26 +652,13 @@
 			path = WordPress;
 			sourceTree = "<group>";
 		};
-		DB34D3F387B83CF031A578E5 /* Merger */ = {
+		DB34D2DD9C9E770972912E43 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				DB34D994329A1B24F374F8FA /* XBDataMerger.h */,
-				DB34DD50F47AAA3F8F721177 /* XBDictionaryDataMerger.m */,
-				DB34D7A8769C56CA962874AB /* XBDictionaryDataMerger.h */,
-				DB34D25920EBD5415BDA44B7 /* XBArrayDataMerger.m */,
-				DB34DEF89ED61ED887D4F2D4 /* XBArrayDataMerger.h */,
+				DB34D27D6AF155BB72D016C9 /* NSIndexSetTest.m */,
+				DB34DEB569802BBD30554F7C /* NSStringTest.m */,
 			);
-			path = Merger;
-			sourceTree = "<group>";
-		};
-		DB34D43888BA4F745D6C7BB0 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				DB34D047C9D413F3166787A2 /* XBJsonToArrayDataMapper.m */,
-				DB34DD39A8E9DB10EE01A426 /* XBJsonToArrayDataMapper.h */,
-				DB34DC6EF9A15F3780503F0F /* XBDataMapper.h */,
-			);
-			path = Mapper;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		DB34D484A379C0BDB811C559 /* QueryParam */ = {
@@ -637,24 +716,6 @@
 			path = Merger;
 			sourceTree = "<group>";
 		};
-		DB34DF3B3D593984B2363099 /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				DB34D708F198027205D1B091 /* XBHttpJsonDataLoader.m */,
-				DB34DAF75A36AC225BCBB2F0 /* XBHttpJsonDataLoader.h */,
-				DB34D28555B4C21FB0FF7FF2 /* XBDataLoader.h */,
-				DB34DD540BB0F68142FD79B7 /* XBCacheableDataLoader.m */,
-				DB34DB5770560D67805B1D5C /* XBCacheableDataLoader.h */,
-				DB34D04D1B06C14AB370D79D /* XBBundleJsonDataLoader.h */,
-				DB34D613D90E1247C4EE4944 /* XBBundleJsonDataLoader.m */,
-				DB34D4397AADD174AE6574F7 /* XBCacheKeyBuilder.h */,
-				DB34DAE62945015F04DC9A4D /* XBHttpDataLoaderCacheKeyBuilder.m */,
-				DB34DDE712E8F5539D799C2F /* XBHttpDataLoaderCacheKeyBuilder.h */,
-				DB34DA98E9A602C797CFE27B /* XBHttpDataLoader.h */,
-			);
-			path = Loader;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -662,43 +723,51 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5420850C1707547800290AEF /* XBFileSystemCacheSupport.h in Headers */,
-				5420850F1707547800290AEF /* DCParserConfiguration+XBAdditions.h in Headers */,
-				542085121707547800290AEF /* NSDateFormatter+XBAdditions.h in Headers */,
-				542085151707547800290AEF /* NSError+XBAdditions.h in Headers */,
-				542085181707547800290AEF /* NSNumber+XBAdditions.h in Headers */,
-				542085401707547800290AEF /* XBCompositeArrayDataSource+protected.h in Headers */,
-				542085411707547800290AEF /* XBCompositeArrayDataSource.h in Headers */,
-				542085441707547800290AEF /* XBPagedCompositeArrayDataSource.h in Headers */,
-				542085471707547800290AEF /* XBBasicHttpQueryParamBuilder.h in Headers */,
-				5420854A1707547800290AEF /* XBHttpQueryParamBuilder.h in Headers */,
-				542085561707547800290AEF /* XBArrayDataSourcePaginator.h in Headers */,
-				542085591707547800290AEF /* XBPaginator.h in Headers */,
-				5420855A1707547800290AEF /* XBArrayDataSource+protected.h in Headers */,
-				5420855B1707547800290AEF /* XBArrayDataSource.h in Headers */,
-				542085621707547800290AEF /* XBReloadableArrayDataSource+protected.h in Headers */,
-				542085631707547800290AEF /* XBReloadableArrayDataSource.h in Headers */,
-				542085671707547800290AEF /* XBHttpClient.h in Headers */,
-				5420856A1707547800290AEF /* XBMapper.h in Headers */,
-				5420856D1707547800290AEF /* XBMappingProvider.h in Headers */,
-				DB34D851B9D58DB382CCD7E2 /* XBToolkit.h in Headers */,
-				DB34D80E240635C691108D99 /* XBJsonToArrayDataMapper.h in Headers */,
-				DB34D935C8E9D443A95803E5 /* XBDataMapper.h in Headers */,
-				DB34D6035A1389B64E4C4990 /* XBHttpJsonDataLoader.h in Headers */,
-				DB34D01D08A656D0ABA0850E /* XBDataLoader.h in Headers */,
-				DB34DD8CC5A5D1D98F2B0392 /* XBCacheElement.h in Headers */,
-				DB34D8CCCE41B95F5E8DA2D7 /* XBCache.h in Headers */,
-				DB34D5993354C60B77E658C2 /* XBCacheSupport.h in Headers */,
-				DB34D887A1094CA62181E0E2 /* XBCacheableDataLoader.h in Headers */,
-				DB34DE727DACF2AA434B264D /* XBBundleJsonDataLoader.h in Headers */,
-				DB34DD34168C59C38098CA50 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */,
-				DB34D63F5CCF3CFCFB0B2298 /* XBInfiniteScrollArrayDataSource.h in Headers */,
-				DB34DF5C4B9E52C46F3DFAD1 /* XBDataMerger.h in Headers */,
-				DB34D9986065C33D6AB6DBD0 /* XBDictionaryDataMerger.h in Headers */,
-				DB34DEA57327BCD8DE9C0D86 /* XBArrayDataMerger.h in Headers */,
-				DB34D039BF98B89097C6D9C3 /* NSURL+XBAdditions.h in Headers */,
-				DB34D565AD1B35BCCDD5D6F1 /* XBPaginatorHttpQueryDataBuilder.h in Headers */,
 				DB34D0B9257643367AC3DFB4 /* XBToolkit-osx-Prefix.pch in Headers */,
+				540957951710A87F00B006B0 /* DCParserConfiguration+XBAdditions.h in Headers */,
+				540957981710A87F00B006B0 /* NSDateFormatter+XBAdditions.h in Headers */,
+				5409579B1710A87F00B006B0 /* NSDictionary+XBAdditions.h in Headers */,
+				5409579E1710A87F00B006B0 /* NSError+XBAdditions.h in Headers */,
+				540957A11710A87F00B006B0 /* NSNumber+XBAdditions.h in Headers */,
+				540957A41710A87F00B006B0 /* NSURL+XBAdditions.h in Headers */,
+				540957A71710A87F00B006B0 /* XBCompositeArrayDataSource+protected.h in Headers */,
+				540957A81710A87F00B006B0 /* XBCompositeArrayDataSource.h in Headers */,
+				540957AB1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.h in Headers */,
+				540957AE1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.h in Headers */,
+				540957B11710A87F00B006B0 /* XBHttpQueryParamBuilder.h in Headers */,
+				540957B21710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h in Headers */,
+				540957B51710A87F00B006B0 /* XBBundleJsonDataLoader.h in Headers */,
+				540957B81710A87F00B006B0 /* XBCacheableDataLoader.h in Headers */,
+				5409578B1710A87F00B006B0 /* XBCache.h in Headers */,
+				540957BB1710A87F00B006B0 /* XBCacheKeyBuilder.h in Headers */,
+				540957E81710B4D300B006B0 /* XBFileSystemCacheSupport.h in Headers */,
+				5409578E1710A87F00B006B0 /* XBCacheElement.h in Headers */,
+				540957911710A87F00B006B0 /* XBCacheSupport.h in Headers */,
+				540957BC1710A87F00B006B0 /* XBDataLoader.h in Headers */,
+				540957BD1710A87F00B006B0 /* XBHttpDataLoader.h in Headers */,
+				540957BE1710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h in Headers */,
+				540957C11710A87F00B006B0 /* XBHttpJsonDataLoader.h in Headers */,
+				540957C41710A87F00B006B0 /* XBDataMapper.h in Headers */,
+				540957C51710A87F00B006B0 /* XBJsonToArrayDataMapper.h in Headers */,
+				540957C81710A87F00B006B0 /* XBArrayDataMerger.h in Headers */,
+				540957CB1710A87F00B006B0 /* XBDataMerger.h in Headers */,
+				540957CC1710A87F00B006B0 /* XBDictionaryDataMerger.h in Headers */,
+				540957CF1710A87F00B006B0 /* XBArrayDataSourceDataPager.h in Headers */,
+				540957D21710A87F00B006B0 /* XBDataPager.h in Headers */,
+				540957D31710A87F00B006B0 /* XBArrayDataSource+protected.h in Headers */,
+				540957D41710A87F00B006B0 /* XBArrayDataSource.h in Headers */,
+				540957D71710A87F00B006B0 /* XBInfiniteScrollArrayDataSource+protected.h in Headers */,
+				540957D81710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.h in Headers */,
+				540957DB1710A87F00B006B0 /* XBReloadableArrayDataSource+protected.h in Headers */,
+				540957DC1710A87F00B006B0 /* XBReloadableArrayDataSource.h in Headers */,
+				540957DF1710A87F00B006B0 /* XBHttpClient.h in Headers */,
+				540957E21710A87F00B006B0 /* XBMapper.h in Headers */,
+				540957E51710A87F00B006B0 /* XBMappingProvider.h in Headers */,
+				540957E61710A87F00B006B0 /* XBToolkit.h in Headers */,
+				54095B191711ABDA00B006B0 /* XBLogging.h in Headers */,
+				54095B1D17120CE600B006B0 /* XBDate.h in Headers */,
+				DB34DB128C2B68E122CE6B90 /* NSIndexSet+XBAdditions.h in Headers */,
+				DB34D4F984B6F73695E9A331 /* NSString+XBAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,36 +903,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5420850D1707547800290AEF /* XBFileSystemCacheSupport.m in Sources */,
-				542085101707547800290AEF /* DCParserConfiguration+XBAdditions.m in Sources */,
-				542085131707547800290AEF /* NSDateFormatter+XBAdditions.m in Sources */,
-				542085161707547800290AEF /* NSError+XBAdditions.m in Sources */,
-				542085191707547800290AEF /* NSNumber+XBAdditions.m in Sources */,
-				542085421707547800290AEF /* XBCompositeArrayDataSource.m in Sources */,
-				542085451707547800290AEF /* XBPagedCompositeArrayDataSource.m in Sources */,
-				542085481707547800290AEF /* XBBasicHttpQueryParamBuilder.m in Sources */,
-				542085571707547800290AEF /* XBArrayDataSourcePaginator.m in Sources */,
-				5420855C1707547800290AEF /* XBArrayDataSource.m in Sources */,
-				542085641707547800290AEF /* XBReloadableArrayDataSource.m in Sources */,
-				542085681707547800290AEF /* XBHttpClient.m in Sources */,
-				5420856B1707547800290AEF /* XBMapper.m in Sources */,
-				DB34D1B2240DDF422B93E98F /* XBJsonToArrayDataMapper.m in Sources */,
-				DB34D5148579F2EF9A76806B /* XBHttpJsonDataLoader.m in Sources */,
-				DB34D39D86C3E6873B35A792 /* XBCacheElement.m in Sources */,
-				DB34D76CBE405CCD78D4E35F /* XBCache.m in Sources */,
-				DB34D3FE9E52C243E32A2E04 /* XBCacheableDataLoader.m in Sources */,
-				DB34DCF676108EB893C5A7F8 /* XBBundleJsonDataLoader.m in Sources */,
-				DB34D57464E6904A421A4D74 /* XBInfiniteScrollArrayDataSource.m in Sources */,
-				DB34D88CBC61B318D9A853B2 /* XBDictionaryDataMerger.m in Sources */,
-				DB34D90D2C5BC23980C84B0E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
-				DB34DA05A27DBF0D6CB9EEDE /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */,
-				DB34D93584D2BDF7D25934C4 /* XBBasicHttpQueryParamBuilderTest.m in Sources */,
-				DB34DEFA9779F9023A241C33 /* XBDictionaryDataMergerTest.m in Sources */,
-				DB34DD1F29A3526A6EE92EFE /* XBArrayDataMerger.m in Sources */,
-				DB34D8A33BBDCD89C3EC82A6 /* XBArrayDataMergerTest.m in Sources */,
-				DB34DBB5D35522F204F9A493 /* XBInfiniteScrollArrayDataSourceTest.m in Sources */,
-				DB34DC348F627BA507690E8B /* NSURL+XBAdditions.m in Sources */,
-				DB34D1D6A1E1A2BD09CFD5F6 /* XBPaginatorHttpQueryDataBuilder.m in Sources */,
+				5409578C1710A87F00B006B0 /* XBCache.m in Sources */,
+				5409578F1710A87F00B006B0 /* XBCacheElement.m in Sources */,
+				540957931710A87F00B006B0 /* XBFileSystemCacheSupport.m in Sources */,
+				540957961710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */,
+				540957991710A87F00B006B0 /* NSDateFormatter+XBAdditions.m in Sources */,
+				5409579C1710A87F00B006B0 /* NSDictionary+XBAdditions.m in Sources */,
+				5409579F1710A87F00B006B0 /* NSError+XBAdditions.m in Sources */,
+				540957A21710A87F00B006B0 /* NSNumber+XBAdditions.m in Sources */,
+				540957A51710A87F00B006B0 /* NSURL+XBAdditions.m in Sources */,
+				540957A91710A87F00B006B0 /* XBCompositeArrayDataSource.m in Sources */,
+				540957AC1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m in Sources */,
+				540957AF1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */,
+				540957B31710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */,
+				540957B61710A87F00B006B0 /* XBBundleJsonDataLoader.m in Sources */,
+				540957B91710A87F00B006B0 /* XBCacheableDataLoader.m in Sources */,
+				540957BF1710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
+				540957C21710A87F00B006B0 /* XBHttpJsonDataLoader.m in Sources */,
+				540957C61710A87F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */,
+				540957C91710A87F00B006B0 /* XBArrayDataMerger.m in Sources */,
+				540957CD1710A87F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
+				540957D01710A87F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */,
+				540957D51710A87F00B006B0 /* XBArrayDataSource.m in Sources */,
+				540957D91710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m in Sources */,
+				540957DD1710A87F00B006B0 /* XBReloadableArrayDataSource.m in Sources */,
+				540957E01710A87F00B006B0 /* XBHttpClient.m in Sources */,
+				540957E31710A87F00B006B0 /* XBMapper.m in Sources */,
+				54095B1E17120CE600B006B0 /* XBDate.m in Sources */,
+				DB34D20205EE00F691B5CEAA /* NSString+XBAdditions.m in Sources */,
+				DB34D28BAAC83F02AF7A6DA2 /* NSIndexSet+XBAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,27 +943,6 @@
 				54C5341517079438001DB282 /* XBBundleArrayDataSourceTest.m in Sources */,
 				54C5341617079438001DB282 /* XBPagedCompositeArrayDataSourceTest.m in Sources */,
 				54C5341817079460001DB282 /* WPAuthor.m in Sources */,
-				54C5341917079478001DB282 /* XBFileSystemCacheSupport.m in Sources */,
-				54C5341A1707947F001DB282 /* DCParserConfiguration+XBAdditions.m in Sources */,
-				54C5341B1707947F001DB282 /* NSDateFormatter+XBAdditions.m in Sources */,
-				54C5341C1707947F001DB282 /* NSError+XBAdditions.m in Sources */,
-				54C5341D1707947F001DB282 /* NSNumber+XBAdditions.m in Sources */,
-				54C5341E17079484001DB282 /* XBMapper.m in Sources */,
-				54C5341F1707948A001DB282 /* XBHttpClient.m in Sources */,
-				54C5342017079490001DB282 /* XBArrayDataSource.m in Sources */,
-				54C5342217079490001DB282 /* XBReloadableArrayDataSource.m in Sources */,
-				54C5342317079494001DB282 /* XBArrayDataSourcePaginator.m in Sources */,
-				54C5342417079499001DB282 /* XBCompositeArrayDataSource.m in Sources */,
-				54C5342517079499001DB282 /* XBPagedCompositeArrayDataSource.m in Sources */,
-				54C53429170794A5001DB282 /* XBBasicHttpQueryParamBuilder.m in Sources */,
-				DB34DC1C9431A2A6F2B93316 /* XBInfiniteScrollArrayDataSource.m in Sources */,
-				DB34D3AF68A6ED7CB71F935E /* XBDictionaryDataMerger.m in Sources */,
-				DB34D0EF61F63798F1894BC8 /* XBJsonToArrayDataMapper.m in Sources */,
-				DB34D5B6DAE071DFE073A369 /* XBHttpJsonDataLoader.m in Sources */,
-				DB34D789430DE650C4B72EE9 /* XBCacheableDataLoader.m in Sources */,
-				DB34D229A0FE3A84E00C0BA5 /* XBBundleJsonDataLoader.m in Sources */,
-				DB34D8F97C5D1BB7975377E3 /* XBCache.m in Sources */,
-				DB34D979FB7D5FEC4EBBB952 /* XBCacheElement.m in Sources */,
 				DB34D2FB071FDDEEF44CF10E /* XBHttpArrayDataSourceTest.m in Sources */,
 				DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */,
 				DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */,
@@ -903,16 +950,41 @@
 				DB34D8A11F8195A86232C5F1 /* XBHttpJsonDataLoaderTest.m in Sources */,
 				DB34DE8FB6266CA85C780E9D /* XBBundleJsonDataLoaderTest.m in Sources */,
 				DB34DD6A6DA347B85019895F /* XBCacheableDataLoaderTest.m in Sources */,
-				DB34D25FA95798E37205F42E /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
-				DB34DE6DA91E8AB0897DBBD0 /* NSDictionary+XBAdditions.m in Sources */,
 				DB34DF8E883E20633E2351DB /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */,
 				DB34D862ABADFD078BDFB93D /* XBBasicHttpQueryParamBuilderTest.m in Sources */,
 				DB34D981408059A0C826C3FE /* XBDictionaryDataMergerTest.m in Sources */,
-				DB34D0636797602F96E8CE59 /* XBArrayDataMerger.m in Sources */,
 				DB34DF2D8A76DD45DF219B35 /* XBArrayDataMergerTest.m in Sources */,
 				DB34DB705C0B81CECED22ED0 /* XBInfiniteScrollArrayDataSourceTest.m in Sources */,
-				DB34DE88D9ECCF5CF6AD7F8B /* NSURL+XBAdditions.m in Sources */,
-				DB34DDD057AE233D8E7C759F /* XBPaginatorHttpQueryDataBuilder.m in Sources */,
+				5409578D1710A87F00B006B0 /* XBCache.m in Sources */,
+				540957901710A87F00B006B0 /* XBCacheElement.m in Sources */,
+				540957941710A87F00B006B0 /* XBFileSystemCacheSupport.m in Sources */,
+				540957971710A87F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */,
+				5409579A1710A87F00B006B0 /* NSDateFormatter+XBAdditions.m in Sources */,
+				5409579D1710A87F00B006B0 /* NSDictionary+XBAdditions.m in Sources */,
+				540957A01710A87F00B006B0 /* NSError+XBAdditions.m in Sources */,
+				540957A31710A87F00B006B0 /* NSNumber+XBAdditions.m in Sources */,
+				540957A61710A87F00B006B0 /* NSURL+XBAdditions.m in Sources */,
+				540957AA1710A87F00B006B0 /* XBCompositeArrayDataSource.m in Sources */,
+				540957AD1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.m in Sources */,
+				540957B01710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */,
+				540957B41710A87F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */,
+				540957B71710A87F00B006B0 /* XBBundleJsonDataLoader.m in Sources */,
+				540957BA1710A87F00B006B0 /* XBCacheableDataLoader.m in Sources */,
+				540957C01710A87F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
+				540957C31710A87F00B006B0 /* XBHttpJsonDataLoader.m in Sources */,
+				540957C71710A87F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */,
+				540957CA1710A87F00B006B0 /* XBArrayDataMerger.m in Sources */,
+				540957CE1710A87F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
+				540957D11710A87F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */,
+				540957D61710A87F00B006B0 /* XBArrayDataSource.m in Sources */,
+				540957DA1710A87F00B006B0 /* XBInfiniteScrollArrayDataSource.m in Sources */,
+				540957DE1710A87F00B006B0 /* XBReloadableArrayDataSource.m in Sources */,
+				540957E11710A87F00B006B0 /* XBHttpClient.m in Sources */,
+				540957E41710A87F00B006B0 /* XBMapper.m in Sources */,
+				DB34DB03ACF9A36933375184 /* NSString+XBAdditions.m in Sources */,
+				DB34DC6FCA6CD5829A8A634A /* NSIndexSet+XBAdditions.m in Sources */,
+				DB34DFB95EEE53D0BDE5D877 /* NSIndexSetTest.m in Sources */,
+				DB34D46A66485F9AFF325604 /* NSStringTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,6 @@
 
 @interface XBInfiniteScrollArrayDataSource (XBPagedHttpArrayDataSource_protected)
 
--(void)setPaginator:(NSObject<XBPaginator> *)paginator;
+-(void)setDataPager:(NSObject<XBDataPager> *)dataPager;
 
 @end

@@ -21,13 +21,15 @@
 }
 
 + (NSString *)objectToSerializedJson:(id)obj withDateFormat:(NSString *)dateFormat {
-    NSDictionary * dict = [XBMapper dictionaryWithPropertiesOfObject:obj];
+    NSDictionary * dict = [self dictionaryWithPropertiesOfObject:obj];
 
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:dateFormat];
 
-    NSString* json = [dict JSONStringWithOptions:JKSerializeOptionNone serializeUnsupportedClassesUsingBlock:^id(id object) {
-        if([object isKindOfClass:[NSDate class]]) { return([outputFormatter stringFromDate:object]); }
+    NSString* json = [dict JSONStringWithOptions:JKSerializeOptionPretty serializeUnsupportedClassesUsingBlock:^id(id object) {
+        if([object isKindOfClass:[NSDate class]]) {
+            return([outputFormatter stringFromDate:object]);
+        }
         return(nil);
     } error:nil];
 
@@ -35,7 +37,7 @@
 }
 
 +(NSDictionary *) dictionaryWithPropertiesOfObject:(id)obj {
-    return  [XBMapper dictionaryWithPropertiesOfObject:obj withDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return  [self dictionaryWithPropertiesOfObject:obj withDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 +(NSDictionary *) dictionaryWithPropertiesOfObject:(id)obj withDateFormat:(NSString *) dateFormat {
@@ -75,19 +77,17 @@
                 [dict setObject:entries forKey:key];
             }
             else if ([value isKindOfClass:NSDate.class]) {
-                [dict setObject:value forKey:[[NSDateFormatter initWithDateFormat:dateFormat] stringFromDate:value]];
+                [dict setObject:[[NSDateFormatter initWithDateFormat:dateFormat] stringFromDate:value] forKey:key];
             }
-            else {
-                Class classObject = NSClassFromString([key capitalizedString]);
-                if (classObject) {
-                    id subObj = [self dictionaryWithPropertiesOfObject:[obj valueForKey:key]];
-                    [dict setObject:subObj forKey:key];
-                }
-                else {
-                    if(value) {
-                        [dict setObject:value forKey:key];
-                    }
-                }
+            else if ([value isKindOfClass:NSString.class]) {
+                [dict setObject:value forKey:key];
+            }
+            else if ([value isKindOfClass:NSNumber.class]) {
+                [dict setObject:value forKey:key];
+            }
+            else /* if ([value isKindOfClass:NSObject.class]) */ {
+                id subObj = [self dictionaryWithPropertiesOfObject:[obj valueForKey:key]];
+                [dict setObject:subObj forKey:key];
             }
         }
     }
