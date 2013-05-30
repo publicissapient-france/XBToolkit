@@ -40,6 +40,12 @@
     return [jsonLoaded objectFromJSONString];
 }
 
++(NSDictionary *)getSinglePostAsJson {
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"wp-post" ofType:@"json"];
+    NSString *jsonLoaded = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
+    return [jsonLoaded objectFromJSONString];
+}
+
 +(id)fakeHttpClientWithSuccessCallbackWithData:(id)data {
     id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
 

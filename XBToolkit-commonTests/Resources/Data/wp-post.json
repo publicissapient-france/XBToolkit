@@ -1,0 +1,120 @@
+{
+	"status": "ok",
+	"post": {
+		"id": 14332,
+		"type": "post",
+		"slug": "whats-new-in-android",
+		"url": "http:\/\/blog.xebia.fr\/2013\/05\/30\/whats-new-in-android\/",
+		"status": "publish",
+		"title": "What's new in Android ?",
+		"title_plain": "What's new in Android ?",
+		"content": "&lt;p&gt;&lt;a href=&quot;http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid.jpeg&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;100&quot; src=&quot;http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-96x96.jpeg&quot; style=&quot;float:right; margin:0 0 10px 10px;&quot; \/&gt;&lt;\/a&gt;Google I\/O s'est termin\u00e9 le 17 mai et\u00a0apr\u00e8s 3 jours de sessions non stop, il est temps de revenir sur les annonces faites lors de la conf\u00e9rence.\u00a0En \u00a02013, Android repr\u00e9sente au total pas moins de 900 millions d'activations avec pr\u00e8s de 2.5 milliard d'applications install\u00e9es chaque mois. Ces chiffres confirment la bonne sant\u00e9 de l'OS mobile au robot vert. Les annonces de cette ann\u00e9e vont d'ailleurs dans ce sens\u00a0car les d\u00e9veloppeurs de la plateforme Android ont eu le droit \u00e0 leur lot de bonnes nouvelles.&lt;\/p&gt;\r\n&lt;span id=&quot;more-14332&quot;&gt;&lt;\/span&gt;\r\n&lt;h3 id=&quot;What&amp;#39;snewinAndroid?-AndroidStudio&quot;&gt;Android Studio&lt;\/h3&gt;\r\n&lt;p&gt;Une des plus grosses surprises reste l'annonce du nouvel environnement de d\u00e9veloppement : Android Studio. En effet apr\u00e8s des ann\u00e9es \u00e0 d\u00e9velopper le plugin ADT pour Eclipse, Google s'oriente maintenant vers un IDE qui s'appuie sur IntelliJ. JetBrains a d'ailleurs \u00e9crit une &lt;a href=&quot;http:\/\/blogs.jetbrains.com\/idea\/2013\/05\/intellij-idea-and-android-studio-faq\/&quot; rel=&quot;nofollow&quot;&gt;entr\u00e9e dans leur blog&lt;\/a&gt; suite aux nombreuses questions suscit\u00e9es par cette annonce. Il en ressort qu'Android Studio et le plugin Android d'IntelliJ sont construits \u00e0 partir de la m\u00eame base de code. Toutes les nouvelles fonctionnalit\u00e9s pr\u00e9sentes dans Android Studio seront donc disponibles dans les prochaines releases de la version 13 d'IntelliJ.&lt;\/p&gt;\r\n&lt;p&gt;Android studio est actuellement disponible en &lt;a href=&quot;http:\/\/developer.android.com\/sdk\/installing\/studio.html&quot; rel=&quot;nofollow&quot;&gt;early preview&lt;\/a&gt; et dispose de nouvelles fonctionnalit\u00e9s int\u00e9ressantes dont notamment :&lt;\/p&gt;\r\n&lt;ul&gt;\r\n  &lt;li&gt;Le support du nouveau syst\u00e8me de build : Gradle,&lt;\/li&gt;\r\n  &lt;li&gt;Un \u00e9diteur graphique plus abouti, permettant de voir le rendu sur plusieurs devices en m\u00eame temps,&lt;\/li&gt;\r\n  &lt;li&gt;Possibilit\u00e9 de voir la valeur d'une ressource suivant la langue directement dans le code.\u00a0&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n&lt;h3 id=&quot;What&amp;#39;snewinAndroid?-Unnouveausyst\u00e8medebuild&quot;&gt;Un nouveau syst\u00e8me de build&lt;\/h3&gt;\r\n&lt;p&gt;Lors de la pr\u00e9sentation &lt;a href=&quot;https:\/\/developers.google.com\/live\/shows\/599297362\/&quot; rel=&quot;nofollow&quot;&gt;&amp;quot;The New Android SDK Build System&amp;quot;&lt;\/a&gt;,\u00a0Xavier Ducrochet nous a introduit le nouveau syst\u00e8me de build pour Android : Gradle. Le plugin Android est actuellement en &lt;a href=&quot;http:\/\/tools.android.com\/tech-docs\/new-build-system&quot; rel=&quot;nofollow&quot;&gt;version 0.4.1&lt;\/a&gt; et propose d\u00e9j\u00e0 un ensemble de fonctionnalit\u00e9s prometteuses. Entre autres un syst\u00e8me de flavors qui permet de construire diff\u00e9rentes versions d'une m\u00eame application mais aussi de facilement mettre en place du multi-apk. Pour plus d'informations concernant ce syst\u00e8me de build, la &lt;a href=&quot;http:\/\/tools.android.com\/tech-docs\/new-build-system\/user-guide&quot; rel=&quot;nofollow&quot;&gt;documentation officielle&lt;\/a&gt; est vraiment claire et met \u00e0 disposition des projets d'exemple.&lt;\/p&gt;\r\n&lt;p&gt;Cette annonce va de paire avec celle d'Android Studio qui int\u00e8gre d\u00e9j\u00e0 le support de Gradle. Seule ombre au tableau, ce plugin utilise un nouveau format (.aar) pour packager les librairies n\u00e9cessitant des ressources Android qui n'est pas compatible avec le format apklib de Maven Android. Il faut attendre la s\u00e9ance de questions pour apprendre qu'il est pr\u00e9vu que le plugin Maven pour Android utilise ce nouveau format. D'ailleurs certaines librairies comme ActionBarSherlock &lt;a href=&quot;https:\/\/github.com\/JakeWharton\/ActionBarSherlock\/blob\/dev\/build.gradle&quot; rel=&quot;nofollow&quot;&gt;pr\u00e9voit d\u00e9j\u00e0 de le supporter&lt;\/a&gt;.\u00a0&lt;\/p&gt;\r\n&lt;h3 id=&quot;What&amp;#39;snewinAndroid?-GooglePlayServices&quot;&gt;Google Play Services&lt;\/h3&gt;\r\n&lt;h4 id=&quot;What&amp;#39;snewinAndroid?-LocationAPIs&quot;&gt;Location APIs&lt;\/h4&gt;\r\n&lt;p&gt;C'est au cours de la keynote que les nouveaux services int\u00e9gr\u00e9s dans le projet Google Play Services ont \u00e9t\u00e9 pr\u00e9sent\u00e9s. Tout d'abord trois nouvelles API de localisation font leur apparition :&lt;\/p&gt;\r\n&lt;ul&gt;\r\n  &lt;li&gt;&lt;a href=&quot;https:\/\/developer.android.com\/training\/location\/retrieve-current.html&quot; rel=&quot;nofollow&quot;&gt;Fused Location Provider&lt;\/a&gt; : API de haut niveau permettant de s'abstraire des location providers (GPS, WI-FI) pour r\u00e9cup\u00e9rer les informations de g\u00e9olocalisation adapt\u00e9es au besoin,\u00a0&lt;\/li&gt;\r\n  &lt;li&gt;&lt;a href=&quot;http:\/\/developer.android.com\/training\/location\/activity-recognition.html&quot; rel=&quot;nofollow&quot;&gt;Activity Recognition&lt;\/a&gt; : API capable de d\u00e9terminer l'activit\u00e9 de l'utilisateur (en voiture, \u00e0 v\u00e9lo ...) afin de permettre aux applications de s'adapter au contexte d'utilisation en am\u00e9liorant ainsi l'exp\u00e9rience utilisateur,&lt;\/li&gt;\r\n  &lt;li&gt;&lt;a href=&quot;http:\/\/developer.android.com\/training\/location\/geofencing.html&quot; rel=&quot;nofollow&quot;&gt;Geofencing&lt;\/a&gt; : offre la possibilit\u00e9 de d\u00e9clencher des triggers quand un utilisateur entre ou sort de zones g\u00e9ographiques pr\u00e9cises.&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n&lt;p&gt;Avec ces nouvelles API, le d\u00e9veloppement d'application dont le contenu n\u00e9cessite de s'adapter au contexte d'utilisation devrait \u00eatre simplifi\u00e9. Elles ont aussi pour but de r\u00e9duire la consommation de batterie li\u00e9e \u00e0 la r\u00e9cup\u00e9ration d'informations de g\u00e9olocalisation.&lt;\/p&gt;\r\n&lt;h4 id=&quot;What&amp;#39;snewinAndroid?-GameServices&quot;&gt;Game Services&lt;\/h4&gt;\r\n&lt;p&gt;Il s'agit d'un ensemble de fonctionnalit\u00e9s qui permettent de rendre les jeux plus attractifs aupr\u00e8s des utilisateurs. Il est maintenant possible de mettre en place des r\u00e9compenses ou des leaderboards afin de fid\u00e9liser le joueur. Afin d'am\u00e9liorer l'exp\u00e9rience cross-device, l'avancement d'un jeu peut maintenant \u00eatre sauv\u00e9 dans le cloud afin de pouvoir reprendre sa partie, et ce, peu importe le device utilis\u00e9. Pour finir, le d\u00e9veloppement d'applications multi-joueurs en temps r\u00e9el est facilit\u00e9 avec ces nouvelles APIs. \u00a0&lt;\/p&gt;\r\n&lt;h4 id=&quot;What&amp;#39;snewinAndroid?-GoogleCloudMessaging&quot;&gt;Google Cloud Messaging&lt;\/h4&gt;\r\n&lt;p&gt;Il fait maintenant partie int\u00e9grante du projet Google Play Services et se voit dot\u00e9 de nouvelles fonctionnalit\u00e9s :&lt;\/p&gt;\r\n&lt;ul&gt;\r\n  &lt;li&gt;&lt;a href=&quot;http:\/\/developer.android.com\/google\/gcm\/ccs.html&quot; rel=&quot;nofollow&quot;&gt;upstream&lt;\/a&gt; : bien qu'abandonn\u00e9 par Hangout le protocole XMPP refait son apparition afin de permettre une communication bi-directionnelle entre le serveur et un device,&lt;\/li&gt;\r\n  &lt;li&gt;&lt;a href=&quot;http:\/\/developer.android.com\/google\/gcm\/notifications.html&quot; rel=&quot;nofollow&quot;&gt;seamless multi-device messaging&lt;\/a&gt; : Google permet de grouper les devices d'un m\u00eame utilisateur afin d'envoyer de mani\u00e8re uniforme des notifications \u00e0 un utilisateur. Par exemple si un utilisateur re\u00e7oit la notification et traite l'information sur son t\u00e9l\u00e9phone il ne l'aura pas en double sur sa tablette par exemple.\u00a0&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n&lt;p&gt;Le principal avantage des Google Play Services est qu'ils sont mis \u00e0 jour au travers du Play store ind\u00e9pendamment de la version de l'OS (jusqu'\u00e0 la 2.2). Par contre les \u00e9mulateurs actuels ne permettent pas de les tester nativement, c'est pourquoi une image contenant les play services devrait voir le jour via le SDK Manager. Tous ces Google Play Services seront pr\u00e9sent\u00e9s plus en d\u00e9tails dans un prochain article.&lt;\/p&gt;\r\n&lt;h3 id=&quot;What&amp;#39;snewinAndroid?-Traductionsimplifi\u00e9e&quot;&gt;Traduction simplifi\u00e9e&lt;\/h3&gt;\r\n&lt;p&gt;Google lance un nouveau service professionnel de traduction d'application directement int\u00e9gr\u00e9 dans la console Play. Il a \u00e9t\u00e9 pr\u00e9sent\u00e9 plus en d\u00e9tails au cours de la session &lt;a href=&quot;https:\/\/developers.google.com\/live\/shows\/599819016\/&quot; rel=&quot;nofollow&quot;&gt;&amp;quot;Building Android Apps for Global Audience&amp;quot;&lt;\/a&gt;. On y apprend que la tarification se fait au nombre de mots, le prix du mot variant d'une langue \u00e0 l'autre. De plus l'utilisateur est en mesure de suivre l'\u00e9tat d'avancement de ses traductions. Pour finir le traducteur peut, via un syst\u00e8me de commentaires, demander des pr\u00e9cisions concernant le contexte d'utilisation d'un mot afin de le traduire au mieux.&lt;\/p&gt;\r\n&lt;h3 id=&quot;What&amp;#39;snewinAndroid?-Betatesting\/Stagedrollouts&quot;&gt;Beta testing\/Staged rollouts&lt;\/h3&gt;\r\n&lt;p&gt;Dans la nouvelle version de la console Play il est maintenant possible de faire tester une version d'un apk \u00e0 un ensemble r\u00e9duit d'utilisateurs. Ces groupes de testeurs peuvent \u00eatre soit un Google Group soit une Google+ Community. Ces utilisateurs ne pourront pas laisser d'avis publics directement sur Google Play, il faut donc penser \u00e0 leur fournir un canal de communication sp\u00e9cifique (email, site web...)&lt;\/p&gt;\r\n&lt;p&gt;En plus du beta testing, il est possible de faire du &amp;quot;staged rollouts&amp;quot;. Cela consiste \u00e0 releaser de mani\u00e8re progressive une nouvelle version d'une application afin de pouvoir contr\u00f4ler l'\u00e9volution de l'avis des utilisateurs vis \u00e0 vis des nouvelles fonctionnalit\u00e9s mais aussi s'assurer que le nombre de crash n'augmente pas.\u00a0&lt;\/p&gt;\r\n&lt;h3 id=&quot;What&amp;#39;snewinAndroid?-Etlesautresannonces...&quot;&gt;Et les autres annonces...&lt;\/h3&gt;\r\n&lt;p&gt;Lors de la session &lt;a href=&quot;https:\/\/developers.google.com\/live\/shows\/576596704\/&quot; rel=&quot;nofollow&quot;&gt;&amp;quot;Best Practices for Bluetooth Development&amp;quot;&lt;\/a&gt;, on apprend qu'il sera possible d'utiliser la technologie &lt;a href=&quot;http:\/\/en.wikipedia.org\/wiki\/Bluetooth_low_energy&quot; rel=&quot;nofollow&quot;&gt;Bluetooth Low Energy&lt;\/a&gt; \u00e0 partir de la version 18 de l'API sur les devices mettant \u00e0 disposition cette technologie.&lt;\/p&gt;\r\n&lt;p&gt;Pour finir la derni\u00e8re annonce concerne la Google TV qu'il a \u00e9t\u00e9 possible d'apercevoir fonctionner sous Jelly Bean. Une mise \u00e0 jour vers la toute derni\u00e8re version d'Android devrait voir le jour au cours de l'ann\u00e9e.&lt;\/p&gt;\r\n&lt;p&gt;\u00a0&lt;\/p&gt;\r\n",
+		"excerpt": "",
+		"date": "2013-05-30 11:34:00",
+		"modified": "2013-05-30 09:56:24",
+		"categories": [{
+                       "id": 265,
+                       "slug": "mobilite",
+                       "title": "Mobilit\u00e9",
+                       "description": "",
+                       "parent": 0,
+                       "post_count": 27
+                       }
+                       ],
+		"tags": [{
+                 "id": 264,
+                 "slug": "android",
+                 "title": "Android",
+                 "description": "",
+                 "post_count": 43
+                 }, {
+                 "id": 875,
+                 "slug": "api",
+                 "title": "API",
+                 "description": "",
+                 "post_count": 3
+                 }, {
+                 "id": 1191,
+                 "slug": "google-cloud-messaging",
+                 "title": "Google Cloud Messaging",
+                 "description": "",
+                 "post_count": 3
+                 }
+                 ],
+		"author": {
+			"id": 80,
+			"slug": "tguerin",
+			"name": "Thomas Guerin",
+			"first_name": "Thomas",
+			"last_name": "Guerin",
+			"nickname": "tguerin",
+			"url": "http:\/\/blog.xebia.fr",
+			"description": "Consultant Java"
+		},
+		"comments": [{
+                     "id": 1048996,
+                     "name": "Mounir",
+                     "url": "",
+                     "date": "2013-05-30 17:16:32",
+                     "content": "&lt;p&gt;A noter qu&amp;rsquo;il n&amp;rsquo;est pas possible \u00e0l&amp;rsquo;heure actuelle de g\u00e9n\u00e9rer un projet android maven avec android studio. &lt;\/p&gt;\n&lt;p&gt;Toutefois en importer un fonctionne sans probl\u00e8me.&lt;\/p&gt;\n",
+                     "parent": 0
+                     }
+                     ],
+		"attachments": [{
+                        "id": 14331,
+                        "url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid.jpeg",
+                        "slug": "defi-android-logoandroid-jpeg",
+                        "title": "defi-android-logoandroid.jpeg",
+                        "description": "",
+                        "caption": "",
+                        "parent": 14332,
+                        "mime_type": "image\/jpeg",
+                        "images": {
+                        "full": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid.jpeg",
+						"width": 871,
+						"height": 847
+                        },
+                        "thumbnail": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-150x150.jpeg",
+						"width": 150,
+						"height": 150
+                        },
+                        "medium": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-300x291.jpeg",
+						"width": 300,
+						"height": 291
+                        },
+                        "large": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid.jpeg",
+						"width": 871,
+						"height": 847
+                        },
+                        "guest-author-32": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-32x32.jpeg",
+						"width": 32,
+						"height": 32
+                        },
+                        "guest-author-64": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-64x64.jpeg",
+						"width": 64,
+						"height": 64
+                        },
+                        "guest-author-96": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-96x96.jpeg",
+						"width": 96,
+						"height": 96
+                        },
+                        "guest-author-128": {
+						"url": "http:\/\/blog.xebia.fr\/wp-content\/uploads\/2013\/05\/defi-android-logoandroid-128x128.jpeg",
+						"width": 128,
+						"height": 128
+                        }
+                        }
+                        }
+                        ],
+		"comment_count": 1,
+		"comment_status": "open"
+	},
+	"previous_url": "http:\/\/blog.xebia.fr\/2013\/05\/29\/graphite-les-bases\/"
+}

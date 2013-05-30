@@ -14,12 +14,12 @@
 
 @property (nonatomic, strong, readonly)NSError *error;
 @property (nonatomic, strong, readonly)id rawData;
-@property (nonatomic, strong, readonly)NSObject<XBDataLoader> *dataLoader;
-@property (nonatomic, strong, readonly)NSObject<XBDataMapper> *dataMapper;
+@property (nonatomic, strong, readonly)id<XBDataLoader> dataLoader;
+@property (nonatomic, strong, readonly)id<XBDataMapper> dataMapper;
 
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper;
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
 
-+ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper;
++ (id)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
 
 - (void)loadData;
 

@@ -12,18 +12,18 @@
 
 @property (nonatomic, strong)NSError *error;
 @property (nonatomic, strong)id rawData;
-@property (nonatomic, strong)NSObject<XBDataLoader> *dataLoader;
-@property (nonatomic, strong)NSObject<XBDataMapper> *dataMapper;
+@property (nonatomic, strong)id<XBDataLoader> dataLoader;
+@property (nonatomic, strong)id<XBDataMapper> dataMapper;
 
 @end
 
 @implementation XBReloadableArrayDataSource
 
-+ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper {
++ (id)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper {
     return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper];
 }
 
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper {
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper {
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;

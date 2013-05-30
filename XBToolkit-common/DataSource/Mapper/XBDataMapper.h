@@ -9,6 +9,6 @@
 
 @protocol XBDataMapper <NSObject>
 
--(id)mapData:(id)data;
+- (id)mapData:(id)data;
 
 @end

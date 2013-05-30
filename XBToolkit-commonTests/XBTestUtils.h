@@ -14,6 +14,7 @@
 +(WPAuthor *)findAuthorInArray:(NSArray *) authors ById:(NSInteger)identifier;
 +(UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier;
 +(NSDictionary *)getAuthorsAsJson;
++(NSDictionary *)getSinglePostAsJson;
 +(id)fakeHttpClientWithSuccessCallbackWithData:(id)data;
 +(id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data;
 +(id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName;

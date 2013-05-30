@@ -9,7 +9,7 @@
 
 @interface XBHttpJsonDataLoader()
 @property (nonatomic, strong)NSString *resourcePath;
-@property (nonatomic, strong)XBHttpClient *httpClient;
+@property (nonatomic, strong) XBHttpClient *httpClient;
 @property (nonatomic, strong)NSObject<XBHttpQueryParamBuilder> *httpQueryParamBuilder;
 @end
 

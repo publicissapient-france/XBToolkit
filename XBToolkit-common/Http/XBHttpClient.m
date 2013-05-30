@@ -9,7 +9,7 @@
 #import "AFNetworking.h"
 #import "XBLogging.h"
 
-@interface XBHttpClient()
+@interface XBHttpClient ()
 
 @property(nonatomic, strong)NSString *baseUrl;
 
@@ -36,8 +36,8 @@
 
 - (void)executeGetJsonRequestWithPath:(NSString *)path
                            parameters:(NSDictionary *)parameters
-                                  success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
-                              failure: (void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id))errorCb {
+                              success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
+                              failure:(void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id))errorCb {
 
     NSURLRequest *urlRequest = [_afHttpClient requestWithMethod:@"GET" path:path parameters:parameters];
 

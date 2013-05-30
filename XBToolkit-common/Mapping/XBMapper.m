@@ -104,22 +104,22 @@
         [NSException raise:NSInvalidArgumentException format:@"Class provided does not implement XBMappingProtocol"];
     }
 
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: objectClass andConfiguration: [objectClass mappings]];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: objectClass andConfiguration:[objectClass mappings]];
 
     return [parser parseArray:objectArray];
 
 }
 
-+ (id)parseObject:(NSDictionary*)objectDictionnary intoObjectsOfType:(Class)objectClass {
++ (id)parseObject:(NSDictionary *)objectDictionary intoObjectOfType:(Class)objectClass {
 
     if (![objectClass conformsToProtocol:@protocol(XBMappingProvider)]) {
 
         [NSException raise:NSInvalidArgumentException format:@"Class provided does not implement XBMappingProtocol"];
     }
 
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: objectClass andConfiguration: [objectClass mappings]];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: objectClass andConfiguration:[objectClass mappings]];
 
-    return [parser parseDictionary:objectDictionnary];
+    return [parser parseDictionary:objectDictionary];
 
 }
 
