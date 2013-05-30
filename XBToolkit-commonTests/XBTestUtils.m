@@ -28,7 +28,7 @@
 }
 
 + (id)getAuthorsAsJsonWithPage:(NSUInteger)page {
-    NSString *filename = [NSString stringWithFormat:@"wp-author-index-p%ld", page];
+    NSString *filename = [NSString stringWithFormat:@"wp-author-index-p%d", page];
     NSString *file = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
     NSString *jsonLoaded = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
     return [jsonLoaded objectFromJSONString];

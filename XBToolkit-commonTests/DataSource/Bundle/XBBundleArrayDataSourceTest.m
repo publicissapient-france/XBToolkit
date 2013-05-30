@@ -32,7 +32,7 @@
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 //    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
-    GHAssertNil(bundleDS.error, [NSString stringWithFormat:@"Error[code: '%i', domain: '%@'", (long)bundleDS.error.code, bundleDS.error.domain]);
+    GHAssertNil(bundleDS.error, [NSString stringWithFormat:@"Error[code: '%ld', domain: '%@'", (long)bundleDS.error.code, bundleDS.error.domain]);
     GHAssertTrue(bundleDS.count > 0, @"Response should not be nil");
 }
 
