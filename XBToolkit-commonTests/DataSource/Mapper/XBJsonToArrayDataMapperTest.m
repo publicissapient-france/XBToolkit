@@ -18,7 +18,7 @@
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
     NSArray *wpAuthors = [dataMapper mapData:[XBTestUtils getAuthorsAsJson]];
 
-    GHAssertEquals(wpAuthors.count, [@70U unsignedIntValue], nil);
+    GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
 }
 
 - (void)testValues {
