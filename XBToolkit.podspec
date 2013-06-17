@@ -22,10 +22,10 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'JSONKit',						'1.5pre'
-  s.dependency 'Underscore.m',					'0.2.0'
-  s.dependency 'AFNetworking',					'1.1'
+  s.dependency 'Underscore.m',			'0.2.0'
+  s.dependency 'AFNetworking',			'1.3'
   s.dependency 'AFHTTPRequestOperationLogger',	'0.10.0'
   # s.dependency 'KeyValueObjectMapping',	:git => "https://github.com/viteinfinite/KeyValueObjectMapping.git", :tag => "1.3.1"
-  s.dependency 'CocoaLumberjack',				'1.6'
+  s.dependency 'CocoaLumberjack',		'1.6'
 
 end
