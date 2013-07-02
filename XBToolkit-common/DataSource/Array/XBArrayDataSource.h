@@ -6,7 +6,6 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBArrayDataSource.h"
 
 typedef BOOL (^XBPredicateBlock)(id obj);
 
@@ -27,5 +26,7 @@ typedef BOOL (^XBPredicateBlock)(id obj);
 - (void)filter:(XBPredicateBlock)filterPredicate;
 
 - (void)sort:(NSComparator)sortComparator;
+
+- (NSArray *)array;
 
 @end
