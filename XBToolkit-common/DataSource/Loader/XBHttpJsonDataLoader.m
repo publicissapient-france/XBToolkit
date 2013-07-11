@@ -8,9 +8,9 @@
 #import "XBHttpJsonDataLoader.h"
 
 @interface XBHttpJsonDataLoader()
-@property (nonatomic, strong)NSString *resourcePath;
+@property (nonatomic, strong) NSString *resourcePath;
 @property (nonatomic, strong) XBHttpClient *httpClient;
-@property (nonatomic, strong)NSObject<XBHttpQueryParamBuilder> *httpQueryParamBuilder;
+@property (nonatomic, strong) NSObject<XBHttpQueryParamBuilder> *httpQueryParamBuilder;
 @end
 
 @implementation XBHttpJsonDataLoader

@@ -7,10 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class AFHTTPClient;
 
 @interface XBHttpClient : NSObject
 
 @property(nonatomic, strong, readonly)NSString *baseUrl;
+@property(nonatomic, strong, readonly)AFHTTPClient *afHttpClient;
 
 +(id)httpClientWithBaseUrl:(NSString *)baseUrl;
 -(id)initWithBaseUrl:(NSString *)baseUrl;

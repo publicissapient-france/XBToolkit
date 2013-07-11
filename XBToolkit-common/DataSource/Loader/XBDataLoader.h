@@ -9,6 +9,9 @@
 
 @protocol XBDataLoader <NSObject>
 
--(void)loadDataWithSuccess:(void(^)(id))success failure:(void(^)(NSError *))failure;
+- (void)loadDataWithSuccess:(void(^)(id))success failure:(void(^)(NSError *))failure;
+
+@optional
+- (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 @end

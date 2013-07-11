@@ -25,4 +25,7 @@
 
 - (void)loadDataWithCallback:(void (^)())callback;
 
+- (void)loadDataWithHttpMethod:(NSString *)httpMethod
+                  withCallback:(void (^)())callback;
+
 @end

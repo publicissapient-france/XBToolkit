@@ -55,6 +55,24 @@
     }];
 }
 
+- (void)loadDataWithHttpMethod:(NSString *)httpMethod
+                  withCallback:(void (^)())callback
+{
+    [self.dataLoader loadDataWithHttpMethod:httpMethod
+                                withSuccess:^(id data) {
+                                    [self processSuccessWithRawData:data];
+                                    if (callback) {
+                                        callback();
+                                    }
+                                } failure:^(NSError *error) {
+                                    self.error = error;
+                                    if (callback) {
+                                        callback();
+                                    }
+                                }];
+}
+
+
 - (void)processSuccessWithRawData:(id)rawData
 {
     self.rawData = rawData;
