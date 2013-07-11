@@ -54,6 +54,12 @@
                                                                                              parameters:[OCMArg any]
                                                                                                 success:[OCMArg isNotNil]
                                                                                                 failure:[OCMArg isNotNil]];
+    
+    [[[httpClient expect] andDo:[self fakeSuccessCallbackForMethodWithData: data]] executeJsonRequestWithPath:[OCMArg isNotNil]
+                                                                                                   httpMethod:[OCMArg isNotNil]
+                                                                                                   parameters:[OCMArg any]
+                                                                                                      success:[OCMArg isNotNil]
+                                                                                                      failure:[OCMArg isNotNil]];
 
     return httpClient;
 }
@@ -69,6 +75,13 @@
                                    parameters:[OCMArg any]
                                       success:[OCMArg isNotNil]
                                       failure:[OCMArg isNotNil]];
+        
+        [[[httpClient expect] andDo:[self fakeSuccesiveSuccessCallbackForMethodWithData:data parameterName:parameterName]]
+         executeJsonRequestWithPath:[OCMArg isNotNil]
+         httpMethod:[OCMArg isNotNil]
+         parameters:[OCMArg any]
+         success:[OCMArg isNotNil]
+         failure:[OCMArg isNotNil]];
     }
 
     return httpClient;
@@ -81,6 +94,12 @@
                                                                                              parameters:[OCMArg any]
                                                                                                 success:[OCMArg isNotNil]
                                                                                                 failure:[OCMArg isNotNil]];
+    
+    [[[httpClient expect] andDo:[self fakeErrorCallbackForMethodWithError:error data: data]] executeJsonRequestWithPath:[OCMArg isNotNil]
+                                                                                                             httpMethod:[OCMArg isNotNil]
+                                                                                                             parameters:[OCMArg any]
+                                                                                                                success:[OCMArg isNotNil]
+                                                                                                                failure:[OCMArg isNotNil]];
 
     return httpClient;
 }
@@ -102,6 +121,23 @@
     };
 }
 
++(void (^)(NSInvocation *))fakeSuccesiveSuccessCallbackForMethodWithData:(NSArray *)data parameterName:(NSString *)parameterName {
+    return ^(NSInvocation *invocation) {
+        
+        NSDictionary * parameters = [invocation getArgumentAtIndexAsObject:4];
+        NSUInteger page = (NSUInteger)[parameters[@"page"] integerValue];
+        
+        void (^successCb)(NSURLRequest *, NSHTTPURLResponse *, id) = nil;
+        [invocation getArgument:&successCb atIndex:5];
+        if (!page) {
+            successCb(nil, nil, data[0]);
+        }
+        else {
+            successCb(nil, nil, data[page]);
+        }
+    };
+}
+
 
 +(void (^)(NSInvocation *))fakeSuccessCallbackWithData:(id)data {
     return ^(NSInvocation *invocation) {
@@ -111,10 +147,26 @@
     };
 }
 
++(void (^)(NSInvocation *))fakeSuccessCallbackForMethodWithData:(id)data {
+    return ^(NSInvocation *invocation) {
+        void (^successCb)(NSURLRequest *, NSHTTPURLResponse *, id) = nil;
+        [invocation getArgument:&successCb atIndex:5];
+        successCb(nil, nil, data);
+    };
+}
+
 +(void (^)(NSInvocation *))fakeErrorCallbackWithError:(NSError *)error data:(id)data {
     return ^(NSInvocation *invocation) {
         void (^errorCb)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id) = nil;
         [invocation getArgument:&errorCb atIndex:5];
+        errorCb(nil, nil, error, data);
+    };
+}
+
++(void (^)(NSInvocation *))fakeErrorCallbackForMethodWithError:(NSError *)error data:(id)data {
+    return ^(NSInvocation *invocation) {
+        void (^errorCb)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id) = nil;
+        [invocation getArgument:&errorCb atIndex:6];
         errorCb(nil, nil, error, data);
     };
 }
