@@ -20,7 +20,7 @@
 }
 
 +(id)httpClientWithBaseUrl:(NSString *)baseUrl {
-    return [[XBHttpClient alloc] initWithBaseUrl:baseUrl];
+    return [[self alloc] initWithBaseUrl:baseUrl];
 }
 
 -(id)initWithBaseUrl:(NSString *)baseUrl {
