@@ -44,6 +44,7 @@
             callback();
         }
     } failure:^(NSError *error, id jsonFetched) {
+        [self processFailureWithRawData:jsonFetched];
         self.error = error;
         if (callback) {
             callback();
@@ -55,6 +56,11 @@
     self.rawData = rawData;
     self.array = [self.dataMapper mapData:rawData];
     [self filterData];
+}
+
+- (void)processFailureWithRawData:(id)rawData
+{
+    self.rawData = rawData;
 }
 
 @end
