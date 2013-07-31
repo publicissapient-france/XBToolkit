@@ -47,7 +47,7 @@
         if (callback) {
             callback();
         }
-    } failure:^(NSError *error) {
+    } failure:^(NSError *error, id jsonFetched) {
         self.error = error;
         if (callback) {
             callback();
@@ -64,7 +64,7 @@
                                     if (callback) {
                                         callback();
                                     }
-                                } failure:^(NSError *error) {
+                                } failure:^(NSError *error, id jsonFetched) {
                                     self.error = error;
                                     if (callback) {
                                         callback();

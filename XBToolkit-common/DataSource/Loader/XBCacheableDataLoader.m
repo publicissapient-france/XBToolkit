@@ -41,7 +41,7 @@
     return [self.cacheKeyBuilder buildWithData:self.dataLoader];
 }
 
-- (void)loadDataWithSuccess:(void(^)(id))success failure:(void(^)(NSError *))failure {
+- (void)loadDataWithSuccess:(void(^)(id))success failure:(void(^)(NSError *, id))failure {
 
     NSDictionary *data = [self fetchDataFromCacheWithError:nil];
 
@@ -53,8 +53,8 @@
             NSError *error = nil;
             [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
             success(loadedData);
-        } failure:^(NSError *error) {
-            failure(error);
+        } failure:^(NSError *error, id jsonFetched) {
+            failure(error, jsonFetched);
         }];
     }
 }

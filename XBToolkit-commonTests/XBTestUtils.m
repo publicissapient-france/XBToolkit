@@ -138,7 +138,6 @@
     };
 }
 
-
 +(void (^)(NSInvocation *))fakeSuccessCallbackWithData:(id)data {
     return ^(NSInvocation *invocation) {
         void (^successCb)(NSURLRequest *, NSHTTPURLResponse *, id) = nil;

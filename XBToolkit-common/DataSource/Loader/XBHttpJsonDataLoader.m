@@ -34,7 +34,7 @@
     return self;
 }
 
-- (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure
+- (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(void (^)(id))success failure:(void (^)(NSError *, id))failure
 {
     NSDictionary *parameters = self.httpQueryParamBuilder ? [self.httpQueryParamBuilder build] : nil;
     [self.httpClient executeJsonRequestWithPath:self.resourcePath httpMethod:httpMethod parameters:parameters
@@ -45,13 +45,13 @@
                                            }
                                            failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonFetched) {
                                                if (failure) {
-                                                   failure(jsonFetched);
+                                                   failure(error, jsonFetched);
                                                }
                                            }
      ];
 }
 
-- (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+- (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *, id))failure {
     [self loadDataWithHttpMethod:@"GET" withSuccess:success failure:failure];
 }
 

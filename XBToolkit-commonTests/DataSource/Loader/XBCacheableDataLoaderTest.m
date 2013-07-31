@@ -43,7 +43,7 @@
     [dataLoader loadDataWithSuccess:^(NSDictionary *data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
-    } failure:^(NSError *error) {
+    } failure:^(NSError *error, id jsonFetched) {
         responseError = error;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];

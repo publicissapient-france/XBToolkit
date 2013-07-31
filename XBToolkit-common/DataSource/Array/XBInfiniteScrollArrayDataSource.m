@@ -63,7 +63,7 @@
         if (callback) {
             callback();
         }
-    } failure:^(NSError *error) {
+    } failure:^(NSError *error, id jsonFetched) {
         XBLogWarn(@"Error: %@", error);
         self.error = error;
         if (callback) {
