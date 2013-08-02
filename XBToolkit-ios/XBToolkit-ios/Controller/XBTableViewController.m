@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Xebia France. All rights reserved.
 //
 
-#import "UIColor+XBAdditions.h"
 #import "UITableViewCell+VariableHeight.h"
 #import "XBToolkit.h"
 #import "XBArrayDataSource.h"
@@ -45,8 +44,6 @@
 }
 
 - (void)configureTableView {
-    self.tableView.backgroundColor = [UIColor colorWithPatternImageName:@"bg_home_pattern"];
-//    self.tableView.backgroundColor = [UIColor colorWithHex:@"#191919" alpha:1.0];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self.tableView registerNib:[UINib nibWithNibName:[self.delegate cellNibName] bundle:nil] forCellReuseIdentifier:[self.delegate cellReuseIdentifier]];

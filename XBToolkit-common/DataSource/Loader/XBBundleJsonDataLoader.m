@@ -34,7 +34,7 @@
     return self;
 }
 
-- (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+- (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *, id))failure {
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *file = [mainBundle pathForResource:self.resourcePath ofType:self.resourceType];
     NSError *error;
@@ -46,7 +46,7 @@
         success(json);
     }
     else {
-        failure(error);
+        failure(error, nil);
     }
 
 }

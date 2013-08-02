@@ -109,8 +109,6 @@
 		DB34D4DE3C27799C71F448A6 /* UIScreen+XBAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34DBB59BE4A0CDD5A9EEF9 /* UIScreen+XBAdditions.h */; };
 		DB34D545D0984B70648D0A97 /* UITableViewCell+VariableHeight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34D578A14BD10D7014D9D6 /* UITableViewCell+VariableHeight.h */; };
 		DB34D5AFA4D08F8DE821D95E /* UIImageView+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D211729B2397C072F792 /* UIImageView+XBAdditions.m */; };
-		DB34D662A60D68B1CB55CC6D /* UIColor+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D14DB70CA95B4C48176A /* UIColor+XBAdditions.m */; };
-		DB34D6A2A75C8B50B6179AE7 /* UIColor+XBAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34DF67E1F386687F415679 /* UIColor+XBAdditions.h */; };
 		DB34D6B883061318597BB883 /* UIStoryboard+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34DB3370BFA6BF447E6ABB /* UIStoryboard+XBAdditions.m */; };
 		DB34D6E7F9F0DDF352C16D70 /* XBReloadableTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34DDFC0A0F08EC0859AC44 /* XBReloadableTableViewController.h */; };
 		DB34D7B85A45CEBBECD54CCC /* UIScreen+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D331501CC267C2B85DF8 /* UIScreen+XBAdditions.m */; };
@@ -128,7 +126,6 @@
 		DB34DE178BF7C64257D435C7 /* UIStoryboard+XBAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34D67503D49B5B4ECCB41A /* UIStoryboard+XBAdditions.h */; };
 		DB34DE719B74F2CFA923E80B /* UISearchBar+XBAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34D4DE863210C1F121F593 /* UISearchBar+XBAdditions.h */; };
 		DB34DF3AB06BFB5FA6852DEE /* UIImage+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D3EEC64FCC8309C49BE5 /* UIImage+XBAdditions.m */; };
-		DB34DF477889DD9C23EBD069 /* UIColor+XBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D14DB70CA95B4C48176A /* UIColor+XBAdditions.m */; };
 		DB34DF889E28F2DD930492D9 /* XBInfiniteScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D1740A50F86A7F59C617 /* XBInfiniteScrollTableViewController.m */; };
 		E48D455BB88E451993552315 /* libPods-XBToolkit-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB089F6D419944DFABA5C2B9 /* libPods-XBToolkit-iosTests.a */; };
 /* End PBXBuildFile section */
@@ -145,7 +142,6 @@
 				DB34D4C0744B420030CDB178 /* XBTableViewController.h in CopyFiles */,
 				DB34D6E7F9F0DDF352C16D70 /* XBReloadableTableViewController.h in CopyFiles */,
 				DB34DC8FB87F5FE558977CCB /* XBInfiniteScrollTableViewController.h in CopyFiles */,
-				DB34D6A2A75C8B50B6179AE7 /* UIColor+XBAdditions.h in CopyFiles */,
 				DB34D9FDFB8901C21F78620C /* UIImage+XBAdditions.h in CopyFiles */,
 				DB34DB0ECB7412DB40D2B52F /* UIImageView+XBAdditions.h in CopyFiles */,
 				DB34DE719B74F2CFA923E80B /* UISearchBar+XBAdditions.h in CopyFiles */,
@@ -282,7 +278,6 @@
 		A72D9672488D4A1AB2EB4940 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB089F6D419944DFABA5C2B9 /* libPods-XBToolkit-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XBToolkit-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D15A5AAF9548C8A27C7AE1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		DB34D14DB70CA95B4C48176A /* UIColor+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XBAdditions.m"; sourceTree = "<group>"; };
 		DB34D1740A50F86A7F59C617 /* XBInfiniteScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollTableViewController.m; sourceTree = "<group>"; };
 		DB34D211729B2397C072F792 /* UIImageView+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XBAdditions.m"; sourceTree = "<group>"; };
 		DB34D331501CC267C2B85DF8 /* UIScreen+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+XBAdditions.m"; sourceTree = "<group>"; };
@@ -300,7 +295,6 @@
 		DB34DCC6CEC9B186A9DA5933 /* UIImage+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XBAdditions.h"; sourceTree = "<group>"; };
 		DB34DD7CFFD93DE413B1E460 /* XBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTableViewController.h; sourceTree = "<group>"; };
 		DB34DDFC0A0F08EC0859AC44 /* XBReloadableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBReloadableTableViewController.h; sourceTree = "<group>"; };
-		DB34DF67E1F386687F415679 /* UIColor+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+XBAdditions.h"; sourceTree = "<group>"; };
 		DB34DFD5F61E5F3C24983EC4 /* UISearchBar+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+XBAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -755,8 +749,6 @@
 		DB34D54BF0494658E3890E54 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				DB34DF67E1F386687F415679 /* UIColor+XBAdditions.h */,
-				DB34D14DB70CA95B4C48176A /* UIColor+XBAdditions.m */,
 				DB34DCC6CEC9B186A9DA5933 /* UIImage+XBAdditions.h */,
 				DB34D3EEC64FCC8309C49BE5 /* UIImage+XBAdditions.m */,
 				DB34D8EF8A5440D8EA5B4BA5 /* UIImageView+XBAdditions.h */,
@@ -927,7 +919,6 @@
 				DB34DDCDD8425976225BE862 /* XBTableViewController.m in Sources */,
 				DB34D3D73C4D8869490FFC58 /* XBReloadableTableViewController.m in Sources */,
 				DB34DF889E28F2DD930492D9 /* XBInfiniteScrollTableViewController.m in Sources */,
-				DB34D662A60D68B1CB55CC6D /* UIColor+XBAdditions.m in Sources */,
 				DB34DA2D7DF0E3F22FD144A0 /* UIImage+XBAdditions.m in Sources */,
 				DB34DBC97C48909080CC5361 /* UIImageView+XBAdditions.m in Sources */,
 				DB34D36DB645123FB65791D9 /* UISearchBar+XBAdditions.m in Sources */,
@@ -987,7 +978,6 @@
 				DB34D9DFE4E58E2DFD3121A8 /* XBTableViewController.m in Sources */,
 				DB34D202B4ADB224BE162B66 /* XBReloadableTableViewController.m in Sources */,
 				DB34D391FA3654ADF2407044 /* XBInfiniteScrollTableViewController.m in Sources */,
-				DB34DF477889DD9C23EBD069 /* UIColor+XBAdditions.m in Sources */,
 				DB34DF3AB06BFB5FA6852DEE /* UIImage+XBAdditions.m in Sources */,
 				DB34D5AFA4D08F8DE821D95E /* UIImageView+XBAdditions.m in Sources */,
 				DB34D2031C7BA51FE157F5BF /* UISearchBar+XBAdditions.m in Sources */,
