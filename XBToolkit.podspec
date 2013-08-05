@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "XBToolkit"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "Xebia Toolkit for iOS & OSX."
   s.homepage     = "https://github.com/xebia-france/XBToolkit"
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com' }
 
   s.license      = 'Apache License, Version 2.0'
-  s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :tag => "0.0.6" }
+  s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :tag => s.version.to_s }
 
 #  s.platform = :osx, "10.7"
 #  s.platform = :ios, "5.0"
@@ -23,9 +23,9 @@ Pod::Spec.new do |s|
 
   s.dependency 'JSONKit',						'1.5pre'
   s.dependency 'Underscore.m',			'0.2.0'
-  s.dependency 'AFNetworking',			'1.3.1'
   s.dependency 'AFHTTPRequestOperationLogger',	'0.10.0'
   # s.dependency 'KeyValueObjectMapping',	:git => "https://github.com/viteinfinite/KeyValueObjectMapping.git", :tag => "1.3.1"
+  s.dependency 'AFNetworking',      '1.3.1'
   s.dependency 'CocoaLumberjack',		'1.6'
 
 end
