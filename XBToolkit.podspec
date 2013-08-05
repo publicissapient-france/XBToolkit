@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com' }
 
   s.license      = 'Apache License, Version 2.0'
-  s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :tag => "0.0.5" }
+  s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :tag => "0.0.6" }
 
 #  s.platform = :osx, "10.7"
 #  s.platform = :ios, "5.0"
