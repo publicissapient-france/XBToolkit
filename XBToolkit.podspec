@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XBToolkit"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "Xebia Toolkit for iOS & OSX."
   s.homepage     = "https://github.com/xebia-france/XBToolkit"
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com' }
