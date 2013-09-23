@@ -31,12 +31,9 @@
 
 #import "GHUnit.h"
 #import "GHTestApp.h"
-#import "DDLog.h"
-#import "DDTTYLogger.h"
 
 int main(int argc, char *argv[]) {
     @autoreleasepool {
-        [DDLog addLogger:[DDTTYLogger sharedInstance]];
         
         // Register any special test case classes
         //[[GHTesting sharedInstance] registerClassName:@"GHSpecialTestCase"];

@@ -5,8 +5,6 @@ pod 'Underscore.m',					'0.2.0'
 pod 'AFNetworking',					'1.1'
 pod 'DCKeyValueObjectMapping', 		'1.4'
 pod 'OCMock',						'2.0.1'
-pod 'CocoaLumberjack',				'1.6'
-#pod 'OCMockito',					'0.23'
 
 target 'XBToolkit-iosTests', :exclusive => true do
   pod 'GHUnitIOS',					'0.5.6'

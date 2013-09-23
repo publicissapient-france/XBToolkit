@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   s.dependency 'DCKeyValueObjectMapping',	'1.4'
   s.dependency 'AFNetworking',      '1.3.1'
   s.dependency 'CocoaLumberjack',		'1.6'
-
+  
 end
