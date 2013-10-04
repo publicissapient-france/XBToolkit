@@ -17,23 +17,30 @@
 
 @implementation XBJsonToArrayDataMapper
 
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass {
++ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+{
     return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
 }
 
-- (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass {
+- (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+{
     self = [super init];
     if (self) {
         _rootKeyPath = rootKeyPath;
         _typeClass = typeClass;
     }
-
+    
     return self;
 }
 
-- (id)mapData:(id)data {
+- (id)mapData:(id)data
+{
     NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
-    return [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
+    if ([array isKindOfClass:[NSArray class]]) {
+        return [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
+    }
+    
+    return nil;
 }
 
 @end
