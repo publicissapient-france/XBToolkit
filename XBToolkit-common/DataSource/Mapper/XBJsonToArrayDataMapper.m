@@ -33,14 +33,22 @@
     return self;
 }
 
-- (id)mapData:(id)data
+- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback
 {
-    NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
-    if ([array isKindOfClass:[NSArray class]]) {
-        return [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
-    }
-    
-    return nil;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
+
+        id mappedData = nil;
+        if ([array isKindOfClass:[NSArray class]]) {
+            mappedData = [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (callback) {
+                callback(mappedData);
+            }
+        });
+    });
 }
 
 @end

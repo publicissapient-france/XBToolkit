@@ -18,11 +18,13 @@
 
 @implementation XBJsonToObjectDataMapper
 
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass {
++ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+{
     return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
 }
 
-- (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass {
+- (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+{
     self = [super init];
     if (self) {
         _rootKeyPath = rootKeyPath;
@@ -32,9 +34,19 @@
     return self;
 }
 
-- (id)mapData:(id)data {
-    id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
-    return [XBMapper parseObject:object intoObjectOfType:self.typeClass];
+- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
+        id mappedData = [XBMapper parseObject:object intoObjectOfType:self.typeClass];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (callback) {
+                callback(mappedData);
+            }
+        });
+    });
 }
 
 @end

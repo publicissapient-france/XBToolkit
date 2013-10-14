@@ -16,6 +16,6 @@
 
 -(void)setError:(NSError *)error;
 
-- (void)processSuccessWithRawData:(id)rawData;
+- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback;
 
 @end

@@ -10,20 +10,39 @@
 #import "WPAuthor.h"
 #import "XBTestUtils.h"
 
-@interface XBJsonToArrayDataMapperTest : GHTestCase @end
+NSTimeInterval kNetworkTimeout = 30.0;
+
+@interface XBJsonToArrayDataMapperTest : GHAsyncTestCase @end
 
 @implementation XBJsonToArrayDataMapperTest
 
 - (void)testCount {
+    [self prepare];
+
+    __block NSArray *wpAuthors;
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    NSArray *wpAuthors = [dataMapper mapData:[XBTestUtils getAuthorsAsJson]];
+    [dataMapper mapData:[XBTestUtils getAuthorsAsJson] withCompletionCallback:^(id mappedData) {
+        wpAuthors = mappedData;
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testCount)];
+    }];
+
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
 }
 
 - (void)testValues {
+    [self prepare];
+
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    NSArray *authors = [dataMapper mapData:[XBTestUtils getAuthorsAsJson]];
+    __block NSArray *authors;
+
+    [dataMapper mapData:[XBTestUtils getAuthorsAsJson] withCompletionCallback:^(id mappedData) {
+        authors = mappedData;
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValues)];
+    }];
+
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:authors ById:50];
 

@@ -43,10 +43,11 @@
 - (void)loadDataWithCallback:(void (^)())callback
 {
     [self.dataLoader loadDataWithSuccess:^(id data) {
-        [self processSuccessWithRawData:data];
-        if (callback) {
-            callback();
-        }
+        [self processSuccessWithRawData:data callback:^{
+            if (callback) {
+                callback();
+            }
+        }];
     } failure:^(NSError *error, id jsonFetched) {
         [self processFailureWithRawData:jsonFetched];
         self.error = error;
@@ -61,7 +62,8 @@
 {
     [self.dataLoader loadDataWithHttpMethod:httpMethod
                                 withSuccess:^(id data) {
-                                    [self processSuccessWithRawData:data];
+                                    [self processSuccessWithRawData:data callback:^{
+                                    }];
                                     if (callback) {
                                         callback();
                                     }
@@ -75,10 +77,13 @@
 }
 
 
-- (void)processSuccessWithRawData:(id)rawData
+- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback
 {
     self.rawData = rawData;
-    self.object = [self.dataMapper mapData:rawData];
+    [self.dataMapper mapData:rawData withCompletionCallback:^(id mappedData) {
+        self.object = mappedData;
+        callback();
+    }];
 }
 
 - (void)processFailureWithRawData:(id)rawData

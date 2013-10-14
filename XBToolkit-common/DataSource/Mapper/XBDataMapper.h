@@ -7,8 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^XBDataMapperCompletionCallback)(id mappedData);
+
 @protocol XBDataMapper <NSObject>
 
-- (id)mapData:(id)data;
+- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback;
 
 @end

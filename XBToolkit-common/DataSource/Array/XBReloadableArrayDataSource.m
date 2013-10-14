@@ -34,15 +34,17 @@
 }
 
 - (void)loadData {
-    [self loadDataWithCallback: nil];
+    [self loadDataWithCallback:nil];
 }
 
 - (void)loadDataWithCallback:(void (^)())callback {
     [self.dataLoader loadDataWithSuccess:^(id data) {
-        [self processSuccessWithRawData:data];
-        if (callback) {
-            callback();
-        }
+        [self processSuccessWithRawData:data callback:^{
+            if (callback) {
+                callback();
+            }
+        }];
+
     } failure:^(NSError *error, id jsonFetched) {
         [self processFailureWithRawData:jsonFetched];
         self.error = error;
@@ -52,10 +54,15 @@
     }];
 }
 
-- (void)processSuccessWithRawData:(id)rawData {
+- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback {
     self.rawData = rawData;
-    self.array = [self.dataMapper mapData:rawData];
-    [self filterData];
+    [self.dataMapper mapData:rawData withCompletionCallback:^(id mappedData) {
+        self.array = mappedData;
+        [self filterData];
+        if (callback) {
+            callback();
+        }
+    }];
 }
 
 - (void)processFailureWithRawData:(id)rawData

@@ -59,10 +59,11 @@
 - (void)fetchDataFromSourceInternalWithCallback:(void (^)())callback merge:(BOOL)merge {
 
     [self.dataLoader loadDataWithSuccess:^(id jsonFetched) {
-        [self processSuccessWithRawData:jsonFetched merge:merge];
-        if (callback) {
-            callback();
-        }
+        [self processSuccessWithRawData:jsonFetched merge:merge callback:^{
+            if (callback) {
+                callback();
+            }
+        }];
     } failure:^(NSError *error, id jsonFetched) {
         XBLogWarn(@"Error: %@", error);
         self.error = error;
@@ -72,9 +73,14 @@
     }];
 }
 
-- (void)processSuccessWithRawData:(id)rawData merge:(BOOL)merge {
+- (void)processSuccessWithRawData:(id)rawData merge:(BOOL)merge callback:(void (^)())callback
+{
     id mergedRawData = !merge ? rawData : [self mergeRawData:rawData];
-    [super processSuccessWithRawData:mergedRawData];
+    [super processSuccessWithRawData:mergedRawData callback:^{
+        if (callback) {
+            callback();
+        }
+    }];
 }
 
 - (id)mergeRawData:(id)rawData {

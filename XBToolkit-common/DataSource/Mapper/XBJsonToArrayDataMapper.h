@@ -16,5 +16,4 @@
 
 + (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
 
-
 @end
