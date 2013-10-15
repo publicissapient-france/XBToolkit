@@ -63,10 +63,10 @@
     [self.dataLoader loadDataWithHttpMethod:httpMethod
                                 withSuccess:^(id data) {
                                     [self processSuccessWithRawData:data callback:^{
+                                        if (callback) {
+                                            callback();
+                                        }
                                     }];
-                                    if (callback) {
-                                        callback();
-                                    }
                                 } failure:^(NSError *error, id jsonFetched) {
                                     [self processFailureWithRawData:jsonFetched];
                                     self.error = error;
