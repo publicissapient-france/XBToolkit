@@ -16,8 +16,8 @@
 +(NSDictionary *) dictionaryWithPropertiesOfObject:(id)obj;
 +(NSDictionary *) dictionaryWithPropertiesOfObject:(id)obj withDateFormat:(NSString *) dateFormat;
 
-+ (NSArray *)parseArray:(NSArray*)objectArray intoObjectsOfType:(Class)objectClass;
-+ (id)parseObject:(NSDictionary *)objectDictionary intoObjectOfType:(Class)objectClass;
++ (NSArray *)parseArray:(NSArray *)objectArray intoObjectsOfClass:(Class)objectClass;
++ (id)parseObject:(NSDictionary *)objectDictionary intoObjectOfClass:(Class)objectClass;
 
 
 @end

@@ -8,76 +8,61 @@
 #import "XBHttpClient.h"
 #import "AFNetworking.h"
 #import "XBLogging.h"
+#import "AFHTTPRequestOperation.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 @interface XBHttpClient () 
 
-@property(nonatomic, strong)NSString *baseUrl;
+@property(nonatomic, strong) NSString *baseUrl;
 
 @end
 
-@implementation XBHttpClient {
-    AFHTTPClient *_afHttpClient;
-}
+@implementation XBHttpClient
 
-+(id)httpClientWithBaseUrl:(NSString *)baseUrl {
-    return [[self alloc] initWithBaseUrl:baseUrl];
-}
-
--(id)initWithBaseUrl:(NSString *)baseUrl {
+- (id)initWithBaseUrl:(NSString *)baseUrl
+{
     self = [super init];
 
     if (self) {
         self.baseUrl = baseUrl;
-        _afHttpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseUrl]];
+        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];;
     }
 
     return self;
 }
 
-- (AFHTTPClient *)afHttpClient
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl
 {
-    return _afHttpClient;
+    return [[self alloc] initWithBaseUrl:baseUrl];
 }
 
 - (void)executeJsonRequestWithPath:(NSString *)path
-                        httpMethod:(NSString *)method
+                            method:(NSString *)method
                         parameters:(NSDictionary *)parameters
-                           success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
-                           failure:(void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id))errorCb
+                           success:(XBHttpClientRequestSuccessBlock)successCb
+                           failure:(XBHttpClientRequestFailureBlock)errorCb
 {
-    NSURLRequest *urlRequest = [_afHttpClient requestWithMethod:method path:path parameters:parameters];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest
-        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id json) {
-            XBLogVerbose(@"json: %@", json);
-                                                                                            
-            if (successCb) {
-                successCb(request, response, json);
-            }
-        }
-        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id json) {
-            XBLogWarn(@"Error: %@, json: %@", error, json);
-            
-            if (errorCb) {
-                errorCb(request, response, error, json);
-            }
-        }
-    ];
-    
-    [operation start];
-}
 
-- (void)executeGetJsonRequestWithPath:(NSString *)path
-                           parameters:(NSDictionary *)parameters
-                              success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
-                              failure:(void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id))errorCb
-{
-    [self executeJsonRequestWithPath:path
-                          httpMethod:@"GET"
-                          parameters:parameters
-                             success:successCb
-                             failure:errorCb];
+    NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer
+            requestWithMethod:method
+                    URLString:[[NSURL URLWithString:path relativeToURL:self.httpRequestOperationManager.baseURL] absoluteString]
+                   parameters:parameters];
 
+    AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
+        XBLogVerbose(@"json: %@", httpRequestOperation.responseString);
+
+        if (successCb) {
+            successCb(httpRequestOperation, responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
+        XBLogWarn(@"Error: %@, json: %@", error, httpRequestOperation.responseString);
+
+        if (errorCb) {
+            errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
+        }
+    }];
+
+    [self.httpRequestOperationManager.operationQueue addOperation:operation];
 }
 
 @end

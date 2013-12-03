@@ -14,6 +14,6 @@
 
 - (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
 
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
++ (instancetype)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
 
 @end

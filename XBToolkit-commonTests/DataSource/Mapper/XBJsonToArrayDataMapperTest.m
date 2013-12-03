@@ -17,43 +17,48 @@ NSTimeInterval kNetworkTimeout = 30.0;
 @implementation XBJsonToArrayDataMapperTest
 
 - (void)testCount {
-    [self prepare];
+    GHAssertTrue(NO, nil);
+#warning Change implementation as the mapper is not supposed to work anymore like this
 
-    __block NSArray *wpAuthors;
-    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    [dataMapper mapData:[XBTestUtils getAuthorsAsJson] withCompletionCallback:^(id mappedData) {
-        wpAuthors = mappedData;
-        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testCount)];
-    }];
-
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
-
-    GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
+//    [self prepare];
+//
+//    __block NSArray *wpAuthors;
+//    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+//    [dataMapper mapData:[XBTestUtils getAuthorsAsArray] withCompletionCallback:^(id mappedData) {
+//        wpAuthors = mappedData;
+//        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testCount)];
+//    }];
+//
+//    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
+//
+//    GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
 }
 
 - (void)testValues {
-    [self prepare];
+    GHAssertTrue(NO, nil);
+//    [self prepare];
 
-    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    __block NSArray *authors;
-
-    [dataMapper mapData:[XBTestUtils getAuthorsAsJson] withCompletionCallback:^(id mappedData) {
-        authors = mappedData;
-        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValues)];
-    }];
-
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
-
-    WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:authors ById:50];
-
-    GHAssertEquals([wpAuthor.identifier intValue], 50, nil);
-    GHAssertEqualStrings(wpAuthor.slug, @"akinsella", nil);
-    GHAssertEqualStrings(wpAuthor.name, @"Alexis Kinsella", nil);
-    GHAssertEqualStrings(wpAuthor.first_name, @"Alexis", nil);
-    GHAssertEqualStrings(wpAuthor.last_name, @"Kinsella", nil);
-    GHAssertEqualStrings(wpAuthor.nickname, @"akinsella", nil);
-    GHAssertEqualStrings(wpAuthor.url, @"http://www.xebia.fr", nil);
-    GHAssertEqualStrings(wpAuthor.description_, @"", nil);
+#warning Change implementation as the mapper is not supposed to work anymore like this
+//    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+//    __block NSArray *authors;
+//
+//    [dataMapper mapData:[XBTestUtils getAuthorsAsArray] withCompletionCallback:^(id mappedData) {
+//        authors = mappedData;
+//        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValues)];
+//    }];
+//
+//    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
+//
+//    WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:authors ById:50];
+//
+//    GHAssertEquals([wpAuthor.identifier intValue], 50, nil);
+//    GHAssertEqualStrings(wpAuthor.slug, @"akinsella", nil);
+//    GHAssertEqualStrings(wpAuthor.name, @"Alexis Kinsella", nil);
+//    GHAssertEqualStrings(wpAuthor.first_name, @"Alexis", nil);
+//    GHAssertEqualStrings(wpAuthor.last_name, @"Kinsella", nil);
+//    GHAssertEqualStrings(wpAuthor.nickname, @"akinsella", nil);
+//    GHAssertEqualStrings(wpAuthor.url, @"http://www.xebia.fr", nil);
+//    GHAssertEqualStrings(wpAuthor.description_, @"", nil);
 }
 
 @end

@@ -22,18 +22,21 @@
 
 @implementation XBObjectDataSource
 
-- (id)initWithObject:(NSObject *)object {
+- (id)initWithObject:(NSObject *)object
+{
     if (self = [super init]) {
         _object = object;
     }
     return self;
 }
 
-+ (instancetype)dataSourceWithObject:(NSObject *)object {
++ (instancetype)dataSourceWithObject:(NSObject *)object
+{
     return [[self alloc] initWithObject:object];
 }
 
-- (id)object {
+- (id)object
+{
     return _object;
 }
 

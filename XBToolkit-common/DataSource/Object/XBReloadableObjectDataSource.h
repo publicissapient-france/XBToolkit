@@ -17,9 +17,9 @@
 @property (nonatomic, strong, readonly)id<XBDataLoader> dataLoader;
 @property (nonatomic, strong, readonly)id<XBDataMapper> dataMapper;
 
-+ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
-
 - (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
+
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
 
 - (void)loadData;
 

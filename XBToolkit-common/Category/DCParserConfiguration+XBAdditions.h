@@ -4,12 +4,12 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
+#warning Candidate for deletion
 
 #import <Foundation/Foundation.h>
-#import "DCParserConfiguration.h"
 
-@interface DCParserConfiguration (XBAdditions)
+//@interface DCParserConfiguration (XBAdditions)
+//
+//-(void) mergeConfig:(DCParserConfiguration *) parserConfiguration;
 
--(void) mergeConfig:(DCParserConfiguration *) parserConfiguration;
-
-@end
+//@end

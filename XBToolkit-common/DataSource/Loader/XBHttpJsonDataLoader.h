@@ -13,10 +13,10 @@
 
 @interface XBHttpJsonDataLoader : NSObject<XBDataLoader, XBHttpDataLoader>
 
-+ (id)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath;
+- (id)initWithHttpClient:(XBHttpClient *)httpClient dataMapper:(id <XBDataMapper>)dataMapper resourcePath:(NSString *)resourcePath httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder;
 
-+ (id)dataLoaderWithHttpClient:(XBHttpClient *)httpClient httpQueryParamBuilder:(NSObject <XBHttpQueryParamBuilder> *)httpQueryParamBuilder resourcePath:(NSString *)resourcePath;
++ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient dataMapper:(id <XBDataMapper>)dataMapper resourcePath:(NSString *)resourcePath;
 
-- (id)initWithHttpClient:(XBHttpClient *)httpClient httpQueryParamBuilder:(NSObject <XBHttpQueryParamBuilder> *)httpQueryParamBuilder resourcePath:(NSString *)resourcePath;
++ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder resourcePath:(NSString *)resourcePath;
 
 @end

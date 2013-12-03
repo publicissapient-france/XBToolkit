@@ -10,43 +10,44 @@
 
 @interface XBReloadableArrayDataSource()
 
-@property (nonatomic, strong)NSError *error;
-@property (nonatomic, strong)id rawData;
-@property (nonatomic, strong)id<XBDataLoader> dataLoader;
-@property (nonatomic, strong)id<XBDataMapper> dataMapper;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) id<XBDataLoader> dataLoader;
+#warning rawData has been removed :/
 
 @end
 
 @implementation XBReloadableArrayDataSource
 
-+ (id)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper {
-    return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper];
-}
-
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper {
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader
+{
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;
-        self.dataMapper = dataMapper;
     }
 
     return self;
 }
 
-- (void)loadData {
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader
+{
+    return [[self alloc] initWithDataLoader:dataLoader];
+}
+
+- (void)loadData
+{
     [self loadDataWithCallback:nil];
 }
 
-- (void)loadDataWithCallback:(void (^)())callback {
-    [self.dataLoader loadDataWithSuccess:^(id data) {
-        [self processSuccessWithRawData:data callback:^{
+#warning loadData does not send the result of the call (success or failure?)
+- (void)loadDataWithCallback:(void (^)())callback
+{
+    [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
+        [self processSuccessForResponseObject:data callback:^{
             if (callback) {
                 callback();
             }
         }];
-
-    } failure:^(NSError *error, id jsonFetched) {
-        [self processFailureWithRawData:jsonFetched];
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         self.error = error;
         if (callback) {
             callback();
@@ -54,20 +55,14 @@
     }];
 }
 
-- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback {
-    self.rawData = rawData;
-    [self.dataMapper mapData:rawData withCompletionCallback:^(id mappedData) {
-        self.array = mappedData;
-        [self filterData];
-        if (callback) {
-            callback();
-        }
-    }];
-}
-
-- (void)processFailureWithRawData:(id)rawData
+#warning There's no background threading here
+- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
 {
-    self.rawData = rawData;
+    self.array = responseObject;
+    [self filterData];
+    if (callback) {
+        callback();
+    }
 }
 
 @end

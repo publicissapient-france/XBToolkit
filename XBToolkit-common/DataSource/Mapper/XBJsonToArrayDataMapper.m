@@ -6,7 +6,8 @@
 
 
 #import "XBJsonToArrayDataMapper.h"
-#import "XBMapper.h"
+#import "XBModel.h"
+#import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @interface XBJsonToArrayDataMapper()
 
@@ -16,11 +17,6 @@
 @end
 
 @implementation XBJsonToArrayDataMapper
-
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
-{
-    return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
-}
 
 - (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
 {
@@ -33,6 +29,11 @@
     return self;
 }
 
++ (instancetype)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+{
+    return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
+}
+
 - (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -40,7 +41,13 @@
 
         id mappedData = nil;
         if ([array isKindOfClass:[NSArray class]]) {
-            mappedData = [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
+            
+            if (![self.typeClass isSubclassOfClass:[XBModel class]]) {
+                [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(self.typeClass)];
+            }
+            
+            NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:self.typeClass];
+            mappedData = [valueTransformer transformedValue:array];
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{

@@ -15,9 +15,9 @@ typedef BOOL (^XBPredicateBlock)(id obj);
 
 - (id)initWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator;
 
-+ (id)dataSourceWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator;
++ (instancetype)dataSourceWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator;
 
-+ (id)dataSourceWithArray:(NSArray *)array;
++ (instancetype)dataSourceWithArray:(NSArray *)array;
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 

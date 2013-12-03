@@ -4,12 +4,15 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-#import "DCParserConfiguration.h"
+//#import "DCParserConfiguration.h"
+
+#warning Candidate for removal (or for extending other protocols)
+
 
 @protocol XBMappingProvider <NSObject>
 
 @required
 
-+(DCParserConfiguration *)mappings;
+//+ (DCParserConfiguration *)mappings;
 
 @end

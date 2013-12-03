@@ -7,10 +7,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBMappingProvider.h"
+#import <Mantle/Mantle.h>
+#import "XBModel.h"
 
-
-@interface WPPost : NSObject<XBMappingProvider>
+@interface WPPost : XBModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *type;
@@ -20,5 +20,7 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *title_plain;
 @property (nonatomic, strong) NSString *content;
+
++ (instancetype)postWithId:(NSNumber *)identifier slug:(NSString *)slug title:(NSString *)title content:(NSString *)content;
 
 @end

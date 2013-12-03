@@ -7,24 +7,25 @@
 
 #import <Foundation/Foundation.h>
 
-@class AFHTTPClient;
+@class AFHTTPRequestOperation;
+
+typedef void (^XBHttpClientRequestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
+typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operation, id responseObject, NSError *error);
+
+@class AFHTTPRequestOperationManager;
 
 @interface XBHttpClient : NSObject
 
 @property(nonatomic, strong, readonly)NSString *baseUrl;
-@property(nonatomic, strong, readonly)AFHTTPClient *afHttpClient;
+#warning Extend with JSONResponseSerializer object
+#warning Add status code response
 
-+(id)httpClientWithBaseUrl:(NSString *)baseUrl;
--(id)initWithBaseUrl:(NSString *)baseUrl;
+@property(nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
-- (void)executeJsonRequestWithPath:(NSString *)path
-                        httpMethod:(NSString *)method
-                        parameters:(NSDictionary *)parameters
-                           success:(void (^)(NSURLRequest *, NSHTTPURLResponse *, id))successCb
-                           failure:(void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id))errorCb;
-- (void)executeGetJsonRequestWithPath:(NSString *)path
-                           parameters:(NSDictionary *)parameters
-                              success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, id jsonFetched))successCb
-                              failure: (void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonFetched))errorCb;
+- (id)initWithBaseUrl:(NSString *)baseUrl;
+
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl;
+
+- (void)executeJsonRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
 
 @end

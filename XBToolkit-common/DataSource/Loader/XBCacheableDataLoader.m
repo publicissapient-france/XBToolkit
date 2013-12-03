@@ -12,20 +12,17 @@
 
 @interface XBCacheableDataLoader()
 
-@property (nonatomic, strong)NSObject<XBDataLoader> *dataLoader;
-@property (nonatomic, strong)XBCache *cache;
-@property (nonatomic, strong)NSObject<XBCacheKeyBuilder> *cacheKeyBuilder;
-@property (nonatomic, assign)NSTimeInterval ttl;
+@property(nonatomic, strong) id <XBDataLoader> dataLoader;
+@property(nonatomic, strong) XBCache *cache;
+@property(nonatomic, strong) id <XBCacheKeyBuilder> cacheKeyBuilder;
+@property(nonatomic, assign) NSTimeInterval ttl;
 
 @end
 
 @implementation XBCacheableDataLoader
 
-+ (id)dataLoaderWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(NSObject <XBCacheKeyBuilder> *)cacheKeyBuilder ttl:(NSTimeInterval)ttl {
-    return [[self alloc] initWithDataLoader:dataLoader cache:cache cacheKeyBuilder:cacheKeyBuilder ttl:ttl];
-}
-
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(NSObject<XBCacheKeyBuilder> *)cacheKeyBuilder ttl:(NSTimeInterval)ttl {
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(id <XBCacheKeyBuilder>)cacheKeyBuilder ttl:(NSTimeInterval)ttl
+{
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;
@@ -37,29 +34,37 @@
     return self;
 }
 
-- (NSString *)cacheKey {
++ (instancetype)dataLoaderWithDataLoader:(id <XBDataLoader>)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(id <XBCacheKeyBuilder>)cacheKeyBuilder ttl:(NSTimeInterval)ttl
+{
+    return [[self alloc] initWithDataLoader:dataLoader cache:cache cacheKeyBuilder:cacheKeyBuilder ttl:ttl];
+}
+
+- (NSString *)cacheKey
+{
     return [self.cacheKeyBuilder buildWithData:self.dataLoader];
 }
 
-- (void)loadDataWithSuccess:(void(^)(id))success failure:(void(^)(NSError *, id))failure {
-
-    NSDictionary *data = [self fetchDataFromCacheWithError:nil];
-
-    if (data) {
-        success(data);
-    }
-    else {
-        [self.dataLoader loadDataWithSuccess:^(id loadedData) {
-            NSError *error = nil;
-            [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
-            success(loadedData);
-        } failure:^(NSError *error, id jsonFetched) {
-            failure(error, jsonFetched);
-        }];
-    }
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
+{
+    #warning Should probably be wrapped by NSOperation?
+//    NSDictionary *data = [self fetchDataFromCacheWithError:nil];
+//
+//    if (data) {
+//        success(nil, data);
+//    }
+//    else {
+//        [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id loadedData) {
+//            NSError *error = nil;
+//            [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
+//            success(nil, loadedData);
+//        } failure:^(NSOperation *operation, NSError *error) {
+//            failure(nil, error);
+//        }];
+//    }
 }
 
-- (NSDictionary *)fetchDataFromCacheWithError:(NSError **)error {
+- (NSDictionary *)fetchDataFromCacheWithError:(NSError **)error
+{
     if (self.cache) {
         @try {
             return [self.cache getForKey:self.cacheKey error:error];

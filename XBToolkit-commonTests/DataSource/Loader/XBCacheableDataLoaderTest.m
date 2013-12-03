@@ -11,6 +11,7 @@
 #import "XBTestUtils.h"
 #import "XBFileSystemCacheSupport.h"
 #import "XBHttpDataLoaderCacheKeyBuilder.h"
+#import "XBCache.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -19,14 +20,15 @@
 
 @implementation XBCacheableDataLoaderTest
 
-
-- (void)testFetchDataResult {
+- (void)testFetchDataResult
+{
     [self prepare];
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
+    GHAssertFalse(true, nil);
+    
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHttpJsonDataLoader *httpJsonDataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpJsonDataLoader *httpJsonDataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
 
     XBFileSystemCacheSupport * cacheSupport = [XBFileSystemCacheSupport cacheSupportWithFilename:@"author-cache"];
 
@@ -40,10 +42,10 @@
     __block NSDictionary *responseData;
     __block NSError *responseError;
 
-    [dataLoader loadDataWithSuccess:^(NSDictionary *data) {
+    [dataLoader loadDataWithSuccess:^(NSOperation *opration, NSDictionary *data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
-    } failure:^(NSError *error, id jsonFetched) {
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         responseError = error;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];

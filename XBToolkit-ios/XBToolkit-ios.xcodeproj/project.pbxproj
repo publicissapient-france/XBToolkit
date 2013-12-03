@@ -23,6 +23,11 @@
 		2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44F8C56F6A1CA0068C65F /* XBArrayDataSource.m */; };
 		423F739D1757797A0023783F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423F739B175779710023783F /* QuartzCore.framework */; };
 		423F739F1757AE510023783F /* wp-post.json in Resources */ = {isa = PBXBuildFile; fileRef = 423F739E1757AE510023783F /* wp-post.json */; };
+		426D143F184E312700A9D2DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426D143E184E312700A9D2DB /* Security.framework */; };
+		426D147B184E70AE00A9D2DB /* XBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D147A184E70AE00A9D2DB /* XBModel.m */; };
+		426D147C184E720D00A9D2DB /* XBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D147A184E70AE00A9D2DB /* XBModel.m */; };
+		426D1480184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D147F184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m */; };
+		426D1481184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D147F184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m */; };
 		540956A41707C2DE00B006B0 /* WPAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956A31707C2DE00B006B0 /* WPAuthor.m */; };
 		540956A81707C39C00B006B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540956A71707C39C00B006B0 /* SystemConfiguration.framework */; };
 		540956AA1707C3CD00B006B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540956A91707C3CD00B006B0 /* MobileCoreServices.framework */; };
@@ -144,6 +149,12 @@
 		3FFB9FEC204A413CBEA44721 /* Pods-XBToolkit-iosTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.xcconfig"; path = "Pods/Pods-XBToolkit-iosTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		423F739B175779710023783F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		423F739E1757AE510023783F /* wp-post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wp-post.json"; path = "Resources/Data/wp-post.json"; sourceTree = "<group>"; };
+		426D143E184E312700A9D2DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		426D1479184E70AE00A9D2DB /* XBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBModel.h; sourceTree = "<group>"; };
+		426D147A184E70AE00A9D2DB /* XBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBModel.m; sourceTree = "<group>"; };
+		426D147E184E80AE00A9D2DB /* XBBundleJsonReadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonReadingOperation.h; sourceTree = "<group>"; };
+		426D147F184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonReadingOperation.m; sourceTree = "<group>"; };
+		426D1483184E80DF00A9D2DB /* XBToolkitOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBToolkitOperation.h; sourceTree = "<group>"; };
 		540956A21707C2DE00B006B0 /* WPAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAuthor.h; sourceTree = "<group>"; };
 		540956A31707C2DE00B006B0 /* WPAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAuthor.m; sourceTree = "<group>"; };
 		540956A71707C39C00B006B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -261,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426D143F184E312700A9D2DB /* Security.framework in Frameworks */,
 				423F739D1757797A0023783F /* QuartzCore.framework in Frameworks */,
 				540956AA1707C3CD00B006B0 /* MobileCoreServices.framework in Frameworks */,
 				540956A81707C39C00B006B0 /* SystemConfiguration.framework in Frameworks */,
@@ -301,6 +313,24 @@
 				2EE441EA74025CB94C0ABAE1 /* XBInfiniteScrollArrayDataSource.m */,
 			);
 			path = Array;
+			sourceTree = "<group>";
+		};
+		426D147D184E809B00A9D2DB /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				426D147E184E80AE00A9D2DB /* XBBundleJsonReadingOperation.h */,
+				426D147F184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		426D1482184E80C800A9D2DB /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				426D1483184E80DF00A9D2DB /* XBToolkitOperation.h */,
+			);
+			name = Operation;
+			path = DataSource/Operation;
 			sourceTree = "<group>";
 		};
 		540956A01707C2DE00B006B0 /* Model */ = {
@@ -345,6 +375,7 @@
 		540956B71710A85E00B006B0 /* XBToolkit-common */ = {
 			isa = PBXGroup;
 			children = (
+				426D1482184E80C800A9D2DB /* Operation */,
 				540956B81710A85E00B006B0 /* Cache */,
 				540956C01710A85E00B006B0 /* Category */,
 				540956CD1710A85F00B006B0 /* DataSource */,
@@ -393,6 +424,7 @@
 		540956CD1710A85F00B006B0 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				426D147D184E809B00A9D2DB /* Bundle */,
 				540956CF1710A85F00B006B0 /* Composite */,
 				540956D51710A85F00B006B0 /* Http */,
 				540956DC1710A85F00B006B0 /* Loader */,
@@ -504,6 +536,8 @@
 				540957031710A85F00B006B0 /* XBMapper.h */,
 				540957041710A85F00B006B0 /* XBMapper.m */,
 				540957051710A85F00B006B0 /* XBMappingProvider.h */,
+				426D1479184E70AE00A9D2DB /* XBModel.h */,
+				426D147A184E70AE00A9D2DB /* XBModel.m */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -572,6 +606,7 @@
 		542082DE17074C9B00290AEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				426D143E184E312700A9D2DB /* Security.framework */,
 				423F739B175779710023783F /* QuartzCore.framework */,
 				540956A91707C3CD00B006B0 /* MobileCoreServices.framework */,
 				540956A71707C39C00B006B0 /* SystemConfiguration.framework */,
@@ -815,6 +850,7 @@
 				5409570D1710A85F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */,
 				5409570F1710A85F00B006B0 /* NSDateFormatter+XBAdditions.m in Sources */,
 				540957111710A85F00B006B0 /* NSDictionary+XBAdditions.m in Sources */,
+				426D1480184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m in Sources */,
 				540957131710A85F00B006B0 /* NSError+XBAdditions.m in Sources */,
 				540957151710A85F00B006B0 /* NSNumber+XBAdditions.m in Sources */,
 				540957171710A85F00B006B0 /* NSURL+XBAdditions.m in Sources */,
@@ -832,6 +868,7 @@
 				5409572F1710A85F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */,
 				540957371710A85F00B006B0 /* XBHttpClient.m in Sources */,
 				540957391710A85F00B006B0 /* XBMapper.m in Sources */,
+				426D147B184E70AE00A9D2DB /* XBModel.m in Sources */,
 				2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */,
 				2EE4493CCE1C75A7A5528A36 /* XBReloadableArrayDataSource.m in Sources */,
 				2EE44C76AE4C284B4A83D0AE /* XBInfiniteScrollArrayDataSource.m in Sources */,
@@ -864,6 +901,7 @@
 				5409571E1710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */,
 				540957201710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */,
 				540957221710A85F00B006B0 /* XBBundleJsonDataLoader.m in Sources */,
+				426D1481184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m in Sources */,
 				540957241710A85F00B006B0 /* XBCacheableDataLoader.m in Sources */,
 				540957261710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
 				540957281710A85F00B006B0 /* XBHttpJsonDataLoader.m in Sources */,
@@ -878,6 +916,7 @@
 				54095B091710C65C00B006B0 /* XBBundleJsonDataLoaderTest.m in Sources */,
 				54095B0A1710C65C00B006B0 /* XBCacheableDataLoaderTest.m in Sources */,
 				54095B0B1710C65C00B006B0 /* XBHttpDataLoaderCacheKeyBuilderTest.m in Sources */,
+				426D147C184E720D00A9D2DB /* XBModel.m in Sources */,
 				54095B0C1710C65C00B006B0 /* XBHttpJsonDataLoaderTest.m in Sources */,
 				54095B0D1710C65C00B006B0 /* XBJsonToArrayDataMapperTest.m in Sources */,
 				54095B0E1710C65C00B006B0 /* XBArrayDataMergerTest.m in Sources */,
@@ -940,7 +979,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -963,7 +1002,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1007,7 +1046,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-iosTests/XBToolkit-iosTests-Prefix.pch";
 				INFOPLIST_FILE = "XBToolkit-iosTests/XBToolkit-iosTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1026,7 +1065,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-iosTests/XBToolkit-iosTests-Prefix.pch";
 				INFOPLIST_FILE = "XBToolkit-iosTests/XBToolkit-iosTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

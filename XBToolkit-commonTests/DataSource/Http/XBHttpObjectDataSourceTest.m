@@ -20,12 +20,11 @@
 
     [self prepare];
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getSinglePostAsJson]];
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getSinglePostAsObject]];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android"];
-
-    XBJsonToObjectDataMapper * dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
+    XBJsonToObjectDataMapper *dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
+    
+    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android"];
 
     XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader
                                                                                            dataMapper:dataMapper];
@@ -41,11 +40,9 @@
     WPPost *post = dataSource.object;
 
     GHAssertEquals([post.identifier intValue], 14332, nil);
-    GHAssertEqualStrings(post.status, @"publish", nil);
     GHAssertEqualStrings(post.slug, @"whats-new-in-android", nil);
-    GHAssertEqualStrings(post.type, @"post", nil);
     GHAssertEqualStrings(post.title, @"What's new in Android ?", nil);
-    GHAssertEqualStrings(post.title_plain, @"What's new in Android ?", nil);
+    GHAssertEqualStrings(post.content, @"Lorem ipsum dolor sit amet", nil);
 }
 
 @end

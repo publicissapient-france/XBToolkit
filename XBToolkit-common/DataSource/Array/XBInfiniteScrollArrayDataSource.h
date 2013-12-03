@@ -13,8 +13,9 @@
 
 @interface XBInfiniteScrollArrayDataSource : XBReloadableArrayDataSource
 
-+ (id)dataSourceWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger dataPager:(NSObject <XBDataPager> *)dataPager;
-- (id)initWithDataLoader:(NSObject <XBDataLoader> *)dataLoader dataMapper:(NSObject <XBDataMapper> *)dataMapper dataMerger:(NSObject <XBDataMerger> *)dataMerger dataPager:(NSObject <XBDataPager> *)dataPager;
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
+
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
 
 - (id)mergeRawData:(id)rawData;
 

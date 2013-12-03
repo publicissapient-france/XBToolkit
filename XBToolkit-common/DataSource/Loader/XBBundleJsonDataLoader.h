@@ -12,8 +12,10 @@
 
 @interface XBBundleJsonDataLoader : NSObject<XBDataLoader>
 
-+ (id)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
-
 - (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
+
++ (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
+
+@property (nonatomic, assign) NSJSONReadingOptions readingOptions;
 
 @end

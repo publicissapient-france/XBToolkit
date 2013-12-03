@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 Xebia France. All rights reserved.
 //
 
-#import "XBMappingProvider.h"
+#import "XBModel.h"
+#import <Mantle/Mantle.h>
 
-@interface WPAuthor : NSObject<XBMappingProvider>
+@interface WPAuthor : XBModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *slug;
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) NSString *nickname;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *description_;
+
++ (instancetype)authorWithId:(NSNumber *)identifier name:(NSString *)name;
 
 @end
 

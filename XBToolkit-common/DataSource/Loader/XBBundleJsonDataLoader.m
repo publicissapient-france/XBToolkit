@@ -7,9 +7,9 @@
 
 #import "XBHttpJsonDataLoader.h"
 #import "XBHttpQueryParamBuilder.h"
-#import "JSONKit.h"
 #import "XBBundleJsonDataLoader.h"
 #import "XBLogging.h"
+#import "XBBundleJsonReadingOperation.h"
 
 @interface XBBundleJsonDataLoader()
 
@@ -20,34 +20,34 @@
 
 @implementation XBBundleJsonDataLoader
 
-+ (id)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
-    return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType];
-}
-
-- (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
+- (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
+{
     self = [super init];
     if (self) {
         self.resourcePath = resourcePath;
         self.resourceType = resourceType;
+        self.readingOptions = 0;
     }
 
     return self;
 }
 
-- (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *, id))failure {
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *file = [mainBundle pathForResource:self.resourcePath ofType:self.resourceType];
-    NSError *error;
-    NSString *jsonLoaded = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:&error];
-    NSDictionary *json = [jsonLoaded objectFromJSONString];
++ (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
+{
+    return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType];
+}
 
-    if (!error) {
-        XBLogVerbose(@"Json loaded from bundle: %@", json);
-        success(json);
-    }
-    else {
-        failure(error, nil);
-    }
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
+{
+    XBBundleJsonReadingOperation *operation = [XBBundleJsonReadingOperation operationWithBundle:[NSBundle mainBundle] resourcePath:self.resourcePath resourceType:self.resourceType];
+    
+    [operation setCompletionBlockWithSuccess:^(XBBundleJsonReadingOperation *operation) {
+        XBLogVerbose(@"Json loaded from bundle: %@", operation.responseObject);
+        success(operation, operation.responseObject);
+    } failure:^(XBBundleJsonReadingOperation *operation, NSError *error) {
+        failure(operation, operation.responseObject, error);
+    }];
+    [operation start];
 
 }
 

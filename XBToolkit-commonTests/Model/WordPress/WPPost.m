@@ -5,21 +5,25 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
-#import <DCKeyValueObjectMapping/DCParserConfiguration.h>
-#import <DCKeyValueObjectMapping/DCObjectMapping.h>
 #import "WPPost.h"
 
 
 @implementation WPPost
 
-+(DCParserConfiguration *)mappings {
-    DCParserConfiguration *config = [DCParserConfiguration configuration];
-
-    [config addObjectMapping: [DCObjectMapping mapKeyPath:@"id" toAttribute:@"identifier" onClass:[self class]]];
-    [config addObjectMapping: [DCObjectMapping mapKeyPath:@"description" toAttribute:@"description_" onClass:[self class]]];
-
-    return config;
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return nil;
 }
+
++ (instancetype)postWithId:(NSNumber *)identifier slug:(NSString *)slug title:(NSString *)title content:(NSString *)content
+{
+    WPPost *post = [[self alloc] init];
+    post.identifier = identifier;
+    post.slug = slug;
+    post.title = title;
+    post.content = content;
+    return post;
+}
+
 
 @end

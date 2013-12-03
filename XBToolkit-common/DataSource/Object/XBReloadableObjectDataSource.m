@@ -10,10 +10,10 @@
 
 @interface XBReloadableObjectDataSource()
 
-@property (nonatomic, strong)NSError *error;
-@property (nonatomic, strong)id rawData;
-@property (nonatomic, strong)id<XBDataLoader> dataLoader;
-@property (nonatomic, strong)id<XBDataMapper> dataMapper;
+@property(nonatomic, strong) NSError *error;
+@property(nonatomic, strong) id<XBDataLoader> dataLoader;
+@property(nonatomic, strong) id<XBDataMapper> dataMapper;
+#warning rawData has been removed
 
 @end
 
@@ -42,14 +42,13 @@
 
 - (void)loadDataWithCallback:(void (^)())callback
 {
-    [self.dataLoader loadDataWithSuccess:^(id data) {
-        [self processSuccessWithRawData:data callback:^{
+    [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
+        [self processSuccessForResponseObject:data callback:^{
             if (callback) {
                 callback();
             }
         }];
-    } failure:^(NSError *error, id jsonFetched) {
-        [self processFailureWithRawData:jsonFetched];
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         self.error = error;
         if (callback) {
             callback();
@@ -61,14 +60,13 @@
                   withCallback:(void (^)())callback
 {
     [self.dataLoader loadDataWithHttpMethod:httpMethod
-                                withSuccess:^(id data) {
-                                    [self processSuccessWithRawData:data callback:^{
+                                withSuccess:^(NSOperation *operation, id data) {
+                                    [self processSuccessForResponseObject:data callback:^{
                                         if (callback) {
                                             callback();
                                         }
                                     }];
-                                } failure:^(NSError *error, id jsonFetched) {
-                                    [self processFailureWithRawData:jsonFetched];
+                                } failure:^(NSOperation *operation, id responseObject, NSError *error) {
                                     self.error = error;
                                     if (callback) {
                                         callback();
@@ -77,18 +75,12 @@
 }
 
 
-- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback
+- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
 {
-    self.rawData = rawData;
-    [self.dataMapper mapData:rawData withCompletionCallback:^(id mappedData) {
-        self.object = mappedData;
+    self.object = responseObject;
+    if (callback) {
         callback();
-    }];
-}
-
-- (void)processFailureWithRawData:(id)rawData
-{
-    self.rawData = rawData;
+    }
 }
 
 @end

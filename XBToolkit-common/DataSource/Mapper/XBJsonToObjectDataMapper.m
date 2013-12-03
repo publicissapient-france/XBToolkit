@@ -7,7 +7,8 @@
 
 
 #import "XBJsonToObjectDataMapper.h"
-#import "XBMapper.h"
+#import "XBModel.h"
+#import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @interface XBJsonToObjectDataMapper()
 
@@ -39,7 +40,13 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
         id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
-        id mappedData = [XBMapper parseObject:object intoObjectOfType:self.typeClass];
+        
+        if (![self.typeClass isSubclassOfClass:[XBModel class]]) {
+            [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(self.typeClass)];
+        }
+        
+        NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:self.typeClass];
+        id mappedData = [valueTransformer transformedValue:object];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             if (callback) {

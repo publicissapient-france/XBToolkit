@@ -21,8 +21,10 @@
     __block NSDictionary *dataDest;
     __block NSDictionary *dataSrc;
 
-    [dataLoaderSrc loadDataWithSuccess:^(NSDictionary * data) { dataSrc = data; } failure:^(NSError *error, id jsonFetched) { }];
-    [dataLoaderDest loadDataWithSuccess:^(NSDictionary * data) { dataDest = data; } failure:^(NSError *error, id jsonFetched) { }];
+    [dataLoaderSrc loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) {
+        dataSrc = data;
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) { }];
+    [dataLoaderDest loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) { dataDest = data; } failure:^(NSOperation *operation, id responseObject, NSError *error) { }];
 
     XBDictionaryDataMerger *dataMerger = [XBDictionaryDataMerger dataMergerWithRootKeyPath:@"authors"];
 
