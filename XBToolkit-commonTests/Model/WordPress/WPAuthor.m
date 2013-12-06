@@ -11,15 +11,15 @@
 
 @implementation WPAuthor
 
-+ (NSDictionary *)JSONKeyPathsByPropertyKey
-{
-    return nil;
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"identifier": @"id"
+    };
 }
-
 + (instancetype)authorWithId:(NSNumber *)identifier name:(NSString *)name
 {
     WPAuthor *author = [[self alloc] init];
-    author.id = identifier;
+    author.identifier = identifier;
     author.name = name;
     return author;
 }

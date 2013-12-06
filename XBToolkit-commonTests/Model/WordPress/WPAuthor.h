@@ -11,7 +11,7 @@
 
 @interface WPAuthor : XBModel<MTLJSONSerializing>
 
-@property (nonatomic, strong) NSNumber *id;
+@property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *slug;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *first_name;

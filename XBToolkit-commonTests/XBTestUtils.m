@@ -20,7 +20,7 @@
 
 + (UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier {
     return ^BOOL(WPAuthor * author) {
-        return [author.id intValue] == identifier;
+        return [author.identifier intValue] == identifier;
     };
 }
 

@@ -48,7 +48,7 @@ NSTimeInterval kNetworkTimeout = 30.0;
 
     WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:authors ById:50];
 
-    GHAssertEquals([wpAuthor.id intValue], 50, nil);
+    GHAssertEquals([wpAuthor.identifier intValue], 50, nil);
     GHAssertEqualStrings(wpAuthor.slug, @"akinsella", nil);
     GHAssertEqualStrings(wpAuthor.name, @"Alexis Kinsella", nil);
     GHAssertEqualStrings(wpAuthor.first_name, @"Alexis", nil);

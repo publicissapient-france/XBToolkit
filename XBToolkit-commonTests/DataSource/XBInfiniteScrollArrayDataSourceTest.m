@@ -64,7 +64,7 @@
 
     WPAuthor *author = [XBTestUtils findAuthorInArray:dataSource.array ById:50];
 
-    GHAssertEquals([author.id intValue], 50, nil);
+    GHAssertEquals([author.identifier intValue], 50, nil);
     GHAssertEqualStrings(author.slug, @"akinsella", nil);
     GHAssertEqualStrings(author.name, @"Alexis Kinsella", nil);
     GHAssertEqualStrings(author.first_name, @"Alexis", nil);
