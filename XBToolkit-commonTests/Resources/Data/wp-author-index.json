@@ -10,7 +10,10 @@
             "last_name":"Alliaume",
             "nickname":"ealliaume",
             "url":"http:\/\/www.xebia.fr",
-            "description":"Passionn\u00e9 par les technologies Java\/JEE depuis sa sortie de l'EPITA, Erwan Alliaume est aujourd'hui consultant chez Xebia. Il intervient depuis 2 ans sur des missions de d\u00e9veloppement et d'architecture pour l\u2019un des leaders mondiaux de la production et de la distribution de contenus multim\u00e9dia. Expert technique polyvalent, Erwan a \u00e9t\u00e9 amen\u00e9 tr\u00e8s t\u00f4t \u00e0 prendre des responsabilit\u00e9s sur des projets de taille significative. Il a notamment d\u00e9velopp\u00e9 des comp\u00e9tences cl\u00e9 dans la mise en place de socle de d\u00e9veloppement, la m\u00e9trologie et les audits de performance et de qualit\u00e9.\r\n\r\nErwan participe \u00e9galement activement au blog Xebia ou il traite aussi bien de sujets d\u2019actualit\u00e9s que de probl\u00e9matiques techniques."
+            "description":"Passionn\u00e9 par les technologies Java\/JEE depuis sa sortie de l'EPITA, Erwan Alliaume est aujourd'hui consultant chez Xebia. Il intervient depuis 2 ans sur des missions de d\u00e9veloppement et d'architecture pour l\u2019un des leaders mondiaux de la production et de la distribution de contenus multim\u00e9dia. Expert technique polyvalent, Erwan a \u00e9t\u00e9 amen\u00e9 tr\u00e8s t\u00f4t \u00e0 prendre des responsabilit\u00e9s sur des projets de taille significative. Il a notamment d\u00e9velopp\u00e9 des comp\u00e9tences cl\u00e9 dans la mise en place de socle de d\u00e9veloppement, la m\u00e9trologie et les audits de performance et de qualit\u00e9.\r\n\r\nErwan participe \u00e9galement activement au blog Xebia ou il traite aussi bien de sujets d\u2019actualit\u00e9s que de probl\u00e9matiques techniques.",
+               "posts": [{"id": 14332,
+                         "type": "post",
+                         "slug": "whats-new-in-android"}]
         },
         {
             "id":59,

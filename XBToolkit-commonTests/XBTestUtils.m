@@ -20,16 +20,23 @@
 
 + (UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier {
     return ^BOOL(WPAuthor * author) {
-        return [author.identifier intValue] == identifier;
+        return [author.id intValue] == identifier;
     };
 }
 
 + (WPAuthor *)findAuthorInArray:(NSArray *) authors ById:(NSInteger)identifier {
-    return Underscore.array(authors).filter([XBTestUtils filterAuthorById:50]).unwrap[0];
+    return Underscore.array(authors).filter([XBTestUtils filterAuthorById:identifier]).unwrap[0];
 }
 
 + (id)getAuthorsAsJsonWithPage:(NSUInteger)page {
     NSString *filename = [NSString stringWithFormat:@"wp-author-index-p%d", page];
+    NSString *file = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:file options:0 error:nil];
+    return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+}
+
++ (id)getAuthorsAsJson {
+    NSString *filename = @"wp-author-index";
     NSString *file = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:file options:0 error:nil];
     return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];

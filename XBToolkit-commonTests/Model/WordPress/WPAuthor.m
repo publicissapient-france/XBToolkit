@@ -7,6 +7,7 @@
 //
 
 #import "WPAuthor.h"
+#import "WPPost.h"
 
 @implementation WPAuthor
 
@@ -18,11 +19,15 @@
 + (instancetype)authorWithId:(NSNumber *)identifier name:(NSString *)name
 {
     WPAuthor *author = [[self alloc] init];
-    author.identifier = identifier;
+    author.id = identifier;
     author.name = name;
     return author;
 }
 
++ (NSValueTransformer *)postsJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:WPPost.class];
+}
 
 @end
 

@@ -15,6 +15,7 @@
 
 + (WPAuthor *)findAuthorInArray:(NSArray *) authors ById:(NSInteger)identifier;
 + (UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier;
++ (id)getAuthorsAsJson;
 + (NSArray *)getAuthorsAsArray;
 + (WPPost *)getSinglePostAsObject;
 + (id)fakeHttpClientWithSuccessCallbackWithData:(id)data;
