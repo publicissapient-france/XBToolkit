@@ -99,9 +99,10 @@
 //    return [NSDictionary dictionaryWithDictionary:dict];
 //}
 
+#warning The following method should be suppressed
 + (NSArray *)parseArray:(NSArray *)objectArray intoObjectsOfClass:(Class)objectClass
 {
-    
+    return nil;
 }
 
 + (id)parseObject:(NSDictionary *)objectDictionary intoObjectOfClass:(Class)objectClass

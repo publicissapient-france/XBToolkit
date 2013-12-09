@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license      = 'Apache License, Version 2.0'
   s.source       = { :git => "https://github.com/xebia-france/XBToolkit.git", :branch => s.version.to_s }
 
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.7'
 
   s.source_files = 'XBToolkit-common/**/*.{h,m}'
