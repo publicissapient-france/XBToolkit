@@ -18,6 +18,7 @@
 + (id)getAuthorsAsJson;
 + (NSArray *)getAuthorsAsArray;
 + (WPPost *)getSinglePostAsObject;
++ (id)getActusAsXml;
 + (id)fakeHttpClientWithSuccessCallbackWithData:(id)data;
 + (id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data;
 + (id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName;

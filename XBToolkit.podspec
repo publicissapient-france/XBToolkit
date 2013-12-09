@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency 'JSONKit',           '1.5pre'
-  s.dependency 'Underscore.m',      '0.2.0'
-  s.dependency 'DCKeyValueObjectMapping', '1.4'
-  s.dependency 'AFNetworking',      '1.3.1'
+  s.dependency 'Underscore.m',      '~> 0.2.1'
+  s.dependency 'AFNetworking',      '~> 2.0.3'
+  s.dependency 'Mantle',            '~> 1.3.1'
+  s.dependency 'MantleXMLAdapter'   :path => 'https://github.com/viteinfinite/MantleXMLAdapter.git'
 
 end

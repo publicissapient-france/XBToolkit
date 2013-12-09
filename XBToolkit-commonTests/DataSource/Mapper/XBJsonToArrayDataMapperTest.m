@@ -11,7 +11,7 @@
 #import "XBTestUtils.h"
 #import "WPPost.h"
 
-NSTimeInterval kNetworkTimeout = 30.0;
+//NSTimeInterval kNetworkTimeout = 30.0;
 
 @interface XBJsonToArrayDataMapperTest : GHAsyncTestCase @end
 
@@ -28,7 +28,7 @@ NSTimeInterval kNetworkTimeout = 30.0;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testCount)];
     }];
 
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:30.0];
 
     GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
 }
@@ -44,7 +44,7 @@ NSTimeInterval kNetworkTimeout = 30.0;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValues)];
     }];
 
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:30.0];
 
     WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:authors ById:50];
 

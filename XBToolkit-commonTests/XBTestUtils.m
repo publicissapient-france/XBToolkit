@@ -42,6 +42,12 @@
     return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
 }
 
++ (id)getActusAsXml {
+    NSString *filename = @"article";
+    NSString *file = [[NSBundle mainBundle] pathForResource:filename ofType:@"xml"];
+    return [NSData dataWithContentsOfFile:file options:0 error:nil];
+}
+
 + (NSArray *)getAuthorsAsArray {
     return @[[WPAuthor authorWithId:@(50) name:@"Alexis Kinsella"],
             [WPAuthor authorWithId:@(51) name:@"Simone Civetta"],

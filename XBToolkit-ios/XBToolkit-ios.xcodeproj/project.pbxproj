@@ -23,6 +23,13 @@
 		2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44F8C56F6A1CA0068C65F /* XBArrayDataSource.m */; };
 		423F739D1757797A0023783F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423F739B175779710023783F /* QuartzCore.framework */; };
 		423F739F1757AE510023783F /* wp-post.json in Resources */ = {isa = PBXBuildFile; fileRef = 423F739E1757AE510023783F /* wp-post.json */; };
+		4261A4931855C26C003461AA /* article.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4261A4921855C26C003461AA /* article.xml */; };
+		4261A4991855C36C003461AA /* CDActu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261A4981855C36C003461AA /* CDActu.m */; };
+		4261A49F1855C72F003461AA /* XBXmlToObjectDataMapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261A49E1855C72F003461AA /* XBXmlToObjectDataMapperTest.m */; };
+		4261A4A21855C81A003461AA /* XBXmlToObjectDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261A4A11855C81A003461AA /* XBXmlToObjectDataMapper.m */; };
+		4261A4A31855C921003461AA /* XBXmlToObjectDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261A4A11855C81A003461AA /* XBXmlToObjectDataMapper.m */; };
+		4261A4A6185605CF003461AA /* CDArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261A4A5185605CF003461AA /* CDArticle.m */; };
+		4261A4AD1856207A003461AA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261A4A918561B71003461AA /* libxml2.dylib */; };
 		426D143F184E312700A9D2DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426D143E184E312700A9D2DB /* Security.framework */; };
 		426D147B184E70AE00A9D2DB /* XBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D147A184E70AE00A9D2DB /* XBModel.m */; };
 		426D147C184E720D00A9D2DB /* XBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D147A184E70AE00A9D2DB /* XBModel.m */; };
@@ -149,6 +156,16 @@
 		3FFB9FEC204A413CBEA44721 /* Pods-XBToolkit-iosTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.xcconfig"; path = "Pods/Pods-XBToolkit-iosTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		423F739B175779710023783F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		423F739E1757AE510023783F /* wp-post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wp-post.json"; path = "Resources/Data/wp-post.json"; sourceTree = "<group>"; };
+		4261A4921855C26C003461AA /* article.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = article.xml; path = Resources/Data/article.xml; sourceTree = "<group>"; };
+		4261A4971855C36C003461AA /* CDActu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDActu.h; sourceTree = "<group>"; };
+		4261A4981855C36C003461AA /* CDActu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDActu.m; sourceTree = "<group>"; };
+		4261A49E1855C72F003461AA /* XBXmlToObjectDataMapperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBXmlToObjectDataMapperTest.m; sourceTree = "<group>"; };
+		4261A4A01855C81A003461AA /* XBXmlToObjectDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBXmlToObjectDataMapper.h; sourceTree = "<group>"; };
+		4261A4A11855C81A003461AA /* XBXmlToObjectDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBXmlToObjectDataMapper.m; sourceTree = "<group>"; };
+		4261A4A4185605CF003461AA /* CDArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDArticle.h; sourceTree = "<group>"; };
+		4261A4A5185605CF003461AA /* CDArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDArticle.m; sourceTree = "<group>"; };
+		4261A4A918561B71003461AA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		4261A4AB18561B7F003461AA /* libPods-KissXML.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libPods-KissXML.a"; path = "Pods/build/Debug-iphoneos/libPods-KissXML.a"; sourceTree = "<group>"; };
 		426D143E184E312700A9D2DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		426D1479184E70AE00A9D2DB /* XBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBModel.h; sourceTree = "<group>"; };
 		426D147A184E70AE00A9D2DB /* XBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBModel.m; sourceTree = "<group>"; };
@@ -272,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4261A4AD1856207A003461AA /* libxml2.dylib in Frameworks */,
 				426D143F184E312700A9D2DB /* Security.framework in Frameworks */,
 				423F739D1757797A0023783F /* QuartzCore.framework in Frameworks */,
 				540956AA1707C3CD00B006B0 /* MobileCoreServices.framework in Frameworks */,
@@ -315,6 +333,17 @@
 			path = Array;
 			sourceTree = "<group>";
 		};
+		4261A4961855C36C003461AA /* CarArticles */ = {
+			isa = PBXGroup;
+			children = (
+				4261A4971855C36C003461AA /* CDActu.h */,
+				4261A4981855C36C003461AA /* CDActu.m */,
+				4261A4A4185605CF003461AA /* CDArticle.h */,
+				4261A4A5185605CF003461AA /* CDArticle.m */,
+			);
+			path = CarArticles;
+			sourceTree = "<group>";
+		};
 		426D147D184E809B00A9D2DB /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +365,7 @@
 		540956A01707C2DE00B006B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4261A4961855C36C003461AA /* CarArticles */,
 				540956A11707C2DE00B006B0 /* WordPress */,
 			);
 			path = Model;
@@ -363,6 +393,7 @@
 		540956AF1707C5CF00B006B0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4261A4921855C26C003461AA /* article.xml */,
 				423F739E1757AE510023783F /* wp-post.json */,
 				540956B01707C66A00B006B0 /* wp-author-index.json */,
 				54095AEE1710C54500B006B0 /* wp-author-index-p1.json */,
@@ -490,6 +521,8 @@
 		540956E81710A85F00B006B0 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				4261A4A01855C81A003461AA /* XBXmlToObjectDataMapper.h */,
+				4261A4A11855C81A003461AA /* XBXmlToObjectDataMapper.m */,
 				540956E91710A85F00B006B0 /* XBDataMapper.h */,
 				540956EA1710A85F00B006B0 /* XBJsonToArrayDataMapper.h */,
 				540956EB1710A85F00B006B0 /* XBJsonToArrayDataMapper.m */,
@@ -564,6 +597,7 @@
 		54095B011710C65C00B006B0 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				4261A49E1855C72F003461AA /* XBXmlToObjectDataMapperTest.m */,
 				54095B031710C65C00B006B0 /* XBJsonToArrayDataMapperTest.m */,
 			);
 			path = Mapper;
@@ -606,6 +640,8 @@
 		542082DE17074C9B00290AEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4261A4AB18561B7F003461AA /* libPods-KissXML.a */,
+				4261A4A918561B71003461AA /* libxml2.dylib */,
 				426D143E184E312700A9D2DB /* Security.framework */,
 				423F739B175779710023783F /* QuartzCore.framework */,
 				540956A91707C3CD00B006B0 /* MobileCoreServices.framework */,
@@ -803,6 +839,7 @@
 				54095AF21710C54500B006B0 /* wp-author-index-p2.json in Resources */,
 				54095AF31710C54500B006B0 /* wp-author-index-p3.json in Resources */,
 				423F739F1757AE510023783F /* wp-post.json in Resources */,
+				4261A4931855C26C003461AA /* article.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +901,7 @@
 				540957271710A85F00B006B0 /* XBHttpJsonDataLoader.m in Sources */,
 				540957291710A85F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */,
 				5409572B1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */,
+				4261A4A21855C81A003461AA /* XBXmlToObjectDataMapper.m in Sources */,
 				5409572D1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
 				5409572F1710A85F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */,
 				540957371710A85F00B006B0 /* XBHttpClient.m in Sources */,
@@ -892,13 +930,16 @@
 				5409570C1710A85F00B006B0 /* XBFileSystemCacheSupport.m in Sources */,
 				5409570E1710A85F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */,
 				540957101710A85F00B006B0 /* NSDateFormatter+XBAdditions.m in Sources */,
+				4261A4991855C36C003461AA /* CDActu.m in Sources */,
 				540957121710A85F00B006B0 /* NSDictionary+XBAdditions.m in Sources */,
 				540957141710A85F00B006B0 /* NSError+XBAdditions.m in Sources */,
+				4261A4A31855C921003461AA /* XBXmlToObjectDataMapper.m in Sources */,
 				540957161710A85F00B006B0 /* NSNumber+XBAdditions.m in Sources */,
 				540957181710A85F00B006B0 /* NSURL+XBAdditions.m in Sources */,
 				5409571A1710A85F00B006B0 /* XBCompositeArrayDataSource.m in Sources */,
 				5409571C1710A85F00B006B0 /* XBPagedCompositeArrayDataSource.m in Sources */,
 				5409571E1710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */,
+				4261A4A6185605CF003461AA /* CDArticle.m in Sources */,
 				540957201710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */,
 				540957221710A85F00B006B0 /* XBBundleJsonDataLoader.m in Sources */,
 				426D1481184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m in Sources */,
@@ -906,6 +947,7 @@
 				540957261710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
 				540957281710A85F00B006B0 /* XBHttpJsonDataLoader.m in Sources */,
 				5409572A1710A85F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */,
+				4261A49F1855C72F003461AA /* XBXmlToObjectDataMapperTest.m in Sources */,
 				5409572C1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */,
 				5409572E1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
 				540957301710A85F00B006B0 /* XBArrayDataSourceDataPager.m in Sources */,
@@ -1015,6 +1057,15 @@
 				DSTROOT = /tmp/XBToolkit_ios.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-ios/XBToolkit-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
+					"\"${PODS_ROOT}/Headers/Mantle\"",
+					"\"${PODS_ROOT}/Headers/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Underscore.m\"",
+					/usr/include/libxml2,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1028,6 +1079,15 @@
 				DSTROOT = /tmp/XBToolkit_ios.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-ios/XBToolkit-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
+					"\"${PODS_ROOT}/Headers/Mantle\"",
+					"\"${PODS_ROOT}/Headers/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Underscore.m\"",
+					/usr/include/libxml2,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1045,6 +1105,15 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-iosTests/XBToolkit-iosTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
+					"\"${PODS_ROOT}/Headers/Mantle\"",
+					"\"${PODS_ROOT}/Headers/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Underscore.m\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "XBToolkit-iosTests/XBToolkit-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1064,6 +1133,15 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-iosTests/XBToolkit-iosTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
+					"\"${PODS_ROOT}/Headers/Mantle\"",
+					"\"${PODS_ROOT}/Headers/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Underscore.m\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "XBToolkit-iosTests/XBToolkit-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
