@@ -10,16 +10,16 @@
 @protocol XBDataLoader;
 @protocol XBDataMapper;
 
+#warning The urlResponse object gets lost :(
 @interface XBReloadableObjectDataSource : XBObjectDataSource
 
 @property (nonatomic, strong, readonly)NSError *error;
 @property (nonatomic, strong, readonly)id rawData;
 @property (nonatomic, strong, readonly)id<XBDataLoader> dataLoader;
-@property (nonatomic, strong, readonly)id<XBDataMapper> dataMapper;
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader;
 
-+ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader;
 
 - (void)loadData;
 

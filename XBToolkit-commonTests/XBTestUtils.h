@@ -16,6 +16,7 @@
 + (WPAuthor *)findAuthorInArray:(NSArray *) authors ById:(NSInteger)identifier;
 + (UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier;
 + (id)getAuthorsAsJson;
++ (NSData *)getAuthorsAsData;
 + (NSArray *)getAuthorsAsArray;
 + (WPPost *)getSinglePostAsObject;
 + (id)getActusAsXml;

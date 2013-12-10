@@ -6,33 +6,28 @@
 #import "XBObjectDataSource+protected.h"
 #import "XBReloadableObjectDataSource.h"
 #import "XBDataLoader.h"
-#import "XBDataMapper.h"
 
 @interface XBReloadableObjectDataSource()
 
 @property(nonatomic, strong) NSError *error;
 @property(nonatomic, strong) id<XBDataLoader> dataLoader;
-@property(nonatomic, strong) id<XBDataMapper> dataMapper;
-#warning rawData has been removed
-
 @end
 
 @implementation XBReloadableObjectDataSource
 
-+ (id)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper
-{
-    return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper];
-}
-
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader
 {
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;
-        self.dataMapper = dataMapper;
     }
 
     return self;
+}
+
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader
+{
+    return [[self alloc] initWithDataLoader:dataLoader];
 }
 
 - (void)loadData
@@ -60,8 +55,8 @@
                   withCallback:(void (^)())callback
 {
     [self.dataLoader loadDataWithHttpMethod:httpMethod
-                                withSuccess:^(NSOperation *operation, id data) {
-                                    [self processSuccessForResponseObject:data callback:^{
+                                withSuccess:^(NSOperation *operation, id responseObject) {
+                                    [self processSuccessForResponseObject:responseObject callback:^{
                                         if (callback) {
                                             callback();
                                         }

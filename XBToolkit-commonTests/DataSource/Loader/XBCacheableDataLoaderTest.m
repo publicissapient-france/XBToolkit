@@ -6,7 +6,7 @@
 
 
 #import "XBCacheableDataLoader.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "GHUnit.h"
 #import "XBTestUtils.h"
 #import "XBFileSystemCacheSupport.h"
@@ -28,7 +28,7 @@
     
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHttpJsonDataLoader *httpJsonDataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *httpJsonDataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
 
     XBFileSystemCacheSupport * cacheSupport = [XBFileSystemCacheSupport cacheSupportWithFilename:@"author-cache"];
 

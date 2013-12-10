@@ -36,10 +36,13 @@
 }
 
 + (id)getAuthorsAsJson {
+    return [NSJSONSerialization JSONObjectWithData:[self getAuthorsAsData] options:0 error:nil];
+}
+
++ (NSData *)getAuthorsAsData {
     NSString *filename = @"wp-author-index";
     NSString *file = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:file options:0 error:nil];
-    return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    return [NSData dataWithContentsOfFile:file options:0 error:nil];
 }
 
 + (id)getActusAsXml {
@@ -66,12 +69,12 @@
 
     [[httpClient stub] httpRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
-    
-    [[[httpClient expect] andDo:[self fakeSuccessCallbackForMethodWithData:data]] executeJsonRequestWithPath:[OCMArg isNotNil]
-                                                                                                       method:[OCMArg isNotNil]
-                                                                                                   parameters:[OCMArg any]
-                                                                                                      success:[OCMArg isNotNil]
-                                                                                                      failure:[OCMArg isNotNil]];
+
+    [[[httpClient expect] andDo:[self fakeSuccessCallbackForMethodWithData:data]] executeRequestWithPath:[OCMArg isNotNil]
+                                                                                                  method:[OCMArg isNotNil]
+                                                                                              parameters:[OCMArg any]
+                                                                                                 success:[OCMArg isNotNil]
+                                                                                                 failure:[OCMArg isNotNil]];
 
     return httpClient;
 }
@@ -85,17 +88,17 @@
 
     for (id element in data) {
         [[[httpClient expect] andDo:[self fakeSuccesiveSuccessCallbackWithData:data parameterName:parameterName]]
-                executeJsonRequestWithPath:[OCMArg isNotNil]
-                                    method:[OCMArg isNotNil]
-                                parameters:[OCMArg any]
-                                   success:[OCMArg isNotNil]
-                                   failure:[OCMArg isNotNil]];
-        
-        [[[httpClient expect] andDo:[self fakeSuccesiveSuccessCallbackForMethodWithData:data parameterName:parameterName]] executeJsonRequestWithPath:[OCMArg isNotNil]
-                                                                                                                                               method:[OCMArg isNotNil]
-                                                                                                                                           parameters:[OCMArg any]
-                                                                                                                                              success:[OCMArg isNotNil]
-                                                                                                                                              failure:[OCMArg isNotNil]];
+                executeRequestWithPath:[OCMArg isNotNil]
+                                method:[OCMArg isNotNil]
+                            parameters:[OCMArg any]
+                               success:[OCMArg isNotNil]
+                               failure:[OCMArg isNotNil]];
+
+        [[[httpClient expect] andDo:[self fakeSuccesiveSuccessCallbackForMethodWithData:data parameterName:parameterName]] executeRequestWithPath:[OCMArg isNotNil]
+                                                                                                                                           method:[OCMArg isNotNil]
+                                                                                                                                       parameters:[OCMArg any]
+                                                                                                                                          success:[OCMArg isNotNil]
+                                                                                                                                          failure:[OCMArg isNotNil]];
     }
 
     return httpClient;
@@ -105,11 +108,11 @@
     id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
     
     [[httpClient stub] httpRequestOperationManager];
-    [[[httpClient stub] andDo:[self fakeErrorCallbackWithError:error data:data]] executeJsonRequestWithPath:[OCMArg isNotNil]
-                                                                                                     method:[OCMArg isNotNil]
-                                                                                                 parameters:[OCMArg any]
-                                                                                                    success:[OCMArg isNotNil]
-                                                                                                    failure:[OCMArg isNotNil]];
+    [[[httpClient stub] andDo:[self fakeErrorCallbackWithError:error data:data]] executeRequestWithPath:[OCMArg isNotNil]
+                                                                                                 method:[OCMArg isNotNil]
+                                                                                             parameters:[OCMArg any]
+                                                                                                success:[OCMArg isNotNil]
+                                                                                                failure:[OCMArg isNotNil]];
 
     return httpClient;
 }

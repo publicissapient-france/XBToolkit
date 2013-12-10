@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
-#import "XBModel.h"
 
-@interface WPPost : XBModel<MTLJSONSerializing>
+@interface WPPost : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *type;

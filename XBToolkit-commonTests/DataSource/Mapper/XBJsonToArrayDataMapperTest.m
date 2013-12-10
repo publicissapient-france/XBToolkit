@@ -10,42 +10,36 @@
 #import "WPAuthor.h"
 #import "XBTestUtils.h"
 #import "WPPost.h"
+#import <OCMock/OCMock.h>
 
-//NSTimeInterval kNetworkTimeout = 30.0;
-
-@interface XBJsonToArrayDataMapperTest : GHAsyncTestCase @end
+@interface XBJsonToArrayDataMapperTest : GHTestCase @end
 
 @implementation XBJsonToArrayDataMapperTest
 
 - (void)testCount {
-    
-    [self prepare];
-
-    __block NSArray *wpAuthors;
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    [dataMapper mapData:[XBTestUtils getAuthorsAsJson] withCompletionCallback:^(id mappedData) {
-        wpAuthors = mappedData;
-        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testCount)];
-    }];
-
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:30.0];
+    NSArray *wpAuthors = [dataMapper mappedObjectFromRawObject:[XBTestUtils getAuthorsAsJson]];
 
     GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
 }
 
+- (void)testResponse {
+    id mockHTTPURLResponse = [OCMockObject niceMockForClass:[NSHTTPURLResponse class]];
+    [[[mockHTTPURLResponse stub] andReturnValue:@(200)] statusCode];
+    [[[mockHTTPURLResponse stub] andReturn:@"application/json"] MIMEType];
+    [[[mockHTTPURLResponse stub] andReturn:[NSURL URLWithString:@"http://mysql"]] URL];
+    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+    NSArray *wpAuthors = [dataMapper responseObjectForResponse:mockHTTPURLResponse data:[XBTestUtils getAuthorsAsData] error:nil];
+    
+    GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
+}
+
 - (void)testValues {
-    [self prepare];
 
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    __block NSArray *authors;
 
-    [dataMapper mapData:[XBTestUtils getAuthorsAsJson] withCompletionCallback:^(id mappedData) {
-        authors = mappedData;
-        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValues)];
-    }];
-
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:30.0];
-
+    NSArray *authors = [dataMapper mappedObjectFromRawObject:[XBTestUtils getAuthorsAsJson]];
+    
     WPAuthor *wpAuthor = [XBTestUtils findAuthorInArray:authors ById:50];
 
     GHAssertEquals([wpAuthor.identifier intValue], 50, nil);

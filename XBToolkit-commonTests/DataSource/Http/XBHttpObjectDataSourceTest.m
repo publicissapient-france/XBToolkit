@@ -4,7 +4,7 @@
 
 #import "GHAsyncTestCase.h"
 #import "XBTestUtils.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "WPPost.h"
 #import "XBReloadableObjectDataSource.h"
 #import "XBObjectDataSource+protected.h"
@@ -24,7 +24,7 @@
 
     XBJsonToObjectDataMapper *dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
     
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android"];
 
     XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader
                                                                                            dataMapper:dataMapper];

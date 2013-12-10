@@ -6,11 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-
-typedef void(^XBDataMapperCompletionCallback)(id mappedData);
-
 @protocol XBDataMapper <NSObject>
 
-- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback;
+#warning Careful! This method is now synchronous!
+- (id)mappedObjectFromRawObject:(id)rawObject;
 
 @end

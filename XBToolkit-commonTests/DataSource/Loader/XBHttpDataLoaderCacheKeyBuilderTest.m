@@ -7,7 +7,7 @@
 
 #import "GHUnit.h"
 #import "XBTestUtils.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "XBHttpDataLoaderCacheKeyBuilder.h"
 #import "XBBasicHttpQueryParamBuilder.h"
 
@@ -19,7 +19,7 @@
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
 
 
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];
@@ -39,9 +39,9 @@
         @"slug":@"ios"
     }];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                httpQueryParamBuilder: httpQueryParamBuilder
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient
+                                                                    httpQueryParamBuilder:httpQueryParamBuilder
+                                                                             resourcePath:@"/wp-json-api/get_author_index/"];
 
 
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];

@@ -6,10 +6,9 @@
 //  Copyright (c) 2012 Xebia France. All rights reserved.
 //
 
-#import "XBModel.h"
 #import <Mantle/Mantle.h>
 
-@interface WPAuthor : XBModel<MTLJSONSerializing>
+@interface WPAuthor : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *slug;

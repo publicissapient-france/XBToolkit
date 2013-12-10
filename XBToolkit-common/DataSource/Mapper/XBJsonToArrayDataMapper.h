@@ -7,8 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import "XBDataMapper.h"
+#import "AFURLResponseSerialization.h"
 
-@interface XBJsonToArrayDataMapper : NSObject<XBDataMapper>
+#warning This should not be an AFJSONResponseSerializer subclass
+@interface XBJsonToArrayDataMapper : AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper>
 
 @property (nonatomic, strong, readonly)NSString *rootKeyPath;
 

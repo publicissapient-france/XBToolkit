@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) NSError *error;
 @property (nonatomic, strong) id<XBDataLoader> dataLoader;
-#warning rawData has been removed :/
 
 @end
 

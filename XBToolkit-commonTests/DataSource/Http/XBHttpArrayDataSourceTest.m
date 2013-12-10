@@ -7,7 +7,7 @@
 #import "GHUnit.h"
 #import "XBInfiniteScrollArrayDataSource.h"
 #import "WPAuthor.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "XBJsonToArrayDataMapper.h"
 #import "XBTestUtils.h"
 #import "Underscore.h"
@@ -26,7 +26,7 @@
 
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
     
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_author_index/"];
 
     XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader];
 

@@ -8,7 +8,7 @@
 #import "XBInfiniteScrollArrayDataSource.h"
 #import "GHUnit.h"
 #import "XBTestUtils.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "XBJsonToArrayDataMapper.h"
 #import "XBArrayDataSource+protected.h"
 #import "XBDictionaryDataMerger.h"
@@ -34,9 +34,9 @@
     XBArrayDataSourceDataPager *dataPager = [XBArrayDataSourceDataPager paginatorWithItemByPage:25];
     XBDataPagerHttpQueryDataBuilder *httpQueryDataBuilder = [XBDataPagerHttpQueryDataBuilder builderWithDataPager:dataPager pageParameterName:@"page"];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient
                                                                     httpQueryParamBuilder:httpQueryDataBuilder
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
+                                                                             resourcePath:@"/wp-json-api/get_author_index/"];
 
     XBJsonToArrayDataMapper * dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
 

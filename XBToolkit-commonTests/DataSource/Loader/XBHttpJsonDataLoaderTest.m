@@ -6,7 +6,7 @@
 
 
 
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "GHUnit.h"
 #import "XBTestUtils.h"
 #import <AFNetworking/AFNetworking.h>
@@ -24,7 +24,7 @@
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
 
     __block NSArray *responseData;
     __block NSError *responseError;
@@ -52,7 +52,7 @@
     NSError *error = [NSError errorWithDomain:@"xebia" code:404 userInfo:nil];
     id httpClient = [XBTestUtils fakeHttpClientWithErrorCallbackWithError:error data:[XBTestUtils getAuthorsAsArray]];
     
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:nil resourcePath:@"/wp-json-api/get_author_index/"];
     
     __block NSDictionary *responseData;
     __block NSError *responseError;

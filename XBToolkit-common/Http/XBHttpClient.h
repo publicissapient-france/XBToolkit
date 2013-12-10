@@ -18,7 +18,6 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 @property(nonatomic, strong, readonly)NSString *baseUrl;
 #warning Extend with JSONResponseSerializer object
-#warning Add status code response
 
 @property(nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
@@ -26,6 +25,6 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 + (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl;
 
-- (void)executeJsonRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
+- (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
 
 @end

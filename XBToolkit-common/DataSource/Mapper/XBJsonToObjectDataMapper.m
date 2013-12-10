@@ -7,53 +7,55 @@
 
 
 #import "XBJsonToObjectDataMapper.h"
-#import "XBModel.h"
+#import <Mantle/Mantle.h>
 #import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @interface XBJsonToObjectDataMapper()
 
-@property (nonatomic, weak)Class typeClass;
-@property (nonatomic, strong)NSString *rootKeyPath;
+@property (nonatomic, weak) Class typeClass;
+@property (nonatomic, strong) NSString *rootKeyPath;
 
 @end
 
 @implementation XBJsonToObjectDataMapper
 
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
-{
-    return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
-}
-
 - (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
 {
     self = [super init];
     if (self) {
-        _rootKeyPath = rootKeyPath;
-        _typeClass = typeClass;
+        self.rootKeyPath = rootKeyPath;
+        self.typeClass = typeClass;
     }
 
     return self;
 }
 
-- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback
++ (instancetype)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
+}
 
-        id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
-        
-        if (![self.typeClass isSubclassOfClass:[XBModel class]]) {
-            [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(self.typeClass)];
-        }
-        
-        NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:self.typeClass];
-        id mappedData = [valueTransformer transformedValue:object];
+- (id)mappedObjectFromRawObject:(id)data
+{
+    id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (callback) {
-                callback(mappedData);
-            }
-        });
-    });
+    if (![self.typeClass isSubclassOfClass:[MTLModel class]]) {
+        #warning Consider switching to NSError instead
+        [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(self.typeClass)];
+    }
+
+    NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:self.typeClass];
+    id mappedData = [valueTransformer transformedValue:object];
+
+    return mappedData;
+}
+
+- (id)responseObjectForResponse:(NSURLResponse *)response
+                           data:(NSData *)data
+                          error:(NSError *__autoreleasing *)error
+{
+    id dictionary = [super responseObjectForResponse:response data:data error:error];
+    return [self mappedObjectFromRawObject:dictionary];
 }
 
 @end

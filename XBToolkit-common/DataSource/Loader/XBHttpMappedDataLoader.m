@@ -6,26 +6,25 @@
 
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "XBHttpJsonDataLoader.h"
-#import "XBDataMapper.h"
+#import "XBHttpMappedDataLoader.h"
 
-@interface XBHttpJsonDataLoader()
+@interface XBHttpMappedDataLoader ()
 @property (nonatomic, strong) NSString *resourcePath;
 @property (nonatomic, strong) XBHttpClient *httpClient;
-@property (nonatomic, strong) id <XBDataMapper> dataMapper;
+@property (nonatomic, strong) AFHTTPResponseSerializer<AFURLResponseSerialization> *dataMapper;
 @property (nonatomic, strong) id <XBHttpQueryParamBuilder> httpQueryParamBuilder;
 @end
 
-@implementation XBHttpJsonDataLoader
+@implementation XBHttpMappedDataLoader
 
-- (id)initWithHttpClient:(XBHttpClient *)httpClient dataMapper:(id <XBDataMapper>)dataMapper resourcePath:(NSString *)resourcePath httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
+- (id)initWithHttpClient:(XBHttpClient *)httpClient dataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper resourcePath:(NSString *)resourcePath httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
 {
     self = [super init];
     if (self) {
         self.httpClient = httpClient;
         self.dataMapper = dataMapper;
         self.httpClient.httpRequestOperationManager.responseSerializer = dataMapper;
-        #warning HttpQueryParamBuilder... is it still needed?
+        #warning Replace with requestSerializer
         self.httpQueryParamBuilder = httpQueryParamBuilder;
         self.resourcePath = resourcePath;
     }
@@ -33,7 +32,7 @@
     return self;
 }
 
-+ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient dataMapper:(id <XBDataMapper>)dataMapper resourcePath:(NSString *)resourcePath
++ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient dataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper resourcePath:(NSString *)resourcePath
 {
     return [self dataLoaderWithHttpClient:httpClient httpQueryParamBuilder:nil resourcePath:resourcePath];
 }
@@ -43,12 +42,11 @@
     return [[self alloc] initWithHttpClient:httpClient dataMapper:nil resourcePath:resourcePath httpQueryParamBuilder:httpQueryParamBuilder];
 }
 
-#warning replace jsonFetched
 - (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
     NSDictionary *parameters = self.httpQueryParamBuilder ? [self.httpQueryParamBuilder build] : nil;
 
-    [self.httpClient executeJsonRequestWithPath:self.resourcePath method:httpMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.httpClient executeRequestWithPath:self.resourcePath method:httpMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success(operation, responseObject);
         }
@@ -64,7 +62,7 @@
     [self loadDataWithHttpMethod:@"GET" withSuccess:success failure:failure];
 }
 
-- (void)setDataMapper:(id <XBDataMapper>)dataMapper
+- (void)setDataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper
 {
     _dataMapper = dataMapper;
     self.httpClient.httpRequestOperationManager.responseSerializer = dataMapper;

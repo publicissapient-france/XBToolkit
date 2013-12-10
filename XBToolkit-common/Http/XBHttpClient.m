@@ -36,11 +36,11 @@
     return [[self alloc] initWithBaseUrl:baseUrl];
 }
 
-- (void)executeJsonRequestWithPath:(NSString *)path
-                            method:(NSString *)method
-                        parameters:(NSDictionary *)parameters
-                           success:(XBHttpClientRequestSuccessBlock)successCb
-                           failure:(XBHttpClientRequestFailureBlock)errorCb
+- (void)executeRequestWithPath:(NSString *)path
+                        method:(NSString *)method
+                    parameters:(NSDictionary *)parameters
+                       success:(XBHttpClientRequestSuccessBlock)successCb
+                       failure:(XBHttpClientRequestFailureBlock)errorCb
 {
 
     NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer

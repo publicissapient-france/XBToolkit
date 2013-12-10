@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "XBDataMapper.h"
+#import "AFURLResponseSerialization.h"
 
 
-@interface XBJsonToObjectDataMapper : NSObject<XBDataMapper>
+@interface XBJsonToObjectDataMapper : AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper>
 
 @property (nonatomic, strong, readonly)NSString *rootKeyPath;
 
 - (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
 
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
++ (instancetype)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass;
 
 @end

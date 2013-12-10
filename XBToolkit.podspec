@@ -20,6 +20,5 @@ Pod::Spec.new do |s|
   s.dependency 'Underscore.m',      '~> 0.2.1'
   s.dependency 'AFNetworking',      '~> 2.0.3'
   s.dependency 'Mantle',            '~> 1.3.1'
-  #s.dependency 'MantleXMLAdapter',  
 
 end

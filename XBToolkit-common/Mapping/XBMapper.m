@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "NSDateFormatter+XBAdditions.h"
 #import "XBMappingProvider.h"
-#import "XBModel.h"
+#import <Mantle/Mantle.h>
 #import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @implementation XBMapper
@@ -99,20 +99,5 @@
 //    return [NSDictionary dictionaryWithDictionary:dict];
 //}
 
-#warning The following method should be suppressed
-+ (NSArray *)parseArray:(NSArray *)objectArray intoObjectsOfClass:(Class)objectClass
-{
-    return nil;
-}
-
-+ (id)parseObject:(NSDictionary *)objectDictionary intoObjectOfClass:(Class)objectClass
-{
-    if (![objectClass isSubclassOfClass:[XBModel class]]) {
-        [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(objectClass)];
-    }
-    
-    NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:objectClass];
-    return [valueTransformer transformedValue:objectDictionary];
-}
 
 @end

@@ -6,7 +6,7 @@
 
 
 #import "XBJsonToArrayDataMapper.h"
-#import "XBModel.h"
+#import <Mantle/Mantle.h>
 #import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @interface XBJsonToArrayDataMapper()
@@ -34,28 +34,31 @@
     return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
 }
 
-- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback
+- (id)mappedObjectFromRawObject:(id)rawObject
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
+    NSArray *array = self.rootKeyPath ? [rawObject valueForKeyPath:self.rootKeyPath] : rawObject;
 
-        id mappedData = nil;
-        if ([array isKindOfClass:[NSArray class]]) {
-            
-            if (![self.typeClass isSubclassOfClass:[XBModel class]]) {
-                [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(self.typeClass)];
-            }
-            
-            NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:self.typeClass];
-            mappedData = [valueTransformer transformedValue:array];
+    id mappedObject = nil;
+    if ([array isKindOfClass:[NSArray class]]) {
+
+        if (![self.typeClass isSubclassOfClass:[MTLModel class]]) {
+#warning Consider switching to NSError instead
+            [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of MTLModel", NSStringFromClass(self.typeClass)];
         }
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (callback) {
-                callback(mappedData);
-            }
-        });
-    });
+        NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:self.typeClass];
+        mappedObject = [valueTransformer transformedValue:array];
+    }
+
+    return mappedObject;
+}
+
+- (id)responseObjectForResponse:(NSURLResponse *)response
+                           data:(NSData *)data
+                          error:(NSError *__autoreleasing *)error
+{
+    id array = [super responseObjectForResponse:response data:data error:error];
+    return [self mappedObjectFromRawObject:array];
 }
 
 @end
