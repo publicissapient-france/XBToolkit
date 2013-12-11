@@ -9,6 +9,6 @@
 @protocol XBDataMapper <NSObject>
 
 #warning Careful! This method is now synchronous!
-- (id)mappedObjectFromRawObject:(id)rawObject;
+- (id)mappedObjectFromData:(id)data error:(NSError * __autoreleasing *)error;
 
 @end
