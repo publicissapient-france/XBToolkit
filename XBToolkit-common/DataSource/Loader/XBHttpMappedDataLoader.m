@@ -17,7 +17,7 @@
 
 @implementation XBHttpMappedDataLoader
 
-- (id)initWithHttpClient:(XBHttpClient *)httpClient dataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper resourcePath:(NSString *)resourcePath httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
+- (id)initWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
 {
     self = [super init];
     if (self) {
@@ -32,14 +32,14 @@
     return self;
 }
 
-+ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient dataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper resourcePath:(NSString *)resourcePath
++ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper
 {
-    return [self dataLoaderWithHttpClient:httpClient httpQueryParamBuilder:nil resourcePath:resourcePath];
+    return [self dataLoaderWithHttpClient:httpClient resourcePath:resourcePath dataMapper:dataMapper httpQueryParamBuilder:nil ];
 }
 
-+ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder resourcePath:(NSString *)resourcePath
++ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
 {
-    return [[self alloc] initWithHttpClient:httpClient dataMapper:nil resourcePath:resourcePath httpQueryParamBuilder:httpQueryParamBuilder];
+    return [[self alloc] initWithHttpClient:httpClient resourcePath:resourcePath dataMapper:dataMapper httpQueryParamBuilder:httpQueryParamBuilder];
 }
 
 - (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
@@ -71,7 +71,10 @@
 - (void)setHttpClient:(XBHttpClient *)httpClient
 {
     _httpClient = httpClient;
-    httpClient.httpRequestOperationManager.responseSerializer = self.dataMapper;
+    
+    if (self.dataMapper) {
+        httpClient.httpRequestOperationManager.responseSerializer = self.dataMapper;
+    }
 }
 
 @end

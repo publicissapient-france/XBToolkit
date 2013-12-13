@@ -49,13 +49,13 @@
                    parameters:parameters];
 
     AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
-        XBLogVerbose(@"json: %@", httpRequestOperation.responseString);
+        XBLogVerbose(@"responseString: %@", httpRequestOperation.responseString);
 
         if (successCb) {
             successCb(httpRequestOperation, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
-        XBLogWarn(@"Error: %@, json: %@", error, httpRequestOperation.responseString);
+        XBLogWarn(@"Error: %@, responseString: %@", error, httpRequestOperation.responseString);
 
         if (errorCb) {
             errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
