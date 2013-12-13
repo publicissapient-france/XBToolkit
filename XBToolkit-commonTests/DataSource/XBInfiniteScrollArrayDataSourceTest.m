@@ -14,6 +14,7 @@
 #import "XBDictionaryDataMerger.h"
 #import "XBArrayDataSourceDataPager.h"
 #import "XBDataPagerHttpQueryDataBuilder.h"
+#import "XBArrayDataMerger.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -26,9 +27,9 @@
     [self prepare];
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessiveSuccessCallbackWithData:@[
-            [XBTestUtils getAuthors:2 inArrayWithPage:1],
-            [XBTestUtils getAuthors:2 inArrayWithPage:2],
-            [XBTestUtils getAuthors:2 inArrayWithPage:3]
+            [XBTestUtils getAuthors:2 asArrayWithPage:1],
+            [XBTestUtils getAuthors:2 asArrayWithPage:2],
+            [XBTestUtils getAuthors:2 asArrayWithPage:3]
     ] parameterName:@"page"];
 
 
@@ -39,7 +40,7 @@
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
     XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:dataMapper httpQueryParamBuilder:httpQueryDataBuilder];
 
-    XBDictionaryDataMerger *dataMerger = [XBDictionaryDataMerger dataMergerWithRootKeyPath:@"authors"];
+    XBArrayDataMerger *dataMerger = [XBArrayDataMerger dataMerger];
 
     XBInfiniteArrayDataSource *dataSource = [XBInfiniteArrayDataSource dataSourceWithDataLoader:dataLoader dataMerger:dataMerger dataPager:dataPager];
 

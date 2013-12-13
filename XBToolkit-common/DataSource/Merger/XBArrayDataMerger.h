@@ -11,6 +11,6 @@
 
 @interface XBArrayDataMerger : NSObject<XBDataMerger>
 
-+ (id)dataMerger;
++ (instancetype)dataMerger;
 
 @end

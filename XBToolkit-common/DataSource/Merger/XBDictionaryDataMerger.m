@@ -33,15 +33,15 @@
 
 - (id)mergeDataOfSource:(id)dataSource1 withSource:(id)dataSource2
 {
-    NSMutableDictionary *mutableDestData = [dataSource2 deepMutableCopy];
+    NSDictionary *copyOfDataSource2 = [dataSource2 deepMutableCopy];
 
-    NSMutableArray *destMutableData = self.rootKeyPath ? [mutableDestData valueForKeyPath:self.rootKeyPath] : mutableDestData;
+    NSMutableArray *destMutableData = [copyOfDataSource2 valueForKeyPath:self.rootKeyPath];
 
-    NSMutableArray *srcMutableData = self.rootKeyPath ? [dataSource1 valueForKeyPath:self.rootKeyPath] : dataSource1;
+    NSMutableArray *srcMutableData = [dataSource1 valueForKeyPath:self.rootKeyPath];
 
     [destMutableData addObjectsFromArray:srcMutableData];
 
-    return mutableDestData;
+    return copyOfDataSource2;
 }
 
 @end

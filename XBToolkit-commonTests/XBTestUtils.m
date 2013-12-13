@@ -28,7 +28,7 @@
     return Underscore.array(authors).filter([XBTestUtils filterAuthorById:identifier]).unwrap[0];
 }
 
-+ (NSDictionary *)getAuthors:(NSInteger)numberOfAuthors inArrayWithPage:(NSUInteger)page
++ (NSArray *)getAuthors:(NSInteger)numberOfAuthors asArrayWithPage:(NSUInteger)page
 {
     NSArray *authors = @[[WPAuthor authorWithId:@(50) name:@"Alexis Kinsella"],
              [WPAuthor authorWithId:@(51) name:@"Simone Civetta"],
@@ -39,9 +39,7 @@
     NSInteger length = page * numberOfAuthors;
     NSInteger diff = length < [authors count] ? 0 : length - [authors count];
     numberOfAuthors -= diff;
-    return @{
-             @"authors" : [authors objectsAtIndexes:[[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(page - 1, numberOfAuthors)]]
-             };
+    return [authors objectsAtIndexes:[[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(page - 1, numberOfAuthors)]];
 }
 
 + (id)getAuthorsAsJson {

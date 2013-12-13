@@ -19,8 +19,11 @@
     NSMutableArray *destMutableData = [dataSource2 mutableCopy];
     NSMutableArray *srcMutableData = [dataSource1 mutableCopy];
 
+    if (!destMutableData) {
+        return srcMutableData;
+    }
+    
     [destMutableData addObjectsFromArray:srcMutableData];
-
     return destMutableData;
 }
 
