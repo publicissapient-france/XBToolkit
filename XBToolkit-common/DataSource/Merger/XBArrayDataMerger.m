@@ -9,14 +9,15 @@
 
 @implementation XBArrayDataMerger
 
-+ (id)dataMerger {
++ (instancetype)dataMerger
+{
     return [[self alloc] init];
 }
 
-- (id)mergeDataFromSource:(NSArray *)srcData toDest:(NSArray *)destData {
-
-    NSMutableArray *destMutableData = [destData mutableCopy];
-    NSMutableArray *srcMutableData = [srcData mutableCopy];
+- (id)mergeDataOfSource:(id)dataSource1 withSource:(id)dataSource2
+{
+    NSMutableArray *destMutableData = [dataSource2 mutableCopy];
+    NSMutableArray *srcMutableData = [dataSource1 mutableCopy];
 
     [destMutableData addObjectsFromArray:srcMutableData];
 

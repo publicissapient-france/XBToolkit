@@ -16,11 +16,8 @@
 
 @implementation XBDictionaryDataMerger
 
-+ (id)dataMergerWithRootKeyPath:(NSString *)rootKeyPath {
-    return [[self alloc] initWithRootKeyPath:rootKeyPath];
-}
-
-- (id)initWithRootKeyPath:(NSString *)rootKeyPath {
+- (id)initWithRootKeyPath:(NSString *)rootKeyPath
+{
     self = [super init];
     if (self) {
         self.rootKeyPath = rootKeyPath;
@@ -29,12 +26,18 @@
     return self;
 }
 
-- (id)mergeDataFromSource:(NSDictionary *)srcData toDest:(NSDictionary *)destData {
-    NSMutableDictionary *mutableDestData = [destData deepMutableCopy];
++ (instancetype)dataMergerWithRootKeyPath:(NSString *)rootKeyPath
+{
+    return [[self alloc] initWithRootKeyPath:rootKeyPath];
+}
+
+- (id)mergeDataOfSource:(id)dataSource1 withSource:(id)dataSource2
+{
+    NSMutableDictionary *mutableDestData = [dataSource2 deepMutableCopy];
 
     NSMutableArray *destMutableData = self.rootKeyPath ? [mutableDestData valueForKeyPath:self.rootKeyPath] : mutableDestData;
 
-    NSMutableArray *srcMutableData = self.rootKeyPath ? [srcData valueForKeyPath:self.rootKeyPath] : srcData;
+    NSMutableArray *srcMutableData = self.rootKeyPath ? [dataSource1 valueForKeyPath:self.rootKeyPath] : dataSource1;
 
     [destMutableData addObjectsFromArray:srcMutableData];
 

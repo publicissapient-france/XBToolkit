@@ -10,6 +10,7 @@
 @protocol XBDataMerger <NSObject>
 
 @required
--(id)mergeDataFromSource:(id)srcData toDest:(id)destData;
+
+- (id)mergeDataOfSource:(id)dataSource1 withSource:(id)dataSource2;
 
 @end

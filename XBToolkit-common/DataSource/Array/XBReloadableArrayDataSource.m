@@ -54,7 +54,7 @@
     }];
 }
 
-#warning There's no background threading here
+#warning Filtering is potentially done on the main thread
 - (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
 {
     self.array = responseObject;

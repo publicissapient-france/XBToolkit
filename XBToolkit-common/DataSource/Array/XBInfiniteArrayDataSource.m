@@ -42,23 +42,23 @@
 - (void)loadDataWithCallback:(void (^)())callback
 {
     [self.dataPager resetPageIncrement];
-    [self fetchDataFromSourceWithCallback:callback merge:NO];
+    [self fetchDataFromSourceAndMergeWithCallback:callback];
 }
 
 - (void)loadMoreDataWithCallback:(void (^)())callback
 {
     if ([self hasMoreData]) {
-        [self fetchDataFromSourceWithCallback:callback merge:YES];
+        [self fetchDataFromSourceAndMergeWithCallback:callback];
     }
     else if (callback) {
         callback();
     }
 }
 
-- (void)fetchDataFromSourceWithCallback:(void (^)())callback merge:(BOOL)merge
+- (void)fetchDataFromSourceAndMergeWithCallback:(void (^)())callback
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
-        [self processSuccessWithRawData:jsonFetched merge:merge callback:^{
+        [self processSuccessWithRawData:jsonFetched callback:^{
             if (callback) {
                 callback();
             }
@@ -72,9 +72,9 @@
     }];
 }
 
-- (void)processSuccessWithRawData:(id)rawData merge:(BOOL)merge callback:(void (^)())callback
+- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback
 {
-    id mergedRawData = !merge ? rawData : [self mergeRawData:rawData];
+    id mergedRawData = self.dataMerger ? [self mergeRawData:rawData] : rawData;
     [super processSuccessForResponseObject:mergedRawData callback:^{
         if (callback) {
             callback();
@@ -84,7 +84,7 @@
 
 - (id)mergeRawData:(id)rawData
 {
-    return [self.dataMerger mergeDataFromSource:rawData toDest:self.rawData];
+    return [self.dataMerger mergeDataOfSource:rawData withSource:self.rawData];
 }
 
 @end

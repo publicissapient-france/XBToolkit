@@ -26,9 +26,9 @@
     [self prepare];
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessiveSuccessCallbackWithData:@[
-            [XBTestUtils getAuthors:2 asArrayWithPage:1],
-            [XBTestUtils getAuthors:2 asArrayWithPage:2],
-            [XBTestUtils getAuthors:2 asArrayWithPage:3]
+            [XBTestUtils getAuthors:2 inArrayWithPage:1],
+            [XBTestUtils getAuthors:2 inArrayWithPage:2],
+            [XBTestUtils getAuthors:2 inArrayWithPage:3]
     ] parameterName:@"page"];
 
 
@@ -56,7 +56,7 @@
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     GHAssertNil(dataSource.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long) dataSource.error.code, dataSource.error.domain]);
-    GHAssertEquals(dataSource.count, [@60 unsignedIntegerValue], nil);
+    GHAssertEquals([dataSource count], 5u, nil);
 
     WPAuthor *author = [XBTestUtils findAuthorInArray:dataSource.array ById:50];
 

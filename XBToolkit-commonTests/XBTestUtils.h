@@ -24,6 +24,6 @@
 + (id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data;
 + (id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName;
 
-+ (NSArray *)getAuthors:(NSInteger)numberOfAuthors asArrayWithPage:(NSUInteger)page;
++ (NSDictionary *)getAuthors:(NSInteger)numberOfAuthors inArrayWithPage:(NSUInteger)page;
 
 @end

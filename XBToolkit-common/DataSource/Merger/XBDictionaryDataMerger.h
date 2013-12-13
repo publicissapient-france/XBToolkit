@@ -13,7 +13,7 @@
 
 - (id)initWithRootKeyPath:(NSString *)rootKeyPath;
 
-+ (id)dataMergerWithRootKeyPath:(NSString *)rootKeyPath;
++ (instancetype)dataMergerWithRootKeyPath:(NSString *)rootKeyPath;
 
 
 @end
