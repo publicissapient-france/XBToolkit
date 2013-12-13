@@ -15,9 +15,9 @@
 		2EE4494730F3BDFF798DECCD /* XBReloadableObjectDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44777CC51AAA7A58B0DC9 /* XBReloadableObjectDataSource.m */; };
 		2EE449B9B47B10B0870E24B7 /* XBJsonToObjectDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44C80B7F48D514C648CD3 /* XBJsonToObjectDataMapper.m */; };
 		2EE449E0CF34F97768E31269 /* XBObjectDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44137C386C88B43A22C99 /* XBObjectDataSource.m */; };
-		2EE44AB95C98B07C8090F881 /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE441EA74025CB94C0ABAE1 /* XBInfiniteScrollArrayDataSource.m */; };
+		2EE44AB95C98B07C8090F881 /* XBInfiniteArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE441EA74025CB94C0ABAE1 /* XBInfiniteArrayDataSource.m */; };
 		2EE44C3BD12C9466266E397E /* XBHttpObjectDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44A554FA12F9125C3E867 /* XBHttpObjectDataSourceTest.m */; };
-		2EE44C76AE4C284B4A83D0AE /* XBInfiniteScrollArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE441EA74025CB94C0ABAE1 /* XBInfiniteScrollArrayDataSource.m */; };
+		2EE44C76AE4C284B4A83D0AE /* XBInfiniteArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE441EA74025CB94C0ABAE1 /* XBInfiniteArrayDataSource.m */; };
 		2EE44D8858DDDA132A7B427F /* XBObjectDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44137C386C88B43A22C99 /* XBObjectDataSource.m */; };
 		2EE44F1683533D617CE914E8 /* WPPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE440ACABAF83FFFB8FF85F /* WPPost.m */; };
 		2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44F8C56F6A1CA0068C65F /* XBArrayDataSource.m */; };
@@ -129,12 +129,12 @@
 		2EE440ACABAF83FFFB8FF85F /* WPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPPost.m; sourceTree = "<group>"; };
 		2EE440CF012183F26BD6E128 /* XBReloadableObjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBReloadableObjectDataSource.h; sourceTree = "<group>"; };
 		2EE44137C386C88B43A22C99 /* XBObjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBObjectDataSource.m; sourceTree = "<group>"; };
-		2EE441EA74025CB94C0ABAE1 /* XBInfiniteScrollArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteScrollArrayDataSource.m; sourceTree = "<group>"; };
-		2EE4433F618D9A124F4DCADF /* XBInfiniteScrollArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteScrollArrayDataSource.h; sourceTree = "<group>"; };
+		2EE441EA74025CB94C0ABAE1 /* XBInfiniteArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteArrayDataSource.m; sourceTree = "<group>"; };
+		2EE4433F618D9A124F4DCADF /* XBInfiniteArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteArrayDataSource.h; sourceTree = "<group>"; };
 		2EE443ACD9545873F4AB199A /* WPPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPPost.h; sourceTree = "<group>"; };
 		2EE44407B82824CD95E6A125 /* XBReloadableArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBReloadableArrayDataSource.m; sourceTree = "<group>"; };
 		2EE44777CC51AAA7A58B0DC9 /* XBReloadableObjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBReloadableObjectDataSource.m; sourceTree = "<group>"; };
-		2EE447DE06ED8D3799866B95 /* XBInfiniteScrollArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBInfiniteScrollArrayDataSource+protected.h"; sourceTree = "<group>"; };
+		2EE447DE06ED8D3799866B95 /* XBInfiniteArrayDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBInfiniteArrayDataSource+protected.h"; sourceTree = "<group>"; };
 		2EE44A4B4125DF30257A4590 /* XBObjectDataSource+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBObjectDataSource+protected.h"; sourceTree = "<group>"; };
 		2EE44A554FA12F9125C3E867 /* XBHttpObjectDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpObjectDataSourceTest.m; sourceTree = "<group>"; };
 		2EE44A7AE1E7C929B453B7C9 /* XBArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSource.h; sourceTree = "<group>"; };
@@ -302,15 +302,15 @@
 		2EE4487479AF9B3F8072D7FF /* Array */ = {
 			isa = PBXGroup;
 			children = (
-				2EE447DE06ED8D3799866B95 /* XBInfiniteScrollArrayDataSource+protected.h */,
+				2EE447DE06ED8D3799866B95 /* XBInfiniteArrayDataSource+protected.h */,
 				2EE44B474968A30287F17904 /* XBReloadableArrayDataSource.h */,
 				2EE44F8C56F6A1CA0068C65F /* XBArrayDataSource.m */,
 				2EE44A7AE1E7C929B453B7C9 /* XBArrayDataSource.h */,
 				2EE44F61273D399DA8827BFB /* XBArrayDataSource+protected.h */,
 				2EE4402DAE9B967CCABAC7C9 /* XBReloadableArrayDataSource+protected.h */,
-				2EE4433F618D9A124F4DCADF /* XBInfiniteScrollArrayDataSource.h */,
+				2EE4433F618D9A124F4DCADF /* XBInfiniteArrayDataSource.h */,
 				2EE44407B82824CD95E6A125 /* XBReloadableArrayDataSource.m */,
-				2EE441EA74025CB94C0ABAE1 /* XBInfiniteScrollArrayDataSource.m */,
+				2EE441EA74025CB94C0ABAE1 /* XBInfiniteArrayDataSource.m */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -872,7 +872,7 @@
 				540957391710A85F00B006B0 /* XBMapper.m in Sources */,
 				2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */,
 				2EE4493CCE1C75A7A5528A36 /* XBReloadableArrayDataSource.m in Sources */,
-				2EE44C76AE4C284B4A83D0AE /* XBInfiniteScrollArrayDataSource.m in Sources */,
+				2EE44C76AE4C284B4A83D0AE /* XBInfiniteArrayDataSource.m in Sources */,
 				2EE4494730F3BDFF798DECCD /* XBReloadableObjectDataSource.m in Sources */,
 				2EE44D8858DDDA132A7B427F /* XBObjectDataSource.m in Sources */,
 				2EE449B9B47B10B0870E24B7 /* XBJsonToObjectDataMapper.m in Sources */,
@@ -924,7 +924,7 @@
 				54095B121710C68700B006B0 /* XBInfiniteScrollArrayDataSourceTest.m in Sources */,
 				2EE44747820E392B8BB33DDD /* XBArrayDataSource.m in Sources */,
 				2EE4457803A157E08212C108 /* XBReloadableArrayDataSource.m in Sources */,
-				2EE44AB95C98B07C8090F881 /* XBInfiniteScrollArrayDataSource.m in Sources */,
+				2EE44AB95C98B07C8090F881 /* XBInfiniteArrayDataSource.m in Sources */,
 				2EE4471006EB87E3CF61BC15 /* XBReloadableObjectDataSource.m in Sources */,
 				2EE449E0CF34F97768E31269 /* XBObjectDataSource.m in Sources */,
 				2EE44C3BD12C9466266E397E /* XBHttpObjectDataSourceTest.m in Sources */,

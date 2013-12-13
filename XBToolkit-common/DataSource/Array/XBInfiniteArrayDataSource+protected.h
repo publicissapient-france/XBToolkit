@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBInfiniteScrollArrayDataSource.h"
+#import "XBInfiniteArrayDataSource.h"
 
-@interface XBInfiniteScrollArrayDataSource (XBPagedHttpArrayDataSource_protected)
+@interface XBInfiniteArrayDataSource (XBPagedHttpArrayDataSource_protected)
 
 -(void)setDataPager:(NSObject<XBDataPager> *)dataPager;
 

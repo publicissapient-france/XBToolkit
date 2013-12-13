@@ -12,13 +12,13 @@
 
 - (NSUInteger)currentPage;
 
-- (NSUInteger)itemByPage;
+- (NSUInteger)itemsPerPage;
 
-- (NSUInteger)totalItem;
+- (NSUInteger)totalNumberOfItems;
 
 - (void)incrementPage;
 
-- (Boolean)hasMorePages;
+- (BOOL)hasMorePages;
 
 - (void)resetPageIncrement;
 
@@ -26,6 +26,6 @@
 
 @protocol XBPaginatorFactory <NSObject>
 
--(NSObject<XBDataPager> *) buildWithDataSource:(XBArrayDataSource *)dataSource;
+- (id <XBDataPager>)buildWithDataSource:(XBArrayDataSource *)dataSource;
 
 @end

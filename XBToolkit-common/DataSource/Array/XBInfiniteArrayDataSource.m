@@ -5,20 +5,20 @@
 //
 
 
-#import "XBInfiniteScrollArrayDataSource.h"
+#import "XBInfiniteArrayDataSource.h"
 #import "XBReloadableArrayDataSource+protected.h"
 #import "XBLogging.h"
 
-@interface XBInfiniteScrollArrayDataSource()
+@interface XBInfiniteArrayDataSource ()
 
 @property(nonatomic, strong) id <XBDataPager> dataPager;
 @property(nonatomic, strong) id <XBDataMerger> dataMerger;
 
 @end
 
-@implementation XBInfiniteScrollArrayDataSource
+@implementation XBInfiniteArrayDataSource
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager
 {
     self = [super initWithDataLoader:dataLoader];
     if (self) {
@@ -29,9 +29,9 @@
     return self;
 }
 
-+ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager
 {
-    return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper dataMerger:dataMerger dataPager:dataPager];
+    return [[self alloc] initWithDataLoader:dataLoader dataMerger:dataMerger dataPager:dataPager];
 }
 
 - (BOOL)hasMoreData
@@ -42,22 +42,21 @@
 - (void)loadDataWithCallback:(void (^)())callback
 {
     [self.dataPager resetPageIncrement];
-    [self fetchDataFromSourceInternalWithCallback:callback merge:NO];
+    [self fetchDataFromSourceWithCallback:callback merge:NO];
 }
 
 - (void)loadMoreDataWithCallback:(void (^)())callback
 {
     if ([self hasMoreData]) {
-        [self fetchDataFromSourceInternalWithCallback:callback merge:YES];
+        [self fetchDataFromSourceWithCallback:callback merge:YES];
     }
     else if (callback) {
         callback();
     }
 }
 
-- (void)fetchDataFromSourceInternalWithCallback:(void (^)())callback merge:(BOOL)merge
+- (void)fetchDataFromSourceWithCallback:(void (^)())callback merge:(BOOL)merge
 {
-
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
         [self processSuccessWithRawData:jsonFetched merge:merge callback:^{
             if (callback) {
@@ -76,7 +75,7 @@
 - (void)processSuccessWithRawData:(id)rawData merge:(BOOL)merge callback:(void (^)())callback
 {
     id mergedRawData = !merge ? rawData : [self mergeRawData:rawData];
-    [super processSuccessWithRawData:mergedRawData callback:^{
+    [super processSuccessForResponseObject:mergedRawData callback:^{
         if (callback) {
             callback();
         }

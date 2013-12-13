@@ -7,9 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
-#import "XBInfiniteScrollArrayDataSource.h"
+#import "XBInfiniteArrayDataSource.h"
 #import "XBCompositeArrayDataSource.h"
-#import "XBInfiniteScrollArrayDataSource.h"
+#import "XBInfiniteArrayDataSource.h"
 
 @interface XBPagedCompositeArrayDataSource : XBCompositeArrayDataSource
 
@@ -17,6 +17,6 @@
 
 - (void)loadMoreDataWithCallback:(void (^)())callback;
 
-- (Boolean)hasMoreData;
+- (BOOL)hasMoreData;
 
 @end

@@ -9,68 +9,62 @@
 
 @interface XBArrayDataSourceDataPager ()
 
+@property (nonatomic, assign) NSUInteger currentPage;
+@property (nonatomic, assign) NSUInteger itemsPerPage;
+@property (nonatomic, assign) NSInteger totalNumberOfItems;
+
 @end
 
-@implementation XBArrayDataSourceDataPager {
-    NSUInteger _currentPage;
-    NSUInteger _itemByPage;
-}
+@implementation XBArrayDataSourceDataPager
 
-+ (id)paginatorWithItemByPage:(NSUInteger)itemByPage {
-    return [[self alloc] initWithItemByPage:itemByPage];
-}
-
-- (id)initWithItemByPage:(NSUInteger)itemByPage {
+- (id)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
+{
     self = [super init];
     if (self) {
-        _itemByPage = itemByPage;
+        self.itemsPerPage = itemsPerPage;
+        self.totalNumberOfItems = totalNumberOfItems;
         [self resetPageIncrement];
     }
 
     return self;
 }
 
-- (void)setDataSource:(XBArrayDataSource *)dataSource {
++ (instancetype)paginatorWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
+{
+    return [[self alloc] initWithItemsPerPage:itemsPerPage totalNumberOfItems:totalNumberOfItems];
+}
+
+- (void)setDataSource:(XBArrayDataSource *)dataSource
+{
     _dataSource = dataSource;
     [self resetPageIncrement];
 }
 
-- (NSUInteger)currentPage {
-    return _currentPage;
-}
-
-- (NSUInteger)itemByPage {
-    return _itemByPage;
-}
-
-- (NSUInteger)totalItem {
-    return [self.dataSource count];
-}
-
-- (void)incrementPage {
+- (void)incrementPage
+{
     _currentPage++;
 }
 
-- (Boolean)hasMorePages {
-    return [self totalItem] > self.currentPage * (self.itemByPage + 1);
+- (BOOL)hasMorePages
+{
+    return self.totalNumberOfItems > self.currentPage * (self.itemsPerPage + 1);
 }
 
-- (void)resetPageIncrement {
-    _currentPage = 1;
+- (void)resetPageIncrement
+{
+    self.currentPage = 1;
 }
 
 @end
 
 
-@implementation XBArrayDataSourcePaginatorFactory {
+@implementation XBArrayDataSourcePaginatorFactory
+{
     NSUInteger _itemByPage;
 }
 
-+ (id)paginatorWithItemByPage:(NSUInteger)itemByPage {
-    return [[self alloc] initWithItemByPage:itemByPage];
-}
-
-- (id)initWithItemByPage:(NSUInteger)itemByPage {
+- (id)initWithItemByPage:(NSUInteger)itemByPage
+{
     self = [super init];
     if (self) {
         _itemByPage = itemByPage;
@@ -79,8 +73,13 @@
     return self;
 }
 
--(XBArrayDataSourceDataPager *)buildWithDataSource:(XBArrayDataSource *)dataSource {
-    XBArrayDataSourceDataPager *paginator = [XBArrayDataSourceDataPager paginatorWithItemByPage:_itemByPage];
++ (instancetype)paginatorWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems {
+    return [[self alloc] initWithItemByPage:itemsPerPage];
+}
+
+- (XBArrayDataSourceDataPager *)buildWithDataSource:(XBArrayDataSource *)dataSource
+{
+    XBArrayDataSourceDataPager *paginator = [XBArrayDataSourceDataPager paginatorWithItemsPerPage:_itemByPage totalNumberOfItems:0];
     paginator.dataSource = dataSource;
     return paginator;
     

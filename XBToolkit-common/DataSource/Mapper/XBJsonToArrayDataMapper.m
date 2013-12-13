@@ -34,9 +34,9 @@
     return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
 }
 
-- (id)mappedObjectFromRawObject:(id)rawObject
+- (id)mappedObjectFromData:(id)data error:(NSError * __autoreleasing *)error;
 {
-    NSArray *array = self.rootKeyPath ? [rawObject valueForKeyPath:self.rootKeyPath] : rawObject;
+    NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
 
     id mappedObject = nil;
     if ([array isKindOfClass:[NSArray class]]) {
@@ -58,7 +58,7 @@
                           error:(NSError *__autoreleasing *)error
 {
     id array = [super responseObjectForResponse:response data:data error:error];
-    return [self mappedObjectFromRawObject:array];
+    return [self mappedObjectFromData:array error:nil];
 }
 
 @end

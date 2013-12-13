@@ -9,18 +9,20 @@
 #import "XBDataPager.h"
 #import "XBArrayDataSource.h"
 
+static const NSInteger XBArrayDataSourceDataPagerUnlimited = NSIntegerMax;
+
 @interface XBArrayDataSourceDataPager : NSObject<XBDataPager>
 
-@property(nonatomic, strong)XBArrayDataSource *dataSource;
+@property (nonatomic, strong) XBArrayDataSource *dataSource;
 
-+ (id)paginatorWithItemByPage:(NSUInteger)itemByPage;
+- (id)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems;
 
-- (id)initWithItemByPage:(NSUInteger)itemByPage;
++ (instancetype)paginatorWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems;
 
 @end
 
 @interface XBArrayDataSourcePaginatorFactory : NSObject<XBPaginatorFactory>
 
-+ (id)paginatorWithItemByPage:(NSUInteger)itemByPage;
++ (instancetype)paginatorWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems;
 
 @end

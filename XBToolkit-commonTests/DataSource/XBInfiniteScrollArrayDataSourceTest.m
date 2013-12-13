@@ -5,7 +5,7 @@
 //
 
 
-#import "XBInfiniteScrollArrayDataSource.h"
+#import "XBInfiniteArrayDataSource.h"
 #import "GHUnit.h"
 #import "XBTestUtils.h"
 #import "XBHttpMappedDataLoader.h"
@@ -21,31 +21,27 @@
 
 @implementation XBInfiniteScrollArrayDataSourceTest
 
--(void)testInfiniteScroll {
+- (void)testInfiniteScroll
+{
     [self prepare];
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessiveSuccessCallbackWithData:@[
-            [XBTestUtils getAuthorsAsJsonWithPage:1],
-            [XBTestUtils getAuthorsAsJsonWithPage:2],
-            [XBTestUtils getAuthorsAsJsonWithPage:3]
+            [XBTestUtils getAuthors:2 asArrayWithPage:1],
+            [XBTestUtils getAuthors:2 asArrayWithPage:2],
+            [XBTestUtils getAuthors:2 asArrayWithPage:3]
     ] parameterName:@"page"];
 
 
-    XBArrayDataSourceDataPager *dataPager = [XBArrayDataSourceDataPager paginatorWithItemByPage:25];
+    XBArrayDataSourceDataPager *dataPager = [XBArrayDataSourceDataPager paginatorWithItemsPerPage:2 totalNumberOfItems:5];
+    
     XBDataPagerHttpQueryDataBuilder *httpQueryDataBuilder = [XBDataPagerHttpQueryDataBuilder builderWithDataPager:dataPager pageParameterName:@"page"];
+    
+    XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:dataMapper httpQueryParamBuilder:httpQueryDataBuilder];
 
-    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient
-                                                                    httpQueryParamBuilder:httpQueryDataBuilder
-                                                                             resourcePath:@"/wp-json-api/get_author_index/"];
+    XBDictionaryDataMerger *dataMerger = [XBDictionaryDataMerger dataMergerWithRootKeyPath:@"authors"];
 
-    XBJsonToArrayDataMapper * dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-
-    XBDictionaryDataMerger * dataMerger = [XBDictionaryDataMerger dataMergerWithRootKeyPath: @"authors"];
-
-    XBInfiniteScrollArrayDataSource *dataSource = [XBInfiniteScrollArrayDataSource dataSourceWithDataLoader:dataLoader
-                                                                                                 dataMapper:dataMapper
-                                                                                                 dataMerger:dataMerger
-                                                                                                  dataPager:dataPager];
+    XBInfiniteArrayDataSource *dataSource = [XBInfiniteArrayDataSource dataSourceWithDataLoader:dataLoader dataMerger:dataMerger dataPager:dataPager];
 
     dataPager.dataSource = dataSource;
 

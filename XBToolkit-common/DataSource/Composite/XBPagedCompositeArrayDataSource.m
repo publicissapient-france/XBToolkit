@@ -13,34 +13,40 @@
 
 @implementation XBPagedCompositeArrayDataSource
 
-+ (id)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
-                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
-    return [[self alloc] initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
-}
-
 - (id)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
-             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
+             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
+{
 
-    if (![[secondDataSource class] isSubclassOfClass:[XBInfiniteScrollArrayDataSource class]]) {
-        [NSException raise:NSInvalidArgumentException format:@"secondDataSource is a sub class of class XBInfiniteScrollArrayDataSource"];
+    if (![[secondDataSource class] isSubclassOfClass:[XBInfiniteArrayDataSource class]]) {
+        [NSException raise:NSInvalidArgumentException format:@"SecondDataSource must be a sub class of class XBInfiniteArrayDataSource"];
     }
 
     return [super initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }
 
--(XBInfiniteScrollArrayDataSource *)pagedSecondDataSource {
-    return (XBInfiniteScrollArrayDataSource *)[self secondDataSource];
++ (instancetype)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
+{
+    return [[self alloc] initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }
 
-- (NSUInteger)totalCount {
+- (XBInfiniteArrayDataSource *)pagedSecondDataSource
+{
+    return (XBInfiniteArrayDataSource *)[self secondDataSource];
+}
+
+- (NSUInteger)totalCount
+{
     return [self firstDataSource].count;
 }
 
-- (void)loadMoreDataWithCallback:(void (^)())callback {
+- (void)loadMoreDataWithCallback:(void (^)())callback
+{
     [[self pagedSecondDataSource] loadMoreDataWithCallback:callback];
 }
 
-- (Boolean)hasMoreData {
+- (BOOL)hasMoreData
+{
     return [[self pagedSecondDataSource] hasMoreData];
 }
 

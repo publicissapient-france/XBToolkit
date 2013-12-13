@@ -5,7 +5,7 @@
 //
 
 #import "GHUnit.h"
-#import "XBInfiniteScrollArrayDataSource.h"
+#import "XBInfiniteArrayDataSource.h"
 #import "WPAuthor.h"
 #import "XBHttpMappedDataLoader.h"
 #import "XBJsonToArrayDataMapper.h"
@@ -26,7 +26,7 @@
 
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
     
-    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:dataMapper];
 
     XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader];
 

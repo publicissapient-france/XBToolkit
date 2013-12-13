@@ -24,10 +24,9 @@
 
     XBJsonToObjectDataMapper *dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
     
-    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient dataMapper:dataMapper resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android" dataMapper:dataMapper];
 
-    XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader
-                                                                                           dataMapper:dataMapper];
+    XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader];
 
     [dataSource loadDataWithCallback:^() {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];

@@ -35,7 +35,7 @@
     return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
 }
 
-- (id)mappedObjectFromRawObject:(id)data
+- (id)mappedObjectFromData:(id)data error:(NSError * __autoreleasing *)error;
 {
     id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
 
@@ -55,7 +55,7 @@
                           error:(NSError *__autoreleasing *)error
 {
     id dictionary = [super responseObjectForResponse:response data:data error:error];
-    return [self mappedObjectFromRawObject:dictionary];
+    return [self mappedObjectFromData:dictionary error:nil];
 }
 
 @end
