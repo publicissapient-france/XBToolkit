@@ -32,43 +32,24 @@
 
 - (void)loadData
 {
-    [self loadDataWithCallback:nil];
+    [self loadData:nil];
 }
 
-- (void)loadDataWithCallback:(void (^)())callback
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
         [self processSuccessForResponseObject:data callback:^{
             if (callback) {
-                callback();
+                callback(operation);
             }
         }];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         self.error = error;
         if (callback) {
-            callback();
+            callback(operation);
         }
     }];
 }
-
-- (void)loadDataWithHttpMethod:(NSString *)httpMethod
-                  withCallback:(void (^)())callback
-{
-    [self.dataLoader loadDataWithHttpMethod:httpMethod
-                                withSuccess:^(NSOperation *operation, id responseObject) {
-                                    [self processSuccessForResponseObject:responseObject callback:^{
-                                        if (callback) {
-                                            callback();
-                                        }
-                                    }];
-                                } failure:^(NSOperation *operation, id responseObject, NSError *error) {
-                                    self.error = error;
-                                    if (callback) {
-                                        callback();
-                                    }
-                                }];
-}
-
 
 - (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
 {

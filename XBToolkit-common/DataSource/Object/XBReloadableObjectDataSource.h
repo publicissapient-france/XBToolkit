@@ -6,11 +6,11 @@
 
 #import <Foundation/Foundation.h>
 #import "XBObjectDataSource.h"
+#import "XBDataLoader.h"
+#import "XBDataMapper.h"
 
-@protocol XBDataLoader;
-@protocol XBDataMapper;
+typedef void (^XBReloadableObjectDataSourceCompletionBlock)(id operation);
 
-#warning The urlResponse object gets lost :(
 @interface XBReloadableObjectDataSource : XBObjectDataSource
 
 @property (nonatomic, strong, readonly)NSError *error;
@@ -21,11 +21,6 @@
 
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader;
 
-- (void)loadData;
-
-- (void)loadDataWithCallback:(void (^)())callback;
-
-- (void)loadDataWithHttpMethod:(NSString *)httpMethod
-                  withCallback:(void (^)())callback;
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback;
 
 @end

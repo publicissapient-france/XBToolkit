@@ -40,8 +40,7 @@
     id object = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
 
     if (![self.typeClass isSubclassOfClass:[MTLModel class]]) {
-        #warning Consider switching to NSError instead
-        [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of XBModel", NSStringFromClass(self.typeClass)];
+        [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of MTLModel", NSStringFromClass(self.typeClass)];
     }
 
     NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:self.typeClass];

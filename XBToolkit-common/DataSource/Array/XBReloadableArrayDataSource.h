@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
-#import "XBDataLoader.h"
 #import "XBDataMapper.h"
+#import "XBDataLoader.h"
 
 typedef void (^XBReloadableArrayDataSourceCompletionBlock)(id operation);
 

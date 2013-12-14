@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 @protocol XBDataMapper <NSObject>
 
-#warning Careful! This method is now synchronous!
 - (id)mappedObjectFromData:(id)data error:(NSError * __autoreleasing *)error;
 
 @end

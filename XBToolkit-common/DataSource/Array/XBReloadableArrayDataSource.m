@@ -7,6 +7,7 @@
 
 #import "XBReloadableArrayDataSource.h"
 #import "XBArrayDataSource+Protected.h"
+#import "XBDataLoader.h"
 
 static dispatch_queue_t reloadable_datasource_filtering_queue() {
     static dispatch_queue_t xbtoolkit_reloadable_datasource_filtering_queue;
@@ -51,7 +52,6 @@ static dispatch_queue_t reloadable_datasource_filtering_queue() {
             }
         }];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
-        #warning the response Object is not set in case of error
         self.error = error;
         if (completion) {
             completion(operation);

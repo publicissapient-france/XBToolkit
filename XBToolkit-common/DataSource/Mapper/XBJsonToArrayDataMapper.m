@@ -42,7 +42,6 @@
     if ([array isKindOfClass:[NSArray class]]) {
 
         if (![self.typeClass isSubclassOfClass:[MTLModel class]]) {
-#warning Consider switching to NSError instead
             [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of MTLModel", NSStringFromClass(self.typeClass)];
         }
 

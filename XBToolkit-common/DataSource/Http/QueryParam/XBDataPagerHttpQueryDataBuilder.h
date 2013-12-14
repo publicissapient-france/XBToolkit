@@ -14,5 +14,4 @@
 - (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
 + (instancetype)builderWithDataPager:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
 
-
 @end

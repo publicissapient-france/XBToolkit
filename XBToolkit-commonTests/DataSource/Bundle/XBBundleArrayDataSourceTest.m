@@ -17,7 +17,8 @@
 
 @implementation XBBundleArrayDataSourceTest
 
-- (void)testLoadDataSourceFromBundle {
+- (void)testLoadDataSourceFromBundle
+{
     [self prepare];
 
     XBBundleJsonDataLoader *dataLoader = [XBBundleJsonDataLoader dataLoaderWithResourcePath:@"wp-author-index" resourceType:@"json"];
@@ -30,7 +31,6 @@
 
     // Wait for the async activity to complete
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
-//    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     GHAssertNil(bundleDS.error, [NSString stringWithFormat:@"Error[code: '%ld', domain: '%@'", (long)bundleDS.error.code, bundleDS.error.domain]);
     GHAssertTrue(bundleDS.count > 0, @"Response should not be nil");

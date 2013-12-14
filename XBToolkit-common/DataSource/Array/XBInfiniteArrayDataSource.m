@@ -63,7 +63,6 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
         [self fetchDataFromSourceAndMerge:completion];
     } else {
         if (completion) {
-            #warning Add operation
             completion(nil);
         }
     }

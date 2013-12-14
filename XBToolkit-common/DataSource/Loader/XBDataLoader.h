@@ -16,11 +16,10 @@ typedef void (^XBDataLoaderFailureBlock)(id operation, id responseObject, NSErro
 
 @protocol XBDataLoader <NSObject>
 
+@required
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure;
 
 @optional
-- (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure;
-
 - (id <XBDataMapper>)dataMapper;
 
 @end

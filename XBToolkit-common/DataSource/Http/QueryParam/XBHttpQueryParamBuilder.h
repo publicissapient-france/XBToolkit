@@ -10,6 +10,7 @@
 @protocol XBHttpQueryParamBuilder <NSObject>
 
 @required
--(NSDictionary *)build;
+
+- (NSDictionary *)build;
 
 @end

@@ -27,11 +27,12 @@
 
 - (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure
 {
+    __weak XBBundleJsonReadingOperation *weakSelf = self;
     self.completionBlock = ^{
-        if (self.error) {
-            failure(self, self.error);
+        if (weakSelf.error) {
+            failure(weakSelf, weakSelf.error);
         } else {
-            success(self);
+            success(weakSelf);
         }
     };
 }

@@ -28,7 +28,7 @@
 
     XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader];
 
-    [dataSource loadDataWithCallback:^() {
+    [dataSource loadData:^(id operation) {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
 
