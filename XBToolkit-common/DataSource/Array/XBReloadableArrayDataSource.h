@@ -10,18 +10,17 @@
 #import "XBDataLoader.h"
 #import "XBDataMapper.h"
 
+typedef void (^XBReloadableArrayDataSourceCompletionBlock)(id operation);
+
 @interface XBReloadableArrayDataSource : XBArrayDataSource
 
 @property (nonatomic, strong, readonly) NSError *error;
-@property (nonatomic, strong, readonly) id rawData;
-@property (nonatomic, strong, readonly) id<XBDataLoader> dataLoader;
+@property (nonatomic, strong, readonly) id <XBDataLoader> dataLoader;
 
-- (id)initWithDataLoader:(id<XBDataLoader>)dataLoader;
+- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader;
 
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader;
 
-- (void)loadData;
-
-- (void)loadDataWithCallback:(void (^)())callback;
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion;
 
 @end

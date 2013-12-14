@@ -9,12 +9,12 @@
 #import "XBArrayDataSource.h"
 #import "XBReloadableArrayDataSource.h"
 
-@interface XBReloadableArrayDataSource (XBLoadableArrayDataSource_protected)
+@interface XBReloadableArrayDataSource (Protected)
 
-@property (nonatomic, strong)NSObject<XBDataLoader> *dataLoader;
-@property (nonatomic, strong)NSObject<XBDataMapper> *dataMapper;
+@property (nonatomic, strong) id <XBDataLoader> dataLoader;
+@property (nonatomic, strong) id <XBDataMapper> dataMapper;
 
 - (void)setError:(NSError *)error;
-- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback;
+- (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion;
 
 @end

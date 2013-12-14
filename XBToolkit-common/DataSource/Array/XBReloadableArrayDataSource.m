@@ -6,7 +6,17 @@
 
 
 #import "XBReloadableArrayDataSource.h"
-#import "XBArrayDataSource+protected.h"
+#import "XBArrayDataSource+Protected.h"
+
+static dispatch_queue_t reloadable_datasource_filtering_queue() {
+    static dispatch_queue_t xbtoolkit_reloadable_datasource_filtering_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        xbtoolkit_reloadable_datasource_filtering_queue = dispatch_queue_create("fr.xbtoolkit.datasource.reloadable.filtering", DISPATCH_QUEUE_CONCURRENT);
+    });
+
+    return xbtoolkit_reloadable_datasource_filtering_queue;
+}
 
 @interface XBReloadableArrayDataSource()
 
@@ -32,36 +42,34 @@
     return [[self alloc] initWithDataLoader:dataLoader];
 }
 
-- (void)loadData
-{
-    [self loadDataWithCallback:nil];
-}
-
-#warning loadData does not send the result of the call (success or failure?)
-- (void)loadDataWithCallback:(void (^)())callback
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
-        [self processSuccessForResponseObject:data callback:^{
-            if (callback) {
-                callback();
+        [self processSuccessForResponseObject:data completion:^{
+            if (completion) {
+                completion(operation);
             }
         }];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
+        #warning the response Object is not set in case of error
         self.error = error;
-        if (callback) {
-            callback();
+        if (completion) {
+            completion(operation);
         }
     }];
 }
 
-#warning Filtering is potentially done on the main thread
-- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
+- (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion
 {
-    self.array = responseObject;
-    [self filterData];
-    if (callback) {
-        callback();
-    }
+    self.sourceArray = responseObject;
+    dispatch_async(reloadable_datasource_filtering_queue(), ^{
+        [self filterData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion) {
+                completion();
+            }
+        });
+    });
 }
 
 @end

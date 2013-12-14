@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "XBObjectDataSource.h"
 
-@interface XBObjectDataSource (protected)
+@interface XBObjectDataSource (Protected)
 
 @property(nonatomic, strong) id object;
 

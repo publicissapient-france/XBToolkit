@@ -10,18 +10,15 @@
 
 @interface XBDataPagerHttpQueryDataBuilder ()
 
-@property(nonatomic, strong) NSObject<XBDataPager> *paginator;
-@property(nonatomic, strong) NSString *pageParameterName;
+@property (nonatomic, strong) id <XBDataPager> paginator;
+@property (nonatomic, strong) NSString *pageParameterName;
 
 @end
 
 @implementation XBDataPagerHttpQueryDataBuilder
 
-+ (id)builderWithDataPager:(NSObject <XBDataPager> *)paginator pageParameterName:(NSString *)pageParameterName {
-    return [[self alloc] initWithPaginator:paginator pageParameterName:pageParameterName];
-}
-
-- (id)initWithPaginator:(NSObject <XBDataPager> *)paginator pageParameterName:(NSString *)pageParameterName {
+- (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName
+{
     self = [super init];
     if (self) {
         self.paginator = paginator;
@@ -31,7 +28,13 @@
     return self;
 }
 
-- (NSDictionary *)build {
++ (instancetype)builderWithDataPager:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName
+{
+    return [[self alloc] initWithPaginator:paginator pageParameterName:pageParameterName];
+}
+
+- (NSDictionary *)build
+{
     return @{ self.pageParameterName : [NSNumber numberWithUnsignedInteger:self.paginator.currentPage] };
 }
 

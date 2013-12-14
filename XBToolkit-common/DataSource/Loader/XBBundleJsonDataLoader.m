@@ -41,11 +41,11 @@
 {
     XBBundleJsonReadingOperation *operation = [XBBundleJsonReadingOperation operationWithBundle:[NSBundle mainBundle] resourcePath:self.resourcePath resourceType:self.resourceType];
     
-    [operation setCompletionBlockWithSuccess:^(XBBundleJsonReadingOperation *operation) {
+    [operation setCompletionBlockWithSuccess:^(XBBundleJsonReadingOperation *readingOperation) {
         XBLogVerbose(@"Json loaded from bundle: %@", operation.responseObject);
-        success(operation, operation.responseObject);
-    } failure:^(XBBundleJsonReadingOperation *operation, NSError *error) {
-        failure(operation, operation.responseObject, error);
+        success(readingOperation, readingOperation.responseObject);
+    } failure:^(XBBundleJsonReadingOperation *readingOperation, NSError *error) {
+        failure(readingOperation, readingOperation.responseObject, error);
     }];
     [operation start];
 

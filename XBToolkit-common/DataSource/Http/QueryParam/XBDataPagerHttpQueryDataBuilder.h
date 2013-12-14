@@ -10,9 +10,9 @@
 #import "XBDataPager.h"
 
 @interface XBDataPagerHttpQueryDataBuilder : NSObject<XBHttpQueryParamBuilder>
-- (id)initWithPaginator:(NSObject <XBDataPager> *)paginator pageParameterName:(NSString *)pageParameterName;
 
-+ (id)builderWithDataPager:(NSObject <XBDataPager> *)paginator pageParameterName:(NSString *)pageParameterName;
+- (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
++ (instancetype)builderWithDataPager:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
 
 
 @end

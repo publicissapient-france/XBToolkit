@@ -11,7 +11,7 @@
 #import "XBJsonToArrayDataMapper.h"
 #import "XBTestUtils.h"
 #import "Underscore.h"
-#import "XBArrayDataSource+protected.h"
+#import "XBArrayDataSource+Protected.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -30,7 +30,7 @@
 
     XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader];
 
-    [dataSource loadDataWithCallback:^() {
+    [dataSource loadData:^(id operation){
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
 

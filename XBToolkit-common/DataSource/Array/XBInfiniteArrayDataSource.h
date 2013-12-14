@@ -17,9 +17,9 @@
 
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
 
-- (id)mergeRawData:(id)rawData;
+- (id)mergeObjects:(id)responseObject;
 
-- (void)loadMoreDataWithCallback:(void(^)())callback;
+- (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion;
 
 - (BOOL)hasMoreData;
 

@@ -6,8 +6,19 @@
 
 
 #import "XBInfiniteArrayDataSource.h"
-#import "XBReloadableArrayDataSource+protected.h"
+#import "XBReloadableArrayDataSource+Protected.h"
 #import "XBLogging.h"
+#import "XBArrayDataSource+Protected.h"
+
+static dispatch_queue_t reloadable_datasource_merging_queue() {
+    static dispatch_queue_t xbtoolkit_reloadable_datasource_merging_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        xbtoolkit_reloadable_datasource_merging_queue = dispatch_queue_create("fr.xbtoolkit.datasource.reloadable.merging", DISPATCH_QUEUE_CONCURRENT);
+    });
+
+    return xbtoolkit_reloadable_datasource_merging_queue;
+}
 
 @interface XBInfiniteArrayDataSource ()
 
@@ -39,52 +50,59 @@
     return [self.dataPager hasMorePages];
 }
 
-- (void)loadDataWithCallback:(void (^)())callback
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
     [self.dataPager resetPageIncrement];
-    [self fetchDataFromSourceAndMergeWithCallback:callback];
+    [self fetchDataFromSourceAndMerge:completion];
 }
 
-- (void)loadMoreDataWithCallback:(void (^)())callback
+- (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
     if ([self hasMoreData]) {
-        [self fetchDataFromSourceAndMergeWithCallback:callback];
-    }
-    else if (callback) {
-        callback();
+        [self.dataPager incrementPage];
+        [self fetchDataFromSourceAndMerge:completion];
+    } else {
+        if (completion) {
+            #warning Add operation
+            completion(nil);
+        }
     }
 }
 
-- (void)fetchDataFromSourceAndMergeWithCallback:(void (^)())callback
+- (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
-        [self processSuccessWithRawData:jsonFetched callback:^{
-            if (callback) {
-                callback();
+        [self processSuccessForResponseObject:jsonFetched callback:^{
+            if (completion) {
+                completion(operation);
             }
         }];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         XBLogWarn(@"Error: %@", error);
         self.error = error;
-        if (callback) {
-            callback();
+        if (completion) {
+            completion(operation);
         }
     }];
 }
 
-- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback
+- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
 {
-    id mergedRawData = self.dataMerger ? [self mergeRawData:rawData] : rawData;
-    [super processSuccessForResponseObject:mergedRawData callback:^{
-        if (callback) {
-            callback();
-        }
-    }];
+    dispatch_async(reloadable_datasource_merging_queue(), ^{
+        id mergedObjects = self.dataMerger ? [self mergeObjects:responseObject] : responseObject;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [super processSuccessForResponseObject:mergedObjects completion:^{
+                if (callback) {
+                    callback();
+                }
+            }];
+        });
+    });
 }
 
-- (id)mergeRawData:(id)rawData
+- (id)mergeObjects:(id)responseObject
 {
-    return [self.dataMerger mergeDataOfSource:rawData withSource:self.rawData];
+    return [self.dataMerger mergeDataOfSource:responseObject withSource:[self sourceArray]];
 }
 
 @end

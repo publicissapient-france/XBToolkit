@@ -5,9 +5,9 @@
 //
 
 
-#import "XBArrayDataSourceDataPager.h"
+#import "XBArrayDataSourcePager.h"
 
-@interface XBArrayDataSourceDataPager ()
+@interface XBArrayDataSourcePager ()
 
 @property (nonatomic, assign) NSUInteger currentPage;
 @property (nonatomic, assign) NSUInteger itemsPerPage;
@@ -15,7 +15,7 @@
 
 @end
 
-@implementation XBArrayDataSourceDataPager
+@implementation XBArrayDataSourcePager
 
 - (id)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
 {
@@ -29,7 +29,7 @@
     return self;
 }
 
-+ (instancetype)paginatorWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
++ (instancetype)pagerWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
 {
     return [[self alloc] initWithItemsPerPage:itemsPerPage totalNumberOfItems:totalNumberOfItems];
 }
@@ -47,7 +47,7 @@
 
 - (BOOL)hasMorePages
 {
-    return self.totalNumberOfItems > self.currentPage * (self.itemsPerPage + 1);
+    return self.totalNumberOfItems > self.currentPage * self.itemsPerPage;
 }
 
 - (void)resetPageIncrement
@@ -73,13 +73,13 @@
     return self;
 }
 
-+ (instancetype)paginatorWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems {
++ (instancetype)pagerWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems {
     return [[self alloc] initWithItemByPage:itemsPerPage];
 }
 
-- (XBArrayDataSourceDataPager *)buildWithDataSource:(XBArrayDataSource *)dataSource
+- (XBArrayDataSourcePager *)buildWithDataSource:(XBArrayDataSource *)dataSource
 {
-    XBArrayDataSourceDataPager *paginator = [XBArrayDataSourceDataPager paginatorWithItemsPerPage:_itemByPage totalNumberOfItems:0];
+    XBArrayDataSourcePager *paginator = [XBArrayDataSourcePager pagerWithItemsPerPage:_itemByPage totalNumberOfItems:0];
     paginator.dataSource = dataSource;
     return paginator;
     

@@ -94,13 +94,6 @@
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
 
     for (id element in data) {
-        [[[httpClient expect] andDo:[self fakeSuccessiveSuccessCallbackWithData:data parameterName:parameterName]]
-                executeRequestWithPath:[OCMArg isNotNil]
-                                method:[OCMArg isNotNil]
-                            parameters:[OCMArg any]
-                               success:[OCMArg isNotNil]
-                               failure:[OCMArg isNotNil]];
-
         [[[httpClient expect] andDo:[self fakeSuccessiveSuccessCallbackForMethodWithData:data parameterName:parameterName]] executeRequestWithPath:[OCMArg isNotNil]
                                                                                                                                            method:[OCMArg isNotNil]
                                                                                                                                        parameters:[OCMArg any]
@@ -124,23 +117,6 @@
     return httpClient;
 }
 
-+ (void (^)(NSInvocation *))fakeSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName {
-    return ^(NSInvocation *invocation) {
-
-        NSDictionary * parameters = [invocation getArgumentAtIndexAsObject:4];
-        NSUInteger page = (NSUInteger)[parameters[@"page"] integerValue];
-
-        void (^successCb)(AFHTTPRequestOperation *, id) = nil;
-        [invocation getArgument:&successCb atIndex:5];
-        if (!page) {
-            successCb(nil, data[0]);
-        }
-        else {
-            successCb(nil, data[page]);
-        }
-    };
-}
-
 + (void (^)(NSInvocation *))fakeSuccessiveSuccessCallbackForMethodWithData:(NSArray *)data parameterName:(NSString *)parameterName {
     return ^(NSInvocation *invocation) {
         
@@ -153,7 +129,7 @@
             successCb(nil, data[0]);
         }
         else {
-            successCb(nil, data[page]);
+            successCb(nil, data[page - 1]);
         }
     };
 }

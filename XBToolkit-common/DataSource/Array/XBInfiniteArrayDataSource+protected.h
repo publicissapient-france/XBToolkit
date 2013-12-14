@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "XBInfiniteArrayDataSource.h"
 
-@interface XBInfiniteArrayDataSource (XBPagedHttpArrayDataSource_protected)
+@interface XBInfiniteArrayDataSource (Protected)
 
 -(void)setDataPager:(NSObject<XBDataPager> *)dataPager;
 

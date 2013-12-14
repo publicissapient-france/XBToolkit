@@ -10,19 +10,19 @@
 #import "XBTestUtils.h"
 #import "XBHttpMappedDataLoader.h"
 #import "XBJsonToArrayDataMapper.h"
-#import "XBArrayDataSource+protected.h"
+#import "XBArrayDataSource+Protected.h"
 #import "XBDictionaryDataMerger.h"
-#import "XBArrayDataSourceDataPager.h"
+#import "XBArrayDataSourcePager.h"
 #import "XBDataPagerHttpQueryDataBuilder.h"
 #import "XBArrayDataMerger.h"
 
 #define kNetworkTimeout 30.0f
 
-@interface XBInfiniteScrollArrayDataSourceTest : GHAsyncTestCase @end
+@interface XBInfiniteArrayDataSourceTest : GHAsyncTestCase @end
 
-@implementation XBInfiniteScrollArrayDataSourceTest
+@implementation XBInfiniteArrayDataSourceTest
 
-- (void)testInfiniteScroll
+- (void)testInfiniteArrayDataSource
 {
     [self prepare];
 
@@ -33,7 +33,7 @@
     ] parameterName:@"page"];
 
 
-    XBArrayDataSourceDataPager *dataPager = [XBArrayDataSourceDataPager paginatorWithItemsPerPage:2 totalNumberOfItems:5];
+    XBArrayDataSourcePager *dataPager = [XBArrayDataSourcePager pagerWithItemsPerPage:2 totalNumberOfItems:5];
     
     XBDataPagerHttpQueryDataBuilder *httpQueryDataBuilder = [XBDataPagerHttpQueryDataBuilder builderWithDataPager:dataPager pageParameterName:@"page"];
     
@@ -46,29 +46,32 @@
 
     dataPager.dataSource = dataSource;
 
-    [dataSource loadDataWithCallback:^() {
+    void (^completed)() = ^() {
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testInfiniteArrayDataSource)];
+    };
+    
+    [dataSource loadData:^(id operation){
         GHAssertTrue([dataSource hasMoreData], nil);
 
-        [dataSource loadMoreDataWithCallback:^{
-            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testInfiniteScroll)];
+        [dataSource loadMoreData:^(id operation) {
+            GHAssertTrue([dataSource hasMoreData], nil);
+            
+            [dataSource loadMoreData:^(id operation) {                
+                completed();
+            }];
         }];
     }];
 
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
+    GHAssertFalse([dataSource hasMoreData], nil);
     GHAssertNil(dataSource.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long) dataSource.error.code, dataSource.error.domain]);
     GHAssertEquals([dataSource count], 5u, nil);
 
     WPAuthor *author = [XBTestUtils findAuthorInArray:dataSource.array ById:50];
 
     GHAssertEquals([author.identifier intValue], 50, nil);
-    GHAssertEqualStrings(author.slug, @"akinsella", nil);
     GHAssertEqualStrings(author.name, @"Alexis Kinsella", nil);
-    GHAssertEqualStrings(author.first_name, @"Alexis", nil);
-    GHAssertEqualStrings(author.last_name, @"Kinsella", nil);
-    GHAssertEqualStrings(author.nickname, @"akinsella", nil);
-    GHAssertEqualStrings(author.url, @"http://www.xebia.fr", nil);
-    GHAssertEqualStrings(author.description_, @"", nil);
 }
 
 @end

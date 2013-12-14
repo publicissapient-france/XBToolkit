@@ -9,17 +9,15 @@
 
 @interface XBArrayDataSource()
 
-@property(nonatomic, strong) NSArray *array;
-@property(nonatomic, strong) NSArray *filteredSortedArray;
-@property(nonatomic, strong) XBPredicateBlock filterPredicate;
-@property(nonatomic, assign) NSComparator sortComparator;
+@property (nonatomic, strong) NSArray *sourceArray;
+@property (nonatomic, strong) NSArray *filteredSortedArray;
+@property (nonatomic, strong) XBPredicateBlock filterPredicate;
+@property (nonatomic, assign) NSComparator sortComparator;
 
 @end
 
 
-@implementation XBArrayDataSource {
-    NSArray *_array;
-}
+@implementation XBArrayDataSource
 
 - (id)initWithArray:(NSArray *)array
 {
@@ -30,7 +28,7 @@
 {
     self = [super init];
     if (self) {
-        _array = array;
+        self.sourceArray = array;
         self.filterPredicate = filterPredicate;
         self.sortComparator = sortComparator;
         [self filterData];
@@ -61,7 +59,7 @@
 
 - (void)setArray:(NSArray *)array
 {
-    _array = array;
+    self.sourceArray = array;
     [self filterData];
 }
 
@@ -86,7 +84,7 @@
 {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.array.count];
 
-    for (id item in _array) {
+    for (id item in self.sourceArray) {
         if (!self.filterPredicate || self.filterPredicate(item) ? item : nil) {
             [result addObject:item];
         }

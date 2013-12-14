@@ -7,9 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XBArrayDataSource (protected)
+@interface XBArrayDataSource (Protected)
 
-@property(nonatomic, strong) NSArray *array;
+@property(nonatomic, strong) NSArray *sourceArray;
 
 - (void)filterData;
 - (void)sortData;

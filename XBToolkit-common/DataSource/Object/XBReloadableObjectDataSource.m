@@ -3,7 +3,7 @@
 //
 
 
-#import "XBObjectDataSource+protected.h"
+#import "XBObjectDataSource+Protected.h"
 #import "XBReloadableObjectDataSource.h"
 #import "XBDataLoader.h"
 

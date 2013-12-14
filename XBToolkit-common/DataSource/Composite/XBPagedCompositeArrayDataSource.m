@@ -8,7 +8,7 @@
 #import "XBArrayDataSource.h"
 #import "XBCompositeArrayDataSource.h"
 #import "XBPagedCompositeArrayDataSource.h"
-#import "XBCompositeArrayDataSource+protected.h"
+#import "XBCompositeArrayDataSource+Protected.h"
 
 
 @implementation XBPagedCompositeArrayDataSource
@@ -42,7 +42,7 @@
 
 - (void)loadMoreDataWithCallback:(void (^)())callback
 {
-    [[self pagedSecondDataSource] loadMoreDataWithCallback:callback];
+    [[self pagedSecondDataSource] loadMoreData:callback];
 }
 
 - (BOOL)hasMoreData

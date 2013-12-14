@@ -6,11 +6,11 @@
 
 
 #import "XBCompositeArrayDataSource.h"
-#import "XBCompositeArrayDataSource+protected.h"
+#import "XBCompositeArrayDataSource+Protected.h"
 #import "XBArrayDataSource.h"
-#import "XBArrayDataSource+protected.h"
+#import "XBArrayDataSource+Protected.h"
 #import "XBReloadableArrayDataSource.h"
-#import "XBReloadableArrayDataSource+protected.h"
+#import "XBReloadableArrayDataSource+Protected.h"
 
 @implementation XBCompositeArrayDataSource
 
@@ -44,7 +44,7 @@
 }
 
 - (id)rawData {
-    return self.secondDataSource.rawData;
+    return [self.secondDataSource sourceArray];
 }
 
 - (NSArray *)array {
@@ -59,16 +59,16 @@
     [self.secondDataSource sort:sortComparator];
 }
 
-
-- (void)loadDataWithCallback:(void (^)())callback {
-    [self.firstDataSource loadDataWithCallback:^{
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
+{
+    [self.firstDataSource loadData:^(id operation){
         if (self.firstDataSource.error) {
-            if (callback) {
-                callback();
+            if (completion) {
+                completion(operation);
             }
         }
         else {
-            [self.secondDataSource loadDataWithCallback:callback];
+            [self.secondDataSource loadData:completion];
         }
     }];
 }

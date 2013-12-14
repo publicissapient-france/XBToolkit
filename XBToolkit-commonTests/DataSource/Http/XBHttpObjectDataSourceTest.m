@@ -7,7 +7,7 @@
 #import "XBHttpMappedDataLoader.h"
 #import "WPPost.h"
 #import "XBReloadableObjectDataSource.h"
-#import "XBObjectDataSource+protected.h"
+#import "XBObjectDataSource+Protected.h"
 #import "XBJsonToObjectDataMapper.h"
 
 #define kNetworkTimeout 30.0f
