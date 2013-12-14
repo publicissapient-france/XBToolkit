@@ -6,7 +6,7 @@
 //
 
 
-#import "XBHttpClient.h"
+#import "XBHTTPClient.h"
 #import "XBCache.h"
 #import "XBObjectDataSource.h"
 
@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSError *error;
 @property (nonatomic, strong) NSString *resourcePath;
 @property (nonatomic, strong) XBCache *cache;
-@property (nonatomic, strong) XBHttpClient *httpClient;
+@property (nonatomic, strong) XBHTTPClient *httpClient;
 @property (nonatomic, strong) id object;
 
 @end

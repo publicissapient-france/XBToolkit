@@ -75,8 +75,8 @@
 		5409572E1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956F11710A85F00B006B0 /* XBDictionaryDataMerger.m */; };
 		5409572F1710A85F00B006B0 /* XBArrayDataSourcePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956F41710A85F00B006B0 /* XBArrayDataSourcePager.m */; };
 		540957301710A85F00B006B0 /* XBArrayDataSourcePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956F41710A85F00B006B0 /* XBArrayDataSourcePager.m */; };
-		540957371710A85F00B006B0 /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957011710A85F00B006B0 /* XBHttpClient.m */; };
-		540957381710A85F00B006B0 /* XBHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957011710A85F00B006B0 /* XBHttpClient.m */; };
+		540957371710A85F00B006B0 /* XBHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957011710A85F00B006B0 /* XBHTTPClient.m */; };
+		540957381710A85F00B006B0 /* XBHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957011710A85F00B006B0 /* XBHTTPClient.m */; };
 		540957391710A85F00B006B0 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957041710A85F00B006B0 /* XBMapper.m */; };
 		5409573A1710A85F00B006B0 /* XBMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957041710A85F00B006B0 /* XBMapper.m */; };
 		540957EB1710B90E00B006B0 /* XBTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 540957EA1710B90E00B006B0 /* XBTestUtils.m */; };
@@ -189,7 +189,7 @@
 		540956D41710A85F00B006B0 /* XBPagedCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedCompositeArrayDataSource.m; sourceTree = "<group>"; };
 		540956D71710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicHttpQueryParamBuilder.h; sourceTree = "<group>"; };
 		540956D81710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilder.m; sourceTree = "<group>"; };
-		540956D91710A85F00B006B0 /* XBHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpQueryParamBuilder.h; sourceTree = "<group>"; };
+		540956D91710A85F00B006B0 /* XBHTTPRequestDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHTTPRequestDataBuilder.h; sourceTree = "<group>"; };
 		540956DA1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataPagerHttpQueryDataBuilder.h; sourceTree = "<group>"; };
 		540956DB1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDataPagerHttpQueryDataBuilder.m; sourceTree = "<group>"; };
 		540956DD1710A85F00B006B0 /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
@@ -214,8 +214,8 @@
 		540956F31710A85F00B006B0 /* XBArrayDataSourcePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayDataSourcePager.h; sourceTree = "<group>"; };
 		540956F41710A85F00B006B0 /* XBArrayDataSourcePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayDataSourcePager.m; sourceTree = "<group>"; };
 		540956F51710A85F00B006B0 /* XBDataPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataPager.h; sourceTree = "<group>"; };
-		540957001710A85F00B006B0 /* XBHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpClient.h; sourceTree = "<group>"; };
-		540957011710A85F00B006B0 /* XBHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpClient.m; sourceTree = "<group>"; };
+		540957001710A85F00B006B0 /* XBHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHTTPClient.h; sourceTree = "<group>"; };
+		540957011710A85F00B006B0 /* XBHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHTTPClient.m; sourceTree = "<group>"; };
 		540957031710A85F00B006B0 /* XBMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMapper.h; sourceTree = "<group>"; };
 		540957041710A85F00B006B0 /* XBMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBMapper.m; sourceTree = "<group>"; };
 		540957051710A85F00B006B0 /* XBMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMappingProvider.h; sourceTree = "<group>"; };
@@ -463,21 +463,21 @@
 		540956D51710A85F00B006B0 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				540956D61710A85F00B006B0 /* QueryParam */,
+				540956D61710A85F00B006B0 /* Request Data */,
 			);
 			path = Http;
 			sourceTree = "<group>";
 		};
-		540956D61710A85F00B006B0 /* QueryParam */ = {
+		540956D61710A85F00B006B0 /* Request Data */ = {
 			isa = PBXGroup;
 			children = (
 				540956D71710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.h */,
 				540956D81710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m */,
-				540956D91710A85F00B006B0 /* XBHttpQueryParamBuilder.h */,
+				540956D91710A85F00B006B0 /* XBHTTPRequestDataBuilder.h */,
 				540956DA1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */,
 				540956DB1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */,
 			);
-			path = QueryParam;
+			path = "Request Data";
 			sourceTree = "<group>";
 		};
 		540956DC1710A85F00B006B0 /* Loader */ = {
@@ -535,8 +535,8 @@
 		540956FF1710A85F00B006B0 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				540957001710A85F00B006B0 /* XBHttpClient.h */,
-				540957011710A85F00B006B0 /* XBHttpClient.m */,
+				540957001710A85F00B006B0 /* XBHTTPClient.h */,
+				540957011710A85F00B006B0 /* XBHTTPClient.m */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -879,7 +879,7 @@
 				5409572B1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */,
 				5409572D1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
 				5409572F1710A85F00B006B0 /* XBArrayDataSourcePager.m in Sources */,
-				540957371710A85F00B006B0 /* XBHttpClient.m in Sources */,
+				540957371710A85F00B006B0 /* XBHTTPClient.m in Sources */,
 				540957391710A85F00B006B0 /* XBMapper.m in Sources */,
 				2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */,
 				2EE4493CCE1C75A7A5528A36 /* XBReloadableArrayDataSource.m in Sources */,
@@ -921,7 +921,7 @@
 				5409572C1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */,
 				5409572E1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
 				540957301710A85F00B006B0 /* XBArrayDataSourcePager.m in Sources */,
-				540957381710A85F00B006B0 /* XBHttpClient.m in Sources */,
+				540957381710A85F00B006B0 /* XBHTTPClient.m in Sources */,
 				5409573A1710A85F00B006B0 /* XBMapper.m in Sources */,
 				540957EB1710B90E00B006B0 /* XBTestUtils.m in Sources */,
 				54095AF71710C62E00B006B0 /* XBBasicHttpQueryParamBuilderTest.m in Sources */,

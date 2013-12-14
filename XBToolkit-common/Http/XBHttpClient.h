@@ -14,7 +14,7 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 @class AFHTTPRequestOperationManager;
 
-@interface XBHttpClient : NSObject
+@interface XBHTTPClient : NSObject
 
 @property(nonatomic, strong, readonly)NSString *baseUrl;
 #warning Extend with JSONResponseSerializer object

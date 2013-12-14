@@ -6,7 +6,7 @@
 
 
 #import "XBHttpMappedDataLoader.h"
-#import "XBHttpQueryParamBuilder.h"
+#import "XBHTTPRequestDataBuilder.h"
 #import "XBBundleJsonDataLoader.h"
 #import "XBLogging.h"
 #import "XBBundleJsonReadingOperation.h"

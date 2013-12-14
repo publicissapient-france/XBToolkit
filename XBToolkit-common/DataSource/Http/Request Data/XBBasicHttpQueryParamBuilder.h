@@ -6,10 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBHttpQueryParamBuilder.h"
+#import "XBHTTPRequestDataBuilder.h"
 
 
-@interface XBBasicHttpQueryParamBuilder : NSObject<XBHttpQueryParamBuilder>
+@interface XBBasicHttpQueryParamBuilder : NSObject<XBHTTPRequestDataBuilder>
 
 @property(nonatomic, strong)NSDictionary *dictionary;
 

@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import "XBDataLoader.h"
-#import "XBHttpClient.h"
-#import "XBHttpQueryParamBuilder.h"
+#import "XBHTTPClient.h"
+#import "XBHTTPRequestDataBuilder.h"
 
 #warning Should create class for mapping data as well
 @interface XBBundleJsonDataLoader : NSObject<XBDataLoader>

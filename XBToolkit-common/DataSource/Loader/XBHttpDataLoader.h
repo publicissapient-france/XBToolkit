@@ -6,14 +6,14 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBHttpClient.h"
+#import "XBHTTPClient.h"
 
-@protocol XBHttpQueryParamBuilder;
+@protocol XBHTTPRequestDataBuilder;
 
 @protocol XBHttpDataLoader<NSObject>
 
 - (NSString *)resourcePath;
-- (id<XBHttpQueryParamBuilder>)httpQueryParamBuilder;
-- (XBHttpClient *)httpClient;
+- (id<XBHTTPRequestDataBuilder>)requestDataBuilder;
+- (XBHTTPClient *)HTTPClient;
 
 @end

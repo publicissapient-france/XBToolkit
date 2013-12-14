@@ -9,7 +9,7 @@
 #import <OCMock/OCMArg.h>
 
 #import "XBTestUtils.h"
-#import "XBHttpClient.h"
+#import "XBHTTPClient.h"
 #import "OCMockRecorder.h"
 #import "NSInvocation+OCMAdditions.h"
 #import "NSURL+XBAdditions.h"
@@ -72,7 +72,7 @@
 }
 
 + (id)fakeHttpClientWithSuccessCallbackWithData:(id)data {
-    id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
+    id httpClient = [OCMockObject mockForClass:[XBHTTPClient class]];
 
     [[httpClient stub] httpRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
@@ -88,7 +88,7 @@
 
 + (id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName
 {
-    id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
+    id httpClient = [OCMockObject mockForClass:[XBHTTPClient class]];
 
     [[httpClient stub] httpRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
@@ -105,7 +105,7 @@
 }
 
 + (id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data {
-    id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
+    id httpClient = [OCMockObject mockForClass:[XBHTTPClient class]];
     
     [[httpClient stub] httpRequestOperationManager];
     [[[httpClient stub] andDo:[self fakeErrorCallbackWithError:error data:data]] executeRequestWithPath:[OCMArg isNotNil]

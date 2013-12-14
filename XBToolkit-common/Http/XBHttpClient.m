@@ -5,19 +5,19 @@
 //
 
 
-#import "XBHttpClient.h"
+#import "XBHTTPClient.h"
 #import "AFNetworking.h"
 #import "XBLogging.h"
 #import "AFHTTPRequestOperation.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 
-@interface XBHttpClient () 
+@interface XBHTTPClient ()
 
 @property(nonatomic, strong) NSString *baseUrl;
 
 @end
 
-@implementation XBHttpClient
+@implementation XBHTTPClient
 
 - (id)initWithBaseUrl:(NSString *)baseUrl
 {

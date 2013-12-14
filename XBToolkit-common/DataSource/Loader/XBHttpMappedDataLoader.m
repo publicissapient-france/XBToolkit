@@ -7,51 +7,52 @@
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import "XBHttpMappedDataLoader.h"
+#import "XBHTTPMappedRequestDataBuilder.h"
 
 @interface XBHttpMappedDataLoader ()
 @property (nonatomic, strong) NSString *resourcePath;
 @property (nonatomic, strong) NSString *HTTPMethod;
-@property (nonatomic, strong) XBHttpClient *httpClient;
+@property (nonatomic, strong) XBHTTPClient *HTTPClient;
 @property (nonatomic, strong) AFHTTPResponseSerializer<AFURLResponseSerialization> *dataMapper;
-@property (nonatomic, strong) id <XBHttpQueryParamBuilder> httpQueryParamBuilder;
+@property (nonatomic, strong) id <XBHTTPRequestDataBuilder> requestDataBuilder;
 @end
 
 @implementation XBHttpMappedDataLoader
 
-- (id)initWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder {
+- (id)initWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper requestDataBuilder:(id <XBHTTPRequestDataBuilder>)requestDataBuilder
+{
     self = [super init];
     if (self) {
-        self.httpClient = httpClient;
+        self.HTTPClient = HTTPClient;
         self.HTTPMethod = HTTPMethod;
         self.dataMapper = dataMapper;
-        self.httpClient.httpRequestOperationManager.responseSerializer = dataMapper;
-        self.httpQueryParamBuilder = httpQueryParamBuilder;
+        self.requestDataBuilder = requestDataBuilder;
         self.resourcePath = resourcePath;
     }
 
     return self;
 }
 
-+ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
++ (instancetype)dataLoaderWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder
 {
-    return [[self alloc] initWithHttpClient:httpClient resourcePath:resourcePath HTTPMethod:HTTPMethod dataMapper:dataMapper httpQueryParamBuilder:httpQueryParamBuilder];
+    return [[self alloc] initWithHTTPClient:HTTPClient resourcePath:resourcePath HTTPMethod:HTTPMethod dataMapper:dataMapper requestDataBuilder:httpQueryParamBuilder];
 }
 
-+ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper
++ (instancetype)dataLoaderWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper
 {
-    return [self dataLoaderWithHttpClient:httpClient resourcePath:resourcePath dataMapper:dataMapper httpQueryParamBuilder:nil];
+    return [self dataLoaderWithHTTPClient:HTTPClient resourcePath:resourcePath dataMapper:dataMapper httpQueryParamBuilder:nil];
 }
 
-+ (instancetype)dataLoaderWithHttpClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHttpQueryParamBuilder>)httpQueryParamBuilder
++ (instancetype)dataLoaderWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder
 {
-    return [[self alloc] initWithHttpClient:httpClient resourcePath:resourcePath HTTPMethod:nil dataMapper:dataMapper httpQueryParamBuilder:httpQueryParamBuilder];
+    return [[self alloc] initWithHTTPClient:HTTPClient resourcePath:resourcePath HTTPMethod:nil dataMapper:dataMapper requestDataBuilder:httpQueryParamBuilder];
 }
 
 - (void)loadDataWithHTTPMethod:(NSString *)httpMethod withSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
-    NSDictionary *parameters = self.httpQueryParamBuilder ? [self.httpQueryParamBuilder build] : nil;
+    NSDictionary *parameters = self.requestDataBuilder ? [self.requestDataBuilder build] : nil;
 
-    [self.httpClient executeRequestWithPath:self.resourcePath method:httpMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.HTTPClient executeRequestWithPath:self.resourcePath method:httpMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success(operation, responseObject);
         }
@@ -71,15 +72,20 @@
 - (void)setDataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper
 {
     _dataMapper = dataMapper;
-    self.httpClient.httpRequestOperationManager.responseSerializer = dataMapper;
+    self.HTTPClient.httpRequestOperationManager.responseSerializer = dataMapper;
 }
 
-- (void)setHttpClient:(XBHttpClient *)httpClient
+- (void)setRequestDataBuilder:(id <XBHTTPRequestDataBuilder>)requestDataBuilder
 {
-    _httpClient = httpClient;
+    _requestDataBuilder = requestDataBuilder;
+}
+
+- (void)setHTTPClient:(XBHTTPClient *)HTTPClient
+{
+    _HTTPClient = HTTPClient;
     
     if (self.dataMapper) {
-        httpClient.httpRequestOperationManager.responseSerializer = self.dataMapper;
+        HTTPClient.httpRequestOperationManager.responseSerializer = self.dataMapper;
     }
 }
 
