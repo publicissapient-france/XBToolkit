@@ -11,6 +11,9 @@
 
 @interface XBDataPagerHttpQueryDataBuilder : NSObject<XBHTTPRequestDataBuilder>
 
+@property (nonatomic, strong) id <XBDataPager> paginator;
+@property (nonatomic, strong) NSString *pageParameterName;
+
 - (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
 + (instancetype)builderWithDataPager:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
 

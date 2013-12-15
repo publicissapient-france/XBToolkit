@@ -8,13 +8,6 @@
 #import "XBDataPagerHttpQueryDataBuilder.h"
 #import "XBDataPager.h"
 
-@interface XBDataPagerHttpQueryDataBuilder ()
-
-@property (nonatomic, strong) id <XBDataPager> paginator;
-@property (nonatomic, strong) NSString *pageParameterName;
-
-@end
-
 @implementation XBDataPagerHttpQueryDataBuilder
 
 - (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName
