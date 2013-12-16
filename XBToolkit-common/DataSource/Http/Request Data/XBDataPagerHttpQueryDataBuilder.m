@@ -10,20 +10,20 @@
 
 @implementation XBDataPagerHttpQueryDataBuilder
 
-- (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName
+- (id)initWithPager:(id <XBDataPager>)pager pageParameterName:(NSString *)pageParameterName
 {
     self = [super init];
     if (self) {
-        self.paginator = paginator;
+        self.paginator = pager;
         self.pageParameterName = pageParameterName;
     }
 
     return self;
 }
 
-+ (instancetype)builderWithDataPager:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName
++ (instancetype)builderWithDataPager:(id <XBDataPager>)pager pageParameterName:(NSString *)pageParameterName
 {
-    return [[self alloc] initWithPaginator:paginator pageParameterName:pageParameterName];
+    return [[self alloc] initWithPager:pager pageParameterName:pageParameterName];
 }
 
 - (NSDictionary *)build

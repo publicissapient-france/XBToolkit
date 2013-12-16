@@ -12,6 +12,8 @@
 
 - (NSUInteger)currentPage;
 
+- (void)setCurrentPage:(NSUInteger)currentPage;
+
 - (NSUInteger)itemsPerPage;
 
 - (NSUInteger)totalNumberOfItems;

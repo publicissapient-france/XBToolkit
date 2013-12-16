@@ -14,7 +14,7 @@
 @property (nonatomic, strong) id <XBDataPager> paginator;
 @property (nonatomic, strong) NSString *pageParameterName;
 
-- (id)initWithPaginator:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
-+ (instancetype)builderWithDataPager:(id <XBDataPager>)paginator pageParameterName:(NSString *)pageParameterName;
+- (id)initWithPager:(id <XBDataPager>)pager pageParameterName:(NSString *)pageParameterName;
++ (instancetype)builderWithDataPager:(id <XBDataPager>)pager pageParameterName:(NSString *)pageParameterName;
 
 @end
