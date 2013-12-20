@@ -74,12 +74,13 @@
 + (id)fakeHttpClientWithSuccessCallbackWithData:(id)data {
     id httpClient = [OCMockObject mockForClass:[XBHTTPClient class]];
 
-    [[httpClient stub] httpRequestOperationManager];
+    [[httpClient stub] HTTPRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
 
     [[[httpClient expect] andDo:[self fakeSuccessCallbackForMethodWithData:data]] executeRequestWithPath:[OCMArg isNotNil]
                                                                                                   method:[OCMArg isNotNil]
                                                                                               parameters:[OCMArg any]
+                                                                                      responseSerializer:[OCMArg any]
                                                                                                  success:[OCMArg isNotNil]
                                                                                                  failure:[OCMArg isNotNil]];
 
@@ -90,13 +91,14 @@
 {
     id httpClient = [OCMockObject mockForClass:[XBHTTPClient class]];
 
-    [[httpClient stub] httpRequestOperationManager];
+    [[httpClient stub] HTTPRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
 
     for (id element in data) {
         [[[httpClient expect] andDo:[self fakeSuccessiveSuccessCallbackForMethodWithData:data parameterName:parameterName]] executeRequestWithPath:[OCMArg isNotNil]
                                                                                                                                            method:[OCMArg isNotNil]
                                                                                                                                        parameters:[OCMArg any]
+                                                                                                                               responseSerializer:[OCMArg any]
                                                                                                                                           success:[OCMArg isNotNil]
                                                                                                                                           failure:[OCMArg isNotNil]];
     }
@@ -107,10 +109,12 @@
 + (id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data {
     id httpClient = [OCMockObject mockForClass:[XBHTTPClient class]];
     
-    [[httpClient stub] httpRequestOperationManager];
+    [[httpClient stub] HTTPRequestOperationManager];
+    
     [[[httpClient stub] andDo:[self fakeErrorCallbackWithError:error data:data]] executeRequestWithPath:[OCMArg isNotNil]
                                                                                                  method:[OCMArg isNotNil]
                                                                                              parameters:[OCMArg any]
+                                                                                     responseSerializer:[OCMArg any]
                                                                                                 success:[OCMArg isNotNil]
                                                                                                 failure:[OCMArg isNotNil]];
 
@@ -124,7 +128,7 @@
         NSUInteger page = (NSUInteger)[parameters[@"page"] integerValue];
         
         void (^successCb)(AFHTTPRequestOperation *, id) = nil;
-        [invocation getArgument:&successCb atIndex:5];
+        [invocation getArgument:&successCb atIndex:6];
         if (!page) {
             successCb(nil, data[0]);
         }
@@ -137,23 +141,23 @@
 + (void (^)(NSInvocation *))fakeSuccessCallbackWithData:(id)data {
     return ^(NSInvocation *invocation) {
         void (^successCb)(NSURLRequest *, NSHTTPURLResponse *, id) = nil;
-        [invocation getArgument:&successCb atIndex:5];
+        [invocation getArgument:&successCb atIndex:6];
         successCb(nil, nil, data);
     };
 }
 
 + (void (^)(NSInvocation *))fakeSuccessCallbackForMethodWithData:(id)data {
     return ^(NSInvocation *invocation) {
-        XBHttpClientRequestSuccessBlock successCb = nil;
-        [invocation getArgument:&successCb atIndex:5];
+        XBHTTPClientRequestSuccessBlock successCb = nil;
+        [invocation getArgument:&successCb atIndex:6];
         successCb(nil, data);
     };
 }
 
 + (void (^)(NSInvocation *))fakeErrorCallbackWithError:(NSError *)error data:(id)data {
     return ^(NSInvocation *invocation) {
-        XBHttpClientRequestFailureBlock failureCb = nil;
-        [invocation getArgument:&failureCb atIndex:6];
+        XBHTTPClientRequestFailureBlock failureCb = nil;
+        [invocation getArgument:&failureCb atIndex:7];
         
         AFHTTPRequestOperation *fakeOperation = [[AFHTTPRequestOperation alloc] init];
         failureCb(fakeOperation, @{@"status": @"ko", @"count" : @(70), @"authors": [self getAuthorsAsArray]}, error);
