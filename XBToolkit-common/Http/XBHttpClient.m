@@ -8,8 +8,6 @@
 #import "XBHTTPClient.h"
 #import "AFNetworking.h"
 #import "XBLogging.h"
-#import "AFHTTPRequestOperation.h"
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 @interface XBHTTPClient ()
 
@@ -19,19 +17,19 @@
 
 @implementation XBHTTPClient
 
-- (id)initWithBaseUrl:(NSString *)baseUrl
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl
 {
     self = [super init];
 
     if (self) {
         self.baseUrl = baseUrl;
-        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];;
+        self.HTTPRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];;
     }
 
     return self;
 }
 
-+ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl
++ (instancetype)HTTPClientWithBaseUrl:(NSString *)baseUrl
 {
     return [[self alloc] initWithBaseUrl:baseUrl];
 }
@@ -39,30 +37,32 @@
 - (void)executeRequestWithPath:(NSString *)path
                         method:(NSString *)method
                     parameters:(NSDictionary *)parameters
-                       success:(XBHttpClientRequestSuccessBlock)successCb
-                       failure:(XBHttpClientRequestFailureBlock)errorCb
+            responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer
+                       success:(XBHTTPClientRequestSuccessBlock)successCb
+                       failure:(XBHTTPClientRequestFailureBlock)errorCb
 {
 
-    NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer
+    NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
             requestWithMethod:method
-                    URLString:[[NSURL URLWithString:path relativeToURL:self.httpRequestOperationManager.baseURL] absoluteString]
+                    URLString:[[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString]
                    parameters:parameters];
 
-    AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
+    AFHTTPRequestOperation *operation = [self.HTTPRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
         XBLogVerbose(@"responseString: %@", httpRequestOperation.responseString);
 
         if (successCb) {
             successCb(httpRequestOperation, responseObject);
         }
-    } failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
+    }                                                                                             failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
         XBLogWarn(@"Error: %@, responseString: %@", error, httpRequestOperation.responseString);
 
         if (errorCb) {
             errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
         }
     }];
+    operation.responseSerializer = responseSerializer;
 
-    [self.httpRequestOperationManager.operationQueue addOperation:operation];
+    [self.HTTPRequestOperationManager.operationQueue addOperation:operation];
 }
 
 @end

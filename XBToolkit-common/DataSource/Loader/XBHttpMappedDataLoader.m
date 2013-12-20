@@ -6,10 +6,10 @@
 
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "XBHttpMappedDataLoader.h"
+#import "XBHTTPMappedDataLoader.h"
 #import "XBHTTPMappedRequestDataBuilder.h"
 
-@interface XBHttpMappedDataLoader ()
+@interface XBHTTPMappedDataLoader ()
 @property (nonatomic, strong) NSString *resourcePath;
 @property (nonatomic, strong) NSString *HTTPMethod;
 @property (nonatomic, strong) XBHTTPClient *HTTPClient;
@@ -17,7 +17,7 @@
 @property (nonatomic, strong) id <XBHTTPRequestDataBuilder> requestDataBuilder;
 @end
 
-@implementation XBHttpMappedDataLoader
+@implementation XBHTTPMappedDataLoader
 
 - (id)initWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper requestDataBuilder:(id <XBHTTPRequestDataBuilder>)requestDataBuilder
 {
@@ -33,9 +33,9 @@
     return self;
 }
 
-+ (instancetype)dataLoaderWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder
++ (instancetype)dataLoaderWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper HTTPQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)HTTPQueryParamBuilder
 {
-    return [[self alloc] initWithHTTPClient:HTTPClient resourcePath:resourcePath HTTPMethod:HTTPMethod dataMapper:dataMapper requestDataBuilder:httpQueryParamBuilder];
+    return [[self alloc] initWithHTTPClient:HTTPClient resourcePath:resourcePath HTTPMethod:HTTPMethod dataMapper:dataMapper requestDataBuilder:HTTPQueryParamBuilder];
 }
 
 + (instancetype)dataLoaderWithHTTPClient:(XBHTTPClient *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper
@@ -52,7 +52,7 @@
 {
     NSDictionary *parameters = self.requestDataBuilder ? [self.requestDataBuilder build] : nil;
 
-    [self.HTTPClient executeRequestWithPath:self.resourcePath method:httpMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.HTTPClient executeRequestWithPath:self.resourcePath method:httpMethod parameters:parameters responseSerializer:self.dataMapper success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success(operation, responseObject);
         }
@@ -67,26 +67,6 @@
 {
     NSString *method = self.HTTPMethod ? self.HTTPMethod : @"GET";
     [self loadDataWithHTTPMethod:method withSuccess:success failure:failure];
-}
-
-- (void)setDataMapper:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)dataMapper
-{
-    _dataMapper = dataMapper;
-    self.HTTPClient.httpRequestOperationManager.responseSerializer = dataMapper;
-}
-
-- (void)setRequestDataBuilder:(id <XBHTTPRequestDataBuilder>)requestDataBuilder
-{
-    _requestDataBuilder = requestDataBuilder;
-}
-
-- (void)setHTTPClient:(XBHTTPClient *)HTTPClient
-{
-    _HTTPClient = HTTPClient;
-    
-    if (self.dataMapper) {
-        HTTPClient.httpRequestOperationManager.responseSerializer = self.dataMapper;
-    }
 }
 
 @end

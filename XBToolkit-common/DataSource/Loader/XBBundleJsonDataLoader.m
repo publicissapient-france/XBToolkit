@@ -5,7 +5,7 @@
 //
 
 
-#import "XBHttpMappedDataLoader.h"
+#import "XBHTTPMappedDataLoader.h"
 #import "XBHTTPRequestDataBuilder.h"
 #import "XBBundleJsonDataLoader.h"
 #import "XBLogging.h"

@@ -9,22 +9,23 @@
 
 @class AFHTTPRequestOperation;
 
-typedef void (^XBHttpClientRequestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
-typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operation, id responseObject, NSError *error);
+typedef void (^XBHTTPClientRequestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
+typedef void (^XBHTTPClientRequestFailureBlock)(AFHTTPRequestOperation *operation, id responseObject, NSError *error);
 
 @class AFHTTPRequestOperationManager;
+@class AFHTTPResponseSerializer;
+@protocol AFURLResponseSerialization;
 
 @interface XBHTTPClient : NSObject
 
-@property(nonatomic, strong, readonly)NSString *baseUrl;
-#warning Extend with JSONResponseSerializer object
+@property (nonatomic, strong, readonly) NSString *baseUrl;
 
-@property(nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
+@property (nonatomic, strong) AFHTTPRequestOperationManager *HTTPRequestOperationManager;
 
-- (id)initWithBaseUrl:(NSString *)baseUrl;
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl;
 
-+ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl;
++ (instancetype)HTTPClientWithBaseUrl:(NSString *)baseUrl;
 
-- (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
+- (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHTTPClientRequestSuccessBlock)successCb failure:(XBHTTPClientRequestFailureBlock)errorCb;
 
 @end

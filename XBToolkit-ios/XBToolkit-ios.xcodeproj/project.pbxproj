@@ -65,8 +65,8 @@
 		540957241710A85F00B006B0 /* XBCacheableDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E01710A85F00B006B0 /* XBCacheableDataLoader.m */; };
 		540957251710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E51710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */; };
 		540957261710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E51710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */; };
-		540957271710A85F00B006B0 /* XBHttpMappedDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E71710A85F00B006B0 /* XBHttpMappedDataLoader.m */; };
-		540957281710A85F00B006B0 /* XBHttpMappedDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E71710A85F00B006B0 /* XBHttpMappedDataLoader.m */; };
+		540957271710A85F00B006B0 /* XBHTTPMappedDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E71710A85F00B006B0 /* XBHTTPMappedDataLoader.m */; };
+		540957281710A85F00B006B0 /* XBHTTPMappedDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956E71710A85F00B006B0 /* XBHTTPMappedDataLoader.m */; };
 		540957291710A85F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956EB1710A85F00B006B0 /* XBJsonToArrayDataMapper.m */; };
 		5409572A1710A85F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956EB1710A85F00B006B0 /* XBJsonToArrayDataMapper.m */; };
 		5409572B1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956EE1710A85F00B006B0 /* XBArrayDataMerger.m */; };
@@ -201,8 +201,8 @@
 		540956E31710A85F00B006B0 /* XBHttpDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoader.h; sourceTree = "<group>"; };
 		540956E41710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoaderCacheKeyBuilder.h; sourceTree = "<group>"; };
 		540956E51710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilder.m; sourceTree = "<group>"; };
-		540956E61710A85F00B006B0 /* XBHttpMappedDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpMappedDataLoader.h; sourceTree = "<group>"; };
-		540956E71710A85F00B006B0 /* XBHttpMappedDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpMappedDataLoader.m; sourceTree = "<group>"; };
+		540956E61710A85F00B006B0 /* XBHTTPMappedDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHTTPMappedDataLoader.h; sourceTree = "<group>"; };
+		540956E71710A85F00B006B0 /* XBHTTPMappedDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHTTPMappedDataLoader.m; sourceTree = "<group>"; };
 		540956E91710A85F00B006B0 /* XBDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMapper.h; sourceTree = "<group>"; };
 		540956EA1710A85F00B006B0 /* XBJsonToArrayDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToArrayDataMapper.h; sourceTree = "<group>"; };
 		540956EB1710A85F00B006B0 /* XBJsonToArrayDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToArrayDataMapper.m; sourceTree = "<group>"; };
@@ -492,8 +492,8 @@
 				540956E31710A85F00B006B0 /* XBHttpDataLoader.h */,
 				540956E41710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */,
 				540956E51710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */,
-				540956E61710A85F00B006B0 /* XBHttpMappedDataLoader.h */,
-				540956E71710A85F00B006B0 /* XBHttpMappedDataLoader.m */,
+				540956E61710A85F00B006B0 /* XBHTTPMappedDataLoader.h */,
+				540956E71710A85F00B006B0 /* XBHTTPMappedDataLoader.m */,
 			);
 			path = Loader;
 			sourceTree = "<group>";
@@ -874,7 +874,7 @@
 				540957211710A85F00B006B0 /* XBBundleJsonDataLoader.m in Sources */,
 				540957231710A85F00B006B0 /* XBCacheableDataLoader.m in Sources */,
 				540957251710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
-				540957271710A85F00B006B0 /* XBHttpMappedDataLoader.m in Sources */,
+				540957271710A85F00B006B0 /* XBHTTPMappedDataLoader.m in Sources */,
 				540957291710A85F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */,
 				5409572B1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */,
 				5409572D1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
@@ -916,7 +916,7 @@
 				426D1481184E80AE00A9D2DB /* XBBundleJsonReadingOperation.m in Sources */,
 				540957241710A85F00B006B0 /* XBCacheableDataLoader.m in Sources */,
 				540957261710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
-				540957281710A85F00B006B0 /* XBHttpMappedDataLoader.m in Sources */,
+				540957281710A85F00B006B0 /* XBHTTPMappedDataLoader.m in Sources */,
 				5409572A1710A85F00B006B0 /* XBJsonToArrayDataMapper.m in Sources */,
 				5409572C1710A85F00B006B0 /* XBArrayDataMerger.m in Sources */,
 				5409572E1710A85F00B006B0 /* XBDictionaryDataMerger.m in Sources */,
