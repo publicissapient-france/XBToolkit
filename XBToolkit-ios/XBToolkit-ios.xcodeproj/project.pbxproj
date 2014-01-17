@@ -105,8 +105,10 @@
 		54C534971707BCA5001DB282 /* XBPagedCompositeArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085741707554500290AEF /* XBPagedCompositeArrayDataSourceTest.m */; };
 		54C534981707BCA8001DB282 /* XBHttpArrayDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 542085761707554500290AEF /* XBHttpArrayDataSourceTest.m */; };
 		871849EDE14F46F9B3DC9F72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72D9672488D4A1AB2EB4940 /* libPods.a */; };
+		DB34D6BD5A6BC517AEA7214B /* XBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D8D9EF014C715067FD73 /* XBLogger.m */; };
 		DB34D94C56FCCFF073839CB4 /* XBLogging.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB34D4B0D8798E3D8D76E1BC /* XBLogging.h */; };
 		DB34DB4E214FD2A180146277 /* XBToolkit-ios-Prefix.pch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 542082E317074C9B00290AEF /* XBToolkit-ios-Prefix.pch */; };
+		DB34DDAF5AA5AC997E3674A8 /* XBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34D8D9EF014C715067FD73 /* XBLogger.m */; };
 		E48D455BB88E451993552315 /* libPods-XBToolkit-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB089F6D419944DFABA5C2B9 /* libPods-XBToolkit-iosTests.a */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +260,8 @@
 		BB089F6D419944DFABA5C2B9 /* libPods-XBToolkit-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XBToolkit-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D15A5AAF9548C8A27C7AE1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DB34D4B0D8798E3D8D76E1BC /* XBLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBLogging.h; sourceTree = "<group>"; };
+		DB34D8D9EF014C715067FD73 /* XBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBLogger.m; sourceTree = "<group>"; };
+		DB34DC5A761AFBAC059B4689 /* XBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBLogger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -731,6 +735,8 @@
 			isa = PBXGroup;
 			children = (
 				DB34D4B0D8798E3D8D76E1BC /* XBLogging.h */,
+				DB34DC5A761AFBAC059B4689 /* XBLogger.h */,
+				DB34D8D9EF014C715067FD73 /* XBLogger.m */,
 			);
 			path = Logging;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 				2EE4494730F3BDFF798DECCD /* XBReloadableObjectDataSource.m in Sources */,
 				2EE44D8858DDDA132A7B427F /* XBObjectDataSource.m in Sources */,
 				2EE449B9B47B10B0870E24B7 /* XBJsonToObjectDataMapper.m in Sources */,
+				DB34D6BD5A6BC517AEA7214B /* XBLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,6 +949,7 @@
 				2EE44F1683533D617CE914E8 /* WPPost.m in Sources */,
 				2EE446E8A83EB17AC1FBF6C4 /* XBJsonToObjectDataMapper.m in Sources */,
 				2EE44D5916BD39CCEF3139AA /* XBArrayDataSourcePagerTest.m in Sources */,
+				DB34DDAF5AA5AC997E3674A8 /* XBLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
