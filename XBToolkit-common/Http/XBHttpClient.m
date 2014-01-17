@@ -43,7 +43,7 @@
 {
 
     NSString *urlString = [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
-    XBLogVerbose(@"[%@] Http Request URL: %@", NSStringFromClass(self.class), urlString);
+    XBLogVerbose(@"Http Request URL: %@", urlString);
 
     NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
             requestWithMethod:method
@@ -51,13 +51,13 @@
                    parameters:parameters];
 
     AFHTTPRequestOperation *operation = [self.HTTPRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
-        XBLogVerbose(@"[%@] Response: %@", NSStringFromClass(self.class), httpRequestOperation.responseString);
+        XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
 
         if (successCb) {
             successCb(httpRequestOperation, responseObject);
         }
     }                                                                                             failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
-        XBLogWarn(@"[%@]Error: %@, Response: %@", NSStringFromClass(self.class), error, httpRequestOperation.responseString);
+        XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
 
         if (errorCb) {
             errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
