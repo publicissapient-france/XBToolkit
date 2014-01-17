@@ -43,7 +43,7 @@
 {
 
     NSString *urlString = [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
-    XBLogVerbose(@"Http Request URL: %@", urlString);
+    XBLogDebug(@"Http Request URL: %@", urlString);
 
     NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
             requestWithMethod:method
