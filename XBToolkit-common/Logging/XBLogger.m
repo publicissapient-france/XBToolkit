@@ -6,18 +6,20 @@
 #import "XBLogger.h"
 #import "NSDateFormatter+XBAdditions.h"
 
-NSString * const CDLoggerDateFormatter = @"CDLoggerDateFormatter";
+NSString * const XBLoggerDateFormatter = @"XBLoggerDateFormatter";
 
 
 @implementation XBLogger
 
 + (NSDateFormatter *)dateFormatter {
     NSMutableDictionary *dictionary = [[NSThread currentThread] threadDictionary];
-    if (!dictionary[CDLoggerDateFormatter]) {
-        dictionary[CDLoggerDateFormatter] = [NSDateFormatter initWithDateFormat:@"yyyy/MM/dd HH:mm:ss.SSS"];
+    NSDateFormatter *dateFormatter = dictionary[XBLoggerDateFormatter];
+    if (!dateFormatter) {
+        dateFormatter = [NSDateFormatter initWithDateFormat:@"yyyy/MM/dd HH:mm:ss.SSS"];
+        dictionary[XBLoggerDateFormatter] = dateFormatter;
     }
 
-    return dictionary[CDLoggerDateFormatter];
+    return dateFormatter;
 }
 
 +(void)logWithSourceFile:(char *)sourceFile level:(NSString *)level lineNumber:(int)lineNumber format:(NSString*)format, ...
