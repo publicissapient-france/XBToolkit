@@ -35,7 +35,7 @@ NSString * const XBLoggerDateFormatter = @"XBLoggerDateFormatter";
     NSString *print = [[NSString alloc] initWithFormat:format arguments:ap];
     NSString *file = [[NSString alloc] initWithBytes:sourceFile length:strlen(sourceFile) encoding:NSUTF8StringEncoding];
 
-    fprintf(stderr, "[%s][%s][%s:%d] %s\n", [[[XBLogger dateFormatter] stringFromDate:[NSDate date]] UTF8String], [level UTF8String], [file.lastPathComponent UTF8String], lineNumber, [print UTF8String]);
+    fprintf(stderr, "[%s][%s][%s:%d] %s", [[[XBLogger dateFormatter] stringFromDate:[NSDate date]] UTF8String], [level UTF8String], [file.lastPathComponent UTF8String], lineNumber, [print UTF8String]);
 }
 
 @end
