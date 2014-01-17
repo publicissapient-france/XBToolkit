@@ -42,19 +42,22 @@
                        failure:(XBHTTPClientRequestFailureBlock)errorCb
 {
 
+    NSString *urlString = [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
+    XBLogVerbose(@"[%@] Http Request URL: %@", NSStringFromClass(self.class), urlString);
+
     NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
             requestWithMethod:method
-                    URLString:[[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString]
+                    URLString:urlString
                    parameters:parameters];
 
     AFHTTPRequestOperation *operation = [self.HTTPRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
-        XBLogVerbose(@"responseString: %@", httpRequestOperation.responseString);
+        XBLogVerbose(@"[%@] Response: %@", NSStringFromClass(self.class), httpRequestOperation.responseString);
 
         if (successCb) {
             successCb(httpRequestOperation, responseObject);
         }
     }                                                                                             failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
-        XBLogWarn(@"Error: %@, responseString: %@", error, httpRequestOperation.responseString);
+        XBLogWarn(@"[%@]Error: %@, Response: %@", NSStringFromClass(self.class), error, httpRequestOperation.responseString);
 
         if (errorCb) {
             errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
