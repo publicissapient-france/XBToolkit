@@ -8,7 +8,7 @@
 #import "XBHttpDataLoaderCacheKeyBuilder.h"
 #import "XBHttpDataLoader.h"
 #import "NSDictionary+XBAdditions.h"
-#import "XBHTTPClient.h"
+#import "XBHttpClient1.h"
 #import "XBHTTPRequestDataBuilder.h"
 
 @implementation XBHttpDataLoaderCacheKeyBuilder
@@ -29,7 +29,7 @@
 
 - (NSString *)buildWithData:(NSObject<XBHttpDataLoader> *)httpDataLoader
 {
-    XBHTTPClient *httpClient = httpDataLoader.HTTPClient;
+    XBHttpClient1 *httpClient = httpDataLoader.HTTPClient;
     NSString *resourcePath = httpDataLoader.resourcePath;
     NSDictionary *queryParams = [httpDataLoader.requestDataBuilder build];
 

@@ -16,7 +16,7 @@ typedef void (^XBHTTPClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 @class AFHTTPResponseSerializer;
 @protocol AFURLResponseSerialization;
 
-@interface XBHTTPClient : NSObject
+@interface XBHttpClient1 : NSObject
 
 @property (nonatomic, strong, readonly) NSString *baseUrl;
 
