@@ -42,7 +42,7 @@
                        failure:(XBHttpClientRequestFailureBlock)errorCb
 {
 
-    NSString *urlString = [self URLWithPath:path method:method parameters:parameters ];
+    NSString *urlString = [self URLStringWithPath:path method:method parameters:parameters];
     XBLogDebug(@"Http Request URL: %@", urlString);
 
     NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
@@ -71,7 +71,7 @@
     [self.HTTPRequestOperationManager.operationQueue addOperation:operation];
 }
 
-- (NSString *)URLWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters
+- (NSString *)URLStringWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters
 {
     return [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
 }
