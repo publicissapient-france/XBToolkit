@@ -2,6 +2,6 @@
 
 @interface XBHttpClient (protected)
 
-- (NSString *)URLStringWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters;
+- (NSString *)URLStringWithUrlPath:(NSString *)urlPath method:(NSString *)method parameters:(NSDictionary *)parameters;
 
 @end

@@ -8,6 +8,7 @@
 #import "XBHttpClient.h"
 #import "AFNetworking.h"
 #import "XBLogging.h"
+#import "XBHttpClient+protected.h"
 
 @interface XBHttpClient ()
 
@@ -42,7 +43,7 @@
                        failure:(XBHttpClientRequestFailureBlock)errorCb
 {
 
-    NSString *urlString = [self URLStringWithPath:path method:method parameters:parameters];
+    NSString *urlString = [self URLStringWithUrlPath:path method:method parameters:parameters];
     XBLogDebug(@"Http Request URL: %@", urlString);
 
     NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
@@ -71,9 +72,9 @@
     [self.HTTPRequestOperationManager.operationQueue addOperation:operation];
 }
 
-- (NSString *)URLStringWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters
+- (NSString *)URLStringWithUrlPath:(NSString *)urlPath method:(NSString *)method parameters:(NSDictionary *)parameters;
 {
-    return [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
+    return [[NSURL URLWithString:urlPath relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
 }
 
 @end
