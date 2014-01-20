@@ -5,17 +5,17 @@
 //
 
 
-#import "XBHttpClient1.h"
+#import "XBHttpClient.h"
 #import "AFNetworking.h"
 #import "XBLogging.h"
 
-@interface XBHttpClient1 ()
+@interface XBHttpClient ()
 
 @property(nonatomic, strong) NSString *baseUrl;
 
 @end
 
-@implementation XBHttpClient1
+@implementation XBHttpClient
 
 - (instancetype)initWithBaseUrl:(NSString *)baseUrl
 {

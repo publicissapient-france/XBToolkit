@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XBDataLoader.h"
-#import "XBHttpClient1.h"
+#import "XBHttpClient.h"
 #import "XBHTTPRequestDataBuilder.h"
 
 #warning Should create class for mapping data as well

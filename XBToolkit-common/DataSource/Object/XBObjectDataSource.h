@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class XBHttpClient1;
+@class XBHttpClient;
 
 @interface XBObjectDataSource : NSObject
 

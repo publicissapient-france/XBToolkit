@@ -10,18 +10,18 @@
 #import "XBHTTPRequestDataBuilder.h"
 #import "XBHttpDataLoader.h"
 
-@class XBHttpClient1;
+@class XBHttpClient;
 @class AFHTTPResponseSerializer;
 @protocol AFURLResponseSerialization;
 
 @interface XBHTTPMappedDataLoader : NSObject<XBDataLoader, XBHttpDataLoader>
 
-- (id)initWithHTTPClient:(XBHttpClient1 *)httpClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper requestDataBuilder:(id <XBHTTPRequestDataBuilder>)requestDataBuilder;
+- (id)initWithHTTPClient:(XBHttpClient *)httpClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper requestDataBuilder:(id <XBHTTPRequestDataBuilder>)requestDataBuilder;
 
-+ (instancetype)dataLoaderWithHTTPClient:(XBHttpClient1 *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper;
++ (instancetype)dataLoaderWithHTTPClient:(XBHttpClient *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper;
 
-+ (instancetype)dataLoaderWithHTTPClient:(XBHttpClient1 *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder;
++ (instancetype)dataLoaderWithHTTPClient:(XBHttpClient *)HTTPClient resourcePath:(NSString *)resourcePath dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper httpQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder;
 
-+ (instancetype)dataLoaderWithHTTPClient:(XBHttpClient1 *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper HTTPQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder;
++ (instancetype)dataLoaderWithHTTPClient:(XBHttpClient *)HTTPClient resourcePath:(NSString *)resourcePath HTTPMethod:(NSString *)HTTPMethod dataMapper:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)dataMapper HTTPQueryParamBuilder:(id <XBHTTPRequestDataBuilder>)httpQueryParamBuilder;
 
 @end

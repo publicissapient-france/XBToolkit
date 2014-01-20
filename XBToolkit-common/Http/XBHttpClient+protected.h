@@ -1,6 +1,6 @@
-#import "XBHttpClient1.h"
+#import "XBHttpClient.h"
 
-@interface XBHttpClient1 (protected)
+@interface XBHttpClient (protected)
 
 @property(nonatomic, strong) NSString *baseUrl;
 
