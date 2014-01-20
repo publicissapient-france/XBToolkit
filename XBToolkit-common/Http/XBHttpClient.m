@@ -7,6 +7,7 @@
 
 #import "XBHTTPClient.h"
 #import "AFNetworking.h"
+#import "XBLogging.h"
 
 @interface XBHTTPClient ()
 
