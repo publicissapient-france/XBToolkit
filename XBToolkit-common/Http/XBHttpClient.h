@@ -9,8 +9,8 @@
 
 @class AFHTTPRequestOperation;
 
-typedef void (^XBHTTPClientRequestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
-typedef void (^XBHTTPClientRequestFailureBlock)(AFHTTPRequestOperation *operation, id responseObject, NSError *error);
+typedef void (^XBHttpClientRequestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
+typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operation, id responseObject, NSError *error);
 
 @class AFHTTPRequestOperationManager;
 @class AFHTTPResponseSerializer;
@@ -26,6 +26,6 @@ typedef void (^XBHTTPClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 + (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl;
 
-- (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHTTPClientRequestSuccessBlock)successCb failure:(XBHTTPClientRequestFailureBlock)errorCb;
+- (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
 
 @end

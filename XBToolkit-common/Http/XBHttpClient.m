@@ -38,8 +38,8 @@
                         method:(NSString *)method
                     parameters:(NSDictionary *)parameters
             responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer
-                       success:(XBHTTPClientRequestSuccessBlock)successCb
-                       failure:(XBHTTPClientRequestFailureBlock)errorCb
+                       success:(XBHttpClientRequestSuccessBlock)successCb
+                       failure:(XBHttpClientRequestFailureBlock)errorCb
 {
 
     NSString *urlString = [self URLWithPath:path method:method parameters:parameters ];

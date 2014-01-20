@@ -148,7 +148,7 @@
 
 + (void (^)(NSInvocation *))fakeSuccessCallbackForMethodWithData:(id)data {
     return ^(NSInvocation *invocation) {
-        XBHTTPClientRequestSuccessBlock successCb = nil;
+        XBHttpClientRequestSuccessBlock successCb = nil;
         [invocation getArgument:&successCb atIndex:6];
         successCb(nil, data);
     };
@@ -156,7 +156,7 @@
 
 + (void (^)(NSInvocation *))fakeErrorCallbackWithError:(NSError *)error data:(id)data {
     return ^(NSInvocation *invocation) {
-        XBHTTPClientRequestFailureBlock failureCb = nil;
+        XBHttpClientRequestFailureBlock failureCb = nil;
         [invocation getArgument:&failureCb atIndex:7];
         
         AFHTTPRequestOperation *fakeOperation = [[AFHTTPRequestOperation alloc] init];
