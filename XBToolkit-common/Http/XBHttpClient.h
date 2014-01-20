@@ -24,7 +24,7 @@ typedef void (^XBHTTPClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 - (instancetype)initWithBaseUrl:(NSString *)baseUrl;
 
-+ (instancetype)HTTPClientWithBaseUrl:(NSString *)baseUrl;
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl;
 
 - (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHTTPClientRequestSuccessBlock)successCb failure:(XBHTTPClientRequestFailureBlock)errorCb;
 

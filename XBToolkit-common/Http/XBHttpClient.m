@@ -7,7 +7,6 @@
 
 #import "XBHTTPClient.h"
 #import "AFNetworking.h"
-#import "XBLogging.h"
 
 @interface XBHTTPClient ()
 
@@ -29,7 +28,7 @@
     return self;
 }
 
-+ (instancetype)HTTPClientWithBaseUrl:(NSString *)baseUrl
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl
 {
     return [[self alloc] initWithBaseUrl:baseUrl];
 }
@@ -42,7 +41,7 @@
                        failure:(XBHTTPClientRequestFailureBlock)errorCb
 {
 
-    NSString *urlString = [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
+    NSString *urlString = [self URLWithPath:path method:method parameters:parameters ];
     XBLogDebug(@"Http Request URL: %@", urlString);
 
     NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
@@ -50,22 +49,30 @@
                     URLString:urlString
                    parameters:parameters];
 
-    AFHTTPRequestOperation *operation = [self.HTTPRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
-        XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
+    AFHTTPRequestOperation *operation = [self.HTTPRequestOperationManager HTTPRequestOperationWithRequest:request
+        success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
+            XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
 
-        if (successCb) {
-            successCb(httpRequestOperation, responseObject);
+            if (successCb) {
+                successCb(httpRequestOperation, responseObject);
+            }
         }
-    }                                                                                             failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
-        XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
+        failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
+            XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
 
-        if (errorCb) {
-            errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
+            if (errorCb) {
+                errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
+            }
         }
-    }];
+    ];
     operation.responseSerializer = responseSerializer;
 
     [self.HTTPRequestOperationManager.operationQueue addOperation:operation];
+}
+
+- (NSString *)URLWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters
+{
+    return [[NSURL URLWithString:path relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
 }
 
 @end
