@@ -46,21 +46,20 @@
 
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
-    #warning Should probably be wrapped by NSOperation?
-//    NSDictionary *data = [self fetchDataFromCacheWithError:nil];
-//
-//    if (data) {
-//        success(nil, data);
-//    }
-//    else {
-//        [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id loadedData) {
-//            NSError *error = nil;
-//            [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
-//            success(nil, loadedData);
-//        } failure:^(NSOperation *operation, NSError *error) {
-//            failure(nil, error);
-//        }];
-//    }
+    NSDictionary *data = [self fetchDataFromCacheWithError:nil];
+
+    if (data) {
+        success(nil, data);
+    }
+    else {
+        [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id loadedData) {
+            NSError *error = nil;
+            [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
+            success(nil, loadedData);
+        } failure:^(id operation, id responseObject, NSError *error) {
+            failure(operation, responseObject, error);
+        }];
+    }
 }
 
 - (NSDictionary *)fetchDataFromCacheWithError:(NSError **)error
