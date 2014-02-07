@@ -36,8 +36,8 @@
 
 - (id)mappedObjectFromData:(id)data error:(NSError * __autoreleasing *)error;
 {
-    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
-    NSArray *array = self.rootKeyPath ? [json valueForKeyPath:self.rootKeyPath] : json;
+//    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
+    NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
 
     id mappedObject = nil;
     if ([array isKindOfClass:[NSArray class]]) {
