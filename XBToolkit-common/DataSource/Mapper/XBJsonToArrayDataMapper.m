@@ -42,9 +42,9 @@
     id mappedObject = nil;
     if ([array isKindOfClass:[NSArray class]]) {
 
-        if (![self.typeClass isSubclassOfClass:[MTLModel class]]) {
-            [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of MTLModel", NSStringFromClass(self.typeClass)];
-        }
+//        if (![self.typeClass isSubclassOfClass:[MTLModel class]]) {
+//            [NSException raise:NSInvalidArgumentException format:@"objectClass %@ is not subclass of MTLModel", NSStringFromClass(self.typeClass)];
+//        }
 
         NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:self.typeClass];
         mappedObject = [valueTransformer transformedValue:array];
