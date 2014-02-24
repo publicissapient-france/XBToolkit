@@ -8,6 +8,7 @@
 #import "XBHttpMappedDataLoader.h"
 #import "XBBundleJsonDataLoader.h"
 #import "XBBundleJsonReadingOperation.h"
+#import "XBLogging.h"
 
 @interface XBBundleJsonDataLoader()
 
