@@ -191,7 +191,7 @@
 		540956D41710A85F00B006B0 /* XBPagedCompositeArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPagedCompositeArrayDataSource.m; sourceTree = "<group>"; };
 		540956D71710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBasicHttpQueryParamBuilder.h; sourceTree = "<group>"; };
 		540956D81710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBasicHttpQueryParamBuilder.m; sourceTree = "<group>"; };
-		540956D91710A85F00B006B0 /* XBHTTPRequestDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHTTPRequestDataBuilder.h; sourceTree = "<group>"; };
+		540956D91710A85F00B006B0 /* XBHttpRequestDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpRequestDataBuilder.h; sourceTree = "<group>"; };
 		540956DA1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataPagerHttpQueryDataBuilder.h; sourceTree = "<group>"; };
 		540956DB1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDataPagerHttpQueryDataBuilder.m; sourceTree = "<group>"; };
 		540956DD1710A85F00B006B0 /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
@@ -468,21 +468,21 @@
 		540956D51710A85F00B006B0 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				540956D61710A85F00B006B0 /* Request Data */,
+				540956D61710A85F00B006B0 /* RequestData */,
 			);
 			path = Http;
 			sourceTree = "<group>";
 		};
-		540956D61710A85F00B006B0 /* Request Data */ = {
+		540956D61710A85F00B006B0 /* RequestData */ = {
 			isa = PBXGroup;
 			children = (
 				540956D71710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.h */,
 				540956D81710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m */,
-				540956D91710A85F00B006B0 /* XBHTTPRequestDataBuilder.h */,
+				540956D91710A85F00B006B0 /* XBHttpRequestDataBuilder.h */,
 				540956DA1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.h */,
 				540956DB1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m */,
 			);
-			path = "Request Data";
+			path = RequestData;
 			sourceTree = "<group>";
 		};
 		540956DC1710A85F00B006B0 /* Loader */ = {

@@ -16,6 +16,7 @@ typedef void (^XBReloadableArrayDataSourceCompletionBlock)(id operation);
 
 @property (nonatomic, strong, readonly) NSError *error;
 @property (nonatomic, strong, readonly) id <XBDataLoader> dataLoader;
+@property (nonatomic, strong) BOOL(^filterOnLoad)(id value);
 
 - (id)initWithDataLoader:(id <XBDataLoader>)dataLoader;
 

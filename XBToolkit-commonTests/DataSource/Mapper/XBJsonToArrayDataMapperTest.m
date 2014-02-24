@@ -24,12 +24,12 @@
 }
 
 - (void)testResponse {
-    id mockHTTPURLResponse = [OCMockObject niceMockForClass:[NSHTTPURLResponse class]];
-    [[[mockHTTPURLResponse stub] andReturnValue:@(200)] statusCode];
-    [[[mockHTTPURLResponse stub] andReturn:@"application/json"] MIMEType];
-    [[[mockHTTPURLResponse stub] andReturn:[NSURL URLWithString:@"http://mysql"]] URL];
+    id mockHttpUrlResponse = [OCMockObject niceMockForClass:[NSHTTPURLResponse class]];
+    [[[mockHttpUrlResponse stub] andReturnValue:@(200)] statusCode];
+    [[[mockHttpUrlResponse stub] andReturn:@"application/json"] MIMEType];
+    [[[mockHttpUrlResponse stub] andReturn:[NSURL URLWithString:@"http://mysql"]] URL];
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
-    NSArray *wpAuthors = [dataMapper responseObjectForResponse:mockHTTPURLResponse data:[XBTestUtils getAuthorsAsData] error:nil];
+    NSArray *wpAuthors = [dataMapper responseObjectForResponse:mockHttpUrlResponse data:[XBTestUtils getAuthorsAsData] error:nil];
     
     GHAssertEquals(wpAuthors.count, [@70U unsignedIntegerValue], nil);
 }

@@ -24,7 +24,7 @@
 
     XBJsonToObjectDataMapper *dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
     
-    XBHTTPMappedDataLoader *dataLoader = [XBHTTPMappedDataLoader dataLoaderWithHTTPClient:httpClient resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android" dataMapper:dataMapper];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android" dataMapper:dataMapper];
 
     XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader];
 

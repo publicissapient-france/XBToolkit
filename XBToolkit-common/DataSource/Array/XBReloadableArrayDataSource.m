@@ -8,6 +8,7 @@
 #import "XBReloadableArrayDataSource.h"
 #import "XBArrayDataSource+Protected.h"
 #import "XBDataLoader.h"
+#import "Underscore.h"
 
 static dispatch_queue_t reloadable_datasource_filtering_queue() {
     static dispatch_queue_t xbtoolkit_reloadable_datasource_filtering_queue;
@@ -61,7 +62,7 @@ static dispatch_queue_t reloadable_datasource_filtering_queue() {
 
 - (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion
 {
-    self.sourceArray = responseObject;
+    self.sourceArray = self.filterOnLoad ? Underscore.filter(responseObject, self.filterOnLoad) : responseObject;
     dispatch_async(reloadable_datasource_filtering_queue(), ^{
         [self filterData];
         dispatch_async(dispatch_get_main_queue(), ^{

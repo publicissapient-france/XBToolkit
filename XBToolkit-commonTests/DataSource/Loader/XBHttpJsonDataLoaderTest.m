@@ -24,7 +24,7 @@
 
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHTTPMappedDataLoader *dataLoader = [XBHTTPMappedDataLoader dataLoaderWithHTTPClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
 
     __block NSArray *responseData;
     __block NSError *responseError;
@@ -52,7 +52,7 @@
     NSError *error = [NSError errorWithDomain:@"xebia" code:404 userInfo:nil];
     id httpClient = [XBTestUtils fakeHttpClientWithErrorCallbackWithError:error data:[XBTestUtils getAuthorsAsArray]];
     
-    XBHTTPMappedDataLoader *dataLoader = [XBHTTPMappedDataLoader dataLoaderWithHTTPClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
     
     __block NSDictionary *responseData;
     __block NSError *responseError;

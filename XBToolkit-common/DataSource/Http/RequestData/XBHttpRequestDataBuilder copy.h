@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol XBHTTPRequestDataBuilder <NSObject>
+@protocol XBHttpRequestDataBuilder <NSObject>
 
 @required
 - (NSDictionary *)build;

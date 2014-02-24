@@ -74,7 +74,7 @@
 + (id)fakeHttpClientWithSuccessCallbackWithData:(id)data {
     id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
 
-    [[httpClient stub] HTTPRequestOperationManager];
+    [[httpClient stub] httpRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
 
     [[[httpClient expect] andDo:[self fakeSuccessCallbackForMethodWithData:data]] executeRequestWithPath:[OCMArg isNotNil]
@@ -91,7 +91,7 @@
 {
     id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
 
-    [[httpClient stub] HTTPRequestOperationManager];
+    [[httpClient stub] httpRequestOperationManager];
     [[[httpClient stub] andReturn:@"http://blog.xebia.fr"] baseUrl];
 
     for (id element in data) {
@@ -108,8 +108,8 @@
 
 + (id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data {
     id httpClient = [OCMockObject mockForClass:[XBHttpClient class]];
-    
-    [[httpClient stub] HTTPRequestOperationManager];
+
+    [[httpClient stub] httpRequestOperationManager];
     
     [[[httpClient stub] andDo:[self fakeErrorCallbackWithError:error data:data]] executeRequestWithPath:[OCMArg isNotNil]
                                                                                                  method:[OCMArg isNotNil]

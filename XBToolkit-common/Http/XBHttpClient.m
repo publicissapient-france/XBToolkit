@@ -24,7 +24,7 @@
 
     if (self) {
         self.baseUrl = baseUrl;
-        self.HTTPRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];;
+        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];;
     }
 
     return self;
@@ -46,35 +46,35 @@
     NSString *urlString = [self URLStringWithUrlPath:path method:method parameters:parameters];
     XBLogDebug(@"Http Request URL: %@", urlString);
 
-    NSMutableURLRequest *request = [self.HTTPRequestOperationManager.requestSerializer
+    NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer
             requestWithMethod:method
                     URLString:urlString
                    parameters:parameters];
 
-    AFHTTPRequestOperation *operation = [self.HTTPRequestOperationManager HTTPRequestOperationWithRequest:request
-        success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
-            XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
+    AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request
+                                                                                                  success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
+                                                                                                      XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
 
-            if (successCb) {
-                successCb(httpRequestOperation, responseObject);
-            }
-        }
-        failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
-            XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
+                                                                                                      if (successCb) {
+                                                                                                          successCb(httpRequestOperation, responseObject);
+                                                                                                      }
+                                                                                                  }
+                                                                                                  failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
+                                                                                                      XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
 
-            if (errorCb) {
-                errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
-            }
-        }
+                                                                                                      if (errorCb) {
+                                                                                                          errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
+                                                                                                      }
+                                                                                                  }
     ];
     operation.responseSerializer = responseSerializer;
 
-    [self.HTTPRequestOperationManager.operationQueue addOperation:operation];
+    [self.httpRequestOperationManager.operationQueue addOperation:operation];
 }
 
 - (NSString *)URLStringWithUrlPath:(NSString *)urlPath method:(NSString *)method parameters:(NSDictionary *)parameters;
 {
-    return [[NSURL URLWithString:urlPath relativeToURL:self.HTTPRequestOperationManager.baseURL] absoluteString];
+    return [[NSURL URLWithString:urlPath relativeToURL:self.httpRequestOperationManager.baseURL] absoluteString];
 }
 
 @end

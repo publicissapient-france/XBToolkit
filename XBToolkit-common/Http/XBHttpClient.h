@@ -20,7 +20,7 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 @property (nonatomic, strong, readonly) NSString *baseUrl;
 
-@property (nonatomic, strong) AFHTTPRequestOperationManager *HTTPRequestOperationManager;
+@property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
 - (instancetype)initWithBaseUrl:(NSString *)baseUrl;
 

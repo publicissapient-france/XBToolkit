@@ -6,10 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XBHTTPRequestDataBuilder.h"
+#import "XBHttpRequestDataBuilder.h"
 #import "XBDataPager.h"
 
-@interface XBDataPagerHttpQueryDataBuilder : NSObject<XBHTTPRequestDataBuilder>
+@interface XBDataPagerHttpQueryDataBuilder : NSObject<XBHttpRequestDataBuilder>
 
 @property (nonatomic, strong) id <XBDataPager> paginator;
 @property (nonatomic, strong) NSString *pageParameterName;
