@@ -7,7 +7,6 @@
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import "XBHttpMappedDataLoader.h"
-#import "XBHttpMappedRequestDataBuilder.h"
 
 @interface XBHttpMappedDataLoader ()
 @property (nonatomic, strong) NSString *resourcePath;

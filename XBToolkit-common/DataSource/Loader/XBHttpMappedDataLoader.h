@@ -9,10 +9,8 @@
 #import "XBDataLoader.h"
 #import "XBHttpRequestDataBuilder.h"
 #import "XBHttpDataLoader.h"
-
-@class XBHttpClient;
-@class AFHTTPResponseSerializer;
-@protocol AFURLResponseSerialization;
+#import "XBHttpClient.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface XBHttpMappedDataLoader : NSObject<XBDataLoader, XBHttpDataLoader>
 
