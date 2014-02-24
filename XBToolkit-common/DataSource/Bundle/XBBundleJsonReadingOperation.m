@@ -7,6 +7,9 @@
 //
 
 #import "XBBundleJsonReadingOperation.h"
+#import "XBJsonToObjectDataMapper.h"
+#import "AFURLResponseSerialization.h"
+#import "XBDataMapper.h"
 
 @interface XBBundleJsonReadingOperation ()
 
@@ -15,6 +18,9 @@
 @property (nonatomic, strong) NSString *resourceType;
 @property (nonatomic, strong) id responseObject;
 @property (nonatomic, strong) NSError *error;
+
+@property (readwrite, nonatomic, strong) NSData *rawData;
+@property (readwrite, nonatomic, strong) NSRecursiveLock *lock;
 
 @end
 
@@ -52,13 +58,34 @@
 {    
     NSString *file = [self.bundle pathForResource:self.resourcePath ofType:self.resourceType];
     NSError *error;
-    NSData *jsonData = [NSData dataWithContentsOfFile:file options:0 error:&error];
-    self.responseObject = [NSJSONSerialization JSONObjectWithData:jsonData options:self.readingOptions error:&error];
+    self.rawData = [NSData dataWithContentsOfFile:file options:self.dataReadingOptions error:&error];
     self.error = error;
 }
 
-- (id)responseObject
-{
+- (id)responseObject {
+    
+    if (!self.dataMapper) {
+        if (!_responseObject) {
+            NSError *error;
+            _responseObject = [NSJSONSerialization JSONObjectWithData:self.rawData options:self.jsonReadingOptions error:&error];
+            if (error) {
+                self.error = error;
+            }
+        }
+        
+        return _responseObject;
+    }
+    
+    [self.lock lock];
+    if (!_responseObject && [self isFinished] && !self.error) {
+        NSError *error = nil;
+        self.responseObject = [self.dataMapper responseObjectForResponse:nil data:self.rawData error:&error];
+        if (error) {
+            self.error = error;
+        }
+    }
+    [self.lock unlock];
+
     return _responseObject;
 }
 

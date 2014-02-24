@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EE44029F9230C0CE73802C8 /* XBBundleObjectDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4412AB9AECA3C742E2C96 /* XBBundleObjectDataSourceTest.m */; };
 		2EE4457803A157E08212C108 /* XBReloadableArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44407B82824CD95E6A125 /* XBReloadableArrayDataSource.m */; };
 		2EE446E8A83EB17AC1FBF6C4 /* XBJsonToObjectDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44C80B7F48D514C648CD3 /* XBJsonToObjectDataMapper.m */; };
 		2EE4471006EB87E3CF61BC15 /* XBReloadableObjectDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44777CC51AAA7A58B0DC9 /* XBReloadableObjectDataSource.m */; };
@@ -131,6 +132,7 @@
 		2EE4402DAE9B967CCABAC7C9 /* XBReloadableArrayDataSource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBReloadableArrayDataSource+Protected.h"; sourceTree = "<group>"; };
 		2EE440ACABAF83FFFB8FF85F /* WPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPPost.m; sourceTree = "<group>"; };
 		2EE440CF012183F26BD6E128 /* XBReloadableObjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBReloadableObjectDataSource.h; sourceTree = "<group>"; };
+		2EE4412AB9AECA3C742E2C96 /* XBBundleObjectDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleObjectDataSourceTest.m; sourceTree = "<group>"; };
 		2EE44137C386C88B43A22C99 /* XBObjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBObjectDataSource.m; sourceTree = "<group>"; };
 		2EE441EA74025CB94C0ABAE1 /* XBInfiniteArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBInfiniteArrayDataSource.m; sourceTree = "<group>"; };
 		2EE4433F618D9A124F4DCADF /* XBInfiniteArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBInfiniteArrayDataSource.h; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 			isa = PBXGroup;
 			children = (
 				542085721707554500290AEF /* XBBundleArrayDataSourceTest.m */,
+				2EE4412AB9AECA3C742E2C96 /* XBBundleObjectDataSourceTest.m */,
 			);
 			path = Bundle;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				2EE446E8A83EB17AC1FBF6C4 /* XBJsonToObjectDataMapper.m in Sources */,
 				2EE44D5916BD39CCEF3139AA /* XBArrayDataSourcePagerTest.m in Sources */,
 				DB34DDAF5AA5AC997E3674A8 /* XBLogger.m in Sources */,
+				2EE44029F9230C0CE73802C8 /* XBBundleObjectDataSourceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

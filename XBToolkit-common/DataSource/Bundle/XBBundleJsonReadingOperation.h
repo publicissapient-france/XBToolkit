@@ -9,11 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "XBToolkitOperation.h"
 
+@class XBJsonToObjectDataMapper;
+@protocol AFURLResponseSerialization;
+@protocol XBDataMapper;
+@class AFJSONResponseSerializer;
+
 @interface XBBundleJsonReadingOperation : NSOperation<XBToolkitOperation>
 
 + (instancetype)operationWithBundle:(NSBundle *)bundle resourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
 
-@property (nonatomic, assign) NSJSONReadingOptions readingOptions;
+@property (nonatomic, assign) NSDataReadingOptions dataReadingOptions;
+@property (nonatomic, assign) NSJSONReadingOptions jsonReadingOptions;
+@property (nonatomic, strong) AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *dataMapper;
 
 - (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success
                               failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure;
