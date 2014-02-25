@@ -24,6 +24,16 @@
 
 @end
 
+static dispatch_group_t bundle_json_reading_operation_completion_group() {
+    static dispatch_group_t xb_bundle_json_reading_operation_completion_group;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        xb_bundle_json_reading_operation_completion_group = dispatch_group_create();
+    });
+
+    return xb_bundle_json_reading_operation_completion_group;
+}
+
 @implementation XBBundleJsonReadingOperation
 
 + (instancetype)operationWithBundle:(NSBundle *)bundle resourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
@@ -36,12 +46,24 @@
     [self.lock lock];
     __weak XBBundleJsonReadingOperation *weakSelf = self;
     self.completionBlock = ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
+
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+        dispatch_group_t group = bundle_json_reading_operation_completion_group();
+        dispatch_queue_t queue = dispatch_get_main_queue();
+#pragma clang diagnostic pop
+
+        dispatch_group_async(group, queue, ^{
             if (weakSelf.error) {
                 failure(weakSelf, weakSelf.error);
             } else {
                 success(weakSelf);
             }
+        });
+
+        dispatch_group_notify(group, queue, ^{
+            [strongSelf setCompletionBlock:nil];
         });
     };
     [self.lock unlock];
