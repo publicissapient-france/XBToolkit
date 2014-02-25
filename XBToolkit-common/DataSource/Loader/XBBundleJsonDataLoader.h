@@ -7,15 +7,23 @@
 
 #import <Foundation/Foundation.h>
 #import "XBDataLoader.h"
-#import "XBHttpClient.h"
 #import "XBHttpRequestDataBuilder.h"
 
-#warning Should create class for mapping data as well
+@class XBJsonToObjectDataMapper;
+@class AFJSONResponseSerializer;
+
+@protocol AFURLResponseSerialization;
+@protocol XBDataMapper;
+
 @interface XBBundleJsonDataLoader : NSObject<XBDataLoader>
 
-- (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
+- (instancetype)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
+
+- (instancetype)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType dataMapper:(AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *)dataMapper;
 
 + (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
+
++ (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType dataMapper:(AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *)dataMapper;
 
 @property (nonatomic, assign) NSJSONReadingOptions readingOptions;
 

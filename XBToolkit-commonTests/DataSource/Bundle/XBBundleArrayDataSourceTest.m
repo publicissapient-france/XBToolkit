@@ -21,8 +21,8 @@
 {
     [self prepare];
 
-    XBBundleJsonDataLoader *dataLoader = [XBBundleJsonDataLoader dataLoaderWithResourcePath:@"wp-author-index" resourceType:@"json"];
     XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+    XBBundleJsonDataLoader *dataLoader = [XBBundleJsonDataLoader dataLoaderWithResourcePath:@"wp-author-index" resourceType:@"json" dataMapper:dataMapper];
     XBReloadableArrayDataSource *bundleDS = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader];
 
     [bundleDS loadData:^(id operation) {
@@ -34,6 +34,12 @@
 
     GHAssertNil(bundleDS.error, [NSString stringWithFormat:@"Error[code: '%ld', domain: '%@'", (long)bundleDS.error.code, bundleDS.error.domain]);
     GHAssertTrue(bundleDS.count > 0, @"Response should not be nil");
+
+    WPAuthor *author0 = bundleDS[0];
+    GHAssertEqualStrings(author0.slug, @"ealliaume", nil);
+    
+    WPAuthor *author1 = bundleDS[1];
+    GHAssertEqualStrings(author1.slug, @"yamsellem", nil);
 }
 
 @end
