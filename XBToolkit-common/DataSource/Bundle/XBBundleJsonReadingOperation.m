@@ -33,14 +33,18 @@
 
 - (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure
 {
+    [self.lock lock];
     __weak XBBundleJsonReadingOperation *weakSelf = self;
     self.completionBlock = ^{
-        if (weakSelf.error) {
-            failure(weakSelf, weakSelf.error);
-        } else {
-            success(weakSelf);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (weakSelf.error) {
+                failure(weakSelf, weakSelf.error);
+            } else {
+                success(weakSelf);
+            }
+        });
     };
+    [self.lock unlock];
 }
 
 - (id)initWithBundle:(NSBundle *)bundle resourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
