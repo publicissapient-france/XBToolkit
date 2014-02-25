@@ -53,7 +53,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
 - (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
     [self.dataPager resetPageIncrement];
-    [self fetchDataFromSourceAndMerge:completion];
+    [self fetchDataFromSource:completion];
 }
 
 - (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion
@@ -68,14 +68,19 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
     }
 }
 
-- (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion
+- (void)fetchDataFromSource:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
-        [self processSuccessForResponseObject:jsonFetched callback:^{
-            if (completion) {
-                completion(operation);
-            }
-        }];
+        dispatch_async(reloadable_datasource_merging_queue(), ^{
+            id mergedObjects = jsonFetched;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [super processSuccessForResponseObject:mergedObjects completion:^{
+                    if (completion) {
+                        completion(operation);
+                    }
+                }];
+            });
+        });
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         XBLogWarn(@"Error: %@", error);
         self.error = error;
@@ -85,18 +90,27 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
     }];
 }
 
-- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
+- (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
-    dispatch_async(reloadable_datasource_merging_queue(), ^{
-        id mergedObjects = self.dataMerger ? [self mergeObjects:responseObject] : responseObject;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [super processSuccessForResponseObject:mergedObjects completion:^{
-                if (callback) {
-                    callback();
-                }
-            }];
+    [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
+        dispatch_async(reloadable_datasource_merging_queue(), ^{
+            id mergedObjects = self.dataMerger ? [self mergeObjects:jsonFetched] : jsonFetched;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [super processSuccessForResponseObject:mergedObjects completion:^{
+                    if (completion) {
+                        completion(operation);
+                    }
+                }];
+            });
         });
-    });
+
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
+        XBLogWarn(@"Error: %@", error);
+        self.error = error;
+        if (completion) {
+            completion(operation);
+        }
+    }];
 }
 
 - (id)mergeObjects:(id)responseObject
