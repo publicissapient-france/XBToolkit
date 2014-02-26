@@ -55,7 +55,7 @@
         if (success) {
             success(operation, responseObject);
         }
-    }                               failure:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
         if (failure) {
             failure(operation, responseObject, error);
         }
