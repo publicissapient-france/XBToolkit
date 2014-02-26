@@ -6,11 +6,14 @@
 
 
 #import "XBCompositeArrayDataSource.h"
-#import "XBCompositeArrayDataSource+Protected.h"
-#import "XBArrayDataSource.h"
 #import "XBArrayDataSource+Protected.h"
-#import "XBReloadableArrayDataSource.h"
-#import "XBReloadableArrayDataSource+Protected.h"
+
+@interface XBCompositeArrayDataSource ()
+
+@property(nonatomic, strong) XBReloadableArrayDataSource * firstDataSource;
+@property(nonatomic, strong) XBReloadableArrayDataSource * secondDataSource;
+
+@end
 
 @implementation XBCompositeArrayDataSource
 

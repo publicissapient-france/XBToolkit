@@ -43,8 +43,6 @@
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
 
-
-
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:kNetworkTimeout];
 
     GHAssertNil(responseError, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long)responseError.code, responseError.domain]);
