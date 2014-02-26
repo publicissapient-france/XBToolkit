@@ -8,10 +8,18 @@
 
 @class XBReloadableArrayDataSource;
 
+typedef NSArray *(^XBArrayBridgeDataLoaderTransformationBlock)(XBReloadableArrayDataSource *dataSource);
 
 @interface XBArrayBridgeDataLoader : NSObject<XBDataLoader>
 
+@property (nonatomic, copy) XBArrayBridgeDataLoaderTransformationBlock transformationBlock;
+
 - (instancetype)initWithDataSource:(XBReloadableArrayDataSource *)dataSource;
+
+- (instancetype)initWithDataSource:(XBReloadableArrayDataSource *)dataSource transformationBlock:(XBArrayBridgeDataLoaderTransformationBlock)transformationBlock;
+
 + (instancetype)dataLoaderWithDataSource:(XBReloadableArrayDataSource *)dataSource;
+
++ (instancetype)dataLoaderWithDataSource:(XBReloadableArrayDataSource *)dataSource transformationBlock:(XBArrayBridgeDataLoaderTransformationBlock)transformationBlock;
 
 @end
