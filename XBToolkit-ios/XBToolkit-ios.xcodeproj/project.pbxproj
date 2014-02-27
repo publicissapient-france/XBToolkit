@@ -23,6 +23,8 @@
 		2EE44FC7E0BB507B89EC0DB5 /* XBArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE44F8C56F6A1CA0068C65F /* XBArrayDataSource.m */; };
 		423F739D1757797A0023783F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423F739B175779710023783F /* QuartzCore.framework */; };
 		423F739F1757AE510023783F /* wp-post.json in Resources */ = {isa = PBXBuildFile; fileRef = 423F739E1757AE510023783F /* wp-post.json */; };
+		42E8363C18BF98F400FEDF17 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8363B18BF98F400FEDF17 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E8363D18BF98F400FEDF17 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8363B18BF98F400FEDF17 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		540956A41707C2DE00B006B0 /* WPAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 540956A31707C2DE00B006B0 /* WPAuthor.m */; };
 		540956A81707C39C00B006B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540956A71707C39C00B006B0 /* SystemConfiguration.framework */; };
 		540956AA1707C3CD00B006B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540956A91707C3CD00B006B0 /* MobileCoreServices.framework */; };
@@ -144,6 +146,8 @@
 		3FFB9FEC204A413CBEA44721 /* Pods-XBToolkit-iosTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.xcconfig"; path = "Pods/Pods-XBToolkit-iosTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		423F739B175779710023783F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		423F739E1757AE510023783F /* wp-post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wp-post.json"; path = "Resources/Data/wp-post.json"; sourceTree = "<group>"; };
+		42E8363A18BF98F400FEDF17 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		42E8363B18BF98F400FEDF17 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		540956A21707C2DE00B006B0 /* WPAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAuthor.h; sourceTree = "<group>"; };
 		540956A31707C2DE00B006B0 /* WPAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAuthor.m; sourceTree = "<group>"; };
 		540956A71707C39C00B006B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -301,6 +305,16 @@
 				2EE441EA74025CB94C0ABAE1 /* XBInfiniteScrollArrayDataSource.m */,
 			);
 			path = Array;
+			sourceTree = "<group>";
+		};
+		42E8363918BF98F400FEDF17 /* GCJSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				42E8363A18BF98F400FEDF17 /* JSONKit.h */,
+				42E8363B18BF98F400FEDF17 /* JSONKit.m */,
+			);
+			name = GCJSONKit;
+			path = ../Frameworks/GCJSONKit;
 			sourceTree = "<group>";
 		};
 		540956A01707C2DE00B006B0 /* Model */ = {
@@ -572,6 +586,7 @@
 		542082DE17074C9B00290AEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42E8363918BF98F400FEDF17 /* GCJSONKit */,
 				423F739B175779710023783F /* QuartzCore.framework */,
 				540956A91707C3CD00B006B0 /* MobileCoreServices.framework */,
 				540956A71707C39C00B006B0 /* SystemConfiguration.framework */,
@@ -823,6 +838,7 @@
 				5409571D1710A85F00B006B0 /* XBBasicHttpQueryParamBuilder.m in Sources */,
 				5409571F1710A85F00B006B0 /* XBDataPagerHttpQueryDataBuilder.m in Sources */,
 				540957211710A85F00B006B0 /* XBBundleJsonDataLoader.m in Sources */,
+				42E8363C18BF98F400FEDF17 /* JSONKit.m in Sources */,
 				540957231710A85F00B006B0 /* XBCacheableDataLoader.m in Sources */,
 				540957251710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m in Sources */,
 				540957271710A85F00B006B0 /* XBHttpJsonDataLoader.m in Sources */,
@@ -851,6 +867,7 @@
 				54C534971707BCA5001DB282 /* XBPagedCompositeArrayDataSourceTest.m in Sources */,
 				54C534981707BCA8001DB282 /* XBHttpArrayDataSourceTest.m in Sources */,
 				540957081710A85F00B006B0 /* XBCache.m in Sources */,
+				42E8363D18BF98F400FEDF17 /* JSONKit.m in Sources */,
 				5409570A1710A85F00B006B0 /* XBCacheElement.m in Sources */,
 				5409570C1710A85F00B006B0 /* XBFileSystemCacheSupport.m in Sources */,
 				5409570E1710A85F00B006B0 /* DCParserConfiguration+XBAdditions.m in Sources */,

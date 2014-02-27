@@ -1,6 +1,5 @@
 platform :ios, 						'5.0'
 xcodeproj 'XBToolkit-ios'
-pod 'JSONKit',      		 		'1.5pre'
 pod 'Underscore.m',					'0.2.0'
 pod 'AFNetworking',					'1.1'
 pod 'DCKeyValueObjectMapping', 		'1.4'

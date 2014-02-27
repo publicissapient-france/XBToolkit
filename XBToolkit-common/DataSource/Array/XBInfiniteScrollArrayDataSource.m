@@ -5,7 +5,7 @@
 //
 
 
-#import <JSONKit/JSONKit.h>
+#import "JSONKit.h"
 #import "XBInfiniteScrollArrayDataSource.h"
 #import "XBInfiniteScrollArrayDataSource+protected.h"
 #import "XBReloadableArrayDataSource+protected.h"

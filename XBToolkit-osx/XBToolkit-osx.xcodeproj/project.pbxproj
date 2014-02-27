@@ -34,6 +34,9 @@
 		423F73CC1757B88C0023783F /* XBJsonToObjectDataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 423F73C91757B88C0023783F /* XBJsonToObjectDataMapper.m */; };
 		423F73CD1757B88C0023783F /* XBJsonToObjectDataMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 423F73CA1757B88C0023783F /* XBJsonToObjectDataMapper.h */; };
 		423F73CF1757B9C60023783F /* wp-post.json in Resources */ = {isa = PBXBuildFile; fileRef = 423F73CE1757B9C60023783F /* wp-post.json */; };
+		42E8364118BF99E700FEDF17 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8363F18BF99E700FEDF17 /* JSONKit.h */; };
+		42E8364218BF99E700FEDF17 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8364018BF99E700FEDF17 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E8364318BF99E700FEDF17 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8364018BF99E700FEDF17 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5409578B1710A87F00B006B0 /* XBCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5409573D1710A87F00B006B0 /* XBCache.h */; };
 		5409578C1710A87F00B006B0 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409573E1710A87F00B006B0 /* XBCache.m */; };
 		5409578D1710A87F00B006B0 /* XBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5409573E1710A87F00B006B0 /* XBCache.m */; };
@@ -183,6 +186,8 @@
 		423F73C91757B88C0023783F /* XBJsonToObjectDataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBJsonToObjectDataMapper.m; sourceTree = "<group>"; };
 		423F73CA1757B88C0023783F /* XBJsonToObjectDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToObjectDataMapper.h; sourceTree = "<group>"; };
 		423F73CE1757B9C60023783F /* wp-post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "wp-post.json"; sourceTree = "<group>"; };
+		42E8363F18BF99E700FEDF17 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		42E8364018BF99E700FEDF17 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		5409573D1710A87F00B006B0 /* XBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCache.h; sourceTree = "<group>"; };
 		5409573E1710A87F00B006B0 /* XBCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBCache.m; sourceTree = "<group>"; };
 		5409573F1710A87F00B006B0 /* XBCacheElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheElement.h; sourceTree = "<group>"; };
@@ -345,6 +350,16 @@
 				423F73AF1757B7280023783F /* XBReloadableObjectDataSource.m */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		42E8363E18BF99E700FEDF17 /* GCJSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				42E8363F18BF99E700FEDF17 /* JSONKit.h */,
+				42E8364018BF99E700FEDF17 /* JSONKit.m */,
+			);
+			name = GCJSONKit;
+			path = ../Frameworks/GCJSONKit;
 			sourceTree = "<group>";
 		};
 		5409573B1710A87E00B006B0 /* XBToolkit-common */ = {
@@ -562,6 +577,7 @@
 		5420831317074CCC00290AEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42E8363E18BF99E700FEDF17 /* GCJSONKit */,
 				54C5343117079744001DB282 /* SystemConfiguration.framework */,
 				5420831417074CCC00290AEF /* Cocoa.framework */,
 				5420831617074CCC00290AEF /* Other Frameworks */,
@@ -777,6 +793,7 @@
 				540957A41710A87F00B006B0 /* NSURL+XBAdditions.h in Headers */,
 				540957A71710A87F00B006B0 /* XBCompositeArrayDataSource+protected.h in Headers */,
 				540957A81710A87F00B006B0 /* XBCompositeArrayDataSource.h in Headers */,
+				42E8364118BF99E700FEDF17 /* JSONKit.h in Headers */,
 				540957AB1710A87F00B006B0 /* XBPagedCompositeArrayDataSource.h in Headers */,
 				540957AE1710A87F00B006B0 /* XBBasicHttpQueryParamBuilder.h in Headers */,
 				540957B11710A87F00B006B0 /* XBHttpQueryParamBuilder.h in Headers */,
@@ -985,6 +1002,7 @@
 				423F73BE1757B7280023783F /* XBObjectDataSource.m in Sources */,
 				423F73C11757B7280023783F /* XBReloadableObjectDataSource.m in Sources */,
 				423F73CB1757B88C0023783F /* XBJsonToObjectDataMapper.m in Sources */,
+				42E8364218BF99E700FEDF17 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,6 +1016,7 @@
 				54C5341817079460001DB282 /* WPAuthor.m in Sources */,
 				DB34D2FB071FDDEEF44CF10E /* XBHttpArrayDataSourceTest.m in Sources */,
 				DB34D0CEAB99A3AD8E7F7697 /* XBJsonToArrayDataMapperTest.m in Sources */,
+				42E8364318BF99E700FEDF17 /* JSONKit.m in Sources */,
 				DB34D0D36F70F4E1E8821518 /* XBArrayDataSourceTest.m in Sources */,
 				DB34D43B3203D16B05182880 /* XBTestUtils.m in Sources */,
 				DB34D8A11F8195A86232C5F1 /* XBHttpJsonDataLoaderTest.m in Sources */,
