@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   non_arc_files = 'Frameworks/GCJSONKit/*.{m}'
+  s.ios.exclude_files = non_arc_files
+  s.osx.exclude_files = non_arc_files
 
   s.subspec 'no-arc' do |sna|
     sna.requires_arc = false
