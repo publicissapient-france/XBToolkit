@@ -16,6 +16,15 @@ Pod::Spec.new do |s|
   s.osx.source_files = 'XBToolkit-osx/XBToolkit-osx/**/*.{h,m}', 'Frameworks/GCJSONKit/*.{h,m}'
 
   s.requires_arc = true
+  non_arc_files = 'Frameworks/GCJSONKit/*.{m}'
+
+  s.subspec 'no-arc' do |sna|
+    sna.requires_arc = false
+    sna.ios.source_files = non_arc_files
+    sna.osx.source_files = non_arc_files
+  end
+
+  s.requires_arc = true
 
   s.dependency 'Underscore.m',      '0.2.0'
   s.dependency 'DCKeyValueObjectMapping', '1.4'
