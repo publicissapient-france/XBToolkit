@@ -10,6 +10,7 @@
 #import "XBCacheKeyBuilder.h"
 #import "XBHttpDataLoader.h"
 #import <AFNetworking/AFNetworkReachabilityManager.h>
+#import "XBLogging.h"
 
 @interface XBCacheableDataLoader()
 
