@@ -2,7 +2,7 @@ platform :ios, 						'6.0'
 
 xcodeproj 'XBToolkit-ios'
 pod 'Underscore.m',					'0.2.1'
-pod 'AFNetworking', 				'~> 2.0.3'
+pod 'AFNetworking', 				'2.0.3'
 pod 'Mantle'
 
 target 'XBToolkit-iosTests', :exclusive => true do

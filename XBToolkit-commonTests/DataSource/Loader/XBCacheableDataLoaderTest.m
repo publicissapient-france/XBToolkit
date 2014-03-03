@@ -23,9 +23,6 @@
 - (void)testFetchDataResult
 {
     [self prepare];
-
-    // Test to refactor ??
-    GHAssertFalse(true, nil);
     
     id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 

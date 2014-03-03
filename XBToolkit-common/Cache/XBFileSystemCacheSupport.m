@@ -26,11 +26,13 @@
     return self;
 }
 
-+ (id)cacheSupportWithFilename:(NSString *)filename {
++ (id)cacheSupportWithFilename:(NSString *)filename
+{
     return [[self alloc] initWithFilename:filename];
 }
 
--(void)setForKey:(NSString *)key value:(NSString *)value ttl:(NSTimeInterval)expiration error:(NSError **)error {
+-(void)setForKey:(NSString *)key value:(NSString *)value ttl:(NSTimeInterval)expiration error:(NSError **)error
+{
     XBLogInfo(@"Set cache data for key: %@", key);
     XBCacheElement *element = [XBCacheElement elementWithKey:key value:value ttl:expiration];
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
@@ -38,26 +40,33 @@
     [self saveCacheData:cacheData];
 }
 
-- (id)getForKey:(NSString *)key error:(NSError **)error {
+- (id)getForKey:(NSString *)key error:(NSError **)error forceIfExpired:(BOOL)force
+{
     XBLogInfo(@"Get cache data for key: %@", key);
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
     XBCacheElement *element = (XBCacheElement *)[cacheData objectForKey:key];
+    if ([element hasExpired] && !force) {
+        return nil;
+    }
     return element.value;
 }
 
-- (void)clearForKey:(NSString *)key error:(NSError **)error {
+- (void)clearForKey:(NSString *)key error:(NSError **)error
+{
     XBLogInfo(@"Clear cache data for key: %@", key);
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
     [cacheData removeObjectForKey:key];
     [self saveCacheData:cacheData];
 }
 
-- (void)clearAllWithError:(NSError **)error {
+- (void)clearAllWithError:(NSError **)error
+{
     NSURL *url = [NSURL fileURLWithPath:[self cacheFilePath]];
     [[NSFileManager defaultManager] removeItemAtURL:url error:error];
 }
 
-- (NSMutableDictionary *)cacheDataWithError:(NSError **)error {
+- (NSMutableDictionary *)cacheDataWithError:(NSError **)error
+{
     NSURL *fileURL = [NSURL fileURLWithPath:[self cacheFilePath]];
     NSData *data = [NSData dataWithContentsOfURL:fileURL options:NSDataReadingMappedIfSafe error:error];
 
@@ -69,13 +78,15 @@
     return cacheDictionary;
 }
 
-- (BOOL)saveCacheData:(NSMutableDictionary *)cacheData {
+- (BOOL)saveCacheData:(NSMutableDictionary *)cacheData
+{
     NSURL *fileURL = [NSURL fileURLWithPath:[self cacheFilePath]];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:cacheData];
     return [data writeToURL:fileURL atomically:YES];
 }
 
-- (NSString *)cacheFilePath {
+- (NSString *)cacheFilePath
+{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *cacheDir = [paths lastObject];
     return [cacheDir stringByAppendingPathComponent:self.filename];

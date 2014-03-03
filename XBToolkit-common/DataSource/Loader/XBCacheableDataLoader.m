@@ -8,7 +8,8 @@
 #import "XBCacheableDataLoader.h"
 #import "XBCache.h"
 #import "XBCacheKeyBuilder.h"
-#import "XBLogging.h"
+#import "XBHttpDataLoader.h"
+#import <AFNetworking/AFNetworkReachabilityManager.h>
 
 @interface XBCacheableDataLoader()
 
@@ -46,27 +47,50 @@
 
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
-    NSDictionary *data = [self fetchDataFromCacheWithError:nil];
-
-    if (data) {
-        success(nil, data);
+    BOOL canLoadFromNetwork = NO;
+    if ([self.dataLoader conformsToProtocol:@protocol(XBHttpDataLoader)]) {
+        canLoadFromNetwork = [[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] != AFNetworkReachabilityStatusNotReachable;
     }
-    else {
-        [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id loadedData) {
+
+    NSDictionary *cachedData = [self fetchDataFromCacheWithError:nil forceIfExpired:NO];
+    if (!cachedData && canLoadFromNetwork) {
+        [self.dataLoader loadDataWithSuccess:^(id operation, id loadedData) {
             NSError *error = nil;
             [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
-            success(nil, loadedData);
+            success(operation, loadedData);
+
         } failure:^(id operation, id responseObject, NSError *error) {
+            [self forceLoadDataFromCacheWithSuccess:success failure:failure httpError:error];
             failure(operation, responseObject, error);
         }];
+    } else {
+        if (cachedData) {
+            #warning replace nil with sth more meaningful
+            success(nil, cachedData);
+            return;
+        }
+        [self forceLoadDataFromCacheWithSuccess:success failure:failure httpError:nil];
     }
 }
 
-- (NSDictionary *)fetchDataFromCacheWithError:(NSError **)error
+- (void)forceLoadDataFromCacheWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure httpError:(NSError *)httpError
+{
+    NSError *error;
+    NSDictionary *cachedData = [self fetchDataFromCacheWithError:&error forceIfExpired:YES];
+    if (cachedData) {
+#warning replace nil with sth more meaningful
+        success(nil, cachedData);
+    } else {
+#warning replace nil with sth more meaningful
+        failure(nil, cachedData, httpError ? httpError : error);
+    }
+}
+
+- (NSDictionary *)fetchDataFromCacheWithError:(NSError **)error forceIfExpired:(BOOL)force
 {
     if (self.cache) {
         @try {
-            return [self.cache getForKey:self.cacheKey error:error];
+            return [self.cache getForKey:self.cacheKey error:error forceIfExpired:force];
         }
         @catch ( NSException *e ) {
             XBLogError( @"%@: %@", e.name, e.reason);

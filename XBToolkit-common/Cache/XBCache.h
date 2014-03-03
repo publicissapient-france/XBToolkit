@@ -14,9 +14,9 @@
 
 + (id)cacheWithCacheSupport:(NSObject <XBCacheSupport> *)cacheSupport;
 
--(void)setForKey:(NSString *)key value:(NSString *)value error:(NSError**)error;
--(void)setForKey:(NSString *)key value:(NSString *)value ttl:(NSTimeInterval)ttl error:(NSError**)error;
--(id)getForKey:(NSString *)key error:(NSError**)error;
+- (void)setForKey:(NSString *)key value:(NSString *)value error:(NSError**)error;
+- (void)setForKey:(NSString *)key value:(NSString *)value ttl:(NSTimeInterval)ttl error:(NSError**)error;
+- (id)getForKey:(NSString *)key error:(NSError **)error forceIfExpired:(BOOL)force;
 - (void)clearForKey:(NSString *)key error:(NSError**)error;
 - (void)clearAllWithError:(NSError **)error;
 
