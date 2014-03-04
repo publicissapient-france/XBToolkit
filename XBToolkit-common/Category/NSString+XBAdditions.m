@@ -11,7 +11,7 @@
 @implementation NSString (XBAdditions)
 
 - (BOOL)insensitiveContainsString:(NSString *)subString {
-    return [[self uppercaseString] rangeOfString:[subString uppercaseString]].location != NSNotFound;
+    return !subString || [[self uppercaseString] rangeOfString:[subString uppercaseString]].location != NSNotFound;
 }
 
 -(NSURL *) url {
