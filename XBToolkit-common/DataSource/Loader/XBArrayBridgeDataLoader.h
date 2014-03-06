@@ -7,8 +7,9 @@
 #import "XBDataLoader.h"
 
 @class XBReloadableArrayDataSource;
+@class XBArrayDataSource;
 
-typedef NSArray *(^XBArrayBridgeDataLoaderTransformationBlock)(XBReloadableArrayDataSource *dataSource);
+typedef NSArray *(^XBArrayBridgeDataLoaderTransformationBlock)(XBArrayDataSource *dataSource);
 
 @interface XBArrayBridgeDataLoader : NSObject<XBDataLoader>
 

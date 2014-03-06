@@ -88,7 +88,8 @@ static dispatch_group_t bundle_json_reading_operation_completion_group() {
     self.error = error;
 }
 
-- (id)responseObject {
+- (id)responseObject
+{
     
     if (!self.dataMapper) {
         if (!_responseObject) {

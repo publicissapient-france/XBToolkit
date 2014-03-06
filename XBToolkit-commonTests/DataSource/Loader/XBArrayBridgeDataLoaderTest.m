@@ -61,7 +61,7 @@
     XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:dataMapper];
     XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader];
 
-    XBArrayBridgeDataLoader *bridgeDataLoader = [XBArrayBridgeDataLoader dataLoaderWithDataSource:dataSource transformationBlock:^NSArray *(XBReloadableArrayDataSource *innerDataSource) {
+    XBArrayBridgeDataLoader *bridgeDataLoader = [XBArrayBridgeDataLoader dataLoaderWithDataSource:dataSource transformationBlock:^NSArray *(XBArrayDataSource *innerDataSource) {
         NSMutableArray *result = [NSMutableArray array];
         for (int i = 0; i < innerDataSource.count; i++) {
             if ([[innerDataSource[i] name] isEqualToString:@"Simone Civetta"]) {

@@ -5,6 +5,8 @@
 
 #import "XBArrayBridgeDataLoader.h"
 #import "XBReloadableArrayDataSource.h"
+#import "XBArrayDataSource.h"
+#import "XBArrayTransformationOperation.h"
 
 @interface XBArrayBridgeDataLoader ()
 
@@ -49,14 +51,22 @@
 {
     if (self.dataSource.error) {
         failure(nil, self.dataSource.array, self.dataSource.error);
-    } else {
-        if (self.transformationBlock) {
-            __weak XBArrayBridgeDataLoader *weakSelf = self;
-            success(nil, self.transformationBlock(weakSelf.dataSource));
-        } else {
-            success(nil, self.dataSource.array);
-        }
+        return;
     }
+
+    if (!self.transformationBlock) {
+        success(nil, self.dataSource.array);
+        return;
+    }
+
+    XBArrayTransformationOperation *operation = [XBArrayTransformationOperation operationWithTransformationBlock:self.transformationBlock forDataSource:self.dataSource];
+
+    [operation setCompletionBlockWithSuccess:^(XBArrayTransformationOperation *transformationOperation) {
+        success(transformationOperation, transformationOperation.responseObject);
+    } failure:^(XBArrayTransformationOperation *transformationOperation, NSError *error) {
+        failure(transformationOperation, transformationOperation.responseObject, error);
+    }];
+    [operation start];
 }
 
 @end
