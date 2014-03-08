@@ -62,7 +62,7 @@ static dispatch_queue_t reloadable_datasource_filtering_queue() {
         if (completion) {
             completion(operation);
         }
-    }];
+    } queue: queue];
 }
 
 - (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion queue:(dispatch_queue_t)queue

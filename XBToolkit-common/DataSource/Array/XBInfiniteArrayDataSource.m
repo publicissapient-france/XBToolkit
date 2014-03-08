@@ -97,7 +97,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
         if (completion) {
             completion(operation);
         }
-    }];
+    } queue:queue];
 }
 
 - (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
@@ -120,7 +120,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
         if (completion) {
             completion(operation);
         }
-    }];
+    } queue:queue];
 }
 
 - (id)mergeObjects:(id)responseObject
