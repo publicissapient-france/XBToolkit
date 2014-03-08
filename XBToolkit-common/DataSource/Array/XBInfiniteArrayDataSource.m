@@ -88,7 +88,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
                     if (completion) {
                         completion(operation);
                     }
-                }];
+                } queue:queue];
             });
         });
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
@@ -110,7 +110,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
                     if (completion) {
                         completion(operation);
                     }
-                }];
+                } queue:queue];
             });
         });
 

@@ -64,8 +64,14 @@
 
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
+    [self loadDataWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue
+{
     NSString *method = self.httpMethod ? self.httpMethod : @"GET";
     [self loadDataWithHttpMethod:method withSuccess:success failure:failure];
 }
+
 
 @end
