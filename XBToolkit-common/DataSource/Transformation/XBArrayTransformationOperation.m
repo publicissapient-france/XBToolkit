@@ -42,6 +42,11 @@ static dispatch_group_t array_transformation_operation_completion_group() {
 
 - (void)setCompletionBlockWithSuccess:(void (^)(XBArrayTransformationOperation *operation))success failure:(void (^)(XBArrayTransformationOperation *operation, NSError *error))failure
 {
+    [self setCompletionBlockWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)setCompletionBlockWithSuccess:(void (^)(XBArrayTransformationOperation *operation))success failure:(void (^)(XBArrayTransformationOperation *operation, NSError *error))failure queue:(dispatch_queue_t)queue
+{
     [self.lock lock];
     __weak XBArrayTransformationOperation *weakSelf = self;
     self.completionBlock = ^{
@@ -50,7 +55,6 @@ static dispatch_group_t array_transformation_operation_completion_group() {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
         dispatch_group_t group = array_transformation_operation_completion_group();
-        dispatch_queue_t queue = dispatch_get_main_queue();
 #pragma clang diagnostic pop
 
         dispatch_group_async(group, queue, ^{
@@ -63,6 +67,7 @@ static dispatch_group_t array_transformation_operation_completion_group() {
     };
     [self.lock unlock];
 }
+
 
 - (id)initWithTransformationBlock:(XBArrayBridgeDataLoaderTransformationBlock)transformationBlock forDataSource:(XBArrayDataSource *)dataSource
 {

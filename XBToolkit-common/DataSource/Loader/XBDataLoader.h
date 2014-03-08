@@ -18,6 +18,7 @@ typedef void (^XBDataLoaderFailureBlock)(id operation, id responseObject, NSErro
 
 @required
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure;
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue;
 
 @optional
 - (id <XBDataMapper>)dataMapper;
