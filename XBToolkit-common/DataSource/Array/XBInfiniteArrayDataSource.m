@@ -52,15 +52,25 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
 
 - (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
+    [self loadData:completion queue:dispatch_get_main_queue()];
+}
+
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
+{
     [self.dataPager resetPageIncrement];
-    [self fetchDataFromSource:completion];
+    [self fetchDataFromSource:completion queue:queue];
 }
 
 - (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
+    [self loadMoreData:completion queue:dispatch_get_main_queue()];
+}
+
+- (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
+{
     if ([self hasMoreData]) {
         [self.dataPager incrementPage];
-        [self fetchDataFromSourceAndMerge:completion];
+        [self fetchDataFromSourceAndMerge:completion queue:queue];
     } else {
         if (completion) {
             completion(nil);
@@ -68,12 +78,12 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
     }
 }
 
-- (void)fetchDataFromSource:(XBReloadableArrayDataSourceCompletionBlock)completion
+- (void)fetchDataFromSource:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
         dispatch_async(reloadable_datasource_merging_queue(), ^{
             id mergedObjects = jsonFetched;
-            dispatch_async(dispatch_get_main_queue(), ^{
+            dispatch_async(queue, ^{
                 [super processSuccessForResponseObject:mergedObjects completion:^{
                     if (completion) {
                         completion(operation);
@@ -90,12 +100,12 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
     }];
 }
 
-- (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion
+- (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
         dispatch_async(reloadable_datasource_merging_queue(), ^{
             id mergedObjects = self.dataMerger ? [self mergeObjects:jsonFetched] : jsonFetched;
-            dispatch_async(dispatch_get_main_queue(), ^{
+            dispatch_async(queue, ^{
                 [super processSuccessForResponseObject:mergedObjects completion:^{
                     if (completion) {
                         completion(operation);
@@ -115,7 +125,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
 
 - (id)mergeObjects:(id)responseObject
 {
-    return [self.dataMerger mergeDataOfSource:responseObject withSource:[self sourceArray]];
+    return [self.dataMerger mergeDataOfSource:responseObject withSource:self.sourceArray];
 }
 
 @end

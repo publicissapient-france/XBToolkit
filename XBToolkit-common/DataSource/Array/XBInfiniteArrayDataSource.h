@@ -20,6 +20,7 @@
 - (id)mergeObjects:(id)responseObject;
 
 - (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion;
+- (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue;
 
 - (BOOL)hasMoreData;
 

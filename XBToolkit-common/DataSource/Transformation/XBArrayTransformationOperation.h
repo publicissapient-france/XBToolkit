@@ -19,7 +19,10 @@
 
 + (instancetype)operationWithTransformationBlock:(XBArrayBridgeDataLoaderTransformationBlock)transformationBlock forDataSource:(XBArrayDataSource *)dataSource;
 
+- (void)setCompletionBlockWithSuccess:(void (^)(XBArrayTransformationOperation *operation))success failure:(void (^)(XBArrayTransformationOperation *operation, NSError *error))failure;
+
 - (void)setCompletionBlockWithSuccess:(void (^)(XBArrayTransformationOperation *operation))success
-                              failure:(void (^)(XBArrayTransformationOperation *operation, NSError *error))failure;
+                              failure:(void (^)(XBArrayTransformationOperation *operation, NSError *error))failure
+                                queue:(dispatch_queue_t)queue;
 
 @end

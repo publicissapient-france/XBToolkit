@@ -23,5 +23,6 @@ typedef void (^XBReloadableArrayDataSourceCompletionBlock)(id operation);
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader;
 
 - (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion;
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue;
 
 @end
