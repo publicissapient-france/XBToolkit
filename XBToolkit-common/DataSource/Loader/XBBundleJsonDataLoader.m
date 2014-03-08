@@ -51,6 +51,11 @@
 
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
+    [self loadDataWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue
+{
     XBBundleJsonReadingOperation *operation = [XBBundleJsonReadingOperation operationWithBundle:[NSBundle mainBundle] resourcePath:self.resourcePath resourceType:self.resourceType];
     operation.dataMapper = self.dataMapper;
 
@@ -59,7 +64,7 @@
         success(readingOperation, readingOperation.responseObject);
     } failure:^(XBBundleJsonReadingOperation *readingOperation, NSError *error) {
         failure(readingOperation, readingOperation.responseObject, error);
-    }];
+    } queue:queue];
     [operation start];
 
 }

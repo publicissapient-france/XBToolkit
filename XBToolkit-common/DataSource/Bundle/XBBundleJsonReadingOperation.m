@@ -41,7 +41,11 @@ static dispatch_group_t bundle_json_reading_operation_completion_group() {
     return [[self alloc] initWithBundle:bundle resourcePath:resourcePath resourceType:resourceType];
 }
 
-- (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure
+- (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure {
+    [self setCompletionBlockWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure queue:(dispatch_queue_t)queue
 {
     [self.lock lock];
     __weak XBBundleJsonReadingOperation *weakSelf = self;
@@ -51,7 +55,6 @@ static dispatch_group_t bundle_json_reading_operation_completion_group() {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
         dispatch_group_t group = bundle_json_reading_operation_completion_group();
-        dispatch_queue_t queue = dispatch_get_main_queue();
 #pragma clang diagnostic pop
 
         dispatch_group_async(group, queue, ^{

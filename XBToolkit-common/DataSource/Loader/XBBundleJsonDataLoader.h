@@ -21,6 +21,8 @@
 
 - (instancetype)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType dataMapper:(AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *)dataMapper;
 
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue;
+
 + (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType;
 
 + (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType dataMapper:(AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *)dataMapper;
