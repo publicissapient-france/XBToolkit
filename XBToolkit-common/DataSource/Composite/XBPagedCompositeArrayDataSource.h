@@ -15,7 +15,7 @@
 
 - (NSUInteger)totalCount;
 
-- (void)loadMoreDataWithCallback:(void (^)())callback;
+- (void)loadMoreDataWithCallback:(XBReloadableArrayDataSourceCompletionBlock)callback;
 
 - (BOOL)hasMoreData;
 

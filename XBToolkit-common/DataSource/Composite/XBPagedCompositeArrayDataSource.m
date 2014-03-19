@@ -40,7 +40,7 @@
     return [self firstDataSource].count;
 }
 
-- (void)loadMoreDataWithCallback:(void (^)())callback
+- (void)loadMoreDataWithCallback:(XBReloadableArrayDataSourceCompletionBlock)callback
 {
     [[self pagedSecondDataSource] loadMoreData:callback];
 }
