@@ -50,6 +50,10 @@
             requestWithMethod:method
                     URLString:urlString
                    parameters:parameters];
+    
+    if (self.timeout) {
+        request.timeoutInterval = [self.timeout floatValue];
+    }
 
     AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request
                                                                                                   success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
