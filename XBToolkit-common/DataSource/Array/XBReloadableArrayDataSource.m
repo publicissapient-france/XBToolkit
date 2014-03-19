@@ -52,6 +52,7 @@ static dispatch_queue_t reloadable_datasource_filtering_queue() {
 - (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
+        self.error = nil;
         [self processSuccessForResponseObject:data completion:^{
             if (completion) {
                 completion(operation);

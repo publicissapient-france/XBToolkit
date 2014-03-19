@@ -81,6 +81,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
 - (void)fetchDataFromSource:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
+        self.error = nil;
         dispatch_async(reloadable_datasource_merging_queue(), ^{
             id mergedObjects = jsonFetched;
             dispatch_async(queue, ^{
@@ -103,6 +104,7 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
 - (void)fetchDataFromSourceAndMerge:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id jsonFetched) {
+        self.error = nil;
         dispatch_async(reloadable_datasource_merging_queue(), ^{
             id mergedObjects = self.dataMerger ? [self mergeObjects:jsonFetched] : jsonFetched;
             dispatch_async(queue, ^{

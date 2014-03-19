@@ -43,6 +43,7 @@
 - (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback queue:(dispatch_queue_t)queue
 {
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
+        self.error = nil;
         [self processSuccessForResponseObject:data callback:^{
             if (callback) {
                 callback(operation);
