@@ -37,7 +37,7 @@
                                                                            cacheKeyBuilder:cacheKeyBuilder
                                                                                 ttl:0];
     
-    __block NSDictionary *responseData;
+    __block NSArray *responseData;
     __block NSError *responseError;
 
     [dataLoader loadDataWithSuccess:^(NSOperation *opration, NSDictionary *data) {
@@ -52,13 +52,7 @@
 
     GHAssertNil(responseError, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long)responseError.code, responseError.domain]);
 
-    NSString *status = responseData[@"status"];
-    NSNumber *count = responseData[@"count"];
-    NSArray *authors = responseData[@"authors"];
-
-    GHAssertEqualStrings(status, @"ok", nil);
-    GHAssertEquals([count intValue], 70, nil);
-    GHAssertEquals(authors.count, [@70 unsignedIntegerValue], nil);
+    GHAssertEquals(responseData.count, [@6 unsignedIntegerValue], nil);
 }
 
 

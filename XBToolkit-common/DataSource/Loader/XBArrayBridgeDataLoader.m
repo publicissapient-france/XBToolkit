@@ -49,6 +49,11 @@
 
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
+    [self loadDataWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue
+{
     if (self.dataSource.error) {
         failure(nil, self.dataSource.array, self.dataSource.error);
         return;
@@ -65,8 +70,9 @@
         success(transformationOperation, transformationOperation.responseObject);
     } failure:^(XBArrayTransformationOperation *transformationOperation, NSError *error) {
         failure(transformationOperation, transformationOperation.responseObject, error);
-    }];
+    } queue:queue];
     [operation start];
 }
+
 
 @end

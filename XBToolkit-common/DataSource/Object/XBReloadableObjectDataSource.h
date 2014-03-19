@@ -23,4 +23,6 @@ typedef void (^XBReloadableObjectDataSourceCompletionBlock)(id operation);
 
 - (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback;
 
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback queue:(dispatch_queue_t)queue;
+
 @end

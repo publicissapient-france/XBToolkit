@@ -22,7 +22,7 @@
 @property (nonatomic, assign) NSJSONReadingOptions jsonReadingOptions;
 @property (nonatomic, strong) AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *dataMapper;
 
-- (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success
-                              failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure;
+- (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure;
+- (void)setCompletionBlockWithSuccess:(void (^)(XBBundleJsonReadingOperation *operation))success failure:(void (^)(XBBundleJsonReadingOperation *operation, NSError *error))failure queue:(dispatch_queue_t)queue;
 
 @end

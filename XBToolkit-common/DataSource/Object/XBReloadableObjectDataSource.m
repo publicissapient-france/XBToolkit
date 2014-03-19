@@ -37,6 +37,11 @@
 
 - (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback
 {
+    [self loadData:callback queue:dispatch_get_main_queue()];
+}
+
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback queue:(dispatch_queue_t)queue
+{
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
         [self processSuccessForResponseObject:data callback:^{
             if (callback) {
@@ -48,7 +53,7 @@
         if (callback) {
             callback(operation);
         }
-    }];
+    } queue:queue];
 }
 
 - (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback

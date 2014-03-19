@@ -46,26 +46,31 @@ static dispatch_queue_t reloadable_datasource_filtering_queue() {
 
 - (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
 {
+    [self loadData:completion queue:dispatch_get_main_queue()];
+}
+
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue
+{
     [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
         [self processSuccessForResponseObject:data completion:^{
             if (completion) {
                 completion(operation);
             }
-        }];
+        } queue: queue];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         self.error = error;
         if (completion) {
             completion(operation);
         }
-    }];
+    } queue: queue];
 }
 
-- (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion
+- (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion queue:(dispatch_queue_t)queue
 {
     self.sourceArray = self.filterOnLoad ? Underscore.filter(responseObject, self.filterOnLoad) : responseObject;
     dispatch_async(reloadable_datasource_filtering_queue(), ^{
         [self filterData];
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(queue, ^{
             if (completion) {
                 completion();
             }

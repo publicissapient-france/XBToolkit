@@ -48,6 +48,11 @@
 
 - (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
+    [self loadDataWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue
+{
     BOOL canLoadFromNetwork = NO;
     if ([self.dataLoader conformsToProtocol:@protocol(XBHttpDataLoader)]) {
         canLoadFromNetwork = [[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] != AFNetworkReachabilityStatusNotReachable;
@@ -66,13 +71,14 @@
         }];
     } else {
         if (cachedData) {
-            #warning replace nil with sth more meaningful
+#warning replace nil with sth more meaningful
             success(nil, cachedData);
             return;
         }
         [self forceLoadDataFromCacheWithSuccess:success failure:failure httpError:nil];
     }
 }
+
 
 - (void)forceLoadDataFromCacheWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure httpError:(NSError *)httpError
 {
