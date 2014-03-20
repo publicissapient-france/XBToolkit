@@ -13,6 +13,8 @@
 
 @interface XBInfiniteArrayDataSource : XBReloadableArrayDataSource
 
+-(id<XBDataPager>)dataPager;
+
 - (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
 
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;

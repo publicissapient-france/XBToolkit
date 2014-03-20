@@ -11,13 +11,13 @@
 
 @property (nonatomic, assign) NSUInteger currentPage;
 @property (nonatomic, assign) NSUInteger itemsPerPage;
-@property (nonatomic, assign) NSInteger totalNumberOfItems;
+@property (nonatomic, assign) NSUInteger totalNumberOfItems;
 
 @end
 
 @implementation XBArrayDataSourcePager
 
-- (id)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
+- (id)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSUInteger)totalNumberOfItems
 {
     self = [super init];
     if (self) {
@@ -29,7 +29,7 @@
     return self;
 }
 
-+ (instancetype)pagerWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems
++ (instancetype)pagerWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSUInteger)totalNumberOfItems
 {
     return [[self alloc] initWithItemsPerPage:itemsPerPage totalNumberOfItems:totalNumberOfItems];
 }
@@ -73,7 +73,7 @@
     return self;
 }
 
-+ (instancetype)pagerWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSInteger)totalNumberOfItems {
++ (instancetype)pagerWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSUInteger)totalNumberOfItems {
     return [[self alloc] initWithItemByPage:itemsPerPage];
 }
 

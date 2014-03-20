@@ -18,6 +18,8 @@
 
 - (NSUInteger)totalNumberOfItems;
 
+- (void)setTotalNumberOfItems:(NSUInteger)totalNumberOfItems;
+
 - (void)incrementPage;
 
 - (BOOL)hasMorePages;
