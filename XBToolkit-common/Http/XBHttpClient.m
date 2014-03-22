@@ -24,7 +24,23 @@
 
     if (self) {
         self.baseUrl = baseUrl;
-        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];;
+
+        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    }
+
+    return self;
+}
+
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(CGFloat)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy
+{
+    self = [super init];
+
+    if (self) {
+        self.baseUrl = baseUrl;
+        self.timeoutInterval = timeoutInterval;
+        self.cachePolicy = cachePolicy;
+
+        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
     }
 
     return self;
@@ -33,6 +49,11 @@
 + (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl
 {
     return [[self alloc] initWithBaseUrl:baseUrl];
+}
+
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(CGFloat)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy
+{
+    return [[self alloc] initWithBaseUrl:baseUrl timeoutInterval:timeoutInterval cachePolicy:cachePolicy];
 }
 
 - (void)executeRequestWithPath:(NSString *)path
@@ -50,9 +71,13 @@
             requestWithMethod:method
                     URLString:urlString
                    parameters:parameters];
-    
-    if (self.timeout) {
-        request.timeoutInterval = [self.timeout floatValue];
+
+    if (self.timeoutInterval) {
+        request.timeoutInterval = self.timeoutInterval;
+    }
+
+    if (self.cachePolicy) {
+        request.cachePolicy = self.cachePolicy;
     }
 
     AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request
