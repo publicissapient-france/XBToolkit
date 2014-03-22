@@ -24,6 +24,7 @@
 
     if (self) {
         self.baseUrl = baseUrl;
+        self.cachePolicy = NSURLRequestUseProtocolCachePolicy;
 
         self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
     }
@@ -31,7 +32,22 @@
     return self;
 }
 
-- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(CGFloat)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval
+{
+    self = [super init];
+
+    if (self) {
+        self.baseUrl = baseUrl;
+        self.timeoutInterval = timeoutInterval;
+        self.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+
+        self.httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    }
+
+    return self;
+}
+
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy
 {
     self = [super init];
 
@@ -51,7 +67,12 @@
     return [[self alloc] initWithBaseUrl:baseUrl];
 }
 
-+ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(CGFloat)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval
+{
+    return [[self alloc] initWithBaseUrl:baseUrl timeoutInterval:timeoutInterval];
+}
+
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy
 {
     return [[self alloc] initWithBaseUrl:baseUrl timeoutInterval:timeoutInterval cachePolicy:cachePolicy];
 }
@@ -72,12 +93,10 @@
                     URLString:urlString
                    parameters:parameters];
 
-    if (self.timeoutInterval) {
-        request.timeoutInterval = self.timeoutInterval;
-    }
+    request.cachePolicy = self.cachePolicy;
 
-    if (self.cachePolicy) {
-        request.cachePolicy = self.cachePolicy;
+    if (self.timeoutInterval) {
+        request.timeoutInterval = [self.timeoutInterval floatValue];
     }
 
     AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request

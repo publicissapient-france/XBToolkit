@@ -21,16 +21,20 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
-@property (nonatomic, assign) CGFloat timeoutInterval;
+@property (nonatomic, assign) NSNumber * timeoutInterval;
 @property (nonatomic, assign) NSURLRequestCachePolicy cachePolicy;
 
 - (instancetype)initWithBaseUrl:(NSString *)baseUrl;
 
-- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(CGFloat)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy;
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval;
+
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy;
 
 + (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl;
 
-+ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(CGFloat)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy;
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval;
+
++ (instancetype)httpClientWithBaseUrl:(NSString *)baseUrl timeoutInterval:(NSNumber *)timeoutInterval cachePolicy:(NSURLRequestCachePolicy)cachePolicy;
 
 - (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
 
