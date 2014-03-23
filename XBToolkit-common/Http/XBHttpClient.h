@@ -21,7 +21,7 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
-@property (nonatomic, assign) NSNumber * timeoutInterval;
+@property (nonatomic, strong) NSNumber * timeoutInterval;
 @property (nonatomic, assign) NSURLRequestCachePolicy cachePolicy;
 
 - (instancetype)initWithBaseUrl:(NSString *)baseUrl;
