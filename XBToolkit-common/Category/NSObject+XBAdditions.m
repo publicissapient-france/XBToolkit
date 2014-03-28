@@ -11,13 +11,13 @@
 
 @implementation NSObject (XBAdditions)
 
-- (NSString *)serializeToJsonWithError:(NSError **)error
+- (NSString *)serializeToJSONWithError:(NSError **)error
 {
     NSDateFormatter *dateFormatter = [NSDateFormatter initWithDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"];
-    return [self serializeToJsonWithDateFormatter:dateFormatter error:error];
+    return [self serializeToJSONWithDateFormatter:dateFormatter error:error];
 }
 
-- (NSString *)serializeToJsonWithDateFormatter:(NSDateFormatter *)dateFormatter error:(NSError **)error
+- (NSString *)serializeToJSONWithDateFormatter:(NSDateFormatter *)dateFormatter error:(NSError **)error
 {
     id result = [self dictOrArrayFromObjectWithDateFormatter:dateFormatter];
     

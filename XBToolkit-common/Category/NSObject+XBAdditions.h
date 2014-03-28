@@ -7,9 +7,9 @@
 
 @interface NSObject (XBAdditions)
 
-- (NSString *)serializeToJsonWithError:(NSError **)error;
+- (NSString *)serializeToJSONWithError:(NSError **)error;
 
-- (NSString *)serializeToJsonWithDateFormatter:(NSDateFormatter *)dateFormatter error:(NSError **)error;
+- (NSString *)serializeToJSONWithDateFormatter:(NSDateFormatter *)dateFormatter error:(NSError **)error;
 
 - (id)dictOrArrayFromObject;
 
