@@ -11,4 +11,8 @@
 
 - (NSString *)serializeToJsonWithDateFormatter:(NSDateFormatter *)dateFormatter error:(NSError **)error;
 
+- (id)dictOrArrayFromObject;
+
+- (id)dictOrArrayFromObjectWithDateFormatter:(NSDateFormatter *)dateFormatter;
+
 @end

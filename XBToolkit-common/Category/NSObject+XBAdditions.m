@@ -35,6 +35,12 @@
     return json;
 }
 
+- (id)dictOrArrayFromObject
+{
+    NSDateFormatter *dateFormatter = [NSDateFormatter initWithDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"];
+    return [self dictOrArrayFromObjectWithDateFormatter:dateFormatter];
+}
+
 - (id)dictOrArrayFromObjectWithDateFormatter:(NSDateFormatter *)dateFormatter
 {
     if ([self isKindOfClass:NSDictionary.class]) {
