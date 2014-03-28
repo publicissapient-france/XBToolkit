@@ -9,6 +9,7 @@
 
 @interface NSDictionary (XBAdditions)
 
+-(NSString*) JSONStringWithError:(NSError **)error dateFormatter:(NSDateFormatter *)dateFormatter;
 -(NSString*) urlEncodedString;
 -(NSMutableDictionary *)deepMutableCopy;
 
