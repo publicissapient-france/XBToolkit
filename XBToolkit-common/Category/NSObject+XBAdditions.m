@@ -7,6 +7,7 @@
 #import <objc/runtime.h>
 #import "NSDateFormatter+XBAdditions.h"
 #import "Underscore.h"
+#import "XBLogging.h"
 
 
 @implementation NSObject (XBAdditions)
