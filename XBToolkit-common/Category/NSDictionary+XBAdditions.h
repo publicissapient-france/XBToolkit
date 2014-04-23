@@ -10,6 +10,8 @@
 @interface NSDictionary (XBAdditions)
 
 -(NSString*) urlEncodedString;
+
 -(NSMutableDictionary *)deepMutableCopy;
+- (NSDictionary *)deepImmutableCopy;
 
 @end

@@ -7,18 +7,18 @@
 
 #import "NSDictionary+XBAdditions.h"
 
-
 static NSString *toString(id object) {
-    return [NSString stringWithFormat: @"%@", object];
+    return [NSString stringWithFormat:@"%@", object];
 }
 
 static NSString *urlEncode(id object) {
-    return [toString(object) stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    return [toString(object) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
-@implementation NSDictionary(XBAdditions)
+@implementation NSDictionary (XBAdditions)
 
--(NSString*) urlEncodedString {
+- (NSString *)urlEncodedString
+{
     NSMutableArray *parts = [NSMutableArray array];
 
     NSArray *queryParamKeys = [[self allKeys] sortedArrayUsingComparator:^NSComparisonResult(NSString *str1, NSString *str2) {
@@ -26,18 +26,25 @@ static NSString *urlEncode(id object) {
     }];
 
     for (id key in queryParamKeys) {
-        id value = [self objectForKey: key];
-        NSString *part = [NSString stringWithFormat: @"%@=%@", urlEncode(key), urlEncode(value)];
-        [parts addObject: part];
+        id value = [self objectForKey:key];
+        NSString *part = [NSString stringWithFormat:@"%@=%@", urlEncode(key), urlEncode(value)];
+        [parts addObject:part];
     }
-    return [parts componentsJoinedByString: @"&"];
+    return [parts componentsJoinedByString:@"&"];
 }
 
 // http://stackoverflow.com/questions/5453481/how-to-do-true-deep-copy-for-nsarray-and-nsdictionary-with-have-nested-arrays-di
--(NSMutableDictionary *)deepMutableCopy {
-    return (__bridge NSMutableDictionary *)(CFPropertyListCreateDeepCopy(kCFAllocatorDefault,
-            (__bridge CFPropertyListRef)self,
+- (NSMutableDictionary *)deepMutableCopy
+{
+    return (__bridge NSMutableDictionary *) (CFPropertyListCreateDeepCopy(kCFAllocatorDefault,
+            (__bridge CFPropertyListRef) self,
             kCFPropertyListMutableContainersAndLeaves));
+}
+- (NSDictionary *)deepImmutableCopy
+{
+    return (__bridge NSDictionary *) (CFPropertyListCreateDeepCopy(kCFAllocatorDefault,
+            (__bridge CFPropertyListRef) self,
+            kCFPropertyListImmutable));
 }
 
 @end
