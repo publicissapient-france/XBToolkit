@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 01/04/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBCacheableDataLoader.h"
@@ -12,33 +10,35 @@
 #import <AFNetworking/AFNetworkReachabilityManager.h>
 #import "XBLogging.h"
 
+
 @interface XBCacheableDataLoader()
 
-@property(nonatomic, strong) id <XBDataLoader> dataLoader;
-@property(nonatomic, strong) XBCache *cache;
-@property(nonatomic, strong) id <XBCacheKeyBuilder> cacheKeyBuilder;
-@property(nonatomic, assign) NSTimeInterval ttl;
+@property (nonatomic, strong) id <XBDataLoader> dataLoader;
+@property (nonatomic, strong) XBCache *cache;
+@property (nonatomic, strong) id <XBCacheKeyBuilder> cacheKeyBuilder;
+@property (nonatomic, assign) NSTimeInterval expirationTime;
 
 @end
 
+
 @implementation XBCacheableDataLoader
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(id <XBCacheKeyBuilder>)cacheKeyBuilder ttl:(NSTimeInterval)ttl
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(id <XBCacheKeyBuilder>)cacheKeyBuilder expirationTime:(NSTimeInterval)expiration
 {
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;
         self.cache = cache;
         self.cacheKeyBuilder = cacheKeyBuilder;
-        self.ttl = ttl;
+        self.expirationTime = expiration;
     }
 
     return self;
 }
 
-+ (instancetype)dataLoaderWithDataLoader:(id <XBDataLoader>)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(id <XBCacheKeyBuilder>)cacheKeyBuilder ttl:(NSTimeInterval)ttl
++ (instancetype)dataLoaderWithDataLoader:(id <XBDataLoader>)dataLoader cache:(XBCache *)cache cacheKeyBuilder:(id <XBCacheKeyBuilder>)cacheKeyBuilder expirationTime:(NSTimeInterval)expiration
 {
-    return [[self alloc] initWithDataLoader:dataLoader cache:cache cacheKeyBuilder:cacheKeyBuilder ttl:ttl];
+    return [[self alloc] initWithDataLoader:dataLoader cache:cache cacheKeyBuilder:cacheKeyBuilder expirationTime:expiration];
 }
 
 - (NSString *)cacheKey
@@ -62,7 +62,7 @@
     if (!cachedData && canLoadFromNetwork) {
         [self.dataLoader loadDataWithSuccess:^(id operation, id loadedData) {
             NSError *error = nil;
-            [self.cache setForKey:[self cacheKey] value:loadedData ttl:self.ttl error:&error];
+            [self.cache setForKey:[self cacheKey] value:loadedData expirationTime:self.expirationTime error:&error];
             success(operation, loadedData);
 
         } failure:^(id operation, id responseObject, NSError *error) {
@@ -71,7 +71,7 @@
         }];
     } else {
         if (cachedData) {
-#warning replace nil with sth more meaningful
+            //TODO: return an operation
             success(nil, cachedData);
             return;
         }
@@ -85,10 +85,10 @@
     NSError *error;
     NSDictionary *cachedData = [self fetchDataFromCacheWithError:&error forceIfExpired:YES];
     if (cachedData) {
-#warning replace nil with sth more meaningful
+        //TODO: return an operation
         success(nil, cachedData);
     } else {
-#warning replace nil with sth more meaningful
+        //TODO: return an operation
         failure(nil, cachedData, httpError ? httpError : error);
     }
 }

@@ -33,14 +33,14 @@
     XBCache *cache = [XBCache cacheWithCacheSupport:cacheSupport];
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];
     XBCacheableDataLoader *dataLoader = [XBCacheableDataLoader dataLoaderWithDataLoader:httpJsonDataLoader
-                                                                              cache:cache
-                                                                           cacheKeyBuilder:cacheKeyBuilder
-                                                                                ttl:0];
+                                                                                  cache:cache
+                                                                        cacheKeyBuilder:cacheKeyBuilder
+                                                                         expirationTime:0];
     
     __block NSArray *responseData;
     __block NSError *responseError;
 
-    [dataLoader loadDataWithSuccess:^(NSOperation *opration, NSDictionary *data) {
+    [dataLoader loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {

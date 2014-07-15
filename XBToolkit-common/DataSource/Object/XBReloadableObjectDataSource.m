@@ -7,15 +7,18 @@
 #import "XBReloadableObjectDataSource.h"
 #import "XBDataLoader.h"
 
+
 @interface XBReloadableObjectDataSource()
 
-@property(nonatomic, strong) NSError *error;
-@property(nonatomic, strong) id<XBDataLoader> dataLoader;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) id <XBDataLoader> dataLoader;
+
 @end
+
 
 @implementation XBReloadableObjectDataSource
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader
 {
     self = [super init];
     if (self) {

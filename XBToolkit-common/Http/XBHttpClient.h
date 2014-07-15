@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 18/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import <Foundation/Foundation.h>
@@ -15,6 +13,9 @@
 typedef void (^XBHttpClientRequestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
 typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operation, id responseObject, NSError *error);
 
+/**
+ *  The httpClient is responsible of establishing an HTTP connection with a remote source.
+ */
 @interface XBHttpClient : NSObject
 
 @property (nonatomic, strong, readonly) NSString *baseUrl;
@@ -22,6 +23,7 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 @property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
 @property (nonatomic, strong) NSNumber * timeoutInterval;
+
 @property (nonatomic, assign) NSURLRequestCachePolicy cachePolicy;
 
 - (instancetype)initWithBaseUrl:(NSString *)baseUrl;
@@ -39,4 +41,5 @@ typedef void (^XBHttpClientRequestFailureBlock)(AFHTTPRequestOperation *operatio
 - (void)executeRequestWithPath:(NSString *)path method:(NSString *)method parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
 
 - (void)executeRequestWithPath:(NSString *)path method:(NSString *)method body:(NSData *)body parameters:(NSDictionary *)parameters responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer success:(XBHttpClientRequestSuccessBlock)successCb failure:(XBHttpClientRequestFailureBlock)errorCb;
+
 @end

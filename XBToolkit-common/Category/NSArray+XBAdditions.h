@@ -7,7 +7,7 @@
 
 @interface NSArray (XBAdditions)
 
--(NSMutableDictionary *)deepMutableCopy;
+- (NSMutableDictionary *)deepMutableCopy;
 - (NSDictionary *)deepImmutableCopy;
 
 @end

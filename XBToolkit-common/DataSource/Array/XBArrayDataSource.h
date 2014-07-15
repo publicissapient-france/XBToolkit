@@ -1,19 +1,20 @@
 //
 // Created by akinsella on 29/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import <Foundation/Foundation.h>
 
 typedef BOOL (^XBPredicateBlock)(id obj);
 
+/**
+ *  XBArrayDataSource provides array-like methods for accessing an ordered list of elements.
+ */
 @interface XBArrayDataSource : NSObject
 
-- (id)initWithArray:(NSArray *)array;
+- (instancetype)initWithArray:(NSArray *)array;
 
-- (id)initWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator;
+- (instancetype)initWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator;
 
 + (instancetype)dataSourceWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator;
 

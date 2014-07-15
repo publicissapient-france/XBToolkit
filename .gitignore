@@ -19,3 +19,7 @@ Pods
 Podfile.lock
 
 *~
+doxygen.cfg
+docset-installed.txt
+docset
+html

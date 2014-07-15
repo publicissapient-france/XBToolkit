@@ -8,11 +8,13 @@
 #import "XBArrayDataSource.h"
 #import "XBArrayTransformationOperation.h"
 
+
 @interface XBArrayBridgeDataLoader ()
 
 @property (nonatomic, strong) XBReloadableArrayDataSource *dataSource;
 
 @end
+
 
 @implementation XBArrayBridgeDataLoader
 

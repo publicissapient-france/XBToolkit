@@ -1,14 +1,13 @@
 //
 // Created by akinsella on 26/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBInfiniteArrayDataSource.h"
 #import "XBReloadableArrayDataSource+Protected.h"
 #import "XBLogging.h"
 #import "XBArrayDataSource+Protected.h"
+
 
 static dispatch_queue_t reloadable_datasource_merging_queue() {
     static dispatch_queue_t xbtoolkit_reloadable_datasource_merging_queue;
@@ -20,16 +19,19 @@ static dispatch_queue_t reloadable_datasource_merging_queue() {
     return xbtoolkit_reloadable_datasource_merging_queue;
 }
 
+
 @interface XBInfiniteArrayDataSource ()
 
-@property(nonatomic, strong) id <XBDataPager> dataPager;
-@property(nonatomic, strong) id <XBDataMerger> dataMerger;
+@property (nonatomic, strong) id <XBDataPager> dataPager;
+
+@property (nonatomic, strong) id <XBDataMerger> dataMerger;
 
 @end
 
+
 @implementation XBInfiniteArrayDataSource
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager
 {
     self = [super initWithDataLoader:dataLoader];
     if (self) {

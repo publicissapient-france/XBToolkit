@@ -1,11 +1,10 @@
 //
 // Created by akinsella on 01/04/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "NSDictionary+XBAdditions.h"
+
 
 static NSString *toString(id object) {
     return [NSString stringWithFormat:@"%@", object];
@@ -14,6 +13,7 @@ static NSString *toString(id object) {
 static NSString *urlEncode(id object) {
     return [toString(object) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
+
 
 @implementation NSDictionary (XBAdditions)
 

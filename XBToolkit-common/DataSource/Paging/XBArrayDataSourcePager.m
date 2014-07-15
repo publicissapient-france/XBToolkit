@@ -1,23 +1,25 @@
 //
 // Created by akinsella on 27/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBArrayDataSourcePager.h"
 
+
 @interface XBArrayDataSourcePager ()
 
 @property (nonatomic, assign) NSUInteger currentPage;
+
 @property (nonatomic, assign) NSUInteger itemsPerPage;
+
 @property (nonatomic, assign) NSUInteger totalNumberOfItems;
 
 @end
 
+
 @implementation XBArrayDataSourcePager
 
-- (id)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSUInteger)totalNumberOfItems
+- (instancetype)initWithItemsPerPage:(NSUInteger)itemsPerPage totalNumberOfItems:(NSUInteger)totalNumberOfItems
 {
     self = [super init];
     if (self) {
@@ -63,7 +65,7 @@
     NSUInteger _itemByPage;
 }
 
-- (id)initWithItemByPage:(NSUInteger)itemByPage
+- (instancetype)initWithItemByPage:(NSUInteger)itemByPage
 {
     self = [super init];
     if (self) {

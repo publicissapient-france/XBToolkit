@@ -1,22 +1,22 @@
 //
 // Created by akinsella on 01/04/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBDictionaryDataMerger.h"
 #import "NSDictionary+XBAdditions.h"
 
+
 @interface XBDictionaryDataMerger ()
 
-@property(nonatomic, strong)NSString *rootKeyPath;
+@property (nonatomic, strong) NSString *rootKeyPath;
 
 @end
 
+
 @implementation XBDictionaryDataMerger
 
-- (id)initWithRootKeyPath:(NSString *)rootKeyPath
+- (instancetype)initWithRootKeyPath:(NSString *)rootKeyPath
 {
     self = [super init];
     if (self) {

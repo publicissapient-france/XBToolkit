@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 26/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBFileSystemCacheSupport.h"
@@ -10,14 +8,18 @@
 
 #define kXBFileCachePluginDefaultFileName @"XBCache.plist"
 
+
 @interface XBFileSystemCacheSupport()
-@property(nonatomic, strong) NSString *filename;
+
+@property (nonatomic, strong) NSString *filename;
+
 @end
 
 
 @implementation XBFileSystemCacheSupport
 
-- (id)initWithFilename:(NSString *)filename {
+- (instancetype)initWithFilename:(NSString *)filename
+{
     self = [super init];
     if (self) {
         self.filename = filename;
@@ -26,15 +28,15 @@
     return self;
 }
 
-+ (id)cacheSupportWithFilename:(NSString *)filename
++ (instancetype)cacheSupportWithFilename:(NSString *)filename
 {
     return [[self alloc] initWithFilename:filename];
 }
 
--(void)setForKey:(NSString *)key value:(NSString *)value ttl:(NSTimeInterval)expiration error:(NSError **)error
+- (void)setForKey:(NSString *)key value:(NSString *)value expirationTime:(NSTimeInterval)expiration error:(NSError **)error
 {
     XBLogInfo(@"Set cache data for key: %@", key);
-    XBCacheElement *element = [XBCacheElement elementWithKey:key value:value ttl:expiration];
+    XBCacheElement *element = [XBCacheElement elementWithKey:key value:value expirationTime:expiration];
     NSMutableDictionary *cacheData = [self cacheDataWithError:error];
     [cacheData setObject:element forKey:element.key];
     [self saveCacheData:cacheData];

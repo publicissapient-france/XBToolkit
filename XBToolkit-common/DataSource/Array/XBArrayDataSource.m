@@ -1,11 +1,10 @@
 //
 // Created by akinsella on 29/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBArrayDataSource.h"
+
 
 @interface XBArrayDataSource()
 
@@ -19,12 +18,12 @@
 
 @implementation XBArrayDataSource
 
-- (id)initWithArray:(NSArray *)array
+- (instancetype)initWithArray:(NSArray *)array
 {
     return [self initWithArray: array filterPredicate: nil sortComparator:nil];
 }
 
-- (id)initWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator
+- (instancetype)initWithArray:(NSArray *)array filterPredicate:(XBPredicateBlock)filterPredicate sortComparator:(NSComparator)sortComparator
 {
     self = [super init];
     if (self) {

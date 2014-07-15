@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 02/04/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBDataPagerHttpQueryDataBuilder.h"
@@ -10,7 +8,7 @@
 
 @implementation XBDataPagerHttpQueryDataBuilder
 
-- (id)initWithPager:(id <XBDataPager>)pager pageParameterName:(NSString *)pageParameterName
+- (instancetype)initWithPager:(id <XBDataPager>)pager pageParameterName:(NSString *)pageParameterName
 {
     self = [super init];
     if (self) {

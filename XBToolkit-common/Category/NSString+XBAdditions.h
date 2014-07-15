@@ -1,10 +1,8 @@
 //
 //  NSString+XBAdditions.h
-//  LaCentrale
-//
 //  Created by Simone Civetta on 4/1/13.
-//  Copyright (c) 2013 Xebia IT Architets. All rights reserved.
 //
+
 
 #import <Foundation/Foundation.h>
 
@@ -14,6 +12,6 @@
 
 - (NSIndexSet *)asIndexSet;
 
--(NSURL *) url;
+- (NSURL *)url;
 
 @end

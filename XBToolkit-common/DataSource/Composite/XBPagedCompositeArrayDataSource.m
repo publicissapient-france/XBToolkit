@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 26/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBArrayDataSource.h"
@@ -13,8 +11,8 @@
 
 @implementation XBPagedCompositeArrayDataSource
 
-- (id)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
-             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
+- (instancetype)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                       secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
 {
 
     if (![[secondDataSource class] isSubclassOfClass:[XBInfiniteArrayDataSource class]]) {
@@ -25,7 +23,7 @@
 }
 
 + (instancetype)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
-                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
+                             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
 {
     return [[self alloc] initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }

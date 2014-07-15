@@ -1,26 +1,37 @@
-    //
-// Created by akinsella on 31/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
+// Created by akinsella on 31/03/13.
 //
 
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  An XBCacheElement provides a key-value interface for storing objects in cache along with its cache metadata
+ */
+@interface XBCacheElement : NSObject<NSCoding>
 
-@interface XBCacheElement : NSObject <NSCoding>
-
+/**
+ *  The key identifying the cached object
+ */
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic, retain) NSObject *value;
-@property (nonatomic, assign) NSTimeInterval ttl;
 
-+ (id)elementWithKey:(NSString *)key value:(NSObject *)value;
+/**
+ *  The value of the cached object
+ */
+@property (nonatomic, strong) id <NSCoding> value;
 
-+ (id)elementWithKey:(NSString *)key value:(NSObject *)value ttl:(NSTimeInterval)ttl;
+/**
+ *  The time after the which the elemement will potentially be removed from the cache
+ */
+@property (nonatomic, assign) NSTimeInterval expirationTime;
 
-- (id)initWithKey:(NSString *)key value:(NSObject *)value ttl:(NSTimeInterval)ttl;
++ (instancetype)elementWithKey:(NSString *)key value:(id <NSCoding>)value;
 
-- (void)setTimeToLive:(NSTimeInterval)expiration;
++ (instancetype)elementWithKey:(NSString *)key value:(id <NSCoding>)value expirationTime:(NSTimeInterval)expiration;
+
+- (instancetype)initWithKey:(NSString *)key value:(id <NSCoding>)value expirationTime:(NSTimeInterval)expiration;
+
+- (void)setTimeToLive:(NSTimeInterval)ttl;
 
 - (BOOL)hasExpired;
 

@@ -1,42 +1,41 @@
 //
 // Created by akinsella on 31/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBCacheElement.h"
 
-
 @implementation XBCacheElement
 
-
-+ (id)elementWithKey:(NSString *)key value:(NSObject *)value {
-    return [self elementWithKey:key value:value ttl: 0];
++ (instancetype)elementWithKey:(NSString *)key value:(id <NSCoding>)value
+{
+    return [self elementWithKey:key value:value expirationTime:0];
 }
 
-+ (id)elementWithKey:(NSString *)key value:(NSObject *)value ttl:(NSTimeInterval)ttl {
-    return [[self alloc] initWithKey:key value:value ttl:ttl];
++ (instancetype)elementWithKey:(NSString *)key value:(id <NSCoding>)value expirationTime:(NSTimeInterval)expirationTime
+{
+    return [[self alloc] initWithKey:key value:value expirationTime:expirationTime];
 }
 
-- (id)initWithKey:(NSString *)key value:(NSObject *)value ttl:(NSTimeInterval)ttl {
+- (instancetype)initWithKey:(NSString *)key value:(id <NSCoding>)value expirationTime:(NSTimeInterval)expirationTime
+{
     self = [super init];
     if (self) {
         self.key = key;
         self.value = value;
-        self.ttl = ttl;
+        self.expirationTime = expirationTime;
     }
 
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (instancetype)initWithCoder:(NSCoder *)decoder
 {
     self = [super init];
     if (self) {
-        self.key   = [decoder decodeObjectForKey:@"key"];
+        self.key = [decoder decodeObjectForKey:@"key"];
         self.value = [decoder decodeObjectForKey:@"value"];
-        self.ttl   = [decoder decodeDoubleForKey:@"ttl"];
+        self.expirationTime = [decoder decodeDoubleForKey:@"ttl"];
     }
     return self;
 }
@@ -45,19 +44,21 @@
 {
     [code encodeObject:self.key forKey:@"key"];
     [code encodeObject:self.value forKey:@"value"];
-    [code encodeDouble:self.ttl forKey:@"ttl"];
+    [code encodeDouble:self.expirationTime forKey:@"ttl"];
 }
 
-- (void)setTimeToLive:(NSTimeInterval)ttl {
-    self.ttl = ttl ? [NSDate timeIntervalSinceReferenceDate] + ttl : 0;
+- (void)setTimeToLive:(NSTimeInterval)ttl
+{
+    self.expirationTime = ttl ? [NSDate timeIntervalSinceReferenceDate] + ttl : 0;
 }
 
-- (BOOL)hasExpired {
-    if (!self.ttl) {
+- (BOOL)hasExpired
+{
+    if (!self.expirationTime) {
         return NO;
     }
 
-    return ([NSDate timeIntervalSinceReferenceDate] <= self.ttl);
+    return ([NSDate timeIntervalSinceReferenceDate] <= self.expirationTime);
 }
 
 @end

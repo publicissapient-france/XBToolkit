@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 01/04/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBHttpDataLoaderCacheKeyBuilder.h"
@@ -13,12 +11,12 @@
 
 @implementation XBHttpDataLoaderCacheKeyBuilder
 
-+ (id)cacheKeyBuilder
++ (instancetype)cacheKeyBuilder
 {
     return [[self alloc] init];
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {

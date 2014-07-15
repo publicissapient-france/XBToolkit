@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 26/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import <Foundation/Foundation.h>
@@ -11,17 +9,19 @@
 #import "XBDataPager.h"
 #import "XBDataMerger.h"
 
+
 @interface XBInfiniteArrayDataSource : XBReloadableArrayDataSource
 
--(id<XBDataPager>)dataPager;
-
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
 
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMerger:(id <XBDataMerger>)dataMerger dataPager:(id <XBDataPager>)dataPager;
+
+- (id <XBDataPager>)dataPager;
 
 - (id)mergeObjects:(id)responseObject;
 
 - (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion;
+
 - (void)loadMoreData:(XBReloadableArrayDataSourceCompletionBlock)completion queue:(dispatch_queue_t)queue;
 
 - (BOOL)hasMoreData;

@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 29/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBReloadableArrayDataSource.h"
@@ -23,13 +21,14 @@ static dispatch_queue_t reloadable_datasource_filtering_queue() {
 @interface XBReloadableArrayDataSource()
 
 @property (nonatomic, strong) NSError *error;
-@property (nonatomic, strong) id<XBDataLoader> dataLoader;
+@property (nonatomic, strong) id <XBDataLoader> dataLoader;
 
 @end
 
+
 @implementation XBReloadableArrayDataSource
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader
 {
     self = [super init];
     if (self) {

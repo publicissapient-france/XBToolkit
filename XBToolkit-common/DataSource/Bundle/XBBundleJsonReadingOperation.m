@@ -3,26 +3,33 @@
 //  XBToolkit-ios
 //
 //  Created by Simone Civetta on 03/12/13.
-//  Copyright (c) 2013 Xebia. All rights reserved.
 //
+
 
 #import "XBBundleJsonReadingOperation.h"
 #import "XBJsonToObjectDataMapper.h"
 #import "AFURLResponseSerialization.h"
 #import "XBDataMapper.h"
 
+
 @interface XBBundleJsonReadingOperation ()
 
 @property (nonatomic, strong) NSBundle *bundle;
+
 @property (nonatomic, strong) NSString *resourcePath;
+
 @property (nonatomic, strong) NSString *resourceType;
+
 @property (nonatomic, strong) id responseObject;
+
 @property (nonatomic, strong) NSError *error;
 
 @property (readwrite, nonatomic, strong) NSData *rawData;
+
 @property (readwrite, nonatomic, strong) NSRecursiveLock *lock;
 
 @end
+
 
 static dispatch_group_t bundle_json_reading_operation_completion_group() {
     static dispatch_group_t xb_bundle_json_reading_operation_completion_group;
@@ -33,6 +40,7 @@ static dispatch_group_t bundle_json_reading_operation_completion_group() {
 
     return xb_bundle_json_reading_operation_completion_group;
 }
+
 
 @implementation XBBundleJsonReadingOperation
 
@@ -72,7 +80,7 @@ static dispatch_group_t bundle_json_reading_operation_completion_group() {
     [self.lock unlock];
 }
 
-- (id)initWithBundle:(NSBundle *)bundle resourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
+- (instancetype)initWithBundle:(NSBundle *)bundle resourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
 {
     if (self = [super init]) {
         self.bundle = bundle;

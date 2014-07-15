@@ -12,6 +12,7 @@
 #import "XBDataMapper.h"
 #import "XBArrayDataSource.h"
 
+
 @interface XBArrayTransformationOperation ()
 
 @property (nonatomic, copy) XBArrayBridgeDataLoaderTransformationBlock transformationBlock;
@@ -69,7 +70,7 @@ static dispatch_group_t array_transformation_operation_completion_group() {
 }
 
 
-- (id)initWithTransformationBlock:(XBArrayBridgeDataLoaderTransformationBlock)transformationBlock forDataSource:(XBArrayDataSource *)dataSource
+- (instancetype)initWithTransformationBlock:(XBArrayBridgeDataLoaderTransformationBlock)transformationBlock forDataSource:(XBArrayDataSource *)dataSource
 {
     if (self = [super init]) {
         self.transformationBlock = transformationBlock;

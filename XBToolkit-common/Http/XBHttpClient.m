@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 18/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBHttpClient.h"
@@ -10,11 +8,13 @@
 #import "XBLogging.h"
 #import "XBHttpClient+protected.h"
 
+
 @interface XBHttpClient ()
 
-@property(nonatomic, strong) NSString *baseUrl;
+@property (nonatomic, strong) NSString *baseUrl;
 
 @end
+
 
 @implementation XBHttpClient
 
@@ -88,10 +88,9 @@
     NSString *urlString = [self URLStringWithUrlPath:path method:method parameters:parameters];
     XBLogDebug(@"Http Request URL: %@", urlString);
 
-    NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer
-            requestWithMethod:method
-                    URLString:urlString
-                   parameters:parameters];
+    NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer requestWithMethod:method
+                                                                                               URLString:urlString
+                                                                                              parameters:parameters];
 
     request.cachePolicy = self.cachePolicy;
 
@@ -99,22 +98,18 @@
         request.timeoutInterval = [self.timeoutInterval floatValue];
     }
 
-    AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request
-                                                                                                  success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
-                                                                                                      XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
-
-                                                                                                      if (successCb) {
-                                                                                                          successCb(httpRequestOperation, responseObject);
-                                                                                                      }
-                                                                                                  }
-                                                                                                  failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
-                                                                                                      XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
-
-                                                                                                      if (errorCb) {
-                                                                                                          errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
-                                                                                                      }
-                                                                                                  }
-    ];
+    AFHTTPRequestOperation *operation = [self.httpRequestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *httpRequestOperation, id responseObject) {
+        XBLogVerbose(@"Response: %@", httpRequestOperation.responseString);
+        
+        if (successCb) {
+            successCb(httpRequestOperation, responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *httpRequestOperation, NSError *error) {
+        XBLogWarn(@"Error: %@, Response: %@", error, httpRequestOperation.responseString);
+        if (errorCb) {
+            errorCb(httpRequestOperation, [httpRequestOperation responseObject], error);
+        }
+    }];
     operation.responseSerializer = responseSerializer;
 
     [self.httpRequestOperationManager.operationQueue addOperation:operation];
@@ -164,7 +159,6 @@
 
     [self.httpRequestOperationManager.operationQueue addOperation:operation];
 }
-
 
 - (NSString *)URLStringWithUrlPath:(NSString *)urlPath method:(NSString *)method parameters:(NSDictionary *)parameters;
 {

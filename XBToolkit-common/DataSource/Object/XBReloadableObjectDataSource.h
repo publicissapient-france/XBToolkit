@@ -11,13 +11,19 @@
 
 typedef void (^XBReloadableObjectDataSourceCompletionBlock)(id operation);
 
+/**
+ *  Provide the capability of reloading the object wrapped by the dataSource. 
+ *  This make sense for all the reloadable object data sources that are created from a dataLoader and a dataMapper.
+ */
 @interface XBReloadableObjectDataSource : XBObjectDataSource
 
-@property (nonatomic, strong, readonly)NSError *error;
-@property (nonatomic, strong, readonly)id rawData;
-@property (nonatomic, strong, readonly)id<XBDataLoader> dataLoader;
+@property (nonatomic, strong, readonly) NSError *error;
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader;
+@property (nonatomic, strong, readonly) id rawData;
+
+@property (nonatomic, strong, readonly) id <XBDataLoader> dataLoader;
+
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader;
 
 + (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader;
 

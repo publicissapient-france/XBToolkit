@@ -2,8 +2,6 @@
 // Created by Simone Civetta on 5/30/13.
 // Copyright (c) 2013 Xebia. All rights reserved.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBJsonToObjectDataMapper.h"
@@ -12,14 +10,15 @@
 
 @interface XBJsonToObjectDataMapper()
 
-@property (nonatomic, weak) Class typeClass;
+@property (nonatomic, unsafe_unretained) Class typeClass;
 @property (nonatomic, strong) NSString *rootKeyPath;
 
 @end
 
+
 @implementation XBJsonToObjectDataMapper
 
-- (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+- (instancetype)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
 {
     self = [super init];
     if (self) {
