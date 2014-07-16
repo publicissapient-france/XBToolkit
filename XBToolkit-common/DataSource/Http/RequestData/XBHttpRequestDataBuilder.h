@@ -8,6 +8,7 @@
 @protocol XBHttpRequestDataBuilder <NSObject>
 
 @required
+
 - (NSDictionary *)build;
 
 @end
