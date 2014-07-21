@@ -15,7 +15,7 @@
     NSUInteger currentIndex = [self firstIndex];
     do {
         if (currentIndex != NSNotFound) {
-            [brandIndexes addObject:[NSNumber numberWithUnsignedInt:currentIndex]];
+            [brandIndexes addObject:[NSNumber numberWithUnsignedInteger:currentIndex]];
         }
         currentIndex = [self indexGreaterThanIndex:currentIndex];
     } while (currentIndex != NSNotFound);
