@@ -6,11 +6,12 @@
 
 
 #import "XBCacheableDataLoader.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "GHUnit.h"
 #import "XBTestUtils.h"
 #import "XBFileSystemCacheSupport.h"
 #import "XBHttpDataLoaderCacheKeyBuilder.h"
+#import "XBCache.h"
 
 #define kNetworkTimeout 30.0f
 
@@ -19,31 +20,30 @@
 
 @implementation XBCacheableDataLoaderTest
 
-
-- (void)testFetchDataResult {
+- (void)testFetchDataResult
+{
     [self prepare];
+    
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
-
-    XBHttpJsonDataLoader *httpJsonDataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *httpJsonDataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
 
     XBFileSystemCacheSupport * cacheSupport = [XBFileSystemCacheSupport cacheSupportWithFilename:@"author-cache"];
 
     XBCache *cache = [XBCache cacheWithCacheSupport:cacheSupport];
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];
     XBCacheableDataLoader *dataLoader = [XBCacheableDataLoader dataLoaderWithDataLoader:httpJsonDataLoader
-                                                                              cache:cache
-                                                                           cacheKeyBuilder:cacheKeyBuilder
-                                                                                ttl:0];
+                                                                                  cache:cache
+                                                                        cacheKeyBuilder:cacheKeyBuilder
+                                                                         expirationTime:0];
     
-    __block NSDictionary *responseData;
+    __block NSArray *responseData;
     __block NSError *responseError;
 
-    [dataLoader loadDataWithSuccess:^(NSDictionary *data) {
+    [dataLoader loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
-    } failure:^(NSError *error, id jsonFetched) {
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         responseError = error;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
@@ -52,13 +52,7 @@
 
     GHAssertNil(responseError, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long)responseError.code, responseError.domain]);
 
-    NSString *status = responseData[@"status"];
-    NSNumber *count = responseData[@"count"];
-    NSArray *authors = responseData[@"authors"];
-
-    GHAssertEqualStrings(status, @"ok", nil);
-    GHAssertEquals([count intValue], 70, nil);
-    GHAssertEquals(authors.count, [@70 unsignedIntegerValue], nil);
+    GHAssertEquals(responseData.count, [@6 unsignedIntegerValue], nil);
 }
 
 

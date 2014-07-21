@@ -25,10 +25,10 @@
     __block NSDictionary *responseData;
     __block NSError *responseError;
 
-    [dataLoader loadDataWithSuccess:^(NSDictionary * data) {
+    [dataLoader loadDataWithSuccess:^(NSOperation *operation, NSDictionary * data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
-    } failure:^(NSError *error, id jsonFetched) {
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         responseError = error;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];

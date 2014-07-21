@@ -1,28 +1,23 @@
 //
 // Created by akinsella on 31/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBJsonToArrayDataMapper.h"
-#import "XBMapper.h"
+#import <Mantle/Mantle.h>
+#import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @interface XBJsonToArrayDataMapper()
 
-@property (nonatomic, weak)Class typeClass;
-@property (nonatomic, strong)NSString *rootKeyPath;
+@property (nonatomic, unsafe_unretained) Class typeClass;
+@property (nonatomic, strong) NSString *rootKeyPath;
 
 @end
 
+
 @implementation XBJsonToArrayDataMapper
 
-+ (id)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
-{
-    return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
-}
-
-- (id)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
+- (instancetype)initWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
 {
     self = [super init];
     if (self) {
@@ -33,22 +28,30 @@
     return self;
 }
 
-- (void)mapData:(id)data withCompletionCallback:(XBDataMapperCompletionCallback)callback
++ (instancetype)mapperWithRootKeyPath:(NSString *)rootKeyPath typeClass:(Class)typeClass
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
+    return [[self alloc] initWithRootKeyPath:rootKeyPath typeClass:typeClass];
+}
 
-        id mappedData = nil;
-        if ([array isKindOfClass:[NSArray class]]) {
-            mappedData = [XBMapper parseArray:array intoObjectsOfType:self.typeClass];
-        }
+- (id)mappedObjectFromData:(id)data error:(NSError * __autoreleasing *)error;
+{
+    NSArray *array = self.rootKeyPath ? [data valueForKeyPath:self.rootKeyPath] : data;
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (callback) {
-                callback(mappedData);
-            }
-        });
-    });
+    id mappedObject = nil;
+    if ([array isKindOfClass:[NSArray class]]) {
+        NSValueTransformer *valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:self.typeClass];
+        mappedObject = [valueTransformer transformedValue:array];
+    }
+
+    return mappedObject;
+}
+
+- (id)responseObjectForResponse:(NSURLResponse *)response
+                           data:(NSData *)data
+                          error:(NSError *__autoreleasing *)error
+{
+    id array = [super responseObjectForResponse:response data:data error:error];
+    return [self mappedObjectFromData:array error:nil];
 }
 
 @end

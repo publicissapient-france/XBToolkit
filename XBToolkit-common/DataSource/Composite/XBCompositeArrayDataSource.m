@@ -1,27 +1,33 @@
 //
 // Created by akinsella on 25/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "XBCompositeArrayDataSource.h"
-#import "XBCompositeArrayDataSource+protected.h"
-#import "XBArrayDataSource.h"
-#import "XBArrayDataSource+protected.h"
-#import "XBReloadableArrayDataSource.h"
-#import "XBReloadableArrayDataSource+protected.h"
+#import "XBArrayDataSource+Protected.h"
+
+
+@interface XBCompositeArrayDataSource ()
+
+@property (nonatomic, strong) XBReloadableArrayDataSource * firstDataSource;
+
+@property (nonatomic, strong) XBReloadableArrayDataSource * secondDataSource;
+
+@end
+
 
 @implementation XBCompositeArrayDataSource
 
 
-+ (id)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
-                   secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
++ (instancetype)dataSourceWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
+{
     return [[self alloc] initWithFirstDataSource:firstDataSource secondDataSource:secondDataSource];
 }
 
-- (id)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
-             secondDataSource:(XBReloadableArrayDataSource *)secondDataSource {
+- (instancetype)initWithFirstDataSource:(XBReloadableArrayDataSource *)firstDataSource
+                       secondDataSource:(XBReloadableArrayDataSource *)secondDataSource
+{
     self = [super init];
     if (self) {
         self.firstDataSource = firstDataSource;
@@ -31,44 +37,51 @@
     return self;
 }
 
-- (id)objectAtIndexedSubscript:(NSUInteger)idx {
+- (id)objectAtIndexedSubscript:(NSUInteger)idx
+{
     return [self.secondDataSource objectAtIndexedSubscript:idx];
 }
 
-- (NSUInteger)count {
+- (NSUInteger)count
+{
     return self.secondDataSource.count;
 }
 
-- (NSError *)error {
+- (NSError *)error
+{
     return self.firstDataSource.error ? self.firstDataSource.error : self.secondDataSource.error;
 }
 
-- (id)rawData {
-    return self.secondDataSource.rawData;
+- (id)rawData
+{
+    return [self.secondDataSource sourceArray];
 }
 
-- (NSArray *)array {
+- (NSArray *)array
+{
     return self.secondDataSource.array;
 }
 
-- (void)filter:(XBPredicateBlock)filterPredicate {
+- (void)filter:(XBPredicateBlock)filterPredicate
+{
     [self.secondDataSource filter:filterPredicate];
 }
 
-- (void)sort:(NSComparator)sortComparator {
+- (void)sort:(NSComparator)sortComparator
+{
     [self.secondDataSource sort:sortComparator];
 }
 
-
-- (void)loadDataWithCallback:(void (^)())callback {
-    [self.firstDataSource loadDataWithCallback:^{
+- (void)loadData:(XBReloadableArrayDataSourceCompletionBlock)completion
+{
+    [self.firstDataSource loadData:^(id operation){
         if (self.firstDataSource.error) {
-            if (callback) {
-                callback();
+            if (completion) {
+                completion(operation);
             }
         }
         else {
-            [self.secondDataSource loadDataWithCallback:callback];
+            [self.secondDataSource loadData:completion];
         }
     }];
 }

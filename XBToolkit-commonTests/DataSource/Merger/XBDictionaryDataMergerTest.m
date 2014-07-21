@@ -9,24 +9,42 @@
 #import "GHUnit.h"
 #import "XBBundleJsonDataLoader.h"
 
-@interface XBDictionaryDataMergerTest : GHTestCase @end
+@interface XBDictionaryDataMergerTest : GHAsyncTestCase @end
 
 @implementation XBDictionaryDataMergerTest
 
--(void)testMerger {
+- (void)testMerger
+{
 
+    [self prepare];
+    
     XBBundleJsonDataLoader *dataLoaderDest = [XBBundleJsonDataLoader dataLoaderWithResourcePath:@"wp-author-index-p1" resourceType:@"json"];
     XBBundleJsonDataLoader *dataLoaderSrc = [XBBundleJsonDataLoader dataLoaderWithResourcePath:@"wp-author-index-p2" resourceType:@"json"];
 
     __block NSDictionary *dataDest;
     __block NSDictionary *dataSrc;
 
-    [dataLoaderSrc loadDataWithSuccess:^(NSDictionary * data) { dataSrc = data; } failure:^(NSError *error, id jsonFetched) { }];
-    [dataLoaderDest loadDataWithSuccess:^(NSDictionary * data) { dataDest = data; } failure:^(NSError *error, id jsonFetched) { }];
+    void (^completionBlock)() = ^void() {
+        if (dataSrc && dataDest) {
+            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testMerger)];
+        }
+    };
+
+    [dataLoaderSrc loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) {
+        dataSrc = data;
+        completionBlock();
+    } failure:nil];
+    
+    [dataLoaderDest loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) {
+        dataDest = data;
+        completionBlock();
+    } failure:nil];
+    
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 
     XBDictionaryDataMerger *dataMerger = [XBDictionaryDataMerger dataMergerWithRootKeyPath:@"authors"];
 
-    NSDictionary * result = [dataMerger mergeDataFromSource:dataSrc toDest:dataDest];
+    NSDictionary *result = [dataMerger mergeDataOfSource:dataSrc withSource:dataDest];
 
     NSArray *authors = result[@"authors"];
     GHAssertEquals(authors.count, [@60 unsignedIntegerValue], nil);

@@ -1,53 +1,73 @@
 //
 // Created by akinsella on 31/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
-#import "XBHttpJsonDataLoader.h"
-#import "XBHttpQueryParamBuilder.h"
-#import "JSONKit.h"
+#import "XBHttpMappedDataLoader.h"
 #import "XBBundleJsonDataLoader.h"
+#import "XBBundleJsonReadingOperation.h"
 #import "XBLogging.h"
+#import "XBJsonToObjectDataMapper.h"
+
 
 @interface XBBundleJsonDataLoader()
 
-@property (nonatomic, strong)NSString *resourcePath;
-@property (nonatomic, strong)NSString *resourceType;
+@property (nonatomic, strong) NSString *resourcePath;
+
+@property (nonatomic, strong) NSString *resourceType;
+
+@property (nonatomic, strong) AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *dataMapper;
 
 @end
 
+
 @implementation XBBundleJsonDataLoader
 
-+ (id)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
-    return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType];
-}
-
-- (id)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType {
+- (instancetype)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType dataMapper:(AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *)dataMapper
+{
     self = [super init];
     if (self) {
         self.resourcePath = resourcePath;
         self.resourceType = resourceType;
+        self.dataMapper = dataMapper;
+        self.readingOptions = 0;
     }
 
     return self;
 }
 
-- (void)loadDataWithSuccess:(void (^)(id))success failure:(void (^)(NSError *, id))failure {
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *file = [mainBundle pathForResource:self.resourcePath ofType:self.resourceType];
-    NSError *error;
-    NSString *jsonLoaded = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:&error];
-    NSDictionary *json = [jsonLoaded objectFromJSONString];
+- (instancetype)initWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
+{
+    return [self initWithResourcePath:resourcePath resourceType:resourceType dataMapper:nil];
+}
 
-    if (!error) {
-        XBLogVerbose(@"Json loaded from bundle: %@", json);
-        success(json);
-    }
-    else {
-        failure(error, nil);
-    }
++ (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType
+{
+    return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType dataMapper:nil ];
+}
+
++ (instancetype)dataLoaderWithResourcePath:(NSString *)resourcePath resourceType:(NSString *)resourceType dataMapper:(AFJSONResponseSerializer<AFURLResponseSerialization, XBDataMapper> *)dataMapper
+{
+    return [[self alloc] initWithResourcePath:resourcePath resourceType:resourceType dataMapper:dataMapper];
+}
+
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
+{
+    [self loadDataWithSuccess:success failure:failure queue:dispatch_get_main_queue()];
+}
+
+- (void)loadDataWithSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure queue:(dispatch_queue_t)queue
+{
+    XBBundleJsonReadingOperation *operation = [XBBundleJsonReadingOperation operationWithBundle:[NSBundle mainBundle] resourcePath:self.resourcePath resourceType:self.resourceType];
+    operation.dataMapper = self.dataMapper;
+
+    [operation setCompletionBlockWithSuccess:^(XBBundleJsonReadingOperation *readingOperation) {
+        XBLogVerbose(@"Json loaded from bundle: %@", readingOperation.responseObject);
+        success(readingOperation, readingOperation.responseObject);
+    } failure:^(XBBundleJsonReadingOperation *readingOperation, NSError *error) {
+        failure(readingOperation, readingOperation.responseObject, error);
+    } queue:queue];
+    [operation start];
 
 }
 

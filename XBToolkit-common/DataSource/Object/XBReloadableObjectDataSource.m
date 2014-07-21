@@ -3,92 +3,69 @@
 //
 
 
-#import "XBObjectDataSource+protected.h"
+#import "XBObjectDataSource+Protected.h"
 #import "XBReloadableObjectDataSource.h"
 #import "XBDataLoader.h"
-#import "XBDataMapper.h"
+
 
 @interface XBReloadableObjectDataSource()
 
-@property (nonatomic, strong)NSError *error;
-@property (nonatomic, strong)id rawData;
-@property (nonatomic, strong)id<XBDataLoader> dataLoader;
-@property (nonatomic, strong)id<XBDataMapper> dataMapper;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) id <XBDataLoader> dataLoader;
 
 @end
 
+
 @implementation XBReloadableObjectDataSource
 
-+ (id)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper
-{
-    return [[self alloc] initWithDataLoader:dataLoader dataMapper:dataMapper];
-}
-
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader
 {
     self = [super init];
     if (self) {
         self.dataLoader = dataLoader;
-        self.dataMapper = dataMapper;
     }
 
     return self;
 }
 
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader
+{
+    return [[self alloc] initWithDataLoader:dataLoader];
+}
+
 - (void)loadData
 {
-    [self loadDataWithCallback:nil];
+    [self loadData:nil];
 }
 
-- (void)loadDataWithCallback:(void (^)())callback
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback
 {
-    [self.dataLoader loadDataWithSuccess:^(id data) {
-        [self processSuccessWithRawData:data callback:^{
+    [self loadData:callback queue:dispatch_get_main_queue()];
+}
+
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback queue:(dispatch_queue_t)queue
+{
+    [self.dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
+        self.error = nil;
+        [self processSuccessForResponseObject:data callback:^{
             if (callback) {
-                callback();
+                callback(operation);
             }
         }];
-    } failure:^(NSError *error, id jsonFetched) {
-        [self processFailureWithRawData:jsonFetched];
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         self.error = error;
         if (callback) {
-            callback();
+            callback(operation);
         }
-    }];
+    } queue:queue];
 }
 
-- (void)loadDataWithHttpMethod:(NSString *)httpMethod
-                  withCallback:(void (^)())callback
+- (void)processSuccessForResponseObject:(id)responseObject callback:(void (^)())callback
 {
-    [self.dataLoader loadDataWithHttpMethod:httpMethod
-                                withSuccess:^(id data) {
-                                    [self processSuccessWithRawData:data callback:^{
-                                        if (callback) {
-                                            callback();
-                                        }
-                                    }];
-                                } failure:^(NSError *error, id jsonFetched) {
-                                    [self processFailureWithRawData:jsonFetched];
-                                    self.error = error;
-                                    if (callback) {
-                                        callback();
-                                    }
-                                }];
-}
-
-
-- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback
-{
-    self.rawData = rawData;
-    [self.dataMapper mapData:rawData withCompletionCallback:^(id mappedData) {
-        self.object = mappedData;
+    self.object = responseObject;
+    if (callback) {
         callback();
-    }];
-}
-
-- (void)processFailureWithRawData:(id)rawData
-{
-    self.rawData = rawData;
+    }
 }
 
 @end

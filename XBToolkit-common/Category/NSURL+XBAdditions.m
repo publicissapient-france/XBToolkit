@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 01/04/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "NSURL+XBAdditions.h"
@@ -10,7 +8,8 @@
 
 @implementation NSURL (XBAdditions)
 
-- (NSString *)valueForParameterName:(NSString *)parameterName {
+- (NSString *)valueForParameterName:(NSString *)parameterName
+{
     NSString * q = [self query];
     NSArray * pairs = [q componentsSeparatedByString:@"&"];
     NSMutableDictionary * kvPairs = [NSMutableDictionary dictionary];

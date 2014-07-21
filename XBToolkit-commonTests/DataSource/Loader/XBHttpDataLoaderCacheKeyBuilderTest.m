@@ -7,7 +7,7 @@
 
 #import "GHUnit.h"
 #import "XBTestUtils.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "XBHttpDataLoaderCacheKeyBuilder.h"
 #import "XBBasicHttpQueryParamBuilder.h"
 
@@ -17,11 +17,9 @@
 
 -(void)testWithoutQueryParam {
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
-
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
 
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];
 
@@ -32,7 +30,7 @@
 
 -(void)testWithQueryParams {
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
     XBBasicHttpQueryParamBuilder *httpQueryParamBuilder = [XBBasicHttpQueryParamBuilder builderWithDictionary:@{
         @"count": @20,
@@ -40,10 +38,7 @@
         @"slug":@"ios"
     }];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                httpQueryParamBuilder: httpQueryParamBuilder
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
-
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil httpQueryParamBuilder:httpQueryParamBuilder];
 
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];
 

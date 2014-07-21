@@ -4,10 +4,10 @@
 
 #import "GHAsyncTestCase.h"
 #import "XBTestUtils.h"
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "WPPost.h"
 #import "XBReloadableObjectDataSource.h"
-#import "XBObjectDataSource+protected.h"
+#import "XBObjectDataSource+Protected.h"
 #import "XBJsonToObjectDataMapper.h"
 
 #define kNetworkTimeout 30.0f
@@ -20,17 +20,15 @@
 
     [self prepare];
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getSinglePostAsJson]];
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getSinglePostAsObject]];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android"];
+    XBJsonToObjectDataMapper *dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
+    
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_post/?slug=whats-new-in-android" dataMapper:dataMapper];
 
-    XBJsonToObjectDataMapper * dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
+    XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader];
 
-    XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader
-                                                                                           dataMapper:dataMapper];
-
-    [dataSource loadDataWithCallback:^() {
+    [dataSource loadData:^(id operation) {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
 
@@ -41,11 +39,9 @@
     WPPost *post = dataSource.object;
 
     GHAssertEquals([post.identifier intValue], 14332, nil);
-    GHAssertEqualStrings(post.status, @"publish", nil);
     GHAssertEqualStrings(post.slug, @"whats-new-in-android", nil);
-    GHAssertEqualStrings(post.type, @"post", nil);
     GHAssertEqualStrings(post.title, @"What's new in Android ?", nil);
-    GHAssertEqualStrings(post.title_plain, @"What's new in Android ?", nil);
+    GHAssertEqualStrings(post.content, @"Lorem ipsum dolor sit amet", nil);
 }
 
 @end

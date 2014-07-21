@@ -9,15 +9,21 @@
 #import "Underscore.h"
 #import "WPAuthor.h"
 
+@class WPPost;
+
 @interface XBTestUtils : NSObject
 
-+(WPAuthor *)findAuthorInArray:(NSArray *) authors ById:(NSInteger)identifier;
-+(UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier;
-+(NSDictionary *)getAuthorsAsJson;
-+(NSDictionary *)getSinglePostAsJson;
-+(id)fakeHttpClientWithSuccessCallbackWithData:(id)data;
-+(id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data;
-+(id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName;
++ (WPAuthor *)findAuthorInArray:(NSArray *) authors ById:(NSInteger)identifier;
++ (UnderscoreTestBlock)filterAuthorById:(NSInteger)identifier;
++ (id)getAuthorsAsJson;
++ (NSData *)getAuthorsAsData;
++ (NSArray *)getAuthorsAsArray;
++ (WPPost *)getSinglePostAsObject;
++ (id)getActusAsXml;
++ (id)fakeHttpClientWithSuccessCallbackWithData:(id)data;
++ (id)fakeHttpClientWithErrorCallbackWithError:(NSError *)error data:(id)data;
++ (id)fakeHttpClientWithSuccessiveSuccessCallbackWithData:(NSArray *)data parameterName:(NSString *)parameterName;
 
-+ (id)getAuthorsAsJsonWithPage:(NSUInteger)page;
++ (NSArray *)getAuthors:(NSInteger)numberOfAuthors asArrayWithPage:(NSUInteger)page;
+
 @end

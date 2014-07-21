@@ -1,21 +1,19 @@
 //
 // Created by akinsella on 29/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import <Foundation/Foundation.h>
 #import "XBArrayDataSource.h"
 #import "XBReloadableArrayDataSource.h"
 
-@interface XBReloadableArrayDataSource (XBLoadableArrayDataSource_protected)
 
-@property (nonatomic, strong)NSObject<XBDataLoader> *dataLoader;
-@property (nonatomic, strong)NSObject<XBDataMapper> *dataMapper;
+@interface XBReloadableArrayDataSource (Protected)
 
--(void)setError:(NSError *)error;
+@property (nonatomic, strong) id <XBDataLoader> dataLoader;
+@property (nonatomic, strong) id <XBDataMapper> dataMapper;
 
-- (void)processSuccessWithRawData:(id)rawData callback:(void (^)())callback;
+- (void)setError:(NSError *)error;
+- (void)processSuccessForResponseObject:(id)responseObject completion:(void (^)())completion;
 
 @end

@@ -1,8 +1,5 @@
 //
 // Created by Alexis Kinsella on 08/04/13.
-// Copyright (c) 2013 Xebia IT Architets. All rights reserved.
-//
-// To change the template use AppCode | Preferences | File Templates.
 //
 
 
@@ -11,7 +8,8 @@
 
 @implementation NSIndexSet (XBAdditions)
 
-- (NSArray *)asArray {
+- (NSArray *)asArray
+{
     NSMutableArray * brandIndexes = [NSMutableArray arrayWithCapacity:self.count];
 
     NSUInteger currentIndex = [self firstIndex];
@@ -25,7 +23,8 @@
     return brandIndexes;
 }
 
-- (NSString *)joinByString:(NSString *)joinString {
+- (NSString *)joinByString:(NSString *)joinString
+{
     return [[self asArray] componentsJoinedByString:joinString];
 }
 

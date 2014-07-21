@@ -6,9 +6,12 @@
 
 
 
-#import "XBHttpJsonDataLoader.h"
+#import "XBHttpMappedDataLoader.h"
 #import "GHUnit.h"
 #import "XBTestUtils.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPRequestOperation.h>
+#import <AFNetworking/AFURLConnectionOperation.h>
 
 #define kNetworkTimeout 30.0f
 
@@ -19,18 +22,17 @@
 - (void)testFetchDataResult {
     [self prepare];
 
-    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsJson]];
+    id httpClient = [XBTestUtils fakeHttpClientWithSuccessCallbackWithData:[XBTestUtils getAuthorsAsArray]];
 
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
 
-    __block NSDictionary *responseData;
+    __block NSArray *responseData;
     __block NSError *responseError;
 
-    [dataLoader loadDataWithSuccess:^(NSDictionary * data) {
+    [dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
-    } failure:^(NSError *error, id jsonFetched) {
+    } failure:^(NSOperation *operation, id responseObject, NSError *error) {
         responseError = error;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     }];
@@ -39,13 +41,8 @@
 
     GHAssertNil(responseError, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long)responseError.code, responseError.domain]);
 
-    NSString *status = responseData[@"status"];
-    NSNumber *count = responseData[@"count"];
-    NSArray *authors = responseData[@"authors"];
-
-    GHAssertEqualStrings(status, @"ok", nil);
-    GHAssertEquals([count intValue], 70, nil);
-    GHAssertEquals(authors.count, [@70 unsignedIntegerValue], nil);
+    GHAssertEqualStrings([responseData[0] name], @"Alexis Kinsella", nil);
+    GHAssertEquals(responseData.count, [@6 unsignedIntegerValue], nil);
 }
 
 - (void)testFetchWithError
@@ -53,19 +50,18 @@
     [self prepare];
     
     NSError *error = [NSError errorWithDomain:@"xebia" code:404 userInfo:nil];
-    id httpClient = [XBTestUtils fakeHttpClientWithErrorCallbackWithError:error data:[XBTestUtils getAuthorsAsJson]];
+    id httpClient = [XBTestUtils fakeHttpClientWithErrorCallbackWithError:error data:[XBTestUtils getAuthorsAsArray]];
     
-    XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient
-                                                                         resourcePath:@"/wp-json-api/get_author_index/"];
+    XBHttpMappedDataLoader *dataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
     
     __block NSDictionary *responseData;
     __block NSError *responseError;
     
-    [dataLoader loadDataWithSuccess:^(NSDictionary * data) {
+    [dataLoader loadDataWithSuccess:^(AFHTTPRequestOperation *operation, NSDictionary *data) {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchWithError)];
-    } failure:^(NSError *error, id jsonFetched) {
+    } failure:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
         responseError = error;
-        responseData = (NSDictionary *)jsonFetched;
+        responseData = responseObject;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchWithError)];
     }];
     
@@ -77,9 +73,9 @@
     NSNumber *count = responseData[@"count"];
     NSArray *authors = responseData[@"authors"];
     
-    GHAssertEqualStrings(status, @"ok", nil);
+    GHAssertEqualStrings(status, @"ko", nil);
     GHAssertEquals([count intValue], 70, nil);
-    GHAssertEquals(authors.count, [@70 unsignedIntegerValue], nil);
+    GHAssertEquals(authors.count, [@6 unsignedIntegerValue], nil);
 }
 
 @end

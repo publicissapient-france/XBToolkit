@@ -7,9 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol XBHttpQueryParamBuilder <NSObject>
+@protocol XBHttpRequestDataBuilder <NSObject>
 
 @required
--(NSDictionary *)build;
+- (NSDictionary *)build;
 
 @end

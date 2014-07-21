@@ -1,8 +1,6 @@
 //
 // Created by akinsella on 27/03/13.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import <Foundation/Foundation.h>
@@ -12,13 +10,17 @@
 
 - (NSUInteger)currentPage;
 
-- (NSUInteger)itemByPage;
+- (void)setCurrentPage:(NSUInteger)currentPage;
 
-- (NSUInteger)totalItem;
+- (NSUInteger)itemsPerPage;
+
+- (NSUInteger)totalNumberOfItems;
+
+- (void)setTotalNumberOfItems:(NSUInteger)totalNumberOfItems;
 
 - (void)incrementPage;
 
-- (Boolean)hasMorePages;
+- (BOOL)hasMorePages;
 
 - (void)resetPageIncrement;
 
@@ -26,6 +28,6 @@
 
 @protocol XBPaginatorFactory <NSObject>
 
--(NSObject<XBDataPager> *) buildWithDataSource:(XBArrayDataSource *)dataSource;
+- (id <XBDataPager>)buildWithDataSource:(XBArrayDataSource *)dataSource;
 
 @end

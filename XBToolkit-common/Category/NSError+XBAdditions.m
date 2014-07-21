@@ -1,15 +1,12 @@
 //
 // Created by akinsella on 11/09/12.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "NSError+XBAdditions.h"
 
 
 @implementation NSError (XBAdditions)
-
 
 - (NSString *)debugDescription {
     //  Log the entirety of domain, code, userInfo for debugging.

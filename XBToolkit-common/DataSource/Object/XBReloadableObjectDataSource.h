@@ -6,26 +6,29 @@
 
 #import <Foundation/Foundation.h>
 #import "XBObjectDataSource.h"
+#import "XBDataLoader.h"
+#import "XBDataMapper.h"
 
-@protocol XBDataLoader;
-@protocol XBDataMapper;
+typedef void (^XBReloadableObjectDataSourceCompletionBlock)(id operation);
 
+/**
+ *  Provide the capability of reloading the object wrapped by the dataSource. 
+ *  This make sense for all the reloadable object data sources that are created from a dataLoader and a dataMapper.
+ */
 @interface XBReloadableObjectDataSource : XBObjectDataSource
 
-@property (nonatomic, strong, readonly)NSError *error;
-@property (nonatomic, strong, readonly)id rawData;
-@property (nonatomic, strong, readonly)id<XBDataLoader> dataLoader;
-@property (nonatomic, strong, readonly)id<XBDataMapper> dataMapper;
+@property (nonatomic, strong, readonly) NSError *error;
 
-+ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
+@property (nonatomic, strong, readonly) id rawData;
 
-- (id)initWithDataLoader:(id <XBDataLoader>)dataLoader dataMapper:(id <XBDataMapper>)dataMapper;
+@property (nonatomic, strong, readonly) id <XBDataLoader> dataLoader;
 
-- (void)loadData;
+- (instancetype)initWithDataLoader:(id <XBDataLoader>)dataLoader;
 
-- (void)loadDataWithCallback:(void (^)())callback;
++ (instancetype)dataSourceWithDataLoader:(id <XBDataLoader>)dataLoader;
 
-- (void)loadDataWithHttpMethod:(NSString *)httpMethod
-                  withCallback:(void (^)())callback;
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback;
+
+- (void)loadData:(XBReloadableObjectDataSourceCompletionBlock)callback queue:(dispatch_queue_t)queue;
 
 @end

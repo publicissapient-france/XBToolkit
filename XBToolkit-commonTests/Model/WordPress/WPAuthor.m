@@ -7,19 +7,26 @@
 //
 
 #import "WPAuthor.h"
-#import "DCParserConfiguration.h"
-#import "DCKeyValueObjectMapping.h"
-#import "DCObjectMapping.h"
+#import "WPPost.h"
 
 @implementation WPAuthor
 
-+(DCParserConfiguration *)mappings {
-    DCParserConfiguration *config = [DCParserConfiguration configuration];
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"identifier": @"id"
+    };
+}
++ (instancetype)authorWithId:(NSNumber *)identifier name:(NSString *)name
+{
+    WPAuthor *author = [[self alloc] init];
+    author.identifier = identifier;
+    author.name = name;
+    return author;
+}
 
-    [config addObjectMapping: [DCObjectMapping mapKeyPath:@"id" toAttribute:@"identifier" onClass:[self class]]];
-    [config addObjectMapping: [DCObjectMapping mapKeyPath:@"description" toAttribute:@"description_" onClass:[self class]]];
-
-    return config;
++ (NSValueTransformer *)postsJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:WPPost.class];
 }
 
 @end
