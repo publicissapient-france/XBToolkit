@@ -153,7 +153,7 @@
 		2EE4462F919C53261F8AFC28 /* XBArrayBridgeDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayBridgeDataLoader.h; sourceTree = "<group>"; };
 		2EE44777CC51AAA7A58B0DC9 /* XBReloadableObjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBReloadableObjectDataSource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EE447DE06ED8D3799866B95 /* XBInfiniteArrayDataSource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "XBInfiniteArrayDataSource+Protected.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2EE448C3EF3BD8E1F365A618 /* XBArrayBridgeDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBArrayBridgeDataLoader.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		2EE448C3EF3BD8E1F365A618 /* XBArrayBridgeDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBArrayBridgeDataLoader.m; sourceTree = "<group>"; };
 		2EE448D1E514140BA221A38A /* XBArrayTransformationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBArrayTransformationOperation.h; sourceTree = "<group>"; };
 		2EE44971DFDC6F4D37FD755F /* XBArrayBridgeDataLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBArrayBridgeDataLoaderTest.m; sourceTree = "<group>"; };
 		2EE44A4B4125DF30257A4590 /* XBObjectDataSource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBObjectDataSource+Protected.h"; sourceTree = "<group>"; };
@@ -215,13 +215,13 @@
 		540956DD1710A85F00B006B0 /* XBBundleJsonDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBBundleJsonDataLoader.h; sourceTree = "<group>"; };
 		540956DE1710A85F00B006B0 /* XBBundleJsonDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBBundleJsonDataLoader.m; sourceTree = "<group>"; };
 		540956DF1710A85F00B006B0 /* XBCacheableDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheableDataLoader.h; sourceTree = "<group>"; };
-		540956E01710A85F00B006B0 /* XBCacheableDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBCacheableDataLoader.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		540956E01710A85F00B006B0 /* XBCacheableDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBCacheableDataLoader.m; sourceTree = "<group>"; };
 		540956E11710A85F00B006B0 /* XBCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBCacheKeyBuilder.h; sourceTree = "<group>"; };
 		540956E21710A85F00B006B0 /* XBDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataLoader.h; sourceTree = "<group>"; };
 		540956E31710A85F00B006B0 /* XBHttpDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = XBHttpDataLoader.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		540956E41710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpDataLoaderCacheKeyBuilder.h; sourceTree = "<group>"; };
 		540956E51710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBHttpDataLoaderCacheKeyBuilder.m; sourceTree = "<group>"; };
-		540956E61710A85F00B006B0 /* XBHTTPMappedDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHTTPMappedDataLoader.h; sourceTree = "<group>"; };
+		540956E61710A85F00B006B0 /* XBHttpMappedDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBHttpMappedDataLoader.h; sourceTree = "<group>"; };
 		540956E71710A85F00B006B0 /* XBHTTPMappedDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBHTTPMappedDataLoader.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		540956E91710A85F00B006B0 /* XBDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataMapper.h; sourceTree = "<group>"; };
 		540956EA1710A85F00B006B0 /* XBJsonToArrayDataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBJsonToArrayDataMapper.h; sourceTree = "<group>"; };
@@ -531,7 +531,7 @@
 				540956E31710A85F00B006B0 /* XBHttpDataLoader.h */,
 				540956E41710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.h */,
 				540956E51710A85F00B006B0 /* XBHttpDataLoaderCacheKeyBuilder.m */,
-				540956E61710A85F00B006B0 /* XBHTTPMappedDataLoader.h */,
+				540956E61710A85F00B006B0 /* XBHttpMappedDataLoader.h */,
 				540956E71710A85F00B006B0 /* XBHTTPMappedDataLoader.m */,
 				2EE448C3EF3BD8E1F365A618 /* XBArrayBridgeDataLoader.m */,
 				2EE4462F919C53261F8AFC28 /* XBArrayBridgeDataLoader.h */,

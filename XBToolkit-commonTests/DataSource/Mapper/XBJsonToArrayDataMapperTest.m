@@ -51,7 +51,7 @@
     GHAssertEqualStrings(wpAuthor.url, @"http://www.xebia.fr", nil);
     
     WPAuthor *authorWithPost = [XBTestUtils findAuthorInArray:authors ById:18];
-    GHAssertEquals([authorWithPost.posts count], 1u, nil);
+    GHAssertEquals((NSInteger)[authorWithPost.posts count], (NSInteger)1, nil);
     GHAssertTrue([authorWithPost.posts[0] isKindOfClass:[WPPost class]], nil);
     GHAssertEqualStrings([authorWithPost.posts[0] slug], @"whats-new-in-android", nil);
 }

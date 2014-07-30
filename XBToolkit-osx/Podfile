@@ -1,9 +1,11 @@
-platform :osx,						'10.7'
-pod 'Underscore.m',					'0.2.0'
-pod 'AFNetworking',					'1.1'
-pod 'DCKeyValueObjectMapping', 		'1.4'
-pod 'OCMock',						'2.0.1'
+platform :osx,						'10.8'
+
+xcodeproj 'XBToolkit-osx'
+pod 'Underscore.m',					'0.2.1'
+pod 'AFNetworking', 				'2.2.3'
+pod 'Mantle'
 
 target 'XBToolkit-osxTests', :exclusive => true do
-  pod 'GHUnitOSX',					'0.5.6'
+	pod 'OCMock',						'2.2.4'
+  	pod 'GHUnitOSX',					'0.5.8'
 end

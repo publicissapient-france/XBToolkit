@@ -8,7 +8,7 @@
 @protocol AFURLRequestSerialization;
 @class AFHTTPRequestSerializer;
 
-@protocol XBHTTPMappedRequestDataBuilder <NSObject>
+@protocol XBHttpMappedRequestDataBuilder <NSObject>
 
 @required
 - (AFHTTPRequestSerializer <AFURLRequestSerialization> *)requestSerializer;

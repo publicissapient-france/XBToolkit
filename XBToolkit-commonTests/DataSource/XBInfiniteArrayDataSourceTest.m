@@ -66,7 +66,7 @@
 
     GHAssertFalse([dataSource hasMoreData], nil);
     GHAssertNil(dataSource.error, [NSString stringWithFormat:@"Error[code: '%li', domain: '%@'", (long) dataSource.error.code, dataSource.error.domain]);
-    GHAssertEquals([dataSource count], 5u, nil);
+    GHAssertEquals((NSUInteger)[dataSource count], (NSUInteger)5u, nil);
 
     WPAuthor *author = [XBTestUtils findAuthorInArray:dataSource.array ById:50];
 
