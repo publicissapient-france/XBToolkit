@@ -1,7 +1,7 @@
 # Introduction
 
 **XBToolkit** is a framework that provides a fast and highly customizable way to retrieve and deserialize `JSON` sources.
-It mainly relies on [AFNetworking](https://github.com/AFNetworking/AFNetworking) for the network layer and [Mantle](https://github.com/dchohfi/Mantle) for the deserialization layer.
+It mainly relies on [AFNetworking](https://github.com/AFNetworking/AFNetworking) for the network layer and [Mantle](https://github.com/Mantle/Mantle) for the deserialization layer.
 
 # Installation
 **XBToolkit** can be installed through [CocoaPods](http://cocoapods.org) or by including the source files into  your project.
@@ -18,18 +18,18 @@ Here are short examples showing how to map a remote object in JSON representatio
 ```
 // 1. Create an HTTP client:
 id httpClient = [XBHttpClient httpClientWithBaseUrl:@"http://myfancyblog.com"];
-		
-// 2. Instantiate an dataLoader from your HTTP client and a given resourcePath:
-XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/"];
 
-// 3. Instantiate an dataMapper, allowing the response to be deserialized to a given class (e.g. WPAuthor):
+// 2. Instantiate an dataMapper, allowing the response to be deserialized to a given class (e.g. WPAuthor):
 XBJsonToArrayDataMapper *dataMapper = [XBJsonToArrayDataMapper mapperWithRootKeyPath:@"authors" typeClass:[WPAuthor class]];
+		
+// 3. Instantiate an dataLoader from your HTTP client and a given resourcePath:
+XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:dataMapper];
 
 // 4. Create the data source from the dataLoader and the dataMapper:
-XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader dataMapper:dataMapper];
+XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourceWithDataLoader:dataLoader];
 
 // 5. Load the data:
-[dataSource loadDataWithCallback:^() {
+[dataSource loadData:^(id operation) {
 	NSLog(@"%@", dataSource.array.count); // Will output the number of authors of myfancyblog.com
 }];
 ```
@@ -40,17 +40,17 @@ XBReloadableArrayDataSource *dataSource = [XBReloadableArrayDataSource dataSourc
 // 1. Create an HTTP client:
 id httpClient = [XBHttpClient httpClientWithBaseUrl:@"http://myfancyblog.com"];
 
-// 2. Instantiate an dataLoader from your HTTP client and a given resourcePath:
-XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_post/?slug=xbtoolkit-is-nice"];
-
-// 3. Instantiate an dataMapper, allowing the response to be deserialized to a given class (e.g. WPPost):
+// 2. Instantiate an dataMapper, allowing the response to be deserialized to a given class (e.g. WPPost):
 XBJsonToObjectDataMapper *dataMapper = [XBJsonToObjectDataMapper mapperWithRootKeyPath:@"post" typeClass:[WPPost class]];
 
+// 3. Instantiate an dataLoader from your HTTP client and a given resourcePath:
+XBHttpJsonDataLoader *dataLoader = [XBHttpJsonDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_post/?slug=xbtoolkit-is-so-sweet" dataMapper:dataMapper];
+
 // 4. Create the data source from the dataLoader and the dataMapper:
-XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader dataMapper:dataMapper];
+XBReloadableObjectDataSource *dataSource = [XBReloadableObjectDataSource dataSourceWithDataLoader:dataLoader];
 
 // 5. Load the data:
-[dataSource loadDataWithCallback:^() {
+[dataSource loadData:^(id operation) {
 	NSLog(@"%@", dataSource.object.slug); // Prints "my-great-post"
 }];    
 ```
@@ -111,7 +111,7 @@ If we want to deserialize this object to a WPPost class, what we'll have o do is
 ```
 
 The class method `mappings` must contain the configuration specific to the class.
-Since **XBToolkit** relies on `Mantle` for the mapping of an object, you could find more detailed information on the mapping configuration in the [project's readme page](https://github.com/dchohfi/KeyValueObjectMapping).
+Since **XBToolkit** relies on `Mantle` for the mapping of an object, you could find more detailed information on the mapping configuration in the [project's readme page](https://github.com/Mantle/Mantle).
 
 # Tearing to pieces
 
