@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XBToolkit"
-  s.version      = "2.0"
+  s.version      = "2.0.1"
   s.summary      = "Xebia mapping and serializing tools for iOS & OSX."
   s.homepage     = "https://github.com/xebia-france/XBToolkit"
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com', 'Simone Civetta' => 'viteinfinite@gmail.com', 'Xebia IT Architects' => 'mobile@xebia.fr' }
