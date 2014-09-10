@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.7'
 
   s.source_files = 'XBToolkit-common/**/*.{h,m}'
-  s.ios.source_files = 'XBToolkit-ios/XBToolkit-ios/**/*.{h,m}', 'Frameworks/GCJSONKit/*.{h,m}'
-  s.osx.source_files = 'XBToolkit-osx/XBToolkit-osx/**/*.{h,m}', 'Frameworks/GCJSONKit/*.{h,m}'
+  s.ios.source_files = 'XBToolkit-ios/XBToolkit-ios/**/*.{h,m}'
+  s.osx.source_files = 'XBToolkit-osx/XBToolkit-osx/**/*.{h,m}'
 
   s.requires_arc = true
   non_arc_files = 'Frameworks/GCJSONKit/*.{m}'
