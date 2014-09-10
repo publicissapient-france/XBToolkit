@@ -4,6 +4,7 @@ pod 'Underscore.m',					'0.2.0'
 pod 'AFNetworking',					'1.1'
 pod 'DCKeyValueObjectMapping', 		'1.4'
 pod 'OCMock',						'2.0.1'
+pod 'GCJSONKit', 					'~> 1.5'
 
 target 'XBToolkit-iosTests', :exclusive => true do
   pod 'GHUnitIOS',					'0.5.6'

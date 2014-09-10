@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XBToolkit"
-  s.version      = "0.0.15"
+  s.version      = "0.0.16"
   s.summary      = "Xebia mapping and serializing tools for iOS & OSX."
   s.homepage     = "https://github.com/xebia-france/XBToolkit"
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com' }
@@ -31,5 +31,6 @@ Pod::Spec.new do |s|
   s.dependency 'Underscore.m',      '0.2.0'
   s.dependency 'DCKeyValueObjectMapping', '1.4'
   s.dependency 'AFNetworking',      '1.3.1'
+  s.dependency 'GCJSONKit',         '~> 1.5'
 
 end
