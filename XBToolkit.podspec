@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XBToolkit"
-  s.version      = "2.0.1"
+  s.version      = "2.0.2"
   s.summary      = "Xebia mapping and serializing tools for iOS & OSX."
   s.homepage     = "https://github.com/xebia-france/XBToolkit"
   s.author       = { 'Alexis Kinsella' => 'alexis.kinsella@gmail.com', 'Simone Civetta' => 'viteinfinite@gmail.com', 'Xebia IT Architects' => 'mobile@xebia.fr' }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'Underscore.m',      '~> 0.2.1'
-  s.dependency 'AFNetworking',      '~> 2.2.3'
+  s.dependency 'AFNetworking',      '~> 2.4.0'
   s.dependency 'Mantle',            '~> 1.5.0'
 
 end

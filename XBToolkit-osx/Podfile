@@ -1,8 +1,8 @@
 platform :osx,						'10.8'
 
 xcodeproj 'XBToolkit-osx'
-pod 'Underscore.m',					'0.2.1'
-pod 'AFNetworking', 				'2.2.3'
+pod 'Underscore.m',					'~> 0.2.1'
+pod 'AFNetworking', 				'~> 2.4.0'
 pod 'Mantle'
 
 target 'XBToolkit-osxTests', :exclusive => true do
