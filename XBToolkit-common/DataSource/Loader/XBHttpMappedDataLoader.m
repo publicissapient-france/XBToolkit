@@ -49,7 +49,7 @@
 
 - (void)loadDataWithHttpMethod:(NSString *)httpMethod withSuccess:(XBDataLoaderSuccessBlock)success failure:(XBDataLoaderFailureBlock)failure
 {
-    NSDictionary *parameters = self.requestDataBuilder ? [self.requestDataBuilder build] : nil;
+    id parameters = self.requestDataBuilder ? [self.requestDataBuilder build] : nil;
 
     [self.httpClient executeRequestWithPath:self.resourcePath method:httpMethod parameters:parameters responseSerializer:self.dataMapper success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {

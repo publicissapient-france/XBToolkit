@@ -137,7 +137,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15FE6A34E0074C17BFB8F0B4 /* Pods-XBToolkit-iosTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.xcconfig"; path = "Pods/Pods-XBToolkit-iosTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		0402B63D2C3B0D874D73B8CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2EE4402DAE9B967CCABAC7C9 /* XBReloadableArrayDataSource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "XBReloadableArrayDataSource+Protected.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EE440ACABAF83FFFB8FF85F /* WPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPPost.m; sourceTree = "<group>"; };
 		2EE440CF012183F26BD6E128 /* XBReloadableObjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = XBReloadableObjectDataSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -167,7 +167,6 @@
 		2EE44F61273D399DA8827BFB /* XBArrayDataSource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XBArrayDataSource+Protected.h"; sourceTree = "<group>"; };
 		2EE44F8C56F6A1CA0068C65F /* XBArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = XBArrayDataSource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		34C980E2E53144DDA719FE08 /* libPods-XBToolkit-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XBToolkit-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FFB9FEC204A413CBEA44721 /* Pods-XBToolkit-iosTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.xcconfig"; path = "Pods/Pods-XBToolkit-iosTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		423F739B175779710023783F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		423F739E1757AE510023783F /* wp-post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wp-post.json"; path = "Resources/Data/wp-post.json"; sourceTree = "<group>"; };
 		4261A4921855C26C003461AA /* article.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = article.xml; path = Resources/Data/article.xml; sourceTree = "<group>"; };
@@ -271,9 +270,11 @@
 		54C5347C1707BA31001DB282 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		54C5347E1707BA31001DB282 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		54C534801707BA31001DB282 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		58C905BFBF04B8985F65B7C1 /* Pods-XBToolkit-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XBToolkit-iosTests/Pods-XBToolkit-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		596B84297071FE7ACABCC667 /* Pods-XBToolkit-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBToolkit-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XBToolkit-iosTests/Pods-XBToolkit-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		A72D9672488D4A1AB2EB4940 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A82DD9C7BA819A96FB6A3655 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB089F6D419944DFABA5C2B9 /* libPods-XBToolkit-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XBToolkit-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9D15A5AAF9548C8A27C7AE1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DB34D0F9880723B009BCA144 /* NSObject+XBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XBAdditions.h"; sourceTree = "<group>"; };
 		DB34D1AFC0EBC5ABEFEF79DE /* NSObject+XBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XBAdditions.m"; sourceTree = "<group>"; };
 		DB34D359F163D84F21544ED4 /* XBHttpClient+protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "XBHttpClient+protected.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -356,6 +357,17 @@
 				2EE44569E1FB5381B5E7B57A /* XBArrayDataSourcePagerTest.m */,
 			);
 			path = Paging;
+			sourceTree = "<group>";
+		};
+		4237900620BB904C74F41E5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A82DD9C7BA819A96FB6A3655 /* Pods.debug.xcconfig */,
+				0402B63D2C3B0D874D73B8CB /* Pods.release.xcconfig */,
+				58C905BFBF04B8985F65B7C1 /* Pods-XBToolkit-iosTests.debug.xcconfig */,
+				596B84297071FE7ACABCC667 /* Pods-XBToolkit-iosTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		426D147D184E809B00A9D2DB /* Bundle */ = {
@@ -630,9 +642,7 @@
 				54C534701707BA31001DB282 /* XBToolkit-iosTests */,
 				542082DE17074C9B00290AEF /* Frameworks */,
 				542082DD17074C9B00290AEF /* Products */,
-				D9D15A5AAF9548C8A27C7AE1 /* Pods.xcconfig */,
-				3FFB9FEC204A413CBEA44721 /* Pods-XBToolkit-iosTests.xcconfig */,
-				15FE6A34E0074C17BFB8F0B4 /* Pods-XBToolkit-iosTests.xcconfig */,
+				4237900620BB904C74F41E5B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -870,7 +880,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 		};
 		85A146E7348D4A71B3DBAC2F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -884,7 +894,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-XBToolkit-iosTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XBToolkit-iosTests/Pods-XBToolkit-iosTests-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1029,6 +1039,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1057,6 +1069,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1068,23 +1082,11 @@
 		};
 		5420830217074C9C00290AEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9D15A5AAF9548C8A27C7AE1 /* Pods.xcconfig */;
+			baseConfigurationReference = A82DD9C7BA819A96FB6A3655 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/XBToolkit_ios.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-ios/XBToolkit-ios-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
-					"\"${PODS_ROOT}/Headers/KissXML\"",
-					"\"${PODS_ROOT}/Headers/Mantle\"",
-					"\"${PODS_ROOT}/Headers/MantleXMLAdapter\"",
-					"\"${PODS_ROOT}/Headers/OCMock\"",
-					"\"${PODS_ROOT}/Headers/Underscore.m\"",
-					/usr/include/libxml2,
-				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1092,23 +1094,11 @@
 		};
 		5420830317074C9C00290AEF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9D15A5AAF9548C8A27C7AE1 /* Pods.xcconfig */;
+			baseConfigurationReference = 0402B63D2C3B0D874D73B8CB /* Pods.release.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/XBToolkit_ios.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-ios/XBToolkit-ios-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
-					"\"${PODS_ROOT}/Headers/KissXML\"",
-					"\"${PODS_ROOT}/Headers/Mantle\"",
-					"\"${PODS_ROOT}/Headers/MantleXMLAdapter\"",
-					"\"${PODS_ROOT}/Headers/OCMock\"",
-					"\"${PODS_ROOT}/Headers/Underscore.m\"",
-					/usr/include/libxml2,
-				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1116,7 +1106,7 @@
 		};
 		54C534831707BA31001DB282 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15FE6A34E0074C17BFB8F0B4 /* Pods-XBToolkit-iosTests.xcconfig */;
+			baseConfigurationReference = 58C905BFBF04B8985F65B7C1 /* Pods-XBToolkit-iosTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1125,15 +1115,6 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-iosTests/XBToolkit-iosTests-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
-					"\"${PODS_ROOT}/Headers/Mantle\"",
-					"\"${PODS_ROOT}/Headers/OCMock\"",
-					"\"${PODS_ROOT}/Headers/Underscore.m\"",
-					/usr/include/libxml2,
-				);
 				INFOPLIST_FILE = "XBToolkit-iosTests/XBToolkit-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1144,7 +1125,7 @@
 		};
 		54C534841707BA31001DB282 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15FE6A34E0074C17BFB8F0B4 /* Pods-XBToolkit-iosTests.xcconfig */;
+			baseConfigurationReference = 596B84297071FE7ACABCC667 /* Pods-XBToolkit-iosTests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1153,18 +1134,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XBToolkit-iosTests/XBToolkit-iosTests-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/GHUnitIOS\"",
-					"\"${PODS_ROOT}/Headers/Mantle\"",
-					"\"${PODS_ROOT}/Headers/OCMock\"",
-					"\"${PODS_ROOT}/Headers/Underscore.m\"",
-					/usr/include/libxml2,
-				);
 				INFOPLIST_FILE = "XBToolkit-iosTests/XBToolkit-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

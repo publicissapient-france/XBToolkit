@@ -79,7 +79,7 @@
 
 - (void)executeRequestWithPath:(NSString *)path
                         method:(NSString *)method
-                    parameters:(NSDictionary *)parameters
+                    parameters:(id)parameters
             responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer
                        success:(XBHttpClientRequestSuccessBlock)successCb
                        failure:(XBHttpClientRequestFailureBlock)errorCb
@@ -88,10 +88,16 @@
     NSString *urlString = [self URLStringWithUrlPath:path method:method parameters:parameters];
     XBLogDebug(@"Http Request URL: %@", urlString);
 
+    NSError *requestCreationError;
     NSMutableURLRequest *request = [self.httpRequestOperationManager.requestSerializer requestWithMethod:method
                                                                                                URLString:urlString
-                                                                                              parameters:parameters];
-
+                                                                                              parameters:parameters
+                                                                                                   error:&requestCreationError];
+    if (requestCreationError) {
+        errorCb(nil, nil, requestCreationError);
+        return;
+    }
+    
     request.cachePolicy = self.cachePolicy;
 
     if (self.timeoutInterval) {
@@ -118,8 +124,8 @@
 
 - (void)executeRequestWithPath:(NSString *)path
                         method:(NSString *)method
-                      body:(NSData *)body
-                    parameters:(NSDictionary *)parameters
+                          body:(NSData *)body
+                    parameters:(id)parameters
             responseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer
                        success:(XBHttpClientRequestSuccessBlock)successCb
                        failure:(XBHttpClientRequestFailureBlock)errorCb

@@ -9,6 +9,6 @@
 
 @required
 
-- (NSDictionary *)build;
+- (id)build;
 
 @end

@@ -2,10 +2,10 @@ platform :ios, 						'6.0'
 
 xcodeproj 'XBToolkit-ios'
 pod 'Underscore.m',					'~> 0.2.1'
-pod 'AFNetworking', 				'~> 2.4.0'
-pod 'Mantle'
+pod 'AFNetworking', 				'~> 2.5.1'
+pod 'Mantle', 						'~> 1.5.4'
 
-target 'XBToolkit-iosTests', :exclusive => true do
+target 'XBToolkit-iosTests', :exclusive => false do
 	pod 'OCMock',						'2.2.4'
-  	pod 'GHUnitIOS',					'0.5.8'
+  	pod 'GHUnit',                       '0.5.9'
 end

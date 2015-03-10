@@ -28,7 +28,7 @@
 
     XBHttpMappedDataLoader *httpJsonDataLoader = [XBHttpMappedDataLoader dataLoaderWithHttpClient:httpClient resourcePath:@"/wp-json-api/get_author_index/" dataMapper:nil];
 
-    XBFileSystemCacheSupport * cacheSupport = [XBFileSystemCacheSupport cacheSupportWithFilename:@"author-cache"];
+    XBFileSystemCacheSupport *cacheSupport = [XBFileSystemCacheSupport cacheSupportWithFilename:@"author-cache"];
 
     XBCache *cache = [XBCache cacheWithCacheSupport:cacheSupport];
     XBHttpDataLoaderCacheKeyBuilder *cacheKeyBuilder = [XBHttpDataLoaderCacheKeyBuilder cacheKeyBuilder];
@@ -40,7 +40,7 @@
     __block NSArray *responseData;
     __block NSError *responseError;
 
-    [dataLoader loadDataWithSuccess:^(NSOperation *operation, NSDictionary *data) {
+    [dataLoader loadDataWithSuccess:^(NSOperation *operation, id data) {
         responseData = data;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchDataResult)];
     } failure:^(NSOperation *operation, id responseObject, NSError *error) {
