@@ -6,7 +6,7 @@ It mainly relies on [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 # Installation
 **XBToolkit** can be installed through [CocoaPods](http://cocoapods.org) or by including the source files into  your project.
 
-If you use Cocoapods, please install XBToolkit by appending to your Podfile the following line :
+If you use CocoaPods, please install XBToolkit by appending to your Podfile the following line :
 
 	pod XBToolkit
 
